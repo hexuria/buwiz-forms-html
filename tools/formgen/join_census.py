@@ -53,16 +53,16 @@ RECORD_CLASSES = (
 
 ACCEPTANCE = {
     "FALSE_NEGATIVE": 0,
-    "R1_keyed_1to1": 163,
+    "R1_keyed_1to1": 167,
     "R2_agent_tin": 4,
-    "R2_no_unique_key": 7697,
+    "R2_no_unique_key": 7693,
     "R4_mixed_cell": 1,
     "R5_plus_FALSE_NEGATIVE": 2125,
     "bundles": 53,
     "inventory_files": 44,
     "inventory_null_keys": 972,
     "inventory_rows": 9754,
-    "keyed_in_bundles_with_inventory": 163,
+    "keyed_in_bundles_with_inventory": 167,
     "keyed_in_bundles_without_inventory": 0,
     "records_classified": 9990,
     "resolution_absent": 10,
@@ -234,7 +234,7 @@ def unique_key_ownership_errors(
 ) -> list[str]:
     """Reject a claimed key the box does not uniquely own.
 
-    Live classification does not call this: the shipped 163 R1 keys are
+    Live classification does not call this: the shipped R1 keys are
     catalog-reported. The self-test does, and must fail the fixture.
     """
     key = claimed_key(record)
