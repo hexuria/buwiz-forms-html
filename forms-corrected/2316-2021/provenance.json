@@ -1,0 +1,44 @@
+{
+  "slug": "2316-2021",
+  "code": "2316",
+  "revision": "2021",
+  "variant": "",
+  "in_corpus": true,
+  "source_file": "2316 Sep 2021 ENCS_Final_corrected.pdf",
+  "sha256": "8e927e65b096d7a786ba7d36c55c28ee3de3546278880d9de8c11a91d1b48d60",
+  "stage_failed": null,
+  "error": null,
+  "images_extracted": 2,
+  "pages": 1,
+  "paper": "612.0x936.0",
+  "uniform_paper": true,
+  "page_papers": [
+    "612.0x936.0"
+  ],
+  "fonts": [
+    "Arial",
+    "Arial Narrow",
+    "Times New Roman"
+  ],
+  "rules": 468,
+  "text_runs": 220,
+  "images": 2,
+  "cells": 324,
+  "comb_cells": 31,
+  "growables": [],
+  "sources": [
+    {
+      "role": "form",
+      "file": "2316 Sep 2021 ENCS_Final_corrected.pdf",
+      "sha256": "8e927e65b096d7a786ba7d36c55c28ee3de3546278880d9de8c11a91d1b48d60"
+    }
+  ],
+  "guide": null,
+  "guide_detected": {
+    "inline_pages": [],
+    "standalone_pdfs": []
+  },
+  "html_bytes": 308262,
+  "generator": "tools/formgen batch.py (rule-backend=svg)",
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+}

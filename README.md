@@ -1,9 +1,13 @@
-# Frozen BIR HTML
+# buwiz-forms-html
 
-Product fill/print sheets for the 43 inventory forms. No extractor, no gate.py, no generator history.
+HTML corpus for BIR forms. Layout edits are commits here. The product app
+(`hexuria/buwiz-forms`) keeps only the **frozen** tree for fill/print.
 
-Layout edits are direct HTML commits here. XML `name=` stamps are fail-closed joins from `rules/forms/*/fields.json` and the identity catalog; never invent a key.
+| Tree | What it is |
+| --- | --- |
+| `forms/` | Stage 1 generated sheets (full generator batch, including `extra/`) |
+| `forms-corrected/` | Stage 2 copy + declared corrections + fail-closed TIN `name=` stamps |
+| `html-frozen/` | Product freeze: 43 inventory sheets the app actually loads. Tag `v1-frozen` |
 
-Intended home is `hexuria/buwiz-forms-html` (tag `v1-frozen`). This directory is the in-repo freeze until that repository exists.
-
-2551Q (`2551q-2018`) has fail-closed TIN `name=` stamps from the identity catalog and `rules/forms/2551q-v2018/fields.json`. See `name-gaps.json` for writer keys that still sit on cell ids.
+No extractor, no `gate.py`, no Rust, no formgen CI. Do not invent a `frm…`
+key. Do not copy leftover uniqueness onto `name=`. Do not commit saveXML.

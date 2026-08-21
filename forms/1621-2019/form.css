@@ -1,0 +1,23 @@
+/* 1621 rev 2019 -- form-specific rules.
+ * Shared scaffolding is in ../base.css. */
+@page { size:612pt 936pt;margin:0 }
+@font-face { font-family:"eBIRForms Arimo";font-style:italic;font-weight:100 900;font-display:block;src:url("../fonts/arimo-latin-wght-italic.woff2") format("woff2") }
+@font-face { font-family:"eBIRForms Tinos";font-style:normal;font-weight:400;font-display:block;src:url("../fonts/tinos-latin-400-normal.woff2") format("woff2") }
+.fi { position:absolute;inset:0;appearance:none;-webkit-appearance:none;border:0;margin:0;padding:0;background:transparent;box-shadow:none;outline:0;border-radius:0;caret-color:#000000;text-rendering:geometricPrecision;font-family:"eBIRForms Tinos", Tinos, "Times New Roman", Times, serif;font-weight:400;font-style:normal;font-kerning:none;font-variant-ligatures:none;font-feature-settings:normal;color:#000000;word-spacing:0.0269pt }
+.fh0 { font-size:8.04pt;line-height:8.9035pt;letter-spacing:-0.0223pt }
+.fh1 { font-size:8.04pt;line-height:10.08pt;letter-spacing:-0.0223pt }
+.fh10 { font-size:8.04pt;line-height:19.59pt;letter-spacing:-0.0223pt }
+.fh11 { font-size:8.04pt;line-height:19.68pt;letter-spacing:-0.0223pt }
+.fh12 { font-size:8.04pt;line-height:20.4pt;letter-spacing:-0.0223pt }
+.fh13 { font-size:8.04pt;line-height:20.46pt;letter-spacing:-0.0223pt }
+.fh14 { font-size:8.04pt;line-height:20.52pt;letter-spacing:-0.0223pt }
+.fh2 { font-size:8.04pt;line-height:12.12pt;letter-spacing:-0.0223pt }
+.fh3 { font-size:8.04pt;line-height:12.48pt;letter-spacing:-0.0223pt }
+.fh4 { font-size:8.04pt;line-height:17.64pt;letter-spacing:-0.0223pt }
+.fh5 { font-size:8.04pt;line-height:18.62pt;letter-spacing:-0.0223pt }
+.fh6 { font-size:8.04pt;line-height:19.08pt;letter-spacing:-0.0223pt }
+.fh7 { font-size:8.04pt;line-height:19.2pt;letter-spacing:-0.0223pt }
+.fh8 { font-size:8.04pt;line-height:19.56pt;letter-spacing:-0.0223pt }
+.fh9 { font-size:8.04pt;line-height:19.58pt;letter-spacing:-0.0223pt }
+.doc-link { position:absolute;left:0;top:0;z-index:9;font:12px/1.5 system-ui,-apple-system,sans-serif;padding:2px 8px;background:#fff;color:#0645ad;text-decoration:underline }
+@media print { .doc-link{display:none} }

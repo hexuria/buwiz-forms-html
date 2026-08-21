@@ -1,0 +1,47 @@
+{
+  "slug": "2550-ds-2025",
+  "code": "2550-DS",
+  "revision": "2025",
+  "variant": "",
+  "in_corpus": true,
+  "source_file": "2550-DS  Jan 2025 version_Folio.pdf",
+  "sha256": "5deb4ecb7c617b4f60da4019658ba109861814e72d263b4e103afafd9ea15963",
+  "stage_failed": null,
+  "error": null,
+  "images_extracted": 2,
+  "pages": 1,
+  "paper": "612.0x936.0",
+  "uniform_paper": true,
+  "page_papers": [
+    "612.0x936.0"
+  ],
+  "fonts": [
+    "Arial-BoldItalicMT",
+    "Arial-BoldMT",
+    "Arial-ItalicMT",
+    "ArialMT",
+    "ArialNarrow",
+    "TimesNewRomanPSMT"
+  ],
+  "rules": 722,
+  "text_runs": 172,
+  "images": 2,
+  "cells": 193,
+  "comb_cells": 79,
+  "growables": [],
+  "sources": [
+    {
+      "role": "form",
+      "file": "2550-DS  Jan 2025 version_Folio.pdf",
+      "sha256": "5deb4ecb7c617b4f60da4019658ba109861814e72d263b4e103afafd9ea15963"
+    }
+  ],
+  "guide": null,
+  "guide_detected": {
+    "inline_pages": [],
+    "standalone_pdfs": []
+  },
+  "html_bytes": 416833,
+  "generator": "tools/formgen batch.py (rule-backend=svg)",
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+}

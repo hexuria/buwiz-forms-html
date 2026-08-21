@@ -1,0 +1,52 @@
+/* 2316 rev 2021 -- form-specific rules.
+ * Shared scaffolding is in ../base.css. */
+@page { size:612pt 936pt;margin:0 }
+@font-face { font-family:"eBIRForms Arimo";font-style:italic;font-weight:100 900;font-display:block;src:url("../fonts/arimo-latin-wght-italic.woff2") format("woff2") }
+@font-face { font-family:"eBIRForms Tinos";font-style:normal;font-weight:700;font-display:block;src:url("../fonts/tinos-latin-700-normal.woff2") format("woff2") }
+.fi { position:absolute;inset:0;appearance:none;-webkit-appearance:none;border:0;margin:0;padding:0;background:transparent;box-shadow:none;outline:0;border-radius:0;caret-color:#000000;text-rendering:geometricPrecision;font-family:"eBIRForms Arimo", Arimo, Arial, Helvetica, sans-serif;font-weight:400;font-style:normal;font-kerning:none;font-variant-ligatures:none;font-feature-settings:normal;font-variation-settings:"wght" 400;color:#000000 }
+.fh0 { font-size:6.44pt;line-height:7.2pt;letter-spacing:-0.0275pt }
+.fh1 { font-size:7.22pt;line-height:8.0707pt;letter-spacing:-0.0309pt }
+.fh10 { font-size:7.224pt;line-height:13.7852pt;letter-spacing:-0.0309pt }
+.fh11 { font-size:7.224pt;line-height:13.86pt;letter-spacing:-0.0309pt }
+.fh12 { font-size:7.224pt;line-height:13.87pt;letter-spacing:-0.0309pt }
+.fh13 { font-size:7.224pt;line-height:13.88pt;letter-spacing:-0.0309pt }
+.fh14 { font-size:7.224pt;line-height:13.9pt;letter-spacing:-0.0309pt }
+.fh15 { font-size:7.224pt;line-height:13.92pt;letter-spacing:-0.0309pt }
+.fh16 { font-size:7.224pt;line-height:13.94pt;letter-spacing:-0.0309pt }
+.fh17 { font-size:7.224pt;line-height:13.99pt;letter-spacing:-0.0309pt }
+.fh18 { font-size:7.224pt;line-height:14.01pt;letter-spacing:-0.0309pt }
+.fh19 { font-size:7.224pt;line-height:14.06pt;letter-spacing:-0.0309pt }
+.fh2 { font-size:7.224pt;line-height:11.64pt;letter-spacing:-0.0309pt }
+.fh20 { font-size:7.224pt;line-height:14.08pt;letter-spacing:-0.0309pt }
+.fh21 { font-size:7.224pt;line-height:14.09pt;letter-spacing:-0.0309pt }
+.fh22 { font-size:7.224pt;line-height:14.1pt;letter-spacing:-0.0309pt }
+.fh23 { font-size:7.224pt;line-height:14.12pt;letter-spacing:-0.0309pt }
+.fh24 { font-size:7.224pt;line-height:14.13pt;letter-spacing:-0.0309pt }
+.fh25 { font-size:7.224pt;line-height:14.14pt;letter-spacing:-0.0309pt }
+.fh26 { font-size:7.224pt;line-height:14.15pt;letter-spacing:-0.0309pt }
+.fh27 { font-size:7.224pt;line-height:14.16pt;letter-spacing:-0.0309pt }
+.fh28 { font-size:7.224pt;line-height:14.19pt;letter-spacing:-0.0309pt }
+.fh29 { font-size:7.224pt;line-height:14.25pt;letter-spacing:-0.0309pt }
+.fh3 { font-size:7.224pt;line-height:11.68pt;letter-spacing:-0.0309pt }
+.fh30 { font-size:7.224pt;line-height:14.28pt;letter-spacing:-0.0309pt }
+.fh31 { font-size:7.224pt;line-height:14.31pt;letter-spacing:-0.0309pt }
+.fh32 { font-size:7.224pt;line-height:14.38pt;letter-spacing:-0.0309pt }
+.fh33 { font-size:7.224pt;line-height:14.41pt;letter-spacing:-0.0309pt }
+.fh34 { font-size:7.224pt;line-height:14.47pt;letter-spacing:-0.0309pt }
+.fh35 { font-size:7.224pt;line-height:14.48pt;letter-spacing:-0.0309pt }
+.fh36 { font-size:7.224pt;line-height:14.49pt;letter-spacing:-0.0309pt }
+.fh37 { font-size:7.224pt;line-height:14.5pt;letter-spacing:-0.0309pt }
+.fh38 { font-size:7.224pt;line-height:14.51pt;letter-spacing:-0.0309pt }
+.fh39 { font-size:7.224pt;line-height:14.52pt;letter-spacing:-0.0309pt }
+.fh4 { font-size:7.224pt;line-height:13.21pt;letter-spacing:-0.0309pt }
+.fh40 { font-size:7.224pt;line-height:14.65pt;letter-spacing:-0.0309pt }
+.fh41 { font-size:7.224pt;line-height:14.73pt;letter-spacing:-0.0309pt }
+.fh42 { font-size:7.224pt;line-height:14.87pt;letter-spacing:-0.0309pt }
+.fh43 { font-size:7.224pt;line-height:14.89pt;letter-spacing:-0.0309pt }
+.fh44 { font-size:7.224pt;line-height:14.9pt;letter-spacing:-0.0309pt }
+.fh45 { font-size:7.224pt;line-height:14.92pt;letter-spacing:-0.0309pt }
+.fh5 { font-size:7.224pt;line-height:13.4202pt;letter-spacing:-0.0309pt }
+.fh6 { font-size:7.224pt;line-height:13.46pt;letter-spacing:-0.0309pt }
+.fh7 { font-size:7.224pt;line-height:13.64pt;letter-spacing:-0.0309pt }
+.fh8 { font-size:7.224pt;line-height:13.73pt;letter-spacing:-0.0309pt }
+.fh9 { font-size:7.224pt;line-height:13.7752pt;letter-spacing:-0.0309pt }

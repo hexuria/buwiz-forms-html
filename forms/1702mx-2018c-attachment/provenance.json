@@ -1,0 +1,64 @@
+{
+  "slug": "1702mx-2018c-attachment",
+  "code": "1702MX",
+  "revision": "2018C",
+  "variant": "attachment",
+  "in_corpus": true,
+  "source_file": "1702-MX Attachment Jan 2018 ENCS Final4.pdf",
+  "sha256": "36c02d4c84919d2e5b94cd31b339490019be80afa622f5681ce252c8ec3dec26",
+  "stage_failed": null,
+  "error": null,
+  "images_extracted": 3,
+  "pages": 2,
+  "paper": "612.0x936.0",
+  "uniform_paper": true,
+  "page_papers": [
+    "612.0x936.0",
+    "612.0x936.0"
+  ],
+  "fonts": [
+    "Arial",
+    "Arial Narrow",
+    "Calibri"
+  ],
+  "rules": 1369,
+  "text_runs": 252,
+  "images": 3,
+  "cells": 248,
+  "comb_cells": 108,
+  "growables": [
+    {
+      "page": 2,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 18.24
+    },
+    {
+      "page": 2,
+      "rows": 3,
+      "capacity": 3,
+      "pitch_pt": 18.24
+    },
+    {
+      "page": 2,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 18.24
+    }
+  ],
+  "sources": [
+    {
+      "role": "form",
+      "file": "1702-MX Attachment Jan 2018 ENCS Final4.pdf",
+      "sha256": "36c02d4c84919d2e5b94cd31b339490019be80afa622f5681ce252c8ec3dec26"
+    }
+  ],
+  "guide": null,
+  "guide_detected": {
+    "inline_pages": [],
+    "standalone_pdfs": []
+  },
+  "html_bytes": 783086,
+  "generator": "tools/formgen batch.py (rule-backend=svg)",
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+}

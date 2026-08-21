@@ -1,0 +1,89 @@
+{
+  "slug": "1709-2020",
+  "code": "1709",
+  "revision": "2020",
+  "variant": "",
+  "in_corpus": true,
+  "source_file": "BIR Form No. 1709 Dec 2020 encs.pdf",
+  "sha256": "73629bceae8c271026b6d5fde8e4ac6d2103bceb5d585f78961794bcedffa45c",
+  "stage_failed": null,
+  "error": null,
+  "images_extracted": 4,
+  "pages": 3,
+  "paper": "612.0x936.0",
+  "uniform_paper": true,
+  "page_papers": [
+    "612.0x936.0",
+    "612.0x936.0",
+    "612.0x936.0"
+  ],
+  "fonts": [
+    "Arial",
+    "Arial Narrow",
+    "Calibri"
+  ],
+  "rules": 553,
+  "text_runs": 249,
+  "images": 4,
+  "cells": 403,
+  "comb_cells": 19,
+  "growables": [
+    {
+      "page": 1,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 12.0
+    },
+    {
+      "page": 1,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 12.0
+    },
+    {
+      "page": 1,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 12.0
+    },
+    {
+      "page": 1,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 12.0
+    },
+    {
+      "page": 2,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 12.0
+    },
+    {
+      "page": 2,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 12.0
+    },
+    {
+      "page": 2,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 12.0
+    }
+  ],
+  "sources": [
+    {
+      "role": "form",
+      "file": "BIR Form No. 1709 Dec 2020 encs.pdf",
+      "sha256": "73629bceae8c271026b6d5fde8e4ac6d2103bceb5d585f78961794bcedffa45c"
+    }
+  ],
+  "guide": null,
+  "guide_detected": {
+    "inline_pages": [],
+    "standalone_pdfs": []
+  },
+  "html_bytes": 579680,
+  "generator": "tools/formgen batch.py (rule-backend=svg)",
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+}

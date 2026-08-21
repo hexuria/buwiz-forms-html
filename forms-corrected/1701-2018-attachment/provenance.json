@@ -1,0 +1,58 @@
+{
+  "slug": "1701-2018-attachment",
+  "code": "1701",
+  "revision": "2018",
+  "variant": "attachment",
+  "in_corpus": true,
+  "source_file": "1701 Attachment Jan 2018 ENCSv3.pdf",
+  "sha256": "e71799dc613c08d4c383fcd66bed83032b182ab43721c8665d7b608047766cad",
+  "stage_failed": null,
+  "error": null,
+  "images_extracted": 2,
+  "pages": 2,
+  "paper": "612.0x792.0",
+  "uniform_paper": true,
+  "page_papers": [
+    "612.0x792.0",
+    "612.0x792.0"
+  ],
+  "fonts": [
+    "Arial",
+    "Arial Narrow",
+    "Calibri"
+  ],
+  "rules": 1178,
+  "text_runs": 214,
+  "images": 2,
+  "cells": 253,
+  "comb_cells": 123,
+  "growables": [
+    {
+      "page": 2,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 18.24
+    },
+    {
+      "page": 2,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 18.24
+    }
+  ],
+  "sources": [
+    {
+      "role": "form",
+      "file": "1701 Attachment Jan 2018 ENCSv3.pdf",
+      "sha256": "e71799dc613c08d4c383fcd66bed83032b182ab43721c8665d7b608047766cad"
+    }
+  ],
+  "guide": null,
+  "guide_detected": {
+    "inline_pages": [],
+    "standalone_pdfs": []
+  },
+  "html_bytes": 680926,
+  "generator": "tools/formgen batch.py (rule-backend=svg)",
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "1604cf-2008",
+  "code": "1604CF",
+  "revision": "2008",
+  "variant": "",
+  "in_corpus": false,
+  "source_file": "1604-CF July 2008 ENCS final.pdf",
+  "sha256": "877fbeee071752b2d9af72924647196e6dafa71a2412e74bc9f17897767cc2e7",
+  "stage_failed": null,
+  "error": null,
+  "images_extracted": 1,
+  "pages": 4,
+  "paper": "612.0x1008.0",
+  "uniform_paper": false,
+  "page_papers": [
+    "612.0x1008.0",
+    "612.0x1008.0",
+    "1008.0x612.0",
+    "612.0x1008.0"
+  ],
+  "fonts": [
+    "Arial",
+    "ArialNarrow",
+    "Tahoma",
+    "TimesNewRoman",
+    "Wingdings"
+  ],
+  "rules": 720,
+  "text_runs": 1020,
+  "images": 1,
+  "cells": 1300,
+  "comb_cells": 13,
+  "growables": [],
+  "sources": [
+    {
+      "role": "form",
+      "file": "1604-CF July 2008 ENCS final.pdf",
+      "sha256": "877fbeee071752b2d9af72924647196e6dafa71a2412e74bc9f17897767cc2e7"
+    }
+  ],
+  "guide": {
+    "document": "guide.html",
+    "origins": [
+      "inline-region"
+    ],
+    "moved_from_form": [
+      {
+        "page": 1,
+        "cut_y_pt": 755.28,
+        "reclaimed_pt": 252.72,
+        "reclaimed_pct": 25,
+        "marker": "We declare, under the penalties of perjury, that this declaration has been made in good faith, verified by us, and  to the best of our",
+        "marker_pattern": "reference-band",
+        "moved": {
+          "rules": 9,
+          "cells": 5,
+          "text_runs": 20,
+          "area_fills": 28,
+          "images": 0
+        },
+        "straddlers_kept_by_form": 5,
+        "moved_to": "guide.html"
+      },
+      {
+        "page": 4,
+        "cut_y_pt": 0.0,
+        "reclaimed_pt": 1008.0,
+        "reclaimed_pct": 100,
+        "marker": "BIR Form No. 1604  CF - Annual Information Return of Income Taxes Withheld on Compensation and Final",
+        "marker_pattern": "unfillable-page",
+        "moved": {
+          "rules": 0,
+          "cells": 0,
+          "text_runs": 162,
+          "area_fills": 0,
+          "images": 0
+        },
+        "straddlers_kept_by_form": 0,
+        "moved_to": "guide.html"
+      }
+    ],
+    "standalone_pdfs": [],
+    "reclaimed_pt_total": 1260.72,
+    "reclaimed_pct_mean": 62,
+    "reclaimed_pct_min": 25,
+    "reclaimed_pct_max": 100,
+    "note": "Reference material printed on the source sheet, or shipped as a separate guide PDF. It is not part of the filed form: index.html no longer carries the regions listed under moved_from_form. Each PDF under standalone_pdfs was re-extracted and reflowed into guide.html so that it prints with the document; the pinned PDF is kept beside it and linked, and remains the exact artefact."
+  },
+  "guide_detected": {
+    "inline_pages": [
+      1,
+      4
+    ],
+    "standalone_pdfs": []
+  },
+  "html_bytes": 873329,
+  "generator": "tools/formgen batch.py (rule-backend=svg)",
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+}

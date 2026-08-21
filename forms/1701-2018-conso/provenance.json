@@ -1,0 +1,52 @@
+{
+  "slug": "1701-2018-conso",
+  "code": "1701",
+  "revision": "2018",
+  "variant": "conso",
+  "in_corpus": true,
+  "source_file": "1701 January 2018 Consov4.pdf",
+  "sha256": "eac0ce426cc57c473e24638accb14a978ddd54f8cf795cc4303f527088416871",
+  "stage_failed": null,
+  "error": null,
+  "images_extracted": 2,
+  "pages": 2,
+  "paper": "936.0x612.0",
+  "uniform_paper": true,
+  "page_papers": [
+    "936.0x612.0",
+    "936.0x612.0"
+  ],
+  "fonts": [
+    "Arial",
+    "Arial Narrow",
+    "Calibri"
+  ],
+  "rules": 346,
+  "text_runs": 247,
+  "images": 2,
+  "cells": 415,
+  "comb_cells": 40,
+  "growables": [
+    {
+      "page": 2,
+      "rows": 4,
+      "capacity": 4,
+      "pitch_pt": 13.44
+    }
+  ],
+  "sources": [
+    {
+      "role": "form",
+      "file": "1701 January 2018 Consov4.pdf",
+      "sha256": "eac0ce426cc57c473e24638accb14a978ddd54f8cf795cc4303f527088416871"
+    }
+  ],
+  "guide": null,
+  "guide_detected": {
+    "inline_pages": [],
+    "standalone_pdfs": []
+  },
+  "html_bytes": 406172,
+  "generator": "tools/formgen batch.py (rule-backend=svg)",
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+}

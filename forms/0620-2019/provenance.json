@@ -1,0 +1,45 @@
+{
+  "slug": "0620-2019",
+  "code": "0620",
+  "revision": "2019",
+  "variant": "",
+  "in_corpus": true,
+  "source_file": "0620 Jan 2019 final.pdf",
+  "sha256": "03644c5b617ed246bf840c95ca07b0621137bdbde4d5d5d0804e7e6aa9c14341",
+  "stage_failed": null,
+  "error": null,
+  "images_extracted": 2,
+  "pages": 1,
+  "paper": "612.0x792.0",
+  "uniform_paper": true,
+  "page_papers": [
+    "612.0x792.0"
+  ],
+  "fonts": [
+    "Arial",
+    "Arial Narrow",
+    "Calibri",
+    "Times New Roman"
+  ],
+  "rules": 502,
+  "text_runs": 130,
+  "images": 2,
+  "cells": 151,
+  "comb_cells": 60,
+  "growables": [],
+  "sources": [
+    {
+      "role": "form",
+      "file": "0620 Jan 2019 final.pdf",
+      "sha256": "03644c5b617ed246bf840c95ca07b0621137bdbde4d5d5d0804e7e6aa9c14341"
+    }
+  ],
+  "guide": null,
+  "guide_detected": {
+    "inline_pages": [],
+    "standalone_pdfs": []
+  },
+  "html_bytes": 323510,
+  "generator": "tools/formgen batch.py (rule-backend=svg)",
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+}
