@@ -1,0 +1,37 @@
+{
+  "job": "open-view-1701q",
+  "date": "2026-08-21",
+  "scope": "Official View/Open of the live dummy Save into BIR-Form1701Qv2018.hta. No Submit / Send / Final Copy.",
+  "launch": {
+    "exe": "C:\\eBIRForms\\BIRForms.exe",
+    "cwd": "C:\\eBIRForms",
+    "product_version": "7.9.6.1"
+  },
+  "savefile": {
+    "path": "C:\\eBIRForms\\savefile\\00000000000000-1701Qv2018-2026Q1.xml",
+    "bytes": 11877,
+    "sha256_before_and_after_view": "bf11bbde0f0f01a416d90bffad00c2eda636604259c49f66e33388e26a259ccc",
+    "mtime_local": "2026-08-21T19:08:44",
+    "unchanged_by_view": true,
+    "xml_not_committed": true
+  },
+  "ui": {
+    "main_list_row": "00000000000000-1701Qv2018-2026Q1 / 2026-Q1 / 08/21/2026 19:08:44",
+    "action": "selected radio then View (not Fill-up, not Delete, not Submit)",
+    "window_after": "BIR Form No. 1701Qv2018"
+  },
+  "loaded_header": {
+    "year": "2026",
+    "quarter": "First",
+    "amended": "No",
+    "tin": "000-000-000-00000",
+    "rdo": "018",
+    "synthetic_name": "DELA CRUZ JUAN"
+  },
+  "screenshots": [
+    "tools/formgen/corrections/evidence/open-view-1701q-20260821-scrolled.png",
+    "tools/formgen/corrections/evidence/open-view-1701q-20260821-form.png"
+  ],
+  "no_submit_click": true,
+  "pass": true
+}

@@ -1,0 +1,60 @@
+{
+  "job": "roundtrip-1701q",
+  "date": "2026-08-21",
+  "priority_reason": "Live dummy Save already proved official saveXML(false). Highest-value next sit is whether that packet matches bir-core's 172-field editable contract, before Submit or another harvest.",
+  "scope": "offline contract compare + official main-screen listing; no Submit / Final Copy / transport.rs",
+  "live_savefile": {
+    "path": "C:\\eBIRForms\\savefile\\00000000000000-1701Qv2018-2026Q1.xml",
+    "bytes": 11877,
+    "sha256": "bf11bbde0f0f01a416d90bffad00c2eda636604259c49f66e33388e26a259ccc",
+    "mtime_local": "2026-08-21T19:08:44",
+    "xml_not_committed": true
+  },
+  "writer_contract": {
+    "source": "crates/bir-core/src/forms/form_1701q_xml.rs OFFICIAL_EDITABLE_FIELD_IDS",
+    "field_count": 172,
+    "envelope": "<?xml version='1.0'?> + tab/CRLF pad + All Rights Reserved BIR 2012.",
+    "javascript_escape_fields": [
+      "frm1701q:txtTaxpayerName",
+      "frm1701q:txtAddress",
+      "frm1701q:txtLOB"
+    ]
+  },
+  "result": {
+    "key_order": "exact match vs OFFICIAL_EDITABLE_FIELD_IDS",
+    "rewrap_bytes_identical": true,
+    "js_escape_name": "DELA%20CRUZ%20JUAN",
+    "js_escape_address": "OLONGAPO%2C%20ZAMBALES",
+    "js_escape_lob": "RETAIL",
+    "dummy_tin": {
+      "frm1701q:txtTIN1": "000",
+      "frm1701q:txtTIN2": "000",
+      "frm1701q:txtTIN3": "000",
+      "frm1701q:txtBranchCode": "00000"
+    },
+    "quarter": {
+      "frm1701q:DateQuarter_1": "true"
+    },
+    "txtFinalFlag": "0"
+  },
+  "official_ui": {
+    "listed_on_main_screen": true,
+    "file_name": "00000000000000-1701Qv2018-2026Q1",
+    "return_period": "2026-Q1",
+    "date_created": "08/21/2026 19:08:44",
+    "view_into_form_hta": "not completed this sit (View control off UIA tree; no Submit clicked)"
+  },
+  "screenshots": [
+    "tools/formgen/corrections/evidence/roundtrip-1701q-20260821-open.png"
+  ],
+  "not_done": [
+    "Form1701QDraft::from_bir_xml_payload -> to_bir_xml_payload on this live file (needs bir-core compile on this ARM box)",
+    "Official View/Open of the savefile into BIR-Form1701Qv2018.hta",
+    "Submit / Final Copy"
+  ],
+  "pass": "contract",
+  "notes": [
+    "7.9.6.1 live Save is byte-identical to re-serializing the same values in writer order with the official CRLF envelope.",
+    "QUEUE_SUBMISSION_SUPPORTED remains false. Packed BIRForms.exe untouched."
+  ]
+}
