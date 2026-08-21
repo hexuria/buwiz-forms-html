@@ -17,7 +17,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 172,
-      "index_sha256": "51aaf9e77a5d40c703ee32cbed826c9e4bf7bc296c71166e082eb6ab98f13f5d"
+      "index_sha256": "8aa89e25bc1f6924410555e1b185611878583c22ff7de1dbc8f152029c91e01c",
+      "name_stamped": true
     },
     {
       "form_id": "1601eq-v2018",
@@ -143,7 +144,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 838,
-      "index_sha256": "806807071e2b37541af6e5510ad5292bbe700b394e986d54361b779191949d24"
+      "index_sha256": "d75890170e2c11738074df0f5b6f9371e99c106443a80ec6c94d4335b676267b",
+      "name_stamped": true
     },
     {
       "form_id": "1701a-v2018",
@@ -183,7 +185,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 258,
-      "index_sha256": "54a064752a983bd7856f1cc8ddf9c2de4e3e16d61827e8c51a831dfab5d42e3b"
+      "index_sha256": "d81cf108f4f3d792ce8a1947ff7223f879c1b214368ba3b2e6891193c849bfc9",
+      "name_stamped": true
     },
     {
       "form_id": "1604c-v2018",
@@ -235,7 +238,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 588,
-      "index_sha256": "c828654a366ad67fa58fdaa7df117c73d36ce09e2a8dee8ba1d476448a8356c6"
+      "index_sha256": "78ba59ec330c04df6a0d455eca4b25b94682166e19a445d85c03cca4f5e61d92",
+      "name_stamped": true
     },
     {
       "form_id": "1706-v2018",
@@ -519,7 +523,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 235,
-      "index_sha256": "bf388406d6302e224fedb1ac48924935deb0313e6ebfdb200cad0973a49b8c44"
+      "index_sha256": "9e6831420c0f40e302e891c95565aba67a12323a4e44b24329af8a32abe4f888",
+      "name_stamped": true
     },
     {
       "form_id": "0619e-v2018",
@@ -531,7 +536,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 59,
-      "index_sha256": "323ea0a0ecf3310eb550d1c42310b027f8d10e1e61fd4e913fd51226a4848c6f"
+      "index_sha256": "a73ff3e827aa9cc5e2f45b0f760ef8ab3b905c3669e304e2d4d8df38cd895a2a",
+      "name_stamped": true
     },
     {
       "form_id": "0619f-v2018",
@@ -543,7 +549,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 60,
-      "index_sha256": "2a27480ffbc53be8c5a447ed2b88eb05abd5176c733587bf0f6b39a184430c60"
+      "index_sha256": "b1b4236c813f6e844deda2989468591d663f37a1bc2241b3cdac863f1c56e7ae",
+      "name_stamped": true
     },
     {
       "form_id": "1601c-v2018",
@@ -557,7 +564,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 101,
-      "index_sha256": "5c6499111136b8a4fe9b9d50bf65a40172e661aa3714db999b2896b63a61f9d9"
+      "index_sha256": "0ac6f12d06f5b008f99b07be70e5418739bb6c2ded5a9c86ea8f0ef7cb2d598a",
+      "name_stamped": true
     },
     {
       "form_id": "2550q-v2024",
@@ -571,7 +579,8 @@
         "provenance.json"
       ],
       "serialized_key_count": 160,
-      "index_sha256": "f406f1e28f8fe814aed2c173aba9f588b54d617aae517256601719c3babc3e2b"
+      "index_sha256": "04f93d77402a0ae9a112d4a49f75818579f52b54d7bec7350586e7304122cc32",
+      "name_stamped": true
     },
     {
       "form_id": "2551q-v2018",
