@@ -1,7 +1,7 @@
 {
   "form_id": "2551q-v2018",
   "html_slug": "2551q-2018",
-  "rule": "Stamp name= only where the identity catalog has a 1:1 official_field_key that exists in fields.json. Remaining writer keys stay on cell-id name=. Do not invent a join.",
+  "rule": "Stamp name= only where the identity catalog has a 1:1 official_field_key that exists in fields.json. Remaining writer keys stay on cell-id name=. Do not invent a join. Mixed combs with no empty input are catalog identities but unwritable.",
   "stamped": [
     {
       "catalog_id": "2551q-2018/p1/tin-1",
@@ -30,6 +30,7 @@
     "frm2551Qv2018:txtTIN3",
     "frm2551Qv2018:txtBranchCode"
   ],
+  "unwritable_mixed": [],
   "unstamped_writer_keys_in_fields_json": [
     "frm2551Qv2018:amendedRtn_1",
     "frm2551Qv2018:amendedRtn_2",

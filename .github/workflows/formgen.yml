@@ -245,14 +245,14 @@ jobs:
           set -euo pipefail
           python3 tools/formgen/tab_check.py --forms forms --review-dir "$RUNNER_TEMP/tab-review"
 
-      - name: Frozen inventory and 2551Q TIN stamps
+      - name: Frozen inventory and TIN name stamps
         run: |
           set -euo pipefail
           python3 tools/formgen/freeze_html.py --verify --out html-frozen --index "$PRODUCT/rules/index.json"
-          python3 tools/formgen/stamp_2551q_names.py --self-test
-          python3 tools/formgen/stamp_2551q_names.py --check \
-            --html html-frozen/2551q-2018/index.html \
-            --fields "$PRODUCT/rules/forms/2551q-v2018/fields.json" \
+          python3 tools/formgen/stamp_frozen_names.py --self-test
+          python3 tools/formgen/stamp_frozen_names.py --check-all \
+            --html-root html-frozen \
+            --rules-root "$PRODUCT/rules/forms" \
             --catalog tools/formgen/identity/catalog.json
 
       # extract.py is the strongest check in the pipeline and, until the
