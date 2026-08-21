@@ -1,0 +1,35 @@
+{
+  "title": "1701Q spouse TIN named harvest",
+  "date": "2026-08-21",
+  "printed_caption": "Spouse's TIN",
+  "printed_section": "PART II \u2013 BACKGROUND INFORMATION ON SPOUSE",
+  "source": "html-frozen/1701q-2018/index.html div.t item 17",
+  "rewritten_record_count": 4,
+  "records": [
+    {
+      "html_id_hint": "p1c66",
+      "id": "1701q-2018/p1/tin-spouse-1",
+      "official_field_key": "frm1701q:txtSpouseTIN1"
+    },
+    {
+      "html_id_hint": "p1c68",
+      "id": "1701q-2018/p1/tin-spouse-2",
+      "official_field_key": "frm1701q:txtSpouseTIN2"
+    },
+    {
+      "html_id_hint": "p1c70",
+      "id": "1701q-2018/p1/tin-spouse-3",
+      "official_field_key": "frm1701q:txtSpouseTIN3"
+    },
+    {
+      "html_id_hint": "p1c72",
+      "id": "1701q-2018/p1/tin-spouse-branch",
+      "official_field_key": "frm1701q:txtSpouseBranchCode"
+    }
+  ],
+  "notes": [
+    "tin_roles_for_chain(1701q-2018, 1) now returns tin-spouse-* after quoting Spouse's TIN.",
+    "2316-2021 and 2550-ds-2025 tin-extra records stay gapped; they are not spouse.",
+    "No official_field_key was invented. Catalog size stays 9990."
+  ]
+}

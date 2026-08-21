@@ -52,11 +52,12 @@ CORRECTED_TREE_NAME = "forms-corrected"
 STAGE1_TREE_NAME = "forms"
 FORBIDDEN_KEY_CHARS = frozenset("\"<>&")
 # Pin, not a census. Must equal join_census.ACCEPTANCE["R1_keyed_1to1"].
-EXPECTED_R1 = 163
+EXPECTED_R1 = 167
 # G11: sheet pre-prints the branch digits, emit keeps a mixed comb and
 # refuses empty slots. Those cells resolve as the identity but have no
 # input to name. A field (not mixed) with zero inputs is still an error.
-EXPECTED_UNWRITABLE_MIXED = 15
+# 1701Q spouse branch (p1c72) is the same G11 mixed case as taxpayer branch.
+EXPECTED_UNWRITABLE_MIXED = 16
 EXPECTED_WRITABLE_R1 = EXPECTED_R1 - EXPECTED_UNWRITABLE_MIXED
 
 INPUT_TAG_RE = re.compile(r"<input\b[^>]*>")
@@ -471,7 +472,7 @@ def self_test() -> int:
     check(
         "writable + unwritable-mixed pins sum to R1",
         EXPECTED_WRITABLE_R1 + EXPECTED_UNWRITABLE_MIXED == EXPECTED_R1
-        and EXPECTED_UNWRITABLE_MIXED == 15,
+        and EXPECTED_UNWRITABLE_MIXED == 16,
         f"{EXPECTED_WRITABLE_R1}+{EXPECTED_UNWRITABLE_MIXED}",
     )
 

@@ -24,6 +24,13 @@ MATCH = {"kind": "field", "tolerance_pt": 0.25, "cardinality": "exactly-one"}
 GAP_NO_HARVEST = "no harvested fields.json in this checkout"
 GAP_NO_UNIQUE = "no unique fields.json key for this box"
 EXPECTED_FALSE_NEGATIVE_REWRITES = 1334
+EXPECTED_1701Q_SPOUSE_REWRITES = 4
+TIN_EXTRA_ROLES = ("tin-extra-1", "tin-extra-2", "tin-extra-3", "tin-extra-branch")
+TIN_SPOUSE_ROLES = ("tin-spouse-1", "tin-spouse-2", "tin-spouse-3", "tin-spouse-branch")
+# Printed on html-frozen/1701q-2018/index.html (div.t), not inferred from y.
+# Item 17 at y=391.50, x=26.76: "Spouse's TIN". Section at y=377.25:
+# "PART II – BACKGROUND INFORMATION ON SPOUSE". Chain hints p1c66/68/70/72.
+PRINTED_1701Q_SPOUSE_TIN = "Spouse's TIN"
 
 
 def round_box(box: tuple[float, float, float, float]) -> list[float]:
@@ -241,11 +248,11 @@ def classify_role(field: dict, counters: dict[str, int]) -> str:
 
 
 def tin_roles_for_chain(slug: str, page: int) -> tuple[str, str, str, str]:
-    if slug == "extra/1700-2018" and page == 1:
-        return ("tin-spouse-1", "tin-spouse-2", "tin-spouse-3", "tin-spouse-branch")
+    if slug in ("extra/1700-2018", "1701q-2018") and page == 1:
+        return TIN_SPOUSE_ROLES
     if page >= 2:
         return (f"tin-p{page}-1", f"tin-p{page}-2", f"tin-p{page}-3", f"tin-p{page}-branch")
-    return ("tin-extra-1", "tin-extra-2", "tin-extra-3", "tin-extra-branch")
+    return TIN_EXTRA_ROLES
 
 
 def mint_i1(catalog: dict, tree: pathlib.Path, inventories: dict[str, pathlib.Path]) -> list[dict]:
@@ -345,6 +352,74 @@ def write_evidence(name: str, payload: dict) -> None:
     path.write_text(json.dumps(payload, indent=2) + chr(10), encoding="utf-8")
 
 
+def remint_1701q_spouse(catalog: dict, inventories: dict[str, pathlib.Path]) -> dict:
+    """Rewrite the four 1701Q tin-extra records to tin-spouse after a printed caption.
+
+    Catalog size stays 9990. Keys come from harvest_tin against fields.json.
+    2316-2021 and 2550-ds-2025 tin-extra records are left gapped.
+    """
+    slug = "1701q-2018"
+    by_role = {
+        str(record["role"]): record
+        for record in catalog["records"]
+        if record.get("bundle_slug") == slug and record.get("role") in TIN_EXTRA_ROLES
+    }
+    if set(by_role) != set(TIN_EXTRA_ROLES):
+        raise ValueError(
+            "1701q spouse remint expected roles %s, got %s"
+            % (list(TIN_EXTRA_ROLES), sorted(by_role))
+        )
+    inv = inventory_path_for_slug(slug, inventories)
+    if inv is None:
+        raise ValueError("1701q-2018 has no fields.json")
+    keys = inventory_keys(inv)
+    used = used_keys(catalog, slug)
+    rewritten: list[dict[str, str]] = []
+    for old_role, new_role in zip(TIN_EXTRA_ROLES, TIN_SPOUSE_ROLES):
+        record = by_role[old_role]
+        key, gap = harvest_tin(keys, used, new_role, 1)
+        if not key:
+            raise ValueError("%s: %s" % (new_role, gap))
+        used.add(key)
+        record["id"] = "%s/p1/%s" % (slug, new_role)
+        record["role"] = new_role
+        record["official_field_key"] = key
+        record["official_field_key_gap"] = ""
+        rewritten.append(
+            {
+                "html_id_hint": str(record["html_id_hint"]),
+                "id": str(record["id"]),
+                "official_field_key": key,
+            }
+        )
+    if len(rewritten) != EXPECTED_1701Q_SPOUSE_REWRITES:
+        raise ValueError(
+            "1701q spouse remint expected %s rewrites, got %s"
+            % (EXPECTED_1701Q_SPOUSE_REWRITES, len(rewritten))
+        )
+    leftover_extra = [
+        str(record["id"])
+        for record in catalog["records"]
+        if record.get("bundle_slug") == slug and record.get("role") in TIN_EXTRA_ROLES
+    ]
+    if leftover_extra:
+        raise ValueError("1701q tin-extra records remain: %s" % leftover_extra)
+    return {
+        "title": "1701Q spouse TIN named harvest",
+        "date": "2026-08-21",
+        "printed_caption": PRINTED_1701Q_SPOUSE_TIN,
+        "printed_section": "PART II – BACKGROUND INFORMATION ON SPOUSE",
+        "source": "html-frozen/1701q-2018/index.html div.t item 17",
+        "rewritten_record_count": len(rewritten),
+        "records": rewritten,
+        "notes": [
+            "tin_roles_for_chain(1701q-2018, 1) now returns tin-spouse-* after quoting Spouse's TIN.",
+            "2316-2021 and 2550-ds-2025 tin-extra records stay gapped; they are not spouse.",
+            "No official_field_key was invented. Catalog size stays 9990.",
+        ],
+    }
+
+
 def remint_false_negatives(catalog: dict, inventories: dict[str, pathlib.Path]) -> dict:
     rewritten: list[str] = []
     by_slug: dict[str, int] = {}
@@ -419,6 +494,29 @@ def self_test() -> int:
         "1701-2018-attachment stays absent",
         inventory_path_for_slug("1701-2018-attachment", inventories) is None,
     )
+    check(
+        "1701q-2018 page 1 leftover TIN chain is spouse after printed caption",
+        tin_roles_for_chain("1701q-2018", 1) == TIN_SPOUSE_ROLES,
+        str(tin_roles_for_chain("1701q-2018", 1)),
+    )
+    check(
+        "2316-2021 page 1 leftover TIN chain stays tin-extra",
+        tin_roles_for_chain("2316-2021", 1) == TIN_EXTRA_ROLES,
+        str(tin_roles_for_chain("2316-2021", 1)),
+    )
+    check(
+        "2550-ds-2025 page 1 leftover TIN chain stays tin-extra",
+        tin_roles_for_chain("2550-ds-2025", 1) == TIN_EXTRA_ROLES,
+        str(tin_roles_for_chain("2550-ds-2025", 1)),
+    )
+    inv_1701q = inventory_path_for_slug("1701q-2018", inventories)
+    keys_1701q = inventory_keys(inv_1701q) if inv_1701q else []
+    spouse1, spouse1_gap = harvest_tin(keys_1701q, set(), "tin-spouse-1", 1)
+    check(
+        "1701q harvest_tin spouse-1 is unique frm1701q:txtSpouseTIN1",
+        spouse1 == "frm1701q:txtSpouseTIN1" and not spouse1_gap,
+        "%s %s" % (spouse1, spouse1_gap),
+    )
     print(("FAIL" if failed else "OK"),
           ("%s self-test(s) failed" % failed) if failed else "self-test")
     return 1 if failed else 0
@@ -434,19 +532,34 @@ def main() -> int:
         action="store_true",
         help="rewrite mint-path false-negative gaps; do not invent keys",
     )
+    parser.add_argument(
+        "--remint-1701q-spouse",
+        action="store_true",
+        help="rewrite 1701Q tin-extra records to tin-spouse after printed Spouse's TIN",
+    )
     args = parser.parse_args()
     if args.self_test:
         return self_test()
-    if args.remint_false_negatives:
+    if args.remint_false_negatives and args.remint_1701q_spouse:
+        parser.error("choose one remint")
+    if args.remint_false_negatives or args.remint_1701q_spouse:
         if args.wave:
-            parser.error("--remint-false-negatives does not take --wave")
+            parser.error("remint flags do not take --wave")
         catalog, errors = fi.load_catalog(fi.DEFAULT_CATALOG)
         if errors:
             print(chr(10).join(errors))
             return 1
         before = len(catalog["records"])
+        inventories = load_inventories()
         try:
-            payload = remint_false_negatives(catalog, load_inventories())
+            if args.remint_1701q_spouse:
+                payload = remint_1701q_spouse(catalog, inventories)
+                evidence_name = "tin-1701q-spouse-20260821.json"
+                label = "remint-1701q-spouse"
+            else:
+                payload = remint_false_negatives(catalog, inventories)
+                evidence_name = "join-false-negative-remint-20260819.json"
+                label = "remint-false-negatives"
         except ValueError as exc:
             print("FAIL  %s" % exc)
             return 1
@@ -459,13 +572,12 @@ def main() -> int:
             print("FAIL  remint changed catalog size")
             return 1
         write_catalog(catalog)
-        evidence_name = "join-false-negative-remint-20260819.json"
         write_evidence(evidence_name, payload)
         rewritten = payload["rewritten_record_count"]
-        print("remint-false-negatives: %s gaps rewritten, catalog %s wrote %s" % (rewritten, before, evidence_name))
+        print("%s: %s records rewritten, catalog %s wrote %s" % (label, rewritten, before, evidence_name))
         return 0
     if not args.wave:
-        parser.error("--wave is required unless --self-test or --remint-false-negatives")
+        parser.error("--wave is required unless --self-test or a remint flag")
     tree = args.tree if args.tree.is_absolute() else (pathlib.Path.cwd() / args.tree)
     catalog, errors = fi.load_catalog(fi.DEFAULT_CATALOG)
     if errors:

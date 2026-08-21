@@ -17,18 +17,41 @@
       "catalog_id": "1701q-2018/p1/tin-3",
       "html_id": "p1c20",
       "name": "frm1701q:txtTIN3"
+    },
+    {
+      "catalog_id": "1701q-2018/p1/tin-spouse-1",
+      "html_id": "p1c66",
+      "name": "frm1701q:txtSpouseTIN1"
+    },
+    {
+      "catalog_id": "1701q-2018/p1/tin-spouse-2",
+      "html_id": "p1c68",
+      "name": "frm1701q:txtSpouseTIN2"
+    },
+    {
+      "catalog_id": "1701q-2018/p1/tin-spouse-3",
+      "html_id": "p1c70",
+      "name": "frm1701q:txtSpouseTIN3"
     }
   ],
   "stamped_names": [
     "frm1701q:txtTIN1",
     "frm1701q:txtTIN2",
-    "frm1701q:txtTIN3"
+    "frm1701q:txtTIN3",
+    "frm1701q:txtSpouseTIN1",
+    "frm1701q:txtSpouseTIN2",
+    "frm1701q:txtSpouseTIN3"
   ],
   "unwritable_mixed": [
     {
       "catalog_id": "1701q-2018/p1/tin-branch",
       "html_id": "p1c22",
       "official_field_key": "frm1701q:txtBranchCode"
+    },
+    {
+      "catalog_id": "1701q-2018/p1/tin-spouse-branch",
+      "html_id": "p1c72",
+      "official_field_key": "frm1701q:txtSpouseBranchCode"
     }
   ],
   "unstamped_writer_keys_in_fields_json": [
@@ -187,9 +210,6 @@
     "frm1701q:txtSpouseForeignTaxNum",
     "frm1701q:txtSpouseName",
     "frm1701q:txtSpouseRDOCode",
-    "frm1701q:txtSpouseTIN1",
-    "frm1701q:txtSpouseTIN2",
-    "frm1701q:txtSpouseTIN3",
     "frm1701q:txtTaxpayerName",
     "frm1701q:txtTelno",
     "frm1701q:txtYear",
