@@ -9,5 +9,6 @@ HTML corpus for BIR forms. Layout edits are commits here. The product app
 | `forms-corrected/` | Stage 2 copy + declared corrections + fail-closed TIN `name=` stamps |
 | `html-frozen/` | Product freeze: 43 inventory sheets the app actually loads. Tag `v1-frozen` |
 
-No extractor, no `gate.py`, no Rust, no formgen CI. Do not invent a `frm…`
+CI (`html-corpus`) validates `forms/` and the 2551Q TIN stamps on
+`html-frozen/`. No extractor, no `gate.py`, no Rust. Do not invent a `frm…`
 key. Do not copy leftover uniqueness onto `name=`. Do not commit saveXML.

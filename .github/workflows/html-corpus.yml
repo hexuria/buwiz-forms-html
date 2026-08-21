@@ -1,0 +1,101 @@
+# HTML corpus CI. This is the job that used to walk committed forms/ on
+# hexuria/buwiz-forms. The validator scripts still live there under
+# tools/formgen; this workflow checks that repo out and points the scripts
+# at THIS tree.
+#
+# Not the gate. `python3 tools/formgen/gate.py` stays operator-run on the
+# product repo (needs pinned BIR PDFs and `build/`). No extractor, no Rust.
+
+name: html-corpus
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  html-corpus:
+    runs-on: ubuntu-22.04
+
+    env:
+      PLAYWRIGHT_VERSION: "1.59.0"
+      TOOLS: ${{ github.workspace }}/.ci-buwiz-forms/tools/formgen
+      PRODUCT: ${{ github.workspace }}/.ci-buwiz-forms
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out validator scripts from buwiz-forms
+        uses: actions/checkout@v4
+        with:
+          repository: hexuria/buwiz-forms
+          path: .ci-buwiz-forms
+          persist-credentials: false
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Playwright and Chromium
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check "playwright==${PLAYWRIGHT_VERSION}"
+          python3 -m playwright install --with-deps chromium
+
+      - name: Tree validator self-test (each check can fail)
+        run: python3 "$TOOLS/validate_tree.py" --self-test
+
+      - name: Validate forms/
+        run: python3 "$TOOLS/validate_tree.py" --root forms --verbose
+
+      - name: tab_check.py self-test (synthetic pages)
+        run: python3 "$TOOLS/tab_check.py" --self-test
+
+      - name: Tab-order walk over forms/
+        run: |
+          set -euo pipefail
+          python3 "$TOOLS/tab_check.py" --forms forms --review-dir "$RUNNER_TEMP/tab-review"
+
+      - name: 2551Q TIN name stamps on html-frozen
+        run: |
+          set -euo pipefail
+          python3 "$TOOLS/stamp_2551q_names.py" --self-test
+          python3 "$TOOLS/stamp_2551q_names.py" --check \
+            --html html-frozen/2551q-2018/index.html \
+            --fields "$PRODUCT/rules/forms/2551q-v2018/fields.json" \
+            --catalog "$PRODUCT/tools/formgen/identity/catalog.json"
+
+      - name: Declare what this job covers
+        if: always()
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'MD'
+          ## html-corpus CI — scope
+
+          This job measures the HTML trees in **this** repo. It is not
+          `gate.py`. A green tick does not mean the generator gate passed.
+
+          ### Covered here
+
+          | Check | What it proves |
+          | --- | --- |
+          | `validate_tree.py --self-test` | each tree check can actually fail |
+          | `validate_tree.py --root forms` | generated `forms/` is internally consistent |
+          | `tab_check.py --self-test` | the tab walker can fail, on synthetic pages |
+          | `tab_check.py --forms forms` | Tab order over the generated corpus |
+          | `stamp_2551q_names.py --check` | 2551Q TIN `name=` stamps on `html-frozen/` |
+
+          ### Not covered here
+
+          | Not run | Why |
+          | --- | --- |
+          | `gate.py` | operator-run on `hexuria/buwiz-forms`; needs pinned PDFs and `build/` |
+          | extractor / fixture self-tests | those scripts live on the product repo |
+          | Rust / desktop CI | product app, not this corpus |
+          MD
