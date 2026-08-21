@@ -1,0 +1,312 @@
+{
+  "job": "live-save-1701q",
+  "date": "2026-08-21",
+  "scope": "local Save only; no Submit / Send / e-mail / Final Copy / online filing",
+  "worktrees": {
+    "product": {
+      "path": "C:\\Users\\uriah\\Code\\buwiz-forms-wt-live-save-1701q",
+      "branch": "gol/live-save-1701q",
+      "head": "cac025ff17207610c111139b8889c3511901d8af"
+    },
+    "html": {
+      "path": "C:\\Users\\uriah\\Code\\buwiz-forms-html-wt-live-save-1701q",
+      "branch": "gol/live-save-1701q",
+      "head": "0e77db9fa8d6c2f0ae1aa2b87084c304eb2ea49c"
+    },
+    "dirty_mains_untouched": true
+  },
+  "exe": {
+    "path": "C:\\eBIRForms\\BIRForms.exe",
+    "product_version": "7.9.6.1",
+    "bytes": 58411008,
+    "sha256": "a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c",
+    "changelog_sha256": "a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c",
+    "changelog_bytes": 58411008,
+    "packed_exe_untouched": true
+  },
+  "temp_extract": {
+    "guid": "{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}",
+    "string_util_js_sha256": "6cf89ce385a17df294afe3f458098091bbebca55177b47064a68ade27dbc87a5",
+    "dummy_prefix_patch": "getTinChkCode short-circuits 000000000/999999999/222222222 to return 0 before ValidateTinWChkDgt/chkt.exe; extracted copy only",
+    "launch_cwd": "C:\\eBIRForms"
+  },
+  "savefile": {
+    "path": "C:\\eBIRForms\\savefile\\00000000000000-1701Qv2018-2026Q1.xml",
+    "bytes": 11877,
+    "sha256": "bf11bbde0f0f01a416d90bffad00c2eda636604259c49f66e33388e26a259ccc",
+    "mtime_local": "2026-08-21T19:08:44",
+    "filename": "00000000000000-1701Qv2018-2026Q1.xml",
+    "xml_not_committed": true,
+    "baseline_w1_sha256": "192e71cf66bd43b82817d2cb6468cdbfcf367cf541aa43d67e0b91b64b49ea1e",
+    "baseline_w1_bytes": 11880,
+    "live_resit": true
+  },
+  "dummy_tin": "000-000-000-00000",
+  "synthetic_name": "DELA CRUZ JUAN",
+  "no_live_cor": true,
+  "no_submit_click": true,
+  "dialog": "BIR Form saved successfully as : savefile/00000000000000-1701Qv2018-2026Q1.xml",
+  "tin_keys": {
+    "frm1701q:txtTIN1": [
+      "000"
+    ],
+    "frm1701q:txtTIN2": [
+      "000"
+    ],
+    "frm1701q:txtTIN3": [
+      "000"
+    ],
+    "frm1701q:txtBranchCode": [
+      "00000"
+    ],
+    "frm1701q:txtSpouseTIN1": [
+      ""
+    ],
+    "frm1701q:txtSpouseTIN2": [
+      ""
+    ],
+    "frm1701q:txtSpouseTIN3": [
+      ""
+    ],
+    "frm1701q:txtSpouseBranchCode": [
+      ""
+    ],
+    "frm1701q:txtPg2TIN1": [
+      "000"
+    ],
+    "frm1701q:txtPg2TIN2": [
+      "000"
+    ],
+    "frm1701q:txtPg2TIN3": [
+      "000"
+    ],
+    "frm1701q:txtPg2BranchCode": [
+      "00000"
+    ]
+  },
+  "freeze_stamp_observation": {
+    "taxpayer_txtTIN1_2_3_branch": {
+      "frm1701q:txtTIN1": [
+        "000"
+      ],
+      "frm1701q:txtTIN2": [
+        "000"
+      ],
+      "frm1701q:txtTIN3": [
+        "000"
+      ],
+      "frm1701q:txtBranchCode": [
+        "00000"
+      ]
+    },
+    "spouse_keys_present": [
+      "frm1701q:txtSpouseTIN1",
+      "frm1701q:txtSpouseTIN2",
+      "frm1701q:txtSpouseTIN3",
+      "frm1701q:txtSpouseBranchCode"
+    ],
+    "page2_keys_present": [
+      "frm1701q:txtPg2TIN1",
+      "frm1701q:txtPg2TIN2",
+      "frm1701q:txtPg2TIN3",
+      "frm1701q:txtPg2BranchCode"
+    ],
+    "note": "spouse/page2 key presence is an observation, not a join; leftover uniqueness was not copied onto name="
+  },
+  "xml_vs_fields_json": {
+    "fields_json": "C:\\Users\\uriah\\Code\\buwiz-forms-wt-live-save-1701q\\rules\\forms\\1701q-v2018\\fields.json",
+    "xml_total_keys": 172,
+    "xml_frm1701q_unique": 165,
+    "xml_unprefixed_runtime_keys_present": [
+      "driveSelectTPExport",
+      "ebirOnlineConfirmUsername",
+      "ebirOnlineSecret",
+      "ebirOnlineUsername",
+      "txtEmail",
+      "txtEnroll",
+      "txtFinalFlag"
+    ],
+    "catalog_field_count": 172,
+    "catalog_keys": 172,
+    "in_xml_not_catalog": [],
+    "in_catalog_not_xml": [],
+    "frm1701q_names": [
+      "frm1701q:txtYear",
+      "frm1701q:DateQuarter_1",
+      "frm1701q:DateQuarter_2",
+      "frm1701q:DateQuarter_3",
+      "frm1701q:AmendedRtn_1",
+      "frm1701q:AmendedRtn_2",
+      "frm1701q:txtSheets",
+      "frm1701q:txtTIN1",
+      "frm1701q:txtTIN2",
+      "frm1701q:txtTIN3",
+      "frm1701q:txtBranchCode",
+      "frm1701q:txtRDOCode",
+      "frm1701q:optType_1",
+      "frm1701q:optType_2",
+      "frm1701q:optType_3",
+      "frm1701q:optType_4",
+      "frm1701q:optATC_1",
+      "frm1701q:optATC_2",
+      "frm1701q:optATC_3",
+      "frm1701q:optATC_4",
+      "frm1701q:optATC_5",
+      "frm1701q:optATC_6",
+      "frm1701q:txtTaxpayerName",
+      "frm1701q:txtAddress",
+      "frm1701q:txtZipCode",
+      "frm1701q:txtBirthMonth",
+      "frm1701q:txtBirthDay",
+      "frm1701q:txtBirthYear",
+      "frm1701q:txtCitizenship",
+      "frm1701q:txtForeignTaxNumber",
+      "frm1701q:optForeignTaxCredits_1",
+      "frm1701q:optForeignTaxCredits_2",
+      "frm1701q:optTaxRate_1",
+      "frm1701q:optMethodOfDeduction:_1",
+      "frm1701q:optMethodOfDeduction:_2",
+      "frm1701q:optTaxRate_2",
+      "frm1701q:txtSpouseTIN1",
+      "frm1701q:txtSpouseTIN2",
+      "frm1701q:txtSpouseTIN3",
+      "frm1701q:txtSpouseBranchCode",
+      "frm1701q:txtSpouseRDOCode",
+      "frm1701q:optSpouseType_1",
+      "frm1701q:optSpouseType_2",
+      "frm1701q:optSpouseType_3",
+      "frm1701q:optSpouseATC_1",
+      "frm1701q:optSpouseATC_2",
+      "frm1701q:optSpouseATC_3",
+      "frm1701q:optSpouseATC_4",
+      "frm1701q:optSpouseATC_5",
+      "frm1701q:optSpouseATC_6",
+      "frm1701q:optSpouseATC_7",
+      "frm1701q:txtSpouseName",
+      "frm1701q:txtSpouseCitizenship",
+      "frm1701q:txtSpouseForeignTaxNum",
+      "frm1701q:optSpouseForeignTaxCred_1",
+      "frm1701q:optSpouseForeignTaxCred_2",
+      "frm1701q:optSpouseTaxRate_1",
+      "frm1701q:optSpouseMethod:_1",
+      "frm1701q:optSpouseMethod:_2",
+      "frm1701q:optSpouseTaxRate_2",
+      "frm1701q:txt26A",
+      "frm1701q:txt26B",
+      "frm1701q:txt27A",
+      "frm1701q:txt27B",
+      "frm1701q:txt28A",
+      "frm1701q:txt28B",
+      "frm1701q:txt29A",
+      "frm1701q:txt29B",
+      "frm1701q:txt30A",
+      "frm1701q:txt30B",
+      "frm1701q:txt31",
+      "frm1701q:txtAgency32",
+      "frm1701q:txtNumber32",
+      "frm1701q:txtDate32",
+      "frm1701q:txtAmount32",
+      "frm1701q:txtAgency33",
+      "frm1701q:txtNumber33",
+      "frm1701q:txtDate33",
+      "frm1701q:txtAmount33",
+      "frm1701q:txtNumber34",
+      "frm1701q:txtDate34",
+      "frm1701q:txtAmount34",
+      "frm1701q:txtParticular35",
+      "frm1701q:txtAgency35",
+      "frm1701q:txtNumber35",
+      "frm1701q:txtDate35",
+      "frm1701q:txtAmount35",
+      "frm1701q:txtPg2TIN1",
+      "frm1701q:txtPg2TIN2",
+      "frm1701q:txtPg2TIN3",
+      "frm1701q:txtPg2BranchCode",
+      "frm1701q:txtPg2TaxpayerName",
+      "frm1701q:txt36A",
+      "frm1701q:txt36B",
+      "frm1701q:txt37A",
+      "frm1701q:txt37B",
+      "frm1701q:txt38A",
+      "frm1701q:txt38B",
+      "frm1701q:txt39A",
+      "frm1701q:txt39B",
+      "frm1701q:txt40A",
+      "frm1701q:txt40B",
+      "frm1701q:txt41A",
+      "frm1701q:txt41B",
+      "frm1701q:txt42A",
+      "frm1701q:txt42B",
+      "frm1701q:txt43Desc",
+      "frm1701q:txt43A",
+      "frm1701q:txt43B",
+      "frm1701q:txt44A",
+      "frm1701q:txt44B",
+      "frm1701q:txt45A",
+      "frm1701q:txt45B",
+      "frm1701q:txt46A",
+      "frm1701q:txt46B",
+      "frm1701q:txt47A",
+      "frm1701q:txt47B",
+      "frm1701q:txt48Desc",
+      "frm1701q:txt48A",
+      "frm1701q:txt48B",
+      "frm1701q:txt49A",
+      "frm1701q:txt49B",
+      "frm1701q:txt50A",
+      "frm1701q:txt50B",
+      "frm1701q:txt51A",
+      "frm1701q:txt51B",
+      "frm1701q:txt52A",
+      "frm1701q:txt52B",
+      "frm1701q:txt53A",
+      "frm1701q:txt53B",
+      "frm1701q:txt54A",
+      "frm1701q:txt54B",
+      "frm1701q:txt55A",
+      "frm1701q:txt55B",
+      "frm1701q:txt56A",
+      "frm1701q:txt56B",
+      "frm1701q:txt57A",
+      "frm1701q:txt57B",
+      "frm1701q:txt58A",
+      "frm1701q:txt58B",
+      "frm1701q:txt59A",
+      "frm1701q:txt59B",
+      "frm1701q:txt60A",
+      "frm1701q:txt60B",
+      "frm1701q:txt61Desc",
+      "frm1701q:txt61A",
+      "frm1701q:txt61B",
+      "frm1701q:txt62A",
+      "frm1701q:txt62B",
+      "frm1701q:txt63A",
+      "frm1701q:txt63B",
+      "frm1701q:txt64A",
+      "frm1701q:txt64B",
+      "frm1701q:txt65A",
+      "frm1701q:txt65B",
+      "frm1701q:txt66A",
+      "frm1701q:txt66B",
+      "frm1701q:txt67A",
+      "frm1701q:txt67B",
+      "frm1701q:txt68A",
+      "frm1701q:txt68B",
+      "frm1701q:txtCurrentPage",
+      "frm1701q:txtMaxPage",
+      "frm1701q:txtLOB",
+      "frm1701q:txtTelno"
+    ]
+  },
+  "screenshots": [
+    "tools/formgen/corrections/evidence/live-save-1701q-20260821-save-success.png",
+    "tools/formgen/corrections/evidence/live-save-1701q-20260821-1701q-hta.png",
+    "tools/formgen/corrections/evidence/live-save-1701q-20260821-cwd.png"
+  ],
+  "pass": true,
+  "notes": [
+    "Fill-up 1701Qv2018 from official BIRForms.exe with dummy TIN only; toolbar Save (saveXML(false)); did not click Submit / Final Copy / Send.",
+    "transport.rs not edited. QUEUE_SUBMISSION_SUPPORTED not flipped. R3/R7 leftover harvest not reopened.",
+    "Do not commit the saveXML."
+  ]
+}
