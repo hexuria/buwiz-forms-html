@@ -1,0 +1,84 @@
+{
+  "job": "submit-final-copy-1701q",
+  "date": "2026-08-22",
+  "scope": "Official Submit / Final Copy on the dummy 1701Q Save. Dummy TIN only. Stop before confirming online filing. QUEUE_SUBMISSION_SUPPORTED stays false. transport.rs not edited. Packed BIRForms.exe untouched.",
+  "launch": {
+    "exe": "C:\\eBIRForms\\BIRForms.exe",
+    "cwd": "C:\\eBIRForms",
+    "product_version": "7.9.6.1",
+    "bytes": 58411008,
+    "sha256": "a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c",
+    "packed_exe_untouched": true,
+    "temp_extract_guid": "{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}",
+    "dummy_tin_patch_still_present": "getTinChkCode short-circuits 000000000/999999999/222222222 to return 0"
+  },
+  "dummy_tin": "000-000-000-00000",
+  "synthetic_name": "DELA CRUZ JUAN",
+  "savefile_before": {
+    "path": "C:\\eBIRForms\\savefile\\00000000000000-1701Qv2018-2026Q1.xml",
+    "bytes": 11877,
+    "sha256": "bf11bbde0f0f01a416d90bffad00c2eda636604259c49f66e33388e26a259ccc",
+    "mtime_local": "2026-08-21T19:08:44",
+    "txtFinalFlag": "0",
+    "amended": "No"
+  },
+  "ui": {
+    "action": "View dummy row, scroll to footer, click Submit / Final Copy. Did not click Fill-up, Delete, Print, or dialog OK.",
+    "form_window": "BIR Form No. 1701Qv2018",
+    "header_tin_visible": "000-000-000-00000"
+  },
+  "dialog": {
+    "win32_class": "#32770",
+    "title": "BIR Form No. 1701Qv2018",
+    "exact_message": "Please ensure that you have INTERNET access and a VALID email address is indicated in your tax return.\n\nAre you sure you want to submit?",
+    "buttons": ["OK", "Cancel"],
+    "clicked": "Cancel",
+    "ok_never_clicked": true,
+    "matches_prior_live_ui_observations": true
+  },
+  "not_reached": [
+    "ebirEnroll / username-password enrollment",
+    "checkNetConnection success path",
+    "saveEncryptedProfile (txtFinalFlag=3 / no-internet branch)",
+    "eFPS",
+    "email send",
+    "IAF_RDO_Copy"
+  ],
+  "source_path_before_confirm": {
+    "onclick": "openAlertEmail()",
+    "initConConfig": "synchronous XHR to tinDispatcherSFTP.php with dummy TIN 000000000 and form 1701Qv2018 runs before the confirm dialog. No packet capture this sit. 1701Qv2018 is not in the eFPS allowlist in string-util.js.",
+    "confirm_true_would_do": "If OK: checkNetConnection; online shows ebirEnroll; offline sets txtFinalFlag=3 and saveEncryptedProfile. That OK click was not taken."
+  },
+  "savefile_during_sit": {
+    "observed_rewrite_at_submit_click": true,
+    "mtime_local": "2026-08-22T03:12:57",
+    "bytes": 11882,
+    "sha256": "955beaa5aa8ab530fb34196c2d43b1693b15b2f43b79e471f45ddec4c317344f",
+    "txtFinalFlag_still": "0",
+    "txtEnroll_still": "N",
+    "ebirOnlineSecret_still_empty": true,
+    "field_diff_vs_pre_submit": {
+      "frm1701q:optType_1": {"old": "false", "new": "true"},
+      "frm1701q:optATC_5": {"old": "false", "new": "true"},
+      "frm1701q:optTaxRate_2": {"old": "false", "new": "true"},
+      "frm1701q:txtBirthMonth": {"old": "", "new": "08"},
+      "frm1701q:txtBirthDay": {"old": "", "new": "17"},
+      "frm1701q:txtBirthYear": {"old": "", "new": "1988"}
+    },
+    "note": "Rewrite happened at Submit-click time, before Cancel. txtFinalFlag stayed 0 so this was not a final/outbound copy. Dummy profile has no DOB or those radios; origin is likely in-HTA DOM at write time (scroll/click), not confirmed filing. Official client was then closed and the pre-Submit bytes were restored from %TEMP%\\buwiz-live-1701q-20260821.xml so later sits still match the landed live-save packet.",
+    "restored_after_sit": true,
+    "restored_sha256": "bf11bbde0f0f01a416d90bffad00c2eda636604259c49f66e33388e26a259ccc"
+  },
+  "iaf_rdo_copy": "no new files observed",
+  "screenshots": [
+    "tools/formgen/corrections/evidence/submit-1701q-20260822-scrolled.png",
+    "tools/formgen/corrections/evidence/submit-1701q-20260822-form-before.png",
+    "tools/formgen/corrections/evidence/submit-1701q-20260822-form-scrolled.png",
+    "tools/formgen/corrections/evidence/submit-1701q-20260822-after-click-desktop.png",
+    "tools/formgen/corrections/evidence/submit-1701q-20260822-after-cancel-desktop.png"
+  ],
+  "queue_submission_supported": false,
+  "transport_rs_edited": false,
+  "xml_not_committed": true,
+  "pass": true
+}

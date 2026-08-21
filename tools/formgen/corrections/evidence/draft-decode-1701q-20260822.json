@@ -1,0 +1,54 @@
+{
+  "job": "draft-decode-1701q",
+  "date": "2026-08-22",
+  "scope": "Form1701QDraft::from_bir_xml_payload then to_bir_xml_payload on the live dummy Save. QUEUE_SUBMISSION_SUPPORTED stays false. No transport.rs. XML not committed.",
+  "live_savefile": {
+    "path": "C:\\eBIRForms\\savefile\\00000000000000-1701Qv2018-2026Q1.xml",
+    "temp_copy": "%TEMP%\\buwiz-live-1701q-20260821.xml",
+    "bytes": 11877,
+    "sha256": "bf11bbde0f0f01a416d90bffad00c2eda636604259c49f66e33388e26a259ccc",
+    "mtime_local": "2026-08-21T19:08:44",
+    "xml_not_committed": true
+  },
+  "rust_execution": {
+    "ran_from_bir_xml_payload": false,
+    "ran_to_bir_xml_payload": false,
+    "reason": "bir-core does not compile on this Windows ARM box. cargo test -p bir-core failed in aws-lc-sys (LNK1181 missing chacha-armv8.o). openssl vendored also needs perl/nasm, which are not installed. Same class of environment block as frozen_0619e / ring. Product CI Windows x64 remains the compile surface.",
+    "openssl_vendored_perl_present": false,
+    "clang_cl_present": false
+  },
+  "source_trace": {
+    "decoder": "crates/bir-core/src/forms/form_1701q_xml.rs Form1701QDraft::from_bir_xml_payload -> from_bir_field_map",
+    "envelope": "live bytes start with <?xml version='1.0'?> and end with All Rights Reserved BIR 2012. (already proven byte-identical to serialize_editable_xml in roundtrip-1701q-20260821.json)",
+    "exact_keys": "172 keys match OFFICIAL_EDITABLE_FIELD_IDS",
+    "metadata": {
+      "txtFinalFlag": "0",
+      "txtEnroll": "N",
+      "ebirOnlineSecret": ""
+    },
+    "would_pass_before_choices": [
+      "frm1701q:txtYear=2026",
+      "frm1701q:DateQuarter_1=true (quarter 1)",
+      "frm1701q:AmendedRtn_2=true (not amended)",
+      "frm1701q:txtSheets=0",
+      "paired amount fields and txt31 are 0.00, so parse_money would succeed",
+      "page-2 TIN copies match dummy zeros"
+    ],
+    "would_fail_parse_one_of_required": {
+      "filer_type": "all frm1701q:optType_1..4 are false",
+      "atc": "all frm1701q:optATC_1..6 are false",
+      "tax_rate": "both frm1701q:optTaxRate_1 and _2 are false"
+    },
+    "deduction_method": "parse_one_of required=false; both Item 25 flags false is not a decode error",
+    "early_return": "from_bir_field_map returns Err before constructing Form1701QDraft, so draft.validate() and to_bir_xml_payload are not reached",
+    "predicted_result": "Err([(filer_type, Exactly one official option must be true), (atc, Exactly one official option must be true), (tax_rate, Exactly one official option must be true)])"
+  },
+  "queue_submission_supported": false,
+  "dummy_tin": "000-000-000-00000",
+  "synthetic_name": "DELA CRUZ JUAN",
+  "pass": "source-traced; rust decoder not executed locally",
+  "notes": [
+    "Official Save of a minimum Fill-up is a valid 172-field envelope, but it is not a filing-complete Form1701QDraft.",
+    "Do not treat this live Save as proof that from_bir_xml_payload round-trips. CI on x64 should run the decoder against a TEMP copy of the savefile."
+  ]
+}
