@@ -1,0 +1,212 @@
+[
+ {
+  "slug": "0605-1999",
+  "page": 1,
+  "cell": "p1c54",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "1600wp-2010",
+  "page": 1,
+  "cell": "p1c0",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "1600wp-2010",
+  "page": 1,
+  "cell": "p1c36",
+  "verdict": "TRUE",
+  "detail": "source-crossing-rule-not-comb-scoped-v1"
+ },
+ {
+  "slug": "1604cf-2008",
+  "page": 1,
+  "cell": "p1c0",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "1604f-2018",
+  "page": 1,
+  "cell": "p1c26",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "1606-2018",
+  "page": 2,
+  "cell": "p2c135",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "1707a-2021",
+  "page": 1,
+  "cell": "p1c38",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "1800-2018",
+  "page": 1,
+  "cell": "p1c4",
+  "verdict": "FALSE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2000-ot-2018",
+  "page": 2,
+  "cell": "p2c45",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2000-ot-2018",
+  "page": 2,
+  "cell": "p2c46",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2200a-2020",
+  "page": 1,
+  "cell": "p1c94",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200a-2020",
+  "page": 1,
+  "cell": "p1c115",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200an-2018",
+  "page": 2,
+  "cell": "p2c0",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200c-2018",
+  "page": 1,
+  "cell": "p1c90",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200c-2018",
+  "page": 1,
+  "cell": "p1c111",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200c-2018",
+  "page": 1,
+  "cell": "p1c6",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2200p-2020",
+  "page": 1,
+  "cell": "p1c93",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200p-2020",
+  "page": 1,
+  "cell": "p1c114",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200s-2018",
+  "page": 1,
+  "cell": "p1c0",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200t-2022",
+  "page": 2,
+  "cell": "p2c0",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2200t-2022",
+  "page": 3,
+  "cell": "p3c0",
+  "verdict": "TRUE",
+  "detail": "source-printed-caption-block-not-character-cells-v1"
+ },
+ {
+  "slug": "2550m-2007",
+  "page": 1,
+  "cell": "p1c6",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2550m-2007",
+  "page": 1,
+  "cell": "p1c16",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2550m-2007",
+  "page": 1,
+  "cell": "p1c22",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2550m-2007",
+  "page": 1,
+  "cell": "p1c7",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2551m-2002",
+  "page": 1,
+  "cell": "p1c10",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2551m-2002",
+  "page": 1,
+  "cell": "p1c20",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2551m-2002",
+  "page": 1,
+  "cell": "p1c30",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2553-1999",
+  "page": 1,
+  "cell": "p1c25",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ },
+ {
+  "slug": "2553-1999",
+  "page": 1,
+  "cell": "p1c35",
+  "verdict": "TRUE",
+  "detail": "source-partition-edge-in-final-picture-v1"
+ }
+]

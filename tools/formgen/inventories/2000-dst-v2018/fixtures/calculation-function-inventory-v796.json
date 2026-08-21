@@ -1,0 +1,613 @@
+{
+    "source_sha256":  "43aa6fcdba1ffb40bebb3dc1e8509a87b84799b38937bb6bc57273e9021c4a7b",
+    "function_count":  41,
+    "functions":  [
+                      {
+                          "name":  "Schedule1",
+                          "start_line":  2188,
+                          "end_line":  2194,
+                          "body_sha256":  "84d1b811d374509cbb5d29e2c6373e54b682a2bda0c2bff6c4541488829e44a0",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "Schedule2",
+                          "start_line":  2195,
+                          "end_line":  2200,
+                          "body_sha256":  "9d5660f8b3cbcdc8197747666b63c868663f607200736449bfe45865ee26be25",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "Schedule3",
+                          "start_line":  2201,
+                          "end_line":  2206,
+                          "body_sha256":  "e73378c427a12479263b902196301bb246145aa0293f9da525e982888748e860",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "Schedule4",
+                          "start_line":  2207,
+                          "end_line":  2223,
+                          "body_sha256":  "62dee8d1db700f6caa52934eb7052dbd7e79485eacd1692f4075179ef3bd0327",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "atcPropertyJS",
+                          "start_line":  2224,
+                          "end_line":  2242,
+                          "body_sha256":  "c35884c0ae1ca57364ad7cf3583cbdd4f70a7af7c3bf97bcd8929c8fadef9aa4",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "loadXMLATC",
+                          "start_line":  2313,
+                          "end_line":  2333,
+                          "body_sha256":  "0f0bca039f03cb011c3cc2a6454f41bc7a51dbca6d77e7564784c7fa38fb6d51",
+                          "alerts":  [
+                                         "responseATC.innerHTML"
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "loadATC",
+                          "start_line":  2334,
+                          "end_line":  2381,
+                          "body_sha256":  "6fb62236351ba943e8179065453e4742b16604cf6b6237b4d2579fe3ae719004",
+                          "alerts":  [
+                                         "\u00272000 successfully created array #\u0027+i",
+                                         "\u00272000 not found in array #\u0027+i"
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "loadDataATCRow",
+                          "start_line":  2502,
+                          "end_line":  2566,
+                          "body_sha256":  "80423e8a427e7abd28715743a4e3679f8809518d721491cdd1f8da587f7d54f0",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:txtAddress",
+                                              "frm2000:txtAddress2",
+                                              "frm2000:txtLineBus",
+                                              "frm2000:txtOtherName",
+                                              "frm2000:txtOtherName2",
+                                              "frm2000:txtTaxpayerName"
+                                          ]
+                      },
+                      {
+                          "name":  "getPopulateATC",
+                          "start_line":  3158,
+                          "end_line":  3192,
+                          "body_sha256":  "69cd6e537dde9c98b8de0e3097a3391a8f04407eaf1c147e1b9b036dfc7643bd",
+                          "alerts":  [
+                                         "\"a \" + atc.constTaxDue() + \" \" + atc.maximum() + \" \" + atc.compType() + \" \" + atc.minimum()"
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "processModeAffixture",
+                          "start_line":  3285,
+                          "end_line":  3312,
+                          "body_sha256":  "4279f2fe5befe5aad39b25b1b5956eb4a3078ee7ce3236181b72c9e20278d6c4",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:optMode_1",
+                                              "frm2000:optMode_2",
+                                              "frm2000:optMode_3"
+                                          ]
+                      },
+                      {
+                          "name":  "loadSchedule1",
+                          "start_line":  3313,
+                          "end_line":  3352,
+                          "body_sha256":  "d192fe445934fcd2c70596844e86f8f8bf6d508d2feccc49782625cbd38e5d4d",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched1:txtTaxBase",
+                                              "frm2000:sched1:txtTaxDue",
+                                              "frm2000:sched1:txtTaxRate"
+                                          ]
+                      },
+                      {
+                          "name":  "loadATCDropDown",
+                          "start_line":  3353,
+                          "end_line":  3377,
+                          "body_sha256":  "ca320b0efc01fbdc8ade8f5f8385c1ee7361b01a246edc91f61dcb5a10411058",
+                          "alerts":  [
+                                         "\"i = 0 \" + str) } else if(i == 1) { $(\u0027#drpATCCode\u0027+index).html( d.getElementById(\u0027drpATCCode\u0027+index).innerHTML + \"\u003coption value=\u0027DS010\u0027 \" + str + \" \u003eDS010 - GENERAL \u003c/option\u003e\"",
+                                         "\"i = 1 \" + str) } else { if(i \u003c= ATCnameCode.length) { $(\u0027#drpATCCode\u0027+index).html( d.getElementById(\u0027drpATCCode\u0027+index).innerHTML + \"\u003coption value=\u0027\"+ATCnameCode[x]+\"\u0027 \" + str + \"\u003e \"+ATCnameCode[x]+\" - \" + NaturePayment[x]+\"\u003c/option\u003e\""
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "getATCdrpTaxRate",
+                          "start_line":  3378,
+                          "end_line":  3396,
+                          "body_sha256":  "0f0cf598c77a17941dc3f3c7d836b96f0f2afda51b61dd02da8d933288bee965",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched1:txtTaxRate"
+                                          ]
+                      },
+                      {
+                          "name":  "addSchedule1",
+                          "start_line":  3397,
+                          "end_line":  3429,
+                          "body_sha256":  "9b683abbb924f2ada0da21c97afe647079b9edce19416bc2f66030a9adb4950d",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched1:txtTaxBase",
+                                              "frm2000:sched1:txtTaxDue",
+                                              "frm2000:sched1:txtTaxRate"
+                                          ]
+                      },
+                      {
+                          "name":  "deleteSchedule1",
+                          "start_line":  3430,
+                          "end_line":  3476,
+                          "body_sha256":  "8cfe9296875424fecedf22ea41e00ee77c2bc4ef8490e4c8d6addcd87e1e6ab3",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched1:txtTaxBase",
+                                              "frm2000:sched1:txtTaxDue",
+                                              "frm2000:sched1:txtTaxRate"
+                                          ]
+                      },
+                      {
+                          "name":  "enableSchedule2",
+                          "start_line":  3477,
+                          "end_line":  3487,
+                          "body_sha256":  "f6eb8c971fa15c414c0510244d21a9ee0c0251eaf2b9793cb72778be60980959",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched2Add",
+                                              "frm2000:btnSched2Delete",
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "disableSchedule2",
+                          "start_line":  3488,
+                          "end_line":  3502,
+                          "body_sha256":  "d56d41d9fb7cd52a48878cbf57277b2a18c2b02c53b88dc37d3154126eda849c",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched2Add",
+                                              "frm2000:btnSched2Delete",
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "loadSchedule2",
+                          "start_line":  3503,
+                          "end_line":  3534,
+                          "body_sha256":  "070b26510410768b9e0bf3857b37991623a56d7c04855c84f1cf8c0f29111055",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "addSchedule2",
+                          "start_line":  3535,
+                          "end_line":  3560,
+                          "body_sha256":  "a0f023ac416c405b1f4e79286fa9f135079e962a94dbd596c0581b3aa84c8d29",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "deleteSchedule2",
+                          "start_line":  3561,
+                          "end_line":  3600,
+                          "body_sha256":  "82994900b3094214072451988bb1bc97da12e4bafeaea4068ab9720da1c5a4c0",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "enableSchedule3",
+                          "start_line":  3601,
+                          "end_line":  3611,
+                          "body_sha256":  "3dbac6ddc770fc86b193f641e998ff0951b8a3732988fc570d67d6acdc3821a9",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched3Add",
+                                              "frm2000:btnSched3Delete",
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "disableSchedule3",
+                          "start_line":  3612,
+                          "end_line":  3626,
+                          "body_sha256":  "2af1aad0aba86a3171c9ec18568001004ea58bb32189ec4c89b69767fb5831f5",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched3Add",
+                                              "frm2000:btnSched3Delete",
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "loadSchedule3",
+                          "start_line":  3627,
+                          "end_line":  3658,
+                          "body_sha256":  "e121b5a76c291ff8ba38a87e76a784e43d3b66f8a768779386546316043452d6",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "addSchedule3",
+                          "start_line":  3659,
+                          "end_line":  3684,
+                          "body_sha256":  "5f9992c8311d517002cdc0ab80b15cb54af7be8f2277525b0fe90eabffaa18c1",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "deleteSchedule3",
+                          "start_line":  3685,
+                          "end_line":  3724,
+                          "body_sha256":  "2aaa1d25193348ff1ec0db72653006a24ab4a2da5a07f14da42cb117e07b589b",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "enableSchedule4",
+                          "start_line":  3725,
+                          "end_line":  3738,
+                          "body_sha256":  "cbb21cb2cda725c0ae7f9586ea6cedc48be923949cf3a4e9b8843b6519f928de",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched4Add",
+                                              "frm2000:btnSched4Delete",
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate"
+                                          ]
+                      },
+                      {
+                          "name":  "disableSchedule4",
+                          "start_line":  3739,
+                          "end_line":  3759,
+                          "body_sha256":  "a8fa07cb3249d6bbf898b1308ca0b0cf7a5d86ff127d25737884d589540fb394",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched4Add",
+                                              "frm2000:btnSched4Delete",
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate"
+                                          ]
+                      },
+                      {
+                          "name":  "loadSchedule4",
+                          "start_line":  3760,
+                          "end_line":  3800,
+                          "body_sha256":  "cffe5429c89dea72983330a9905bdd2d77d8b6151aab028f547734dcd6e7c5d3",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate"
+                                          ]
+                      },
+                      {
+                          "name":  "addSchedule4",
+                          "start_line":  3801,
+                          "end_line":  3832,
+                          "body_sha256":  "7f102f09a5f665ea4da8e2a3f3adf1ef62c10d19ce44a1216ad62fd763271089",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate"
+                                          ]
+                      },
+                      {
+                          "name":  "deleteSchedule4",
+                          "start_line":  3833,
+                          "end_line":  3896,
+                          "body_sha256":  "6596d75f3054dd67c0afe09d512df7a9faaaccb7afb6d894ba7328c47c7a39a8",
+                          "alerts":  [
+                                         "\"Serial Number input must be 7 digits long.\""
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate",
+                                              "frm2000:txt13A",
+                                              "frm2000:txt13B",
+                                              "frm2000:txt13C",
+                                              "frm2000:txt13F",
+                                              "frm2000:txt13G",
+                                              "frm2000:txt13H",
+                                              "frm2000:txt13I"
+                                          ]
+                      },
+                      {
+                          "name":  "computeTax15D",
+                          "start_line":  3897,
+                          "end_line":  3907,
+                          "body_sha256":  "8e378979b6acb8b224c165a98a7e1223004d128ea74bc8f28f915f0430d647f4",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:txtTax15A",
+                                              "frm2000:txtTax15B",
+                                              "frm2000:txtTax15C",
+                                              "frm2000:txtTax15D"
+                                          ]
+                      },
+                      {
+                          "name":  "computeTax16",
+                          "start_line":  3908,
+                          "end_line":  3934,
+                          "body_sha256":  "19d092dba78ac392e52ff725581560c4ffecdaae1f8f797c545f3a5267c1bfa5",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:optMode_2",
+                                              "frm2000:txtTax14",
+                                              "frm2000:txtTax15A",
+                                              "frm2000:txtTax15B",
+                                              "frm2000:txtTax15C",
+                                              "frm2000:txtTax16"
+                                          ]
+                      },
+                      {
+                          "name":  "getSelectedModeOfAffixture",
+                          "start_line":  3935,
+                          "end_line":  3945,
+                          "body_sha256":  "9a0b16fdadc29aef7c22acfd84afb368b6bbf7d6e5ddb1d190d0b552ed8d15c3",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:optMode"
+                                          ]
+                      },
+                      {
+                          "name":  "computePenalties",
+                          "start_line":  3946,
+                          "end_line":  3951,
+                          "body_sha256":  "918c99987a612a97027f6ac298804f34df2c077d41bde63f4afc3e8d9f37d919",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:txtTax17A",
+                                              "frm2000:txtTax17B",
+                                              "frm2000:txtTax17C",
+                                              "frm2000:txtTax17D"
+                                          ]
+                      },
+                      {
+                          "name":  "computeTotalAmtPayable",
+                          "start_line":  3952,
+                          "end_line":  3955,
+                          "body_sha256":  "169586a4197b7d804f5be97bdb44b037239ac8a0dcd2fb921a5baff4c4b619ae",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:txtTax16",
+                                              "frm2000:txtTax17D",
+                                              "frm2000:txtTax18"
+                                          ]
+                      },
+                      {
+                          "name":  "newRate",
+                          "start_line":  3956,
+                          "end_line":  4002,
+                          "body_sha256":  "16cd7dd42b6ca8690f0faf54de2a12c87e05e412ccfba148379085beb8cc9e85",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:cmdValidate",
+                                              "frm2000:numOfDays",
+                                              "frm2000:numOfMonths",
+                                              "frm2000:rowLocation",
+                                              "frm2000:sched1:txtTaxDue",
+                                              "frm2000:sched1:txtTaxRate"
+                                          ]
+                      },
+                      {
+                          "name":  "computeSched1TaxDue",
+                          "start_line":  4262,
+                          "end_line":  4559,
+                          "body_sha256":  "03c36ba473034bbaa9678ddcc79be243282635f0616af4ee8923f01aad233bce",
+                          "alerts":  [
+                                         "\"Tax base should not be more than 1000\"",
+                                         "\"Tax base should be between 1,001 to 10,000\"",
+                                         "\"Tax base should be 10000 above\""
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:numOfDays",
+                                              "frm2000:numOfMonths",
+                                              "frm2000:numOfMonths131",
+                                              "frm2000:numOfMonths132",
+                                              "frm2000:sched1:txtTaxBase",
+                                              "frm2000:sched1:txtTaxDue",
+                                              "frm2000:sched1:txtTaxRate",
+                                              "frm2000:txt12D"
+                                          ]
+                      },
+                      {
+                          "name":  "computeSchedule1",
+                          "start_line":  4560,
+                          "end_line":  4597,
+                          "body_sha256":  "fab3cb0d828c699a75fd3f6789f9c54eb3a79d8b7bf2713d5c928b5577b5b061",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched1:txtTaxBase",
+                                              "frm2000:sched1:txtTaxDue",
+                                              "frm2000:sched1:txtTotalDue1",
+                                              "frm2000:txtTax14"
+                                          ]
+                      },
+                      {
+                          "name":  "computeSchedule2",
+                          "start_line":  4598,
+                          "end_line":  4608,
+                          "body_sha256":  "5e7c40b27256fb35026cd39ead417343a92d55ee48c700d0a346a64de86e8538",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtTotalPayment1",
+                                              "frm2000:txtTax15B"
+                                          ]
+                      },
+                      {
+                          "name":  "computeSchedule3",
+                          "start_line":  4609,
+                          "end_line":  4619,
+                          "body_sha256":  "44fa9ebc67792a3d1bdcaf8f1983ddddde0bea393d353eaded2e9d4cb5a77faf",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtTotalPayment1",
+                                              "frm2000:txtTax15C"
+                                          ]
+                      },
+                      {
+                          "name":  "computeSchedule4",
+                          "start_line":  4620,
+                          "end_line":  4631,
+                          "body_sha256":  "3e24aabf10c523278646562cac10468564c3827c2c428b2fdbb91a1890d25efe",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtTotalRemittance1",
+                                              "frm2000:txtTax19"
+                                          ]
+                      }
+                  ]
+}

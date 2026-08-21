@@ -1,0 +1,163 @@
+{
+  "job": "W2",
+  "title": "Give 2000-DST an inventory the catalog can see without stealing 2000-v2018",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W2: Give 2000-DST an inventory the catalog can see",
+    "SAVEFILE": "C:\\eBIRForms\\savefile\\00000000000000-2000v2018-082026.xml sha256=8a89a76a34c393fa55de88af82a22d212c59dc45338d000dd4935722df4ae879",
+    "FORM": "2000 January 2018 ENCS (runtime 2000v2018 Documentary Stamp) package=7.9.6.1",
+    "HTA": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\forms\\BIR-Form2000v2018.hta sha256=43aa6fcdba1ffb40bebb3dc1e8509a87b84799b38937bb6bc57273e9021c4a7b",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c (vs manifest 7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca)",
+    "FINDING": "Opened BIR Form No. 2000v2018 (window title) / printed BIR Form No. 2000 January 2018 (ENCS) Monthly Documentary Stamp Tax Declaration/Return, APPLICATIONNAME=2000v2018. Official dummy Save emitted 143 XML names (140 unique) including catalog keys frm2000:txtTIN1, frm2000:txtTIN2, frm2000:txtTIN3, frm2000:txtBranchCode verbatim (dummy 000/000/000/00000). Extra emitted leaf frm2000:txtRDOCode is not in the copied 2000-v2018 inventory. Staged NEW snapshot tools/formgen/corrections/staging/w2-20260820/rules/forms/2000-dst-v2018 from the live 2000-v2018 inventory + this saveXML. Live 2000-v2018 and 2000ot-v2018 untouched. join_census.parse_slug('2000-dst-2018') is stem 2000dst, so it still cannot steal 2000-v2018 (stem 2000). Live resolve remains absent; staging resolve is exact -> 2000-dst-v2018 and claimed_absent 0 / claimed_unique 4. map_tin.py --write not run. join_census.SLUG_RE / resolve_slug not edited.",
+    "STAGING": "tools/formgen/corrections/staging/w2-20260820/rules/forms/2000-dst-v2018/",
+    "PINS": "leftover_keys.py live tree unchanged (unique 8028, duplicate 4, claimed_unique 147, claimed_duplicate 4, claimed_absent 12, claimed 163); staging census claimed_absent 0 for 1601eq-2019, 1701q-2018, and 2000-dst-2018",
+    "NEXT": "3"
+  },
+  "savefile": {
+    "path": "C:\\eBIRForms\\savefile\\00000000000000-2000v2018-082026.xml",
+    "copied_to": "C:\\Users\\uriah\\Code\\buwiz-forms\\tools\\formgen\\corrections\\staging\\w2-20260820\\00000000000000-2000v2018-082026.xml",
+    "sha256": "8a89a76a34c393fa55de88af82a22d212c59dc45338d000dd4935722df4ae879",
+    "bytes": 11142,
+    "dummy_tin": "000-000-000-00000"
+  },
+  "window_title": "BIR Form No. 2000v2018",
+  "printed_header": "BIR Form No. 2000 January 2018 (ENCS) Page 1 Monthly Documentary Stamp Tax Declaration/Return",
+  "applicationname": "2000v2018",
+  "excluded": [
+    "BIR-Form2000.hta",
+    "2000OT",
+    "BIR-Form2000-OTv2018.hta"
+  ],
+  "emitted_count": 143,
+  "unique_count": 140,
+  "duplicate_keys": [
+    "frm2000:modLabel"
+  ],
+  "tin_keys_verbatim": [
+    "frm2000:txtTIN1",
+    "frm2000:txtTIN2",
+    "frm2000:txtTIN3",
+    "frm2000:txtBranchCode"
+  ],
+  "tin_snippet": [
+    "  \n            <div>frm2000:txtTIN1=000frm2000:txtTIN1=</div>    \n            <div>frm2000:txtTIN2=0",
+    "  \n            <div>frm2000:txtTIN2=000frm2000:txtTIN2=</div>    \n            <div>frm2000:txtTIN3=0",
+    "  \n            <div>frm2000:txtTIN3=000frm2000:txtTIN3=</div>    \n            <div>frm2000:txtBranch",
+    "  \n            <div>frm2000:txtBranchCode=00000frm2000:txtBranchCode=</div>    \n            <div>frm"
+  ],
+  "extra_in_save": [
+    "frm2000:txtRDOCode"
+  ],
+  "missing_from_save_are_schedule_templates": [
+    "chkSchedule1Delete{index}",
+    "chkSchedule2Delete{index}",
+    "chkSchedule3Delete{index}",
+    "chkSchedule4Delete{index}",
+    "drpATCCode{index}",
+    "frm2000:modLabel#occurrence-2",
+    "frm2000:modLabel#occurrence-3",
+    "frm2000:modLabel#occurrence-4",
+    "frm2000:sched1:txtTaxBase{index}",
+    "frm2000:sched1:txtTaxDue{index}",
+    "frm2000:sched1:txtTaxRate{index}",
+    "frm2000:sched2:txtAmountPaid{index}",
+    "frm2000:sched2:txtPaymentDate{index}",
+    "frm2000:sched2:txtReceipt{index}",
+    "frm2000:sched3:txtAmountPaid{index}",
+    "frm2000:sched3:txtPaymentDate{index}",
+    "frm2000:sched3:txtReceipt{index}",
+    "frm2000:sched4:txtAmountRemitted{index}",
+    "frm2000:sched4:txtBank{index}",
+    "frm2000:sched4:txtNumberFrom{index}",
+    "frm2000:sched4:txtNumberTo{index}",
+    "frm2000:sched4:txtRCOCode{index}",
+    "frm2000:sched4:txtRemittanceDate{index}"
+  ],
+  "hta": {
+    "path": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\forms\\BIR-Form2000v2018.hta",
+    "sha256": "43aa6fcdba1ffb40bebb3dc1e8509a87b84799b38937bb6bc57273e9021c4a7b"
+  },
+  "exe": {
+    "product": "7.9.6.1",
+    "sha256": "a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c",
+    "manifest_pin": "7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca"
+  },
+  "resolution": {
+    "live_2000-dst-2018": {
+      "kind": "absent",
+      "inventory": null,
+      "parsed": [
+        "2000dst",
+        "2018",
+        ""
+      ]
+    },
+    "staging_2000-dst-2018": {
+      "kind": "exact",
+      "inventory": "2000-dst-v2018",
+      "parsed": [
+        "2000dst",
+        "2018",
+        ""
+      ]
+    },
+    "why_still_absent_on_live": "Live inventories have 2000-v2018 (stem 2000) and 2000ot-v2018; catalog slug 2000-dst-2018 parses to stem 2000dst. resolve_slug therefore stays absent on the live tree by design and does not steal 2000-v2018. A later land of 2000-dst-v2018 is allowed; the steal-forbid self-test must still forbid binding 2000-dst-2018 to 2000-v2018.",
+    "why_resolves_on_staging": "Staging added a NEW directory 2000-dst-v2018 whose parse_slug stem is 2000dst, so 2000-dst-2018 resolves exact to that snapshot without touching live 2000-v2018."
+  },
+  "staging_census": {
+    "1601eq-2019": {
+      "claimed_absent": 0,
+      "claimed_unique": 4,
+      "claimed_absent_keys": [],
+      "resolution": "skew",
+      "inventory": "1601eq-v2018",
+      "nulls": 531,
+      "rows": 621
+    },
+    "1701q-2018": {
+      "claimed_absent": 0,
+      "claimed_unique": 4,
+      "claimed_absent_keys": [],
+      "resolution": "exact",
+      "inventory": "1701q-v2018",
+      "nulls": 0,
+      "rows": 172
+    },
+    "2000-dst-2018": {
+      "claimed_absent": 0,
+      "claimed_unique": 4,
+      "claimed_absent_keys": [],
+      "resolution": "exact",
+      "inventory": "2000-dst-v2018",
+      "nulls": 0,
+      "rows": 162
+    }
+  },
+  "live_census": {
+    "1601eq-2019": {
+      "claimed_absent": 4,
+      "claimed_unique": 0,
+      "resolution": "skew",
+      "inventory": "1601eq-v2018"
+    },
+    "1701q-2018": {
+      "claimed_absent": 4,
+      "claimed_unique": 0,
+      "resolution": "exact",
+      "inventory": "1701q-v2018"
+    },
+    "2000-dst-2018": {
+      "claimed_absent": 4,
+      "claimed_unique": 0,
+      "resolution": "absent",
+      "inventory": null
+    }
+  },
+  "live_untouched": [
+    "rules/forms/2000-v2018",
+    "rules/forms/2000ot-v2018",
+    "join_census.SLUG_RE",
+    "join_census.resolve_slug",
+    "map_tin.py --write"
+  ]
+}

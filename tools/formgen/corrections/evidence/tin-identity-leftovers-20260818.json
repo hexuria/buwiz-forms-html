@@ -1,0 +1,41 @@
+{
+  "title": "TIN leftover identities (I1)",
+  "date": "2026-08-18",
+  "new_record_count": 28,
+  "ids": [
+    "extra/1801-2018/p1/tin-strip",
+    "extra/1801-2018/p1/tin-2",
+    "extra/1801-2018/p1/tin-3",
+    "extra/1801-2018/p1/tin-branch",
+    "1701-2018/p2/tin-p2-1",
+    "1701-2018/p2/tin-p2-2",
+    "1701-2018/p2/tin-p2-3",
+    "1701-2018/p2/tin-p2-branch",
+    "1701a-2018/p2/tin-p2-1",
+    "1701a-2018/p2/tin-p2-2",
+    "1701a-2018/p2/tin-p2-3",
+    "1701a-2018/p2/tin-p2-branch",
+    "1701q-2018/p1/tin-extra-1",
+    "1701q-2018/p1/tin-extra-2",
+    "1701q-2018/p1/tin-extra-3",
+    "1701q-2018/p1/tin-extra-branch",
+    "2316-2021/p1/tin-extra-1",
+    "2316-2021/p1/tin-extra-2",
+    "2316-2021/p1/tin-extra-3",
+    "2316-2021/p1/tin-extra-branch",
+    "2550-ds-2025/p1/tin-extra-1",
+    "2550-ds-2025/p1/tin-extra-2",
+    "2550-ds-2025/p1/tin-extra-3",
+    "2550-ds-2025/p1/tin-extra-branch",
+    "extra/1700-2018/p1/tin-spouse-1",
+    "extra/1700-2018/p1/tin-spouse-2",
+    "extra/1700-2018/p1/tin-spouse-3",
+    "extra/1700-2018/p1/tin-spouse-branch"
+  ],
+  "notes": [
+    "extra/1801-2018 tin-1 is a mixed caption+tin-1 cell; catalogued as tin-strip from the emitted box.",
+    "tin-2/3/branch on 1801 uniquely resolve against the 2026-08-08 census boxes.",
+    "Extra 3+3+3+N HTML chains that uniquely resolve are catalogued; eight PDF-unmeasurable bundles still emit no such chain.",
+    "Not Stage 3. Nothing writes name= official keys."
+  ]
+}

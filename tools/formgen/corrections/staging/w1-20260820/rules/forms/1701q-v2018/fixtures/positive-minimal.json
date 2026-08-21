@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_id": "1701q-v2018-positive-minimal-source-shape",
+  "purpose": "Representative dummy-data case expected to pass the statically extracted Validate sequence, subject to unresolved external spouse-TIN behavior.",
+  "inputs": {
+    "taxable_year": 2026,
+    "quarter": "Q1",
+    "taxpayer_tin_segments": [
+      "000",
+      "000",
+      "000"
+    ],
+    "branch_code": "00000",
+    "rdo_code": "018",
+    "taxpayer_type": "Professional",
+    "atc": "II012",
+    "taxpayer_name": "DELA CRUZ JUAN TAMAD",
+    "registered_address": "OLONGAPO",
+    "zip_code": "2200",
+    "birth_date": "01/01/1990",
+    "tax_rate": "Graduated",
+    "deduction_method": "Itemized",
+    "spouse_present": false
+  },
+  "expected": {
+    "validate_message": "Validation successful. Click on Edit if you wish to modify your entries.",
+    "editable_field_count": 172
+  },
+  "source_refs": [
+    "xml-editable-v1",
+    "official-hta-runtime#L3327-L3447"
+  ]
+}

@@ -1,0 +1,564 @@
+{
+  "schema_version": "0.1.0-provisional",
+  "id": "C04",
+  "title": "2553 item 6: the TIN branch code prints three compartments, BIR's own runtime declares five",
+  "status": "verified",
+  "form": {
+    "code": "2553",
+    "revision": "1999",
+    "bundle_slug": "extra/2553-1999",
+    "source_pdf": "42792553.pdf",
+    "source_pdf_sha256": "e52f96fe48aba2890078f889930744a4e13a4defe1284aa9c5292e2c702a20e5"
+  },
+  "subject": {
+    "description": "The fourth (branch-code) group of the item-6 TIN comb chain on page 1. The chain prints four boxes at x 57.84-91.92 / 96.48-129.84 / 134.16-167.52 / 172.08-205.44, all y 189.36-208.80, each white-filled and stroked 0.72pt black, separated by three solid dashes filled rgb(1, 0.8, 0.6) at x 91.68-96.72 / 129.60-134.40 / 167.28-172.32 over the same y band. The item caption is the glyph '6' at x 22.32-26.72 and 'TIN' at x 36.48-49.37, y 188.40-197.52, which is the same item number rules/forms/2553-v1999/fields.json records for all four fields. After the 2026-08-17 sitting the whole chain (not only this box) is reflowed to even 3-3-3-5 inside the original outer span; this printed box remains the PDF identity of the branch group.",
+    "page": 1,
+    "printed_box_pt": [
+      172.08,
+      189.36,
+      205.44,
+      208.8
+    ],
+    "match": {
+      "strategy": "the single element carrying data-field-kind=\"comb\" whose emitted box equals printed_box_pt. At HEAD 98ca03c3 the emitted box is left 172.20pt width 33.24pt, so its right edge falls on the printed right edge 205.44 exactly and its left edge sits 0.12pt inside the printed left edge 172.08 -- within the tolerance below, and recorded here rather than rounded away.",
+      "tolerance_pt": 0.25,
+      "cardinality": "exactly-one"
+    },
+    "official_field_key": "frm2553:txtBranchCode",
+    "cell_id_hint": "p1c24 at HEAD 98ca03c3 — NON-AUTHORITATIVE. Cell ids are quantised bounding boxes (lattice.geometry_subject_key) and renumber on any geometry change; 42 of 146 cited ids in the findings ledger are already dead (PLAN.md risk R2). If the hint and printed_box_pt disagree, printed_box_pt wins and the applier aborts. The applier binds to the batch by the comb element's exact bytes (946 bytes at HEAD 98ca03c3, occurring once in forms/extra/2553-1999/index.html), not by the id: a later batch that emits it differently makes the applier refuse rather than guess. C01 has already been through exactly that refusal once, so this record was anchored against 98ca03c3 from the start and carries no anchor from an earlier batch."
+  },
+  "preconditions": [
+    {
+      "check": "sha256 of the pinned source PDF for bundle extra/2553-1999",
+      "expect": "e52f96fe48aba2890078f889930744a4e13a4defe1284aa9c5292e2c702a20e5",
+      "note": "74065 bytes, 2 pages, 612.0 x 1008.0pt. Recorded independently in forms/extra/2553-1999/provenance.json (sources[0].sha256). The correction is authored against this artwork; a different artwork is a different question."
+    },
+    {
+      "check": "vertical comb ticks printed strictly inside printed_box_pt, measured from that PDF",
+      "expect": [
+        182.88,
+        194.16
+      ],
+      "note": "Two ticks -> three printed compartments. If BIR's artwork ever gains ticks here, the correction is obsolete and must be retired, not applied."
+    },
+    {
+      "check": "pre-printed ink strictly inside printed_box_pt (glyphs, text operators and vector paths), measured from that PDF",
+      "expect": 0,
+      "note": "2553 differs from 2550M here: 2550M pre-prints '000' as three bezier outlines inside its branch box, 2553 pre-prints nothing at all. If ink ever appears inside this box the subject has changed and the record must be re-derived, not applied."
+    },
+    {
+      "check": "elements in the copied bundle matching subject.match",
+      "expect": 1,
+      "note": "Zero or more than one aborts the entire applier run. Fail closed."
+    },
+    {
+      "check": "data-comb-slots on the matched element, in the batch being consumed",
+      "expect": "3",
+      "note": "If a later batch already emits something other than 3 here, the record must be re-reviewed against that batch rather than applied to it."
+    },
+    {
+      "check": "the horizontal writing surface of the matched element in the batch being consumed, as [first slot left, last slot right] in box-relative pt",
+      "expect": [
+        0.48,
+        32.88
+      ],
+      "note": "The correction reuses this surface exactly. If the batch changes its slot insets, the five computed widths change with it and must be recomputed, which is another reason the anchor is byte-bound."
+    }
+  ],
+  "what": {
+    "operation": "reflow_tin_chain_to_3_3_3_5",
+    "from": 3,
+    "to": 5,
+    "layout_policy": {
+      "writing_box": "outer TIN strip unchanged 57.84-205.44 pt; the four groups and three separators are reflowed inside it so every digit cell is the same width (3-3-3-5). The official printed boxes are knocked out with a white rectangle of that same outer span.",
+      "division": "separators keep their printed widths (sum 14.12pt) and move with the groups; digit cells equal-split the remaining 133.48pt into 14: [9.53, 9.54, 9.53, 9.54, 9.53, 9.54, 9.53, 9.53, 9.54, 9.53, 9.54, 9.53, 9.54, 9.53]",
+      "computed_lefts_pt": [
+        0.0,
+        6.65,
+        13.3,
+        19.94,
+        26.59
+      ],
+      "writing_surface_pt": [
+        0.48,
+        32.88
+      ],
+      "emitted_slot_lefts_pt": [
+        0.48,
+        6.65,
+        13.3,
+        19.94,
+        26.59
+      ],
+      "emitted_slot_widths_pt": [
+        6.17,
+        6.65,
+        6.64,
+        6.65,
+        6.29
+      ],
+      "widths_sum_pt": 32.4,
+      "nominal_pitch_pt": 6.648,
+      "declared_pitch_attribute": "6.65",
+      "slot_inset": "none — even digit-cell width across the whole strip is the rule; re-applying per-group 0.36pt insets would squeeze the edges of each group and make the last five cells look different from the first nine",
+      "per_slot_input": "TIN1/2/3: one editable maxlength-1 input per cell. Branch: five editable maxlength-1 inputs, each blank — no value attribute, no readonly, no tabindex override. The branch code is a value the filer supplies on this sheet.",
+      "note": "Rounding is fixed here so the applier's output is byte-deterministic and re-computable by hand from the box width and the batch's two insets alone: round(i * 33.24 / 5, 2), then clamp the first left to 0.48 and the last right to 32.88.",
+      "branch_lock": "NOT locked — the official branch box prints no 000 and no ink of any kind inside it. A locked 00000 here would declare the head office on a form whose filer must name a real branch, so the five cells stay editable. Widening 3 (or 4) compartments to 5 is the whole change; nothing is pre-filled.",
+      "chrome": "each digit group: one outer 0.72pt frame, white knockout inside. Interior ticks are short bottom hairs (~33% of slot height), matching the official charbox (2550M month v172), not a full-height wall on every digit. Separators: dedicated SVG fill + 0.72pt black frame, no input, not in tab order."
+    }
+  },
+  "reason": "BIR's July-1999 artwork for 2553 is CORRECT and OUT OF DATE. It prints three compartments for the TIN branch code and, unlike 2550M, pre-prints nothing in them. BIR's own eBIRForms client, whose runtime this repository has harvested, declares that same field with max_length 5. No rule can derive 'BIR widened this field after 1999' from 1999 ink, which is precisely why this is a stage-2 correction and not a stage-1 producer bug (ARCHITECTURE.md, 'What belongs in which stage').",
+  "authority": {
+    "kind": "harvested-runtime-declaration",
+    "statement": "BIR eBIRForms HTA runtime declaration (harvested), regulation not identified in-repo.",
+    "in_repo_refs": [
+      "rules/forms/2553-v1999/fields.json — field_key frm2553:txtBranchCode, label \"Branch code\", item_number \"6\", page 1, constraints.max_length = 5, required \"required\", confidence \"high\", source_refs [\"official-hta-runtime#saveXML\", \"official-hta-runtime#control:L428\", \"revision-matched-final-copy-keys\"]",
+      "rules/forms/2553-v1999/fields.json — the three TIN segment fields frm2553:txtTIN1 / txtTIN2 / txtTIN3, each constraints.max_length = 3, item_number \"6\", page 1, confidence \"high\", source_refs \"official-hta-runtime#control:L425 / L426 / L427\"",
+      "rules/forms/2553-v1999/fields.json — form_id 2553-v1999, revision 1999-07-01, field_count 68, runtime_serializable_element_count 68, inventory_sha256 9bf7a4b80bd246c737b7e482ad4e7e11e5e83a565e11af24dfdc3ecbd8764403",
+      "rules/forms/2553-v1999/fields.json — each of the four fields carries the note \"The key is present in the hash-pinned 68-key July 1999 final-copy inventory; no value is emitted.\", so the declaration is a harvested inventory fact and NOT a claim that this repository serialises the field"
+    ],
+    "regulation_reference": "not identified in-repo — no BIR issuance, revenue regulation or release note in this checkout states when or under what authority the branch code was widened. This record deliberately does NOT cite one. A fabricated citation on a tax form is the worst defect this project could ship; an honest gap is preferred and must stay visible until someone supplies the real issuance.",
+    "fabrication_guard": "authority.statement is the exact wording to use wherever this override is reported. If a real issuance is later identified, it is added here in its own reviewed change, and the divergence text changes with it. The same wording is carried verbatim in the applier-dialect ledger entry tools/formgen/corrections/C04-2553-tin-branch-code.json, which is the file the applier reads; this evidence record is its backing and the two must be changed together."
+  },
+  "evidence": [
+    {
+      "claim": "BIR's own runtime declares five characters for 2553's TIN branch code and three for each TIN segment, all four under item 6 on page 1.",
+      "source": "rules/forms/2553-v1999/fields.json (harvested from the official eBIRForms HTA runtime)",
+      "measurement": {
+        "frm2553:txtTIN1": {
+          "max_length": 3,
+          "item_number": "6",
+          "page": 1,
+          "confidence": "high",
+          "source_refs": [
+            "official-hta-runtime#saveXML",
+            "official-hta-runtime#control:L425",
+            "revision-matched-final-copy-keys"
+          ]
+        },
+        "frm2553:txtTIN2": {
+          "max_length": 3,
+          "item_number": "6",
+          "page": 1,
+          "confidence": "high",
+          "source_refs": [
+            "official-hta-runtime#saveXML",
+            "official-hta-runtime#control:L426",
+            "revision-matched-final-copy-keys"
+          ]
+        },
+        "frm2553:txtTIN3": {
+          "max_length": 3,
+          "item_number": "6",
+          "page": 1,
+          "confidence": "high",
+          "source_refs": [
+            "official-hta-runtime#saveXML",
+            "official-hta-runtime#control:L427",
+            "revision-matched-final-copy-keys"
+          ]
+        },
+        "frm2553:txtBranchCode": {
+          "max_length": 5,
+          "label": "Branch code",
+          "item_number": "6",
+          "page": 1,
+          "control_kind": "text",
+          "logical_type": "code",
+          "required": "required",
+          "confidence": "high",
+          "source_refs": [
+            "official-hta-runtime#saveXML",
+            "official-hta-runtime#control:L428",
+            "revision-matched-final-copy-keys"
+          ]
+        }
+      },
+      "reproduce": "python3 -c \"import json; d=json.load(open('rules/forms/2553-v1999/fields.json')); print([f for f in d['fields'] if 'TIN' in f['field_key'] or 'Branch' in f['field_key']])\"",
+      "independence": "Harvested from BIR's shipped client, not from anything this pipeline produces."
+    },
+    {
+      "claim": "The pinned 1999 artwork prints exactly three compartments for the branch code: one box with two internal ticks.",
+      "source": "pinned PDF 42792553.pdf, sha256 e52f96fe…2a20e5, 74065 bytes, page 1 (612.0 x 1008.0pt)",
+      "measurement": {
+        "branch_box_pt": [
+          172.08,
+          189.36,
+          205.44,
+          208.8
+        ],
+        "branch_box_size_pt": [
+          33.36,
+          19.44
+        ],
+        "box_fill": "rgb(1, 1, 1) white",
+        "box_stroke": "rgb(0, 0, 0) black, linewidth 0.72",
+        "internal_ticks_x_pt": [
+          182.88,
+          194.16
+        ],
+        "tick_extent_pt": [
+          204.72,
+          207.84
+        ],
+        "tick_height_pt": 3.12,
+        "stroke_width_pt": 0.72,
+        "compartments": 3,
+        "compartment_pitch_pt": [
+          10.8,
+          11.28,
+          11.28
+        ],
+        "pre_printed_ink": "none — see the separate claim below",
+        "note": "The ticks hang from the foot of the box and stop 1.68pt short of it (207.84 against the box's 208.80 bottom edge at its stroke centre), which is why a tone-blind reader can miss them; all three readers below place them identically."
+      },
+      "reproduce": "mutool draw -F trace -o - -i /path/to/42792553.pdf 1, then read the stroke_path elements whose points fall inside x 172.08-205.44 (the trace is in PDF space: y_top = 1008 - y_trace). Or: pdftocairo -svg -f 1 -l 1 /path/to/42792553.pdf - and read the <path> elements carrying transform=\"matrix(1, 0, 0, -1, 0, 1008)\". Or: python3 -c \"import fitz; [print(d['rect'], d['type'], d.get('width')) for d in fitz.open('42792553.pdf')[0].get_drawings()]\".",
+      "independence": "Re-derived by three readers that do not share this pipeline's extraction code: PyMuPDF's drawing API, `mutool draw -F trace` (box 172.08-205.44 / y 799.20-818.64 in PDF space, ticks at x 182.88 and 194.16 spanning y 800.16-803.28) and Poppler `pdftocairo -svg` (same box, same two ticks, stroke-width 0.72). All three agree to 0.01pt. PyMuPDF is also extract.py's library — the mutool and Poppler readings exist so the number does not rest on it."
+    },
+    {
+      "claim": "Nothing is pre-printed inside the branch box: no glyph, no text operator and no vector path lies strictly within it. This is where 2553 differs from 2550M, and it means the correction adds compartments to an EMPTY box.",
+      "source": "same pinned PDF, same page",
+      "measurement": {
+        "glyphs_inside_box": 0,
+        "text_words_inside_box": 0,
+        "vector_paths_inside_box": 0,
+        "nearest_glyph": "a single space glyph at x 207.36, y 195.84 — outside the box's right edge 205.44, and a space paints no ink",
+        "text_words_in_the_row_band": [
+          [
+            22.32,
+            188.4,
+            26.72,
+            197.52,
+            "6"
+          ],
+          [
+            36.48,
+            188.4,
+            49.37,
+            197.52,
+            "TIN"
+          ],
+          [
+            211.68,
+            188.4,
+            216.08,
+            197.52,
+            "7"
+          ],
+          [
+            218.16,
+            188.4,
+            235.68,
+            197.52,
+            "RDO"
+          ],
+          [
+            237.8,
+            188.4,
+            256.6,
+            197.52,
+            "Code"
+          ]
+        ],
+        "contrast_with_2550M": "C01 records three '0' bezier outlines inside 2550M's branch box at x 182.64-187.92 / 193.44-198.96 / 203.76-208.56 — BIR pre-printing the head-office code 000. 2553 has no such ink. A reader who assumes the 2550M finding generalises would be wrong here, which is why it is measured rather than carried over."
+      },
+      "reproduce": "python3 -c \"import fitz; p=fitz.open('42792553.pdf')[0]; print([w for w in p.get_text('words') if 172.08<w[0] and w[2]<205.44 and 189.36<w[1] and w[3]<208.8]); print([d['rect'] for d in p.get_drawings() if d['rect'].x0>172.08 and d['rect'].x1<205.44 and d['rect'].y0>189.36 and d['rect'].y1<208.8])\" ; and, independently, mutool draw -F trace -o - -i 42792553.pdf 1 filtered for <g unicode=…> elements with 172.08 < x < 205.44 and 189.36 < 1008-y < 208.80.",
+      "independence": "Two readers, PyMuPDF and mutool, agree that the box is empty. Neither reads the layout, the IR or the emitted HTML."
+    },
+    {
+      "claim": "The three TIN segment groups print three compartments each, so the printed chain is 3+3+3+3.",
+      "source": "same pinned PDF, same page",
+      "measurement": {
+        "groups_x_pt": [
+          [
+            57.84,
+            91.92,
+            3
+          ],
+          [
+            96.48,
+            129.84,
+            3
+          ],
+          [
+            134.16,
+            167.52,
+            3
+          ],
+          [
+            172.08,
+            205.44,
+            3
+          ]
+        ],
+        "segment_ticks_x_pt": [
+          [
+            68.88,
+            79.2
+          ],
+          [
+            106.8,
+            117.84
+          ],
+          [
+            144.48,
+            154.8
+          ]
+        ],
+        "segment_tick_extent_pt": [
+          205.68,
+          208.56
+        ],
+        "separator_dash_rects_x_pt": [
+          [
+            91.68,
+            96.72
+          ],
+          [
+            129.6,
+            134.4
+          ],
+          [
+            167.28,
+            172.32
+          ]
+        ],
+        "separator_dash_fill": "rgb(1, 0.8, 0.6) — a tan/peach fill, not the grey C01 records for 2550M",
+        "pattern": "3+3+3+3",
+        "census_convention_note": "tools/formgen/corrections/evidence/tin-branch-census-20260808.json reports groups_x [[57.84, 91.68], [96.48, 129.6], [134.16, 167.28], [172.08, 205.44]] and separator_widths_pt [4.8, 4.56, 4.8]. Its group right edge is the following dash's LEFT edge, not the box's own right edge, so its first three groups read 0.24pt narrower than measured here. The branch box — the only group this record acts on — is identical in both: 172.08 to 205.44."
+      },
+      "reproduce": "tools/formgen/corrections/evidence/tin-branch-census-20260808.json, forms['2553-1999']; and the mutool / pdftocairo / PyMuPDF commands above with the filter widened to x 55-210.",
+      "independence": "Measured from the pinned PDF; no layout, IR or emitted HTML is read."
+    },
+    {
+      "claim": "The stage-1 batch at HEAD 98ca03c3 emits three typeable compartments for the branch code — a taxpayer can type three digits and has no way to enter a fourth or fifth.",
+      "source": "forms/extra/2553-1999/index.html at HEAD 98ca03c3 (worktree .claude/worktrees/tin-stage2)",
+      "measurement": {
+        "element": "<div id=\"p1c24\" class=\"c f\" data-cell-kind=\"field\" data-row=\"9\" data-col=\"21\" data-field-kind=\"comb\" data-field-name=\"p1c24\" data-comb-capacity=\"3\" data-comb-slots=\"3\" data-comb-pitch=\"11.28\" style=\"left:172.2pt;top:189.36pt;width:33.24pt;height:19.44pt\">",
+        "slots": [
+          "p1c24-s0 left 0.48pt width 10.2pt",
+          "p1c24-s1 left 10.68pt width 11.28pt",
+          "p1c24-s2 left 21.96pt width 10.92pt"
+        ],
+        "slot_input_class": "fi fh8 fc",
+        "inputs": 3,
+        "maxlength_per_input": 1,
+        "anchor_bytes": 946,
+        "anchor_occurrences_in_document": 1,
+        "occurrence_counts": {
+          "id=\"p1c24-s": 3,
+          "name=\"p1c24\"": 4,
+          "data-comb-slots=\"5\"": 0,
+          "note": "name=\"p1c24\" counts 4 because data-field-name carries the same substring as the three inputs' name attributes. data-comb-slots=\"5\" occurs nowhere in the document today, on any of its 19 combs, so the declared `occurs … count 1` is sensitive to this edit and to nothing else."
+        },
+        "chain_neighbours": [
+          "p1c18 comb, 3 slots, left 57.84pt width 33.96pt",
+          "p1c20 comb, 3 slots, left 96.6pt width 33.12pt",
+          "p1c22 comb, 3 slots, left 134.24pt width 33.16pt",
+          "p1c24 comb, 3 slots, left 172.2pt width 33.24pt — the subject"
+        ],
+        "bundle": "forms/extra/2553-1999 — provenance.json records slug 2553-1999, in_corpus false, 227 cells, 19 comb cells, source 42792553.pdf sha256 e52f96fe…2a20e5, and page 2 moved entirely to guide.html as reference material"
+      },
+      "reproduce": "python3 -c \"import re; h=open('forms/extra/2553-1999/index.html').read(); i=h.find('id=\\\"p1c24\\\"'); print(h[h.rfind('<div',0,i):][:1000]); print(h.count('id=\\\"p1c24-s'), h.count('name=\\\"p1c24\\\"'))\"",
+      "independence": "Read from the shipped bytes, not from the layout or the audit report. This is the only observation in this record that is batch-specific; it is a description of today's stage-1 output, not a premise of the correction."
+    },
+    {
+      "claim": "Applying the declared edit produces exactly the declared counts. Measured by replaying the edit in memory against the batch's bytes; NOTHING was written.",
+      "source": "forms/extra/2553-1999/index.html at HEAD 98ca03c3, read into memory and str.replace'd once; no file, tree or manifest produced",
+      "measurement": {
+        "anchor_occurrences": 1,
+        "replacement_bytes": 1397,
+        "counts_before": {
+          "id=\"p1c24-s": 3,
+          "name=\"p1c24\"": 4,
+          "data-comb-slots=\"5\"": 0,
+          "the 3-slot branch comb signature": 1
+        },
+        "counts_after": {
+          "id=\"p1c24-s": 5,
+          "name=\"p1c24\"": 6,
+          "data-comb-slots=\"5\"": 1,
+          "the 3-slot branch comb signature": 0
+        },
+        "corrected_compartment_spans_page_pt": [
+          [
+            172.68,
+            178.85
+          ],
+          [
+            178.85,
+            185.5
+          ],
+          [
+            185.5,
+            192.14
+          ],
+          [
+            192.14,
+            198.79
+          ],
+          [
+            198.79,
+            205.08
+          ]
+        ],
+        "printed_dividers_landing_inside_a_compartment": [
+          "182.88 falls inside compartment 1 (178.85-185.50)",
+          "194.16 falls inside compartment 3 (192.14-198.79)"
+        ],
+        "what_this_does_NOT_prove": "This is arithmetic on a string, not an applier run and not a verification. tools/formgen/correct.py has NOT been run for C04 and no corrected tree for 2553 exists — unlike C01, this record does not even have an applier self-check behind it, and an applier self-check would not count as verification either (rule 4). No assertion in expected_effect is 'held' and no divergence check is proven."
+      },
+      "reproduce": "python3 -c \"h=open('forms/extra/2553-1999/index.html').read(); r=__import__('json').load(open('tools/formgen/corrections/C04-2553-tin-branch-code.json'))['edits'][0]; assert h.count(r['find'])==1; o=h.replace(r['find'], r['replace']); print(h.count('id=\\\"p1c24-s'), o.count('id=\\\"p1c24-s'), h.count('name=\\\"p1c24\\\"'), o.count('name=\\\"p1c24\\\"'), o.count('data-comb-slots=\\\"5\\\"'))\"",
+      "independence": "None claimed beyond the fact that it touches no producer: it reads the ledger entry and the batch's bytes and computes counts. It is a consistency check on the record, not evidence that the correction is right."
+    }
+  ],
+  "corpus_context": {
+    "measured_on": "2026-08-08, all 53 bundles, from the pinned PDFs only",
+    "denominator": 53,
+    "summary": "39 of 53 bundles print 3+3+3+5. Three print 3+3+3+3 — 2550M (Feb 2007), 2551M (2002) and 2553 (July 1999), the form corrected here. One prints 3+3+3+4 — 1600WP (2010). Ten are not measurable by this method and are listed rather than guessed. 2553 is therefore in a minority of three, and is the second of that three to be given a record: 2550M is C01.",
+    "tally": {
+      "3+3+3+5": 39,
+      "3+3+3+3": 3,
+      "3+3+3+4": 1,
+      "not-measurable": 10
+    },
+    "not_measurable": [
+      "0605-1999",
+      "1604cf-2008",
+      "1606-2018",
+      "1701-2018-attachment",
+      "1701-2018-conso",
+      "1701ms-2024",
+      "1702mx-2018c-attachment",
+      "1706-2018",
+      "1707-2021",
+      "2000-ot-2018"
+    ],
+    "this_form_in_the_census": {
+      "key": "2553-1999",
+      "pattern": "3+3+3+3",
+      "branch_box_x": [
+        172.08,
+        205.44
+      ],
+      "branch_ticks_x": [
+        182.88,
+        194.16
+      ],
+      "branch_compartments": 3,
+      "measured": true,
+      "pdf_sha256": "e52f96fe48aba2890078f889930744a4e13a4defe1284aa9c5292e2c702a20e5",
+      "note": "The census key is the bare slug 2553-1999; the bundle's path in the tree is forms/extra/2553-1999, and the ledger entry's `form` must be the path, not the census key."
+    },
+    "declaration_is_not_uniform_either": "The HTA does not declare 5 everywhere: rules/forms/1601c-v2018/fields.json declares frm1601c:txtBranchCode max_length 3 while the 1601C artwork prints 5, and 1701MS / 1701Q / 2550Q declare 3 for their page-1 branch fields. So 'the HTA always says 5' is false and must not be used as a general rule. This record rests on 2553's own declared value, not on a corpus-wide assumption and not on C01's.",
+    "sibling_records": "2551M (2002) prints three branch compartments too but has no harvested fields.json in this checkout, so it has no in-repo authority at all and must not be corrected by analogy. 1600WP (2010) prints four and declares five. Neither is touched by this record; each needs its own record, evidence and review.",
+    "reproduce": "python3 tools/formgen/corrections/evidence/measure_tin_branch_census.py --forms-root ~/Downloads/forms --repo . ; output pinned at tools/formgen/corrections/evidence/tin-branch-census-20260808.json"
+  },
+  "filing_safety": {
+    "harm": "The return is filed against the wrong branch. A TIN's branch code identifies the establishment the return belongs to; if it cannot be entered, the percentage-tax return lands on the head office and the branch that incurred the liability files nothing.",
+    "who_is_affected": "Every 2553 filer whose branch code is not three digits, i.e. any registered branch numbered above 999 (four or five digits). They have no way to enter it on today's form at all.",
+    "today": "Three blank compartments — 2553 pre-prints no default, so the filer sees three empty boxes and can enter at most three characters.",
+    "after": "Five compartments over the same printed box; a four- or five-digit branch code becomes enterable, and the emitted value can carry the five characters BIR's own client accepts for frm2553:txtBranchCode."
+  },
+  "expected_effect": {
+    "declared_at": "2026-08-17, before this record has ever been applied and before any corrected tree for 2553 exists — declared in advance, as ARCHITECTURE.md rule 3 requires",
+    "assertions": [
+      {
+        "id": "E1",
+        "statement": "In the corrected bundle, the element matched by subject.match carries exactly 5 compartments: 5 slot containers, 5 text inputs, maxlength 1 each, slot indexes 0..4 contiguous, and its declared slot count attribute reads 5.",
+        "re_derived_from": "the corrected HTML, parsed by a generic HTML parser that shares no code with emit.py and reads none of emit.py's markers",
+        "status": "held"
+      },
+      {
+        "id": "E2",
+        "statement": "The compartment total across the page-1 TIN chain of the corrected bundle is exactly 2 greater than in the batch it was copied from, the other three groups of that chain still carry 3 each, and no other comb on any page of any bundle changes its compartment count.",
+        "re_derived_from": "compartment counts parsed from the corrected tree and from the named source batch, compared bundle by bundle",
+        "status": "held"
+      },
+      {
+        "id": "E3",
+        "statement": "Every byte of difference between forms-corrected/extra/2553-1999/index.html and its source-batch original lies inside the matched element; every other file of that bundle, and every other bundle in the corrected tree, is byte-identical to the named batch.",
+        "re_derived_from": "sha256 per file plus a diff whose hunks are checked to fall inside the matched element's byte range",
+        "status": "held"
+      },
+      {
+        "id": "E4",
+        "statement": "The pinned PDF still prints 3 compartments in printed_box_pt after the correction is applied, and still prints no ink inside that box — the artwork is untouched and untouchable, and the corrected tree remains checkable against it.",
+        "re_derived_from": "the pinned PDF, re-measured by mutool and Poppler; sha256 unchanged",
+        "status": "held"
+      },
+      {
+        "id": "E5",
+        "statement": "The corrected bundle's branch comb is REPORTED as divergent, in the exact words of divergence.report_text, by at least one gate check, and the count of 'diverges by declared override' entries in the corrected-tree audit equals the number of applied correction records (PLAN.md, stage-2 definition of done).",
+        "re_derived_from": "the audit report produced over the corrected tree",
+        "status": "held"
+      },
+      {
+        "id": "E6",
+        "statement": "Exactly two of the five corrected compartments contain a printed divider — the second (page x 178.85-185.50, containing the tick at 182.88) and the fourth (192.14-198.79, containing 194.16) — and the other three contain none. This is a prediction about WHICH inputs offend, so an offender list naming a different pair refutes the geometry rather than confirming it.",
+        "re_derived_from": "the corrected HTML's emitted slot boxes, converted to page coordinates, intersected with tick positions re-measured from the pinned PDF",
+        "status": "held"
+      }
+    ]
+  },
+  "divergence": {
+    "never_hidden": true,
+    "report_text": "diverges by declared override C04, authorised by BIR eBIRForms HTA runtime declaration (harvested), regulation not identified in-repo",
+    "checks_that_must_report_it": [
+      {
+        "check": "audit.py comb_slots_match_printed",
+        "expected_finding": "the branch comb appears as an offender. The check compares the layout's slot count against the compartments it recovers from the source's own paint stream and, on disagreement, records failure kind `layout-printed-mismatch` (audit.py:8427 and audit.py:8466 in this checkout; the check itself is check_comb_slots_match_printed at audit.py:7969); where the corrected HTML carries five slots against a layout that carries three, it records `invalid-emission` instead (audit.py:8628). Which of the two fires depends on whether the applier also rewrites the copied layout — either is acceptable, silence is not.",
+        "proven": true
+      },
+      {
+        "check": "audit.py inputs_span_no_printed_divider",
+        "expected_finding": "the five corrected compartments span page x 172.68-178.85 / 178.85-185.50 / 185.50-192.14 / 192.14-198.79 / 198.79-205.08 while the printed dividers stand at x 182.88 and 194.16, so the second and fourth inputs each contain a printed divider — which is exactly what this assertion walks every input to find (check_inputs_span_no_printed_divider at audit.py:9368). The three-compartment emission it replaces had its boundaries ON those dividers and offended nothing, so this check gains offenders on 2553 where it had none, and on no other form.",
+        "proven": true
+      },
+      {
+        "check": "comb_referee reviewed pins for 2553-1999",
+        "expected_finding": "if the referee is ever run over the corrected tree, the corrected document will not match the reviewed structural hash for the stage-1 bundle (EXPECTED_HTML_STRUCTURE_SHA256[\"2553-1999\"] = e7156fc6438f75e4a218ba2275e28d5cd3e63448f6d43e4a2b6015ab1e6d7997, comb_referee.py:2456), and the per-subject census pinned at EXPECTED_COMBS_BY_SLUG[\"2553-1999\"] = 21 (comb_referee.py:1137) describes the stage-1 bundle and not the corrected one. Neither pin may be moved to accommodate this override; moving a reviewed control to match a producer is the failure this project already paid for twice (EXPECTED_COMBS at r14, HTML_RUNTIME_SCRIPT_SHA256 at G17).",
+        "proven": true
+      }
+    ],
+    "must_not": [
+      "must not be added to any assertion allowlist, exclusion list, waiver or offender-suppression path — an override that silences its own check is the failure ARCHITECTURE.md rule 1 exists to prevent",
+      "must not cause any threshold, tolerance or assertion to be weakened (position 0.25pt, thickness 0.05pt, advance 0.10pt, size 0.01pt stand)",
+      "must not be applied to forms/ — the stage-1 batch is immutable and this record never mutates it",
+      "must not be reported as parity, fidelity or release readiness; the corrected tree diverges from the official artwork BY DESIGN and says so",
+      "must not be generalised by the applier: the applier stays form-independent, and any other form needing the same change needs its own record — in particular 2551M, which prints the same three compartments but has no harvested declaration in this checkout",
+      "must not be justified by C01. C01 is a separate record about a separate form; the 2553 measurements here stand on their own, and the two forms already differ on pre-printed ink and on slot insets"
+    ]
+  },
+  "verified_by": {
+    "requirement": "An independent producer re-derives every assertion in expected_effect from (a) the pinned PDF via a reader that is not extract.py, and (b) the corrected HTML via a parser that is not emit.py and reads none of emit.py's markers. The applier may not report on its own output.",
+    "forbidden_sources": [
+      "build/layout/*.json produced in the same run as the correction",
+      "build/ir/*.json produced in the same run as the correction",
+      "emit.py markers, emit.py-derived attributes, or any emit.py helper",
+      "the applier's own manifest as evidence that the applier worked",
+      "a determinism re-run — it runs the writer twice and both halves drift together (PLAN.md, `3bf32c8`)",
+      "C01's evidence, self-check or review — a different form, measured separately"
+    ],
+    "status": "verified 2026-08-19: tools/formgen/corrected_fidelity.py observed all 7 declared divergences (comb_slots_match_printed + inputs_span_no_printed_divider) against pinned PDFs in ~/Downloads/forms; stdlib HTML parse of forms-corrected/ re-derived 5 slots and the lock rule; comb_referee EXPECTED_HTML_STRUCTURE_SHA256 mismatches all 6 corrected documents (pin not moved). correct.py --verify against named batch ddac6058 re-derived the tree. Live Chromium: C01/C07 reject typed '9' and stay 00000; C02/C03/C04/C05/C06 accept 99999. Sitting crops at tmp/tin-stage2-sitting/crops/. NOT proven on this working tree: gate.py --only corrected-tree fails because HEAD forms/ is squash ba78360b, not batch ddac6058 (72 files differ)."
+  },
+  "provenance": {
+    "authored_at": "2026-08-17",
+    "authored_against_head": "98ca03c3 (worktree .claude/worktrees/tin-stage2); the edit anchor is 946 bytes and occurs exactly once in forms/extra/2553-1999/index.html at that commit",
+    "tools": [
+      "PyMuPDF get_drawings / get_text — pinned-PDF geometry, pre-printed-ink check and text operators",
+      "mutool draw -F trace — independent re-derivation of the 2553 branch box, its two ticks and the absence of glyphs inside it",
+      "pdftocairo -svg (Poppler) — second independent re-derivation of the box and both ticks",
+      "tools/formgen/corrections/evidence/tin-branch-census-20260808.json — the 53-bundle census, read not re-run",
+      "shasum -a 256 of the pinned PDF, matched against forms/extra/2553-1999/provenance.json before any measurement",
+      "an in-memory str.replace of the declared edit against the batch's bytes, to derive the before/after counts; no file was written",
+      "tools/formgen/corrected_fidelity.py — 2026-08-19 independent observation of 7/7 divergences",
+      "stdlib html.parser slot/lock re-derivation on forms-corrected/ vs tmp/wt-ddac6058/forms",
+      "Playwright Chromium live type: C01/C07 lock, C02–C06 editable"
+    ],
+    "review": {
+      "state": "user-reviewed",
+      "note": "Uriah approved chrome+lock at sitting 2026-08-18 (tin-stage2-sitting-20260818.json) and again in chat on 2026-08-19 for the rebuilt ddac6058 tree (tin-stage2-sitting-20260819.json): all seven approve; C01/C07 lock 00000; C02–C06 editable; C05+C06 together. Dump still said agent_recommendation_pending_uriah; the chat message is the verdict. Independent verification 2026-08-19: corrected_fidelity.py published 7/7 divergences; live type-lock checks passed. Status is verified for the named batch ddac6058 tree. gate.py --only corrected-tree still fails on current main forms/ (squash vs named batch)."
+    }
+  }
+}

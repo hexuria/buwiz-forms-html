@@ -1,0 +1,33 @@
+{
+  "title": "C01–C07 independent verification",
+  "date": "2026-08-19",
+  "named_batch": "ddac60583cca5f7c85b1b98ac01cead297e5869c",
+  "corrected_tree": "forms-corrected/",
+  "fidelity_report": "build/corrected-fidelity.json",
+  "proves_parity": false,
+  "is_non_regression_gate": true,
+  "correct_py_verify": "PASS against named batch via worktree tmp/wt-ddac6058",
+  "gate_corrected_tree_on_current_main_forms": "FAIL — HEAD forms/ is squash ba78360b, 72 files differ from ddac6058",
+  "observations": [
+    {"id": "C01", "form": "2550m-2007", "printed": 3, "emitted": 5, "lock": "00000 readonly", "live_type": "rejects 9, stays 0"},
+    {"id": "C02", "form": "0605-1999", "printed": 3, "emitted": 5, "lock": "editable", "live_type": "accepts 99999"},
+    {"id": "C03", "form": "2551m-2002", "printed": 3, "emitted": 5, "lock": "editable", "live_type": "accepts 99999"},
+    {"id": "C04", "form": "extra/2553-1999", "printed": 3, "emitted": 5, "lock": "editable", "live_type": "accepts 99999"},
+    {"id": "C05", "form": "extra/1600wp-2010 p1c16", "printed": 4, "emitted": 5, "lock": "editable", "live_type": "accepts 99999"},
+    {"id": "C06", "form": "extra/1600wp-2010 p1c74", "printed": 4, "emitted": 5, "lock": "editable", "live_type": "accepts 99999"},
+    {"id": "C07", "form": "extra/1604cf-2008", "printed": 3, "emitted": 5, "lock": "00000 readonly", "live_type": "rejects 9, stays 0"}
+  ],
+  "files_changed_vs_batch": [
+    "0605-1999/index.html",
+    "2550m-2007/index.html",
+    "2551m-2002/index.html",
+    "extra/1600wp-2010/index.html",
+    "extra/1604cf-2008/index.html",
+    "extra/2553-1999/index.html"
+  ],
+  "referee_html_pins": "all 6 corrected documents mismatch EXPECTED_HTML_STRUCTURE_SHA256 (expected; pins not moved)",
+  "sitting": "http://127.0.0.1:4191/",
+  "uriah_verdict": "tools/formgen/corrections/evidence/tin-stage2-sitting-20260819.json — all seven approve in chat 2026-08-19 (Confirm not clicked; chat is the verdict)",
+  "crops": "tmp/tin-stage2-sitting/crops/",
+  "live_screenshots": "tmp/c01-c07-review/"
+}

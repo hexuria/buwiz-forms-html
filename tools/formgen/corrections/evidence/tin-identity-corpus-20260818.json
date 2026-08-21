@@ -1,0 +1,845 @@
+{
+  "title": "TIN-class identity catalog expansion",
+  "date": "2026-08-18",
+  "census": "tools/formgen/corrections/evidence/tin-branch-census-20260808.json",
+  "matcher": "tools/formgen/field_identity.py",
+  "method": [
+    "Census groups_x + band_y from the 2026-08-08 pinned-PDF TIN-chain measurement are source_printed_box_pt.",
+    "Match is center-in-printed-box against fillable cells (data-cell-kind field or mixed, with data-field-kind set). Mixed combs are G11 pre-printed 000 branch identities.",
+    "html_id_hint is the unique center hit on forms/ (stage-1 batch).",
+    "official_field_key is harvested from rules/forms/*/fields.json when that inventory has exactly one page-1 primary TIN quartet. Secondary strips (spouse/agent/donee/schedule/page-2) are excluded. No key is invented.",
+    "A form is catalogued only when all four groups resolve uniquely. Partial strips are skipped.",
+    "PDF-census not-measurable bundles were inspected in HTML; none emit a 3+3+3+N fillable chain, so they stay out.",
+    "correction_id is null: these are identity-only, not C01\u2013C07.",
+    "This is not Stage 3. Nothing writes name= official keys."
+  ],
+  "seed_record_count": 28,
+  "new_record_count": 152,
+  "catalog_record_count": 180,
+  "new_forms": [
+    {
+      "census_slug": "0619e-2018",
+      "bundle_slug": "0619e-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "0619e-v2018",
+      "html_id_hints": [
+        "p1c28",
+        "p1c30",
+        "p1c32",
+        "p1c34"
+      ],
+      "official_field_keys": [
+        "frm0619E:txtTIN1",
+        "frm0619E:txtTIN2",
+        "frm0619E:txtTIN3",
+        "frm0619E:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "0619f-2018",
+      "bundle_slug": "0619f-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "0619f-v2018",
+      "html_id_hints": [
+        "p1c28",
+        "p1c30",
+        "p1c32",
+        "p1c34"
+      ],
+      "official_field_keys": [
+        "frm0619F:txtTIN1",
+        "frm0619F:txtTIN2",
+        "frm0619F:txtTIN3",
+        "frm0619F:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "0620-2019",
+      "bundle_slug": "0620-2019",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": null,
+      "html_id_hints": [
+        "p1c28",
+        "p1c30",
+        "p1c32",
+        "p1c34"
+      ],
+      "official_field_keys": null,
+      "official_field_key_gap": "no harvested fields.json in this checkout"
+    },
+    {
+      "census_slug": "1600-pt-2018",
+      "bundle_slug": "1600-pt-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1600pt-v2018",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm1600PT:txtPg1TIN1",
+        "frm1600PT:txtPg1TIN2",
+        "frm1600PT:txtPg1TIN3",
+        "frm1600PT:txtPg1TIN4"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1600-vt-2018",
+      "bundle_slug": "1600-vt-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1600vt-v2018",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm1600VT:txtPg1TIN1",
+        "frm1600VT:txtPg1TIN2",
+        "frm1600VT:txtPg1TIN3",
+        "frm1600VT:txtPg1TIN4"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1601-fq-2020",
+      "bundle_slug": "1601-fq-2020",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1601fq-v2018",
+      "html_id_hints": [
+        "p1c27",
+        "p1c29",
+        "p1c31",
+        "p1c33"
+      ],
+      "official_field_keys": [
+        "frm1601FQ:txtTIN1",
+        "frm1601FQ:txtTIN2",
+        "frm1601FQ:txtTIN3",
+        "frm1601FQ:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1601c-2018",
+      "bundle_slug": "1601c-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1601c-v2018",
+      "html_id_hints": [
+        "p1c26",
+        "p1c28",
+        "p1c30",
+        "p1c32"
+      ],
+      "official_field_keys": [
+        "frm1601c:txtTIN1",
+        "frm1601c:txtTIN2",
+        "frm1601c:txtTIN3",
+        "frm1601c:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1601eq-2019",
+      "bundle_slug": "1601eq-2019",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1601eq-v2018",
+      "html_id_hints": [
+        "p1c20",
+        "p1c22",
+        "p1c24",
+        "p1c26"
+      ],
+      "official_field_keys": [
+        "frm1601EQ:txtTIN1",
+        "frm1601EQ:txtTIN2",
+        "frm1601EQ:txtTIN3",
+        "frm1601EQ:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1602q-2019",
+      "bundle_slug": "1602q-2019",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1602q-v2018",
+      "html_id_hints": [
+        "p1c27",
+        "p1c29",
+        "p1c31",
+        "p1c33"
+      ],
+      "official_field_keys": [
+        "frm1602Q:txtTIN1",
+        "frm1602Q:txtTIN2",
+        "frm1602Q:txtTIN3",
+        "frm1602Q:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1603q-2018",
+      "bundle_slug": "1603q-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1603q-v2018",
+      "html_id_hints": [
+        "p1c27",
+        "p1c29",
+        "p1c31",
+        "p1c33"
+      ],
+      "official_field_keys": [
+        "frm1603Q:txtTIN1",
+        "frm1603Q:txtTIN2",
+        "frm1603Q:txtTIN3",
+        "frm1603Q:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1604c-2018",
+      "bundle_slug": "1604c-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1604c-v2018",
+      "html_id_hints": [
+        "p1c12",
+        "p1c14",
+        "p1c16",
+        "p1c18"
+      ],
+      "official_field_keys": [
+        "frm1604c:tinA",
+        "frm1604c:tinB",
+        "frm1604c:tinC",
+        "frm1604c:branchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1604e-2018",
+      "bundle_slug": "extra/1604e-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1604e-v2018",
+      "html_id_hints": [
+        "p1c12",
+        "p1c14",
+        "p1c16",
+        "p1c18"
+      ],
+      "official_field_keys": [
+        "frm1604e:txtTIN1",
+        "frm1604e:txtTIN2",
+        "frm1604e:txtTIN3",
+        "frm1604e:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1604f-2018",
+      "bundle_slug": "1604f-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1604f-v2018",
+      "html_id_hints": [
+        "p1c12",
+        "p1c14",
+        "p1c16",
+        "p1c18"
+      ],
+      "official_field_keys": [
+        "frm1604f:tinA",
+        "frm1604f:tinB",
+        "frm1604f:tinC",
+        "frm1604f:branchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1621-2019",
+      "bundle_slug": "1621-2019",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": null,
+      "html_id_hints": [
+        "p1c27",
+        "p1c29",
+        "p1c31",
+        "p1c33"
+      ],
+      "official_field_keys": null,
+      "official_field_key_gap": "no harvested fields.json in this checkout"
+    },
+    {
+      "census_slug": "1700-2018",
+      "bundle_slug": "extra/1700-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1700-v2013",
+      "html_id_hints": [
+        "p1c14",
+        "p1c16",
+        "p1c18",
+        "p1c20"
+      ],
+      "official_field_keys": [
+        "frm1700:txtPg1Pt1I5TIN1",
+        "frm1700:txtPg1Pt1I5TIN2",
+        "frm1700:txtPg1Pt1I5TIN3",
+        "frm1700:txtPg1Pt1I5BranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1701-2018",
+      "bundle_slug": "1701-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1701-v2018",
+      "html_id_hints": [
+        "p1c13",
+        "p1c15",
+        "p1c17",
+        "p1c19"
+      ],
+      "official_field_keys": [
+        "frm1701:txtPg1I4TIN1",
+        "frm1701:txtPg1I4TIN2",
+        "frm1701:txtPg1I4TIN3",
+        "frm1701:txtPg1I4BranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1701a-2018",
+      "bundle_slug": "1701a-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1701a-v2018",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm1701A:txtTIN1",
+        "frm1701A:txtTIN2",
+        "frm1701A:txtTIN3",
+        "frm1701A:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1701q-2018",
+      "bundle_slug": "1701q-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1701q-v2018",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm1701q:txtTIN1",
+        "frm1701q:txtTIN2",
+        "frm1701q:txtTIN3",
+        "frm1701q:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1702ex-2018",
+      "bundle_slug": "1702ex-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1702ex-v2018c",
+      "html_id_hints": [
+        "p1c25",
+        "p1c27",
+        "p1c29",
+        "p1c31"
+      ],
+      "official_field_keys": [
+        "frm1702EX:txtPg1Pt1I6TINC1",
+        "frm1702EX:txtPg1Pt1I6TINC2",
+        "frm1702EX:txtPg1Pt1I6TINC3",
+        "frm1702EX:txtPg1Pt1I6TINC4"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1702mx-2018c",
+      "bundle_slug": "1702mx-2018c",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1702mx-v2018c",
+      "html_id_hints": [
+        "p1c25",
+        "p1c27",
+        "p1c29",
+        "p1c31"
+      ],
+      "official_field_keys": [
+        "frm1702MX:txtPg1Pt1I6TINC1",
+        "frm1702MX:txtPg1Pt1I6TINC2",
+        "frm1702MX:txtPg1Pt1I6TINC3",
+        "frm1702MX:txtPg1Pt1I6TINC4"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1702q-2018",
+      "bundle_slug": "1702q-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1702q-v2018c",
+      "html_id_hints": [
+        "p1c26",
+        "p1c28",
+        "p1c30",
+        "p1c32"
+      ],
+      "official_field_keys": [
+        "frm1702q:txtTIN1",
+        "frm1702q:txtTIN2",
+        "frm1702q:txtTIN3",
+        "frm1702q:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1702rt-2018c",
+      "bundle_slug": "1702rt-2018c",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1702rt-v2018c",
+      "html_id_hints": [
+        "p1c25",
+        "p1c27",
+        "p1c29",
+        "p1c31"
+      ],
+      "official_field_keys": [
+        "frm1702RT:txtPg1Pt1I6TIN1",
+        "frm1702RT:txtPg1Pt1I6TIN2",
+        "frm1702RT:txtPg1Pt1I6TIN3",
+        "frm1702RT:txtPg1Pt1I6TIN4"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1707a-2021",
+      "bundle_slug": "1707a-2021",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1707a-v2021",
+      "html_id_hints": [
+        "p1c21",
+        "p1c23",
+        "p1c25",
+        "p1c27"
+      ],
+      "official_field_keys": [
+        "frm1707Av2021:txtI5TIN1",
+        "frm1707Av2021:txtI5TIN2",
+        "frm1707Av2021:txtI5TIN3",
+        "frm1707Av2021:txtI5BranchMask"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "1709-2020",
+      "bundle_slug": "1709-2020",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": null,
+      "html_id_hints": [
+        "p1c15",
+        "p1c17",
+        "p1c19",
+        "p1c21"
+      ],
+      "official_field_keys": null,
+      "official_field_key_gap": "no harvested fields.json in this checkout"
+    },
+    {
+      "census_slug": "1800-2018",
+      "bundle_slug": "extra/1800-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "1800-v2018",
+      "html_id_hints": [
+        "p1c13",
+        "p1c15",
+        "p1c16",
+        "p1c18"
+      ],
+      "official_field_keys": [
+        "frm1800v2018:txtTIN1",
+        "frm1800v2018:txtTIN2",
+        "frm1800v2018:txtTIN3",
+        "frm1800v2018:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2000-dst-2018",
+      "bundle_slug": "2000-dst-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2000-v2018",
+      "html_id_hints": [
+        "p1c13",
+        "p1c15",
+        "p1c17",
+        "p1c19"
+      ],
+      "official_field_keys": [
+        "frm2000:txtTIN1",
+        "frm2000:txtTIN2",
+        "frm2000:txtTIN3",
+        "frm2000:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2200a-2020",
+      "bundle_slug": "extra/2200a-2020",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2200a-v2020",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm2200Av2020:tinA",
+        "frm2200Av2020:tinB",
+        "frm2200Av2020:tinC",
+        "frm2200Av2020:branchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2200an-2018",
+      "bundle_slug": "extra/2200an-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2200an-v2018",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm2200ANv2018:txtTIN1",
+        "frm2200ANv2018:txtTIN2",
+        "frm2200ANv2018:txtTIN3",
+        "frm2200ANv2018:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2200c-2018",
+      "bundle_slug": "2200c-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2200c-v2018",
+      "html_id_hints": [
+        "p1c18",
+        "p1c20",
+        "p1c22",
+        "p1c24"
+      ],
+      "official_field_keys": [
+        "frm2200C:txtPg1TIN1",
+        "frm2200C:txtPg1TIN2",
+        "frm2200C:txtPg1TIN3",
+        "frm2200C:txtPg1TIN4"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2200m-2018",
+      "bundle_slug": "2200m-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2200m-v2018",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm2200M:txtPg1TIN1",
+        "frm2200M:txtPg1TIN2",
+        "frm2200M:txtPg1TIN3",
+        "frm2200M:txtPg1TIN4"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2200p-2020",
+      "bundle_slug": "extra/2200p-2020",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2200p-v2020",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm2200P:txtPg1TIN1",
+        "frm2200P:txtPg1TIN2",
+        "frm2200P:txtPg1TIN3",
+        "frm2200P:txtPg1TIN4"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2200s-2018",
+      "bundle_slug": "extra/2200s-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2200s-v2018",
+      "html_id_hints": [
+        "p1c15",
+        "p1c17",
+        "p1c19",
+        "p1c21"
+      ],
+      "official_field_keys": [
+        "frm2200S:txtTIN1",
+        "frm2200S:txtTIN2",
+        "frm2200S:txtTIN3",
+        "frm2200S:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2200t-2022",
+      "bundle_slug": "extra/2200t-2022",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2200t-v2020",
+      "html_id_hints": [
+        "p1c16",
+        "p1c18",
+        "p1c20",
+        "p1c22"
+      ],
+      "official_field_keys": [
+        "frm2200Tv2020:tinA",
+        "frm2200Tv2020:tinB",
+        "frm2200Tv2020:tinC",
+        "frm2200Tv2020:branchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2316-2021",
+      "bundle_slug": "2316-2021",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": null,
+      "html_id_hints": [
+        "p1c17",
+        "p1c12",
+        "p1c14",
+        "p1c16"
+      ],
+      "official_field_keys": null,
+      "official_field_key_gap": "no harvested fields.json in this checkout"
+    },
+    {
+      "census_slug": "2550-ds-2025",
+      "bundle_slug": "2550-ds-2025",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": null,
+      "html_id_hints": [
+        "p1c32",
+        "p1c34",
+        "p1c36",
+        "p1c38"
+      ],
+      "official_field_keys": null,
+      "official_field_key_gap": "no harvested fields.json in this checkout"
+    },
+    {
+      "census_slug": "2550q-2024",
+      "bundle_slug": "2550q-2024",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2550q-v2024",
+      "html_id_hints": [
+        "p1c29",
+        "p1c31",
+        "p1c33",
+        "p1c35"
+      ],
+      "official_field_keys": [
+        "frm2550qv2024:txtTIN1",
+        "frm2550qv2024:txtTIN2",
+        "frm2550qv2024:txtTIN3",
+        "frm2550qv2024:branchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2551q-2018",
+      "bundle_slug": "2551q-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2551q-v2018",
+      "html_id_hints": [
+        "p1c20",
+        "p1c22",
+        "p1c24",
+        "p1c26"
+      ],
+      "official_field_keys": [
+        "frm2551Qv2018:txtTIN1",
+        "frm2551Qv2018:txtTIN2",
+        "frm2551Qv2018:txtTIN3",
+        "frm2551Qv2018:txtBranchCode"
+      ],
+      "official_field_key_gap": ""
+    },
+    {
+      "census_slug": "2552-2018",
+      "bundle_slug": "extra/2552-2018",
+      "pattern": "3+3+3+5",
+      "page": 1,
+      "inventory": "2552-v2018",
+      "html_id_hints": [
+        "p1c14",
+        "p1c16",
+        "p1c18",
+        "p1c20"
+      ],
+      "official_field_keys": [
+        "frm2552:txtPg1TIN1",
+        "frm2552:txtPg1TIN2",
+        "frm2552:txtPg1TIN3",
+        "frm2552:txtPg1TIN4"
+      ],
+      "official_field_key_gap": ""
+    }
+  ],
+  "skipped": [
+    {
+      "census_slug": "0605-1999",
+      "bundle_slug": "0605-1999",
+      "reason": "already in catalog (C01\u2013C07 seed)"
+    },
+    {
+      "census_slug": "1600wp-2010",
+      "bundle_slug": "extra/1600wp-2010",
+      "reason": "already in catalog (C01\u2013C07 seed)"
+    },
+    {
+      "census_slug": "1604cf-2008",
+      "bundle_slug": "extra/1604cf-2008",
+      "reason": "already in catalog (C01\u2013C07 seed)"
+    },
+    {
+      "census_slug": "1606-2018",
+      "bundle_slug": "1606-2018",
+      "reason": "PDF census not-measurable; HTML does not emit a 3+3+3+N fillable chain"
+    },
+    {
+      "census_slug": "1701-2018-attachment",
+      "bundle_slug": "1701-2018-attachment",
+      "reason": "PDF census not-measurable; HTML does not emit a 3+3+3+N fillable chain"
+    },
+    {
+      "census_slug": "1701-2018-conso",
+      "bundle_slug": "1701-2018-conso",
+      "reason": "PDF census not-measurable; HTML does not emit a 3+3+3+N fillable chain"
+    },
+    {
+      "census_slug": "1701ms-2024",
+      "bundle_slug": "1701ms-2024",
+      "reason": "PDF census not-measurable; HTML does not emit a 3+3+3+N fillable chain"
+    },
+    {
+      "census_slug": "1702mx-2018c-attachment",
+      "bundle_slug": "1702mx-2018c-attachment",
+      "reason": "PDF census not-measurable; HTML does not emit a 3+3+3+N fillable chain"
+    },
+    {
+      "census_slug": "1706-2018",
+      "bundle_slug": "extra/1706-2018",
+      "reason": "PDF census not-measurable; HTML does not emit a 3+3+3+N fillable chain"
+    },
+    {
+      "census_slug": "1707-2021",
+      "bundle_slug": "extra/1707-2021",
+      "reason": "PDF census not-measurable; HTML does not emit a 3+3+3+N fillable chain"
+    },
+    {
+      "census_slug": "1801-2018",
+      "bundle_slug": "extra/1801-2018",
+      "reason": "HTML does not uniquely resolve the full 3+3+3+N strip (fail closed; not cataloguing a partial strip)",
+      "unresolved": [
+        {
+          "role": "tin-1",
+          "status": "unresolved",
+          "reason": "no fillable field has its center in source_printed_box_pt"
+        }
+      ],
+      "resolved_roles": [
+        "tin-2",
+        "tin-3",
+        "tin-branch"
+      ]
+    },
+    {
+      "census_slug": "2000-ot-2018",
+      "bundle_slug": "2000-ot-2018",
+      "reason": "PDF census not-measurable; HTML does not emit a 3+3+3+N fillable chain"
+    },
+    {
+      "census_slug": "2550m-2007",
+      "bundle_slug": "2550m-2007",
+      "reason": "already in catalog (C01\u2013C07 seed)"
+    },
+    {
+      "census_slug": "2551m-2002",
+      "bundle_slug": "2551m-2002",
+      "reason": "already in catalog (C01\u2013C07 seed)"
+    },
+    {
+      "census_slug": "2553-1999",
+      "bundle_slug": "extra/2553-1999",
+      "reason": "already in catalog (C01\u2013C07 seed)"
+    }
+  ]
+}

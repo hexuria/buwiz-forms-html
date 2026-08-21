@@ -1,0 +1,110 @@
+{
+    "$schema": "../../schema/form-manifest.schema.json",
+    "schema_version": "1.0.0",
+    "form_id": "2000-dst-v2018",
+    "form_code": "2000",
+    "revision": "2018-01-01",
+    "revision_label": "January 2018 ENCS (2000v2018 DST runtime; staged as 2000-dst-v2018)",
+    "package_version": "7.9.6.0",
+    "status": "staging-observation",
+    "official_assets": [
+        {
+            "asset_id": "package-7.9.6",
+            "kind": "official-package-executable",
+            "path": "C:\\eBIRForms\\BIRForms.exe",
+            "sha256": "de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca",
+            "size": 57506304,
+            "revision_binding": "Installed package 7.9.6.0."
+        },
+        {
+            "asset_id": "official-hta-runtime",
+            "kind": "runtime-extracted-hta",
+            "path": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\forms\\BIR-Form2000v2018.hta",
+            "sha256": "43aa6fcdba1ffb40bebb3dc1e8509a87b84799b38937bb6bc57273e9021c4a7b",
+            "size": 360371,
+            "revision_binding": "APPLICATIONNAME 2000v2018; January 2018 ENCS."
+        },
+        {
+            "asset_id": "official-help-v2018",
+            "kind": "official-runtime-help",
+            "path": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\helpfile\\Help2000v2018.hta",
+            "sha256": "254279e70740ab5b3099b684fbb02a4dc7a42723e813f157baa2022ac2e144f8",
+            "size": 18920,
+            "revision_binding": "Revision-matched help."
+        },
+        {
+            "asset_id": "official-form-pdf",
+            "kind": "official-form-pdf",
+            "path": "C:\\Mac\\Home\\Downloads\\forms\\2000-DSTv2018\\2000-DST Jan 2018 final.pdf",
+            "sha256": "b18ce9d2380d216814f4410c2e132eebb02b93754f7ca0167311f368e100e79f",
+            "size": 714787,
+            "revision_binding": "January 2018 form."
+        },
+        {
+            "asset_id": "official-guide-pdf",
+            "kind": "official-guidelines-pdf",
+            "path": "C:\\Mac\\Home\\Downloads\\forms\\2000-DSTv2018\\2000 Guide Jan 2018.pdf",
+            "sha256": "bb653d7157cf3c6a116b5eae5d669fe302e4e08230154dffe3239ea61174a130",
+            "size": 143121,
+            "revision_binding": "January 2018 guide."
+        },
+        {
+            "asset_id": "legacy-hta-excluded",
+            "kind": "runtime-extracted-hta-legacy",
+            "path": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\forms\\BIR-Form2000.hta",
+            "sha256": "8b80e909f7f70785dbdf002488b2c14b0a4a2fca7b3c783b68cdd5a59f3ca475",
+            "size": 260113,
+            "revision_binding": "Legacy txtMonth1 runtime; excluded."
+        },
+        {
+            "asset_id": "legacy-help-excluded",
+            "kind": "official-runtime-help-legacy",
+            "path": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\helpfile\\Help2000.hta",
+            "sha256": "36cdb3ff0bfd624b4b5f66f288c29dac512029006697f37d9ba35bd5ce65ef0e",
+            "size": 18482,
+            "revision_binding": "Legacy help; excluded."
+        },
+        {
+            "asset_id": "legacy-final-copy-excluded",
+            "kind": "dummy-profile-encrypted-final-copy-legacy",
+            "path": "C:\\Mac\\Home\\Downloads\\forms\\2000\\2000-final-copy-#email-redacted#.xml",
+            "sha256": "f52eff04eb3e2e50c9d6fc626cd5344aa243a4a4ea8fb1ae954093165daefe9c",
+            "size": 1005,
+            "revision_binding": "Legacy txtMonth1 artifact; excluded."
+        }
+    ],
+    "counts": {
+        "concrete_fields": 142,
+        "runtime_field_families": 20,
+        "fields_total": 162,
+        "typed_fields": 162,
+        "validation_rules": 23,
+        "confirmed_official_bugs": 12,
+        "calculations": 36,
+        "negative_fixtures": 19,
+        "unverified_gaps": 3
+    },
+    "artifacts": {
+        "fields": "fields.json",
+        "validations": "validations.json",
+        "calculations": "calculations.json",
+        "workflow": "workflow.json",
+        "evidence": "evidence.md",
+        "audit": "audit.md",
+        "gaps": "gaps.md",
+        "runtime_control_fixture": "fixtures/runtime-control-inventory-v796.json",
+        "legacy_artifact_exclusion": "fixtures/legacy-artifact-exclusion.json",
+        "validation_function_fixture": "fixtures/validation-function-inventory-v796.json",
+        "calculation_function_fixture": "fixtures/calculation-function-inventory-v796.json",
+        "resource_hash_fixture": "fixtures/official-resource-hashes-v796.json",
+        "negative_fixtures": "fixtures/negative-cases.json",
+        "calculation_fixtures": "fixtures/calculation-boundaries.json"
+    },
+    "scope_notes": [
+        "Research only; no renderer/release metadata changed.",
+        "142 ordered baseline serializer occurrences preserve four duplicate modLabel keys and two collapsed continuation pairs.",
+        "Twenty indexed families preserve expandable Schedules 1-4.",
+        "The 114-entry/113-unique encrypted sample is legacy txtMonth1 and excluded.",
+        "Twenty-eight ATC branches are individually machine-readable; ambiguous statutory rounding/rates fail closed."
+    ]
+}

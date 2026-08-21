@@ -1,0 +1,142 @@
+{
+  "$schema": "../../schema/form-manifest.schema.json",
+  "schema_version": "1.0.0",
+  "form_id": "1601eq-v2018",
+  "form_code": "1601EQ",
+  "revision": "2018-01-01",
+  "revision_label": "January 2018",
+  "package_version": "7.9.6.0",
+  "status": "complete",
+  "official_assets": [
+    {
+      "asset_id": "package-7.9.6",
+      "kind": "official-package-executable",
+      "path": "C:\\eBIRForms\\BIRForms.exe",
+      "sha256": "de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca",
+      "size": 57506304,
+      "revision_binding": "Installed package from which the inspected 1601EQ runtime was extracted.",
+      "notes": "File and product version 7.9.6.0."
+    },
+    {
+      "asset_id": "official-hta-runtime",
+      "kind": "runtime-extracted-hta",
+      "path": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\forms\\BIR-Form1601EQ.hta",
+      "sha256": "cd56bf18d1da2127d578af611fe8005fe49913a65781bb603b22b31bbe548b96",
+      "size": 268182,
+      "revision_binding": "HTA title, printed header, and help identify BIR Form 1601-EQ January 2018.",
+      "notes": "Temporary extraction path; rediscover after package restart."
+    },
+    {
+      "asset_id": "official-help-runtime",
+      "kind": "runtime-extracted-help-hta",
+      "path": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\helpfile\\Help1601EQ.hta",
+      "sha256": "9f531a985a89e980c8870fc5fa9d6341799dd1fb7fc900284f28668ac62edf05",
+      "size": 17141,
+      "revision_binding": "Title states Guidelines and Instructions for BIR Form No. 1601-EQ (January 2018)."
+    },
+    {
+      "asset_id": "official-pdf-2018",
+      "kind": "official-form-pdf",
+      "path": "C:\\Users\\uriah\\.codex\\visualizations\\2026\\07\\22\\019f8b9e-3f1f-72c2-bf81-4294cc208f76\\1601-EQ-Jan-2018-Annex-A.pdf",
+      "sha256": "60034ceb199ebfed1b8e63a858c1a05c1331d68f81eaefadc27fa76b301f1c5c",
+      "size": 902380,
+      "revision_binding": "Official BIR January 2018 form and printed item numbering.",
+      "notes": "Retrieved from https://bir-cdn.bir.gov.ph/local/pdf/1601-EQ%20Jan%202018%20Annex%20A.pdf."
+    },
+    {
+      "asset_id": "atc-catalog-runtime",
+      "kind": "official-package-xml",
+      "path": "runtime-extraction\\xml\\atcCodes.xml",
+      "sha256": "16e4db6ce456a6fb0a97f085cf8ef19349c2f6fc183971e97d4e253f63cdd22b",
+      "size": 153753,
+      "revision_binding": "Loaded by the inspected HTA to populate category-specific ATC choices and rates."
+    },
+    {
+      "asset_id": "environment-runtime",
+      "kind": "shared-javascript",
+      "path": "runtime-extraction\\js\\environment.js",
+      "sha256": "53f86a9e4def3955950ade2b452c722b22236d3e3d5e51f767f32d1fff555c4c",
+      "size": 11556,
+      "revision_binding": "Loaded by the inspected HTA; declares package version 7.9.6.0."
+    },
+    {
+      "asset_id": "string-util-runtime",
+      "kind": "shared-javascript",
+      "path": "runtime-extraction\\js\\string-util.js",
+      "sha256": "bc7f86f70bf993389a3a0135dcbd76c3e370c49d2eb95e2fc66ff318a2ebe43c",
+      "size": 54582,
+      "revision_binding": "Loaded directly by the inspected HTA."
+    },
+    {
+      "asset_id": "string-util2014-runtime",
+      "kind": "shared-javascript",
+      "path": "runtime-extraction\\js\\string-util2014.js",
+      "sha256": "ca42592694e7416a15eca97fa25491c01da17e383038fc97dd9d6261e67bcf7d",
+      "size": 15980,
+      "revision_binding": "Loaded directly by the inspected HTA."
+    },
+    {
+      "asset_id": "ebirtools-runtime",
+      "kind": "shared-vbscript",
+      "path": "runtime-extraction\\js\\eBIRTools.vbs",
+      "sha256": "7d0ceb5aad2c0eb90aeca189d6104ff05163ecd1820379f456125634ff7460f7",
+      "size": 7557,
+      "revision_binding": "Loaded directly by the inspected HTA for encryption and transport helpers."
+    },
+    {
+      "asset_id": "xml-editable-v1",
+      "kind": "dummy-profile-editable-save",
+      "path": "C:\\eBIRForms\\savefile\\00000000000000-1601EQ-2026Q1V1.xml",
+      "sha256": "34830ad384cd2c0775c4b9135d291c4951c09fbb7b7cac24641789f9604272e2",
+      "size": 11519,
+      "revision_binding": "Filename and serialized keys identify 1601EQ; dummy data only.",
+      "notes": "Represents the initial six ATC rows, not the complete dynamic-key union."
+    },
+    {
+      "asset_id": "official-pdf-2019-comparator",
+      "kind": "official-form-pdf-comparator",
+      "path": "C:\\Mac\\Home\\Downloads\\forms\\1601EQv2019\\1601-EQ January 2019 ENCS final.pdf",
+      "sha256": "5277addc6778c96a53fde99b8664b1a5213fcea638dea06033c9acf22ee73c25",
+      "size": 879703,
+      "revision_binding": "January 2019 comparator only; not interchangeable with the January 2018 runtime.",
+      "notes": "Adds printed Item 24 Other Payments and shifts the later item numbering."
+    },
+    {
+      "asset_id": "official-guide-2019-comparator",
+      "kind": "official-guide-pdf-comparator",
+      "path": "C:\\Mac\\Home\\Downloads\\forms\\1601EQv2019\\1601-EQ Guide January 2019 ENCS rev.pdf",
+      "sha256": "64730a5220bb67fbf1c8492f7bf785f407d6be5e790c7fe9e903e20c58026fc2",
+      "size": 143703,
+      "revision_binding": "January 2019 instructions used only to audit post-2018 rate/catalog inconsistencies."
+    }
+  ],
+  "counts": {
+    "typed_fields": 621,
+    "runtime_serializable_elements": 621,
+    "validation_rules": 48,
+    "calculations": 8,
+    "negative_fixtures": 22,
+    "atc_records_for_form": 211,
+    "confirmed_official_bugs": 10,
+    "unverified_gaps": 2
+  },
+  "artifacts": {
+    "fields": "fields.json",
+    "validations": "validations.json",
+    "calculations": "calculations.json",
+    "workflow": "workflow.json",
+    "evidence": "evidence.md",
+    "audit": "audit.md",
+    "gaps": "gaps.md",
+    "calculation_fixtures": "fixtures/calculation-boundaries.json",
+    "atc_catalog_fixture": "fixtures/atc-catalog-v796.json",
+    "runtime_control_fixture": "fixtures/runtime-control-inventory-v796.json",
+    "live_ui_observations": "fixtures/live-ui-observations-v1.json"
+  },
+  "scope_notes": [
+    "Research artifacts only; no renderer, migration status, release evidence, or capability flags were changed.",
+    "The January 2018 runtime and January 2019 official form are materially different revisions and are never merged.",
+    "Online submission, final-copy confirmation, and encrypted-copy creation were not invoked for 1601EQ.",
+    "Two exact Validate first-error dialogs were observed in the official UI; the blank 1601EQ return remained unsaved."
+  ]
+}

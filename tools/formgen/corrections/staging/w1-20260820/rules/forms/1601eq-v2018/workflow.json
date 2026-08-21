@@ -1,0 +1,188 @@
+{
+  "$schema": "../../schema/workflow.schema.json",
+  "schema_version": "1.0.0",
+  "form_id": "1601eq-v2018",
+  "revision": "2018-01-01",
+  "phases": [
+    {
+      "phase": "edit",
+      "official_behavior": "Form controls are editable subject to dependency rules. Validate is enabled; Print and Submit / Final Copy are disabled.",
+      "source_refs": ["official-hta-runtime#init:L1579-L1616", "official-hta-runtime#enableAllControl:L3353-L3404"],
+      "confidence": "high"
+    },
+    {
+      "phase": "saved-draft",
+      "official_behavior": "Save runs only the three-check initialValidateBeforeSave preflight, serializes current form controls to plaintext savefile XML, updates the profile, and leaves the return editable.",
+      "source_refs": ["official-hta-runtime#saveXML:L2102-L2383", "official-hta-runtime#initialValidateBeforeSave:L3485-L3501"],
+      "confidence": "high"
+    },
+    {
+      "phase": "validated",
+      "official_behavior": "After ordered Validate checks pass, editable controls are disabled, Edit/Print/Submit-Final Copy are enabled, and the current dynamic ATC row count is stored.",
+      "source_refs": ["official-hta-runtime#validateForm:L3141-L3288", "official-hta-runtime#disableAllControl:L3295-L3350"],
+      "confidence": "high"
+    },
+    {
+      "phase": "final-copy-confirmation",
+      "official_behavior": "Submit / Final Copy first checks existing versions, then asks for Internet/email confirmation. It does not expose a separate ordinary offline-final action.",
+      "source_refs": ["official-hta-runtime#openAlertEmail:L4096-L4167"],
+      "confidence": "high"
+    },
+    {
+      "phase": "offline-final-copy",
+      "official_behavior": "When the connection probe fails after confirmation, txtFinalFlag is set to 3 and saveEncryptedProfile produces an encrypted IAF_RDO_Copy artifact through saveXML(true).",
+      "source_refs": ["official-hta-runtime#openAlertEmail:L4153-L4163", "official-hta-runtime#saveEncryptedProfile:L1913-L2000"],
+      "confidence": "high"
+    },
+    {
+      "phase": "submission-pending",
+      "official_behavior": "Enrollment/credential UI collects online state, creates the encrypted return, and invokes RenameAndSendFile.",
+      "source_refs": ["official-hta-runtime#sendEmail:L4284-L4359"],
+      "confidence": "high"
+    },
+    {
+      "phase": "submitted",
+      "official_behavior": "Transport return code 0 sets txtFinalFlag=1, updates the saved return, shows the success message, and displays payment options.",
+      "source_refs": ["official-hta-runtime#sendEmail:L4360-L4366"],
+      "confidence": "high"
+    },
+    {
+      "phase": "submission-retry",
+      "official_behavior": "A nonzero transport code or exception sets txtFinalFlag=2, updates the saved return, and permits the resend branch.",
+      "source_refs": ["official-hta-runtime#sendEmail:L4367-L4382", "official-hta-runtime#openAlertEmail:L4106-L4111"],
+      "confidence": "high"
+    }
+  ],
+  "transitions": [
+    {
+      "from": "edit",
+      "action": "Save",
+      "to": "saved-draft",
+      "guard": "TIN segments/branch nonblank, RDO not 000, and withholding-agent name nonblank.",
+      "side_effects": ["Writes plaintext save XML.", "Updates background profile.", "Does not establish full validation."],
+      "source_refs": ["official-hta-runtime#initialValidateBeforeSave:L3485-L3501", "official-hta-runtime#saveXML:L2166-L2380"]
+    },
+    {
+      "from": "edit",
+      "action": "Validate",
+      "to": "validated",
+      "guard": "All ordered validateForm rules pass.",
+      "side_effects": ["Stores hPartIITableSize.", "Locks form controls.", "Enables Edit, Print, and Submit / Final Copy."],
+      "source_refs": ["official-hta-runtime#validateForm:L3141-L3288", "official-hta-runtime#disableAllControl:L3295-L3350"]
+    },
+    {
+      "from": "validated",
+      "action": "Edit",
+      "to": "edit",
+      "guard": null,
+      "side_effects": ["Re-enables editable inputs.", "Keeps identity/TIN controls profile-owned or locked as coded.", "Disables final-copy and print actions until revalidation."],
+      "source_refs": ["official-hta-runtime#enableAllControl:L3353-L3404"]
+    },
+    {
+      "from": "validated",
+      "action": "Submit / Final Copy",
+      "to": "final-copy-confirmation",
+      "guard": "No conflicting finalized non-amended return/version and txtFinalFlag is not the direct resend state.",
+      "side_effects": ["Shows the Internet/email confirmation."],
+      "source_refs": ["official-hta-runtime#openAlertEmail:L4096-L4167"]
+    },
+    {
+      "from": "final-copy-confirmation",
+      "action": "Confirm with failed connection probe",
+      "to": "offline-final-copy",
+      "guard": "checkNetConnection() returns false.",
+      "side_effects": ["Sets txtFinalFlag=3.", "Writes and encrypts an IAF_RDO_Copy artifact.", "Updates final-copy button state."],
+      "source_refs": ["official-hta-runtime#openAlertEmail:L4153-L4163", "official-hta-runtime#saveXML:L2102-L2383"]
+    },
+    {
+      "from": "final-copy-confirmation",
+      "action": "Confirm with connection",
+      "to": "submission-pending",
+      "guard": "checkNetConnection() returns true and enrollment/credential confirmation proceeds.",
+      "side_effects": ["Shows enrollment UI.", "Creates encrypted submission artifact.", "Begins transport."],
+      "source_refs": ["official-hta-runtime#openAlertEmail:L4153-L4159", "official-hta-runtime#sendEmail:L4284-L4359"]
+    },
+    {
+      "from": "submission-pending",
+      "action": "Transport succeeds",
+      "to": "submitted",
+      "guard": "RenameAndSendFile returns 0.",
+      "side_effects": ["Sets txtFinalFlag=1.", "Updates save-file final flag.", "Shows success and payment options."],
+      "source_refs": ["official-hta-runtime#sendEmail:L4360-L4366"]
+    },
+    {
+      "from": "submission-pending",
+      "action": "Transport fails",
+      "to": "submission-retry",
+      "guard": "RenameAndSendFile returns nonzero or throws.",
+      "side_effects": ["Sets txtFinalFlag=2.", "Updates save-file final flag.", "Shows generic transport failure message."],
+      "source_refs": ["official-hta-runtime#sendEmail:L4367-L4382"]
+    },
+    {
+      "from": "submission-retry",
+      "action": "Submit / Final Copy",
+      "to": "submission-pending",
+      "guard": "txtFinalFlag is 2.",
+      "side_effects": ["Invokes the emailResend branch."],
+      "source_refs": ["official-hta-runtime#openAlertEmail:L4106-L4111"]
+    }
+  ],
+  "prerequisites": [
+    "A fully validated state is required before Submit / Final Copy becomes enabled.",
+    "Item 12 must be nonblank under Validate, but the official implementation does not validate email syntax.",
+    "The submission-first path asks the user to ensure Internet access; a failed connection probe falls back to encrypted offline-final generation.",
+    "An existing finalized non-amended return requires selecting Amended Return Yes before Save, Final Copy, or Submit."
+  ],
+  "required_attachments": [
+    {
+      "attachment_id": "qap",
+      "label": "Quarterly Alphalist of Payees (QAP)",
+      "required_when": "For the quarterly 1601-EQ filing.",
+      "official_ui_enforcement": "Not validated or attached by this Offline eBIRForms form UI; the installed help directs separate submission.",
+      "source_refs": ["official-help-runtime#L130-L133"],
+      "confidence": "high"
+    },
+    {
+      "attachment_id": "qap-acknowledgment",
+      "label": "Acknowledgment Receipt/Validation Successful message proving QAP submission",
+      "required_when": "When filing 1601-EQ with the separately submitted QAP.",
+      "official_ui_enforcement": "Not validated by this form UI.",
+      "source_refs": ["official-help-runtime#L130-L134"],
+      "confidence": "high"
+    },
+    {
+      "attachment_id": "representative-authorization",
+      "label": "Authorization letter",
+      "required_when": "The return is signed/filed by an authorized representative.",
+      "official_ui_enforcement": "Printed instruction only; no UI validation is implemented.",
+      "source_refs": ["official-hta-runtime#L846-L847", "official-pdf#p1:declaration"],
+      "confidence": "high"
+    }
+  ],
+  "filing_deadlines": [
+    {
+      "quarter": "Q1",
+      "due_date_rule": "Not later than the last day of the month following the close of the quarter, subject to applicable eFPS issuances.",
+      "source_refs": ["official-help-runtime#L88-L90"],
+      "confidence": "high"
+    },
+    {
+      "quarter": "Q2",
+      "due_date_rule": "Not later than the last day of the month following the close of the quarter, subject to applicable eFPS issuances.",
+      "source_refs": ["official-help-runtime#L88-L90"],
+      "confidence": "high"
+    },
+    {
+      "quarter": "Q3",
+      "due_date_rule": "Not later than the last day of the month following the close of the quarter, subject to applicable eFPS issuances.",
+      "source_refs": ["official-help-runtime#L88-L90"],
+      "confidence": "high"
+    },
+    {
+      "quarter": "Q4",
+      "due_date_rule": "Not later than the last day of the month following the close of the quarter, subject to applicable eFPS issuances.",
+      "source_refs": ["official-help-runtime#L88-L90"],
+      "confidence": "high"
+    }
+  ]
+}

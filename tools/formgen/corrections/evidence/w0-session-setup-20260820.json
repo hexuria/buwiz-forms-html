@@ -1,0 +1,63 @@
+{
+  "job": "W0",
+  "title": "Session setup leftover pin replay and 7.9.6.1 hash drift",
+  "date": "2026-08-20",
+  "checkout": {
+    "path": "C:\\Users\\uriah\\Code\\buwiz-forms",
+    "branch": "main",
+    "head": "df537eb",
+    "note": "PR #28 leftover-keys census is on main"
+  },
+  "leftover_keys_self_test": "pass",
+  "leftover_keys_census": {
+    "leftover_unique": 8028,
+    "leftover_duplicate": 4,
+    "claimed_unique": 147,
+    "claimed_duplicate": 4,
+    "claimed_absent": 12,
+    "claimed": 163,
+    "pins": "unchanged"
+  },
+  "exe": {
+    "path": "C:\\eBIRForms\\BIRForms.exe",
+    "product_version": "7.9.6.1",
+    "size": 58411008,
+    "sha256": "a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c",
+    "manifest_pin": {
+      "product_version": "7.9.6.0",
+      "size": 57506304,
+      "sha256": "de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca"
+    },
+    "note": "Package 7.9.6.1 vs pinned 7.9.6.0 is discovery context, not a silent upgrade of rules/"
+  },
+  "hta_root": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\",
+  "hta_hashes": {
+    "BIR-Form1601EQ.hta": "cd56bf18d1da2127d578af611fe8005fe49913a65781bb603b22b31bbe548b96",
+    "BIR-Form1701Qv2018.hta": "5f164dde6154b96f28e23656ed2ef29406010ee3f94333e88ea6eb107fe589a0",
+    "BIR-Form2000v2018.hta": "43aa6fcdba1ffb40bebb3dc1e8509a87b84799b38937bb6bc57273e9021c4a7b",
+    "BIR-Form2200Av2020.hta": "1df302eeb1352eccb88f6aa7a23fdcc185b6fbb4d15435996250f985a0198e2c",
+    "BIR-Form2550M.hta": "72f1422dab2f8523d140aa51fe5f54f7d9025acc2cf877b37c8d92b60c7668b5",
+    "BIR-Form1600WP.hta": "e33af59157e1083432cdfc360f648e06602caab75167a27fbb89a08853cb9420"
+  },
+  "savefile_dir": {
+    "path": "C:\\eBIRForms\\savefile\\",
+    "contents": [
+      "readme.txt"
+    ],
+    "note": "prior dummy saves named in manifests are gone"
+  },
+  "rtk": "missing",
+  "forms_corrected": "absent",
+  "packet": {
+    "JOB": "W0: Session setup leftover pin replay and 7.9.6.1 hash drift",
+    "SAVEFILE": "none",
+    "FORM": "n/a n/a package=7.9.6.1",
+    "HTA": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\ sha256=see hta_hashes",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c (vs manifest 7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca)",
+    "FINDING": "leftover_keys.py --self-test and --tree forms-corrected reproduce leftover_unique 8028 leftover_duplicate 4 claimed_unique 147 claimed_duplicate 4 claimed_absent 12 claimed 163. Live exe is 7.9.6.1; HTA hashes still match the 7.9.6.0 form manifests. Savefile dir empty except readme.txt. No Save performed.",
+    "STAGING": "none",
+    "PINS": "leftover_keys.py unchanged",
+    "NEXT": "1"
+  }
+}
+

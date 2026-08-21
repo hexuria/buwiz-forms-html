@@ -1,0 +1,162 @@
+{
+  "job": "W3",
+  "title": "Disambiguate 2200A TIN occurrences",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W3: Disambiguate 2200A TIN occurrences",
+    "SAVEFILE": "C:\\eBIRForms\\savefile\\00000000000000-2200Av2020-01202026.xml sha256=e6ea8150d9c25b6862c43b9ab4a7bf9e75e23dc4d94cbbe6420a9e36e898fc42",
+    "FORM": "2200-A January 2020 ENCS (runtime 2200Av2020 Excise Tax Return for Alcohol Products) package=7.9.6.1",
+    "HTA": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\forms\\BIR-Form2200Av2020.hta sha256=1df302eeb1352eccb88f6aa7a23fdcc185b6fbb4d15435996250f985a0198e2c",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c (vs manifest 7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca)",
+    "FINDING": "Opened BIR Form No. 2200Av2020 / printed BIR Form No. 2200-A January 2020 (ENCS) Page 1 EXCISE TAX RETURN for Alcohol Products. Dummy profile TIN/name/RDO loaded only after profile formType was 2200Av2020. Occ1 tinA/B/C + branchCode (HTA L396-L399) are Item 4 taxpayer TIN on page 1 and were profile-locked/disabled after loadBGData; did not dummy-type a distinct digit. Occ2 (L1390-L1393 name tinA_2) and occ3 (L2007-L2010 name tinA_3) are disabled page-2/page-3 header TIN copies of the same taxpayer, not schedule/payee TINs. saveXML serializes elem[i].id, so dummy Save emitted frm2200Av2020:tinA/tinB/tinC/branchCode three times with dummy 000/000/000/00000 and never tinA_2/tinA_3. registeredName also emitted x3. Catalog identity candidate if obvious: extra/2200a-2020/p1/tin-1 for occ1 only; occ2/occ3 left blank because they are header mirrors. map_tin.py --write not run. Live rules/forms untouched. Staging none.",
+    "STAGING": "none (savefile copy only under tools/formgen/corrections/staging/w3-20260820/)",
+    "PINS": "leftover_keys.py live tree unchanged (unique 8028, duplicate 4, claimed_unique 147, claimed_duplicate 4, claimed_absent 12, claimed 163)",
+    "NEXT": "4"
+  },
+  "savefile": {
+    "path": "C:\\eBIRForms\\savefile\\00000000000000-2200Av2020-01202026.xml",
+    "copied_to": "C:\\Users\\uriah\\Code\\buwiz-forms\\tools\\formgen\\corrections\\staging\\w3-20260820\\00000000000000-2200Av2020-01202026.xml",
+    "sha256": "e6ea8150d9c25b6862c43b9ab4a7bf9e75e23dc4d94cbbe6420a9e36e898fc42",
+    "bytes": 25465,
+    "dummy_tin": "000-000-000-00000",
+    "return_date": "01/20/2026",
+    "emitted_count": 284,
+    "unique_count": 274
+  },
+  "window_title": "BIR Form No. 2200Av2020",
+  "printed_header": "BIR Form No. 2200-A January 2020 (ENCS) Page 1 EXCISE TAX RETURN for Alcohol Products",
+  "applicationname": "2200Av2020",
+  "occ1_writable_on_save": false,
+  "occ1_reason": "profile-locked after loadBGData; editForm() keeps tinA/B/C/branchCode disabled",
+  "xml_emitted_tin_keys": [
+    "frm2200Av2020:tinA",
+    "frm2200Av2020:tinB",
+    "frm2200Av2020:tinC",
+    "frm2200Av2020:branchCode"
+  ],
+  "xml_missing_name_keys": [
+    "frm2200Av2020:tinA_2",
+    "frm2200Av2020:tinB_2",
+    "frm2200Av2020:tinC_2",
+    "frm2200Av2020:branchCode_2",
+    "frm2200Av2020:tinA_3",
+    "frm2200Av2020:tinB_3",
+    "frm2200Av2020:tinC_3",
+    "frm2200Av2020:branchCode_3"
+  ],
+  "xml_duplicate_counts": {
+    "frm2200Av2020:tinA": 3,
+    "frm2200Av2020:tinB": 3,
+    "frm2200Av2020:tinC": 3,
+    "frm2200Av2020:branchCode": 3,
+    "frm2200Av2020:registeredName": 3
+  },
+  "occurrences": [
+    {
+      "occurrence": 1,
+      "fields": [
+        "tinA",
+        "tinB",
+        "tinC",
+        "branchCode"
+      ],
+      "caption": "Taxpayer Identification Number (TIN)",
+      "page": 1,
+      "item": "4",
+      "role": "taxpayer TIN",
+      "control_line": "L396-L399",
+      "name": "frm2200Av2020:tinA / tinB / tinC / branchCode",
+      "id": "frm2200Av2020:tinA / tinB / tinC / branchCode",
+      "disabled_in_source": false,
+      "writable_on_save": false,
+      "profile_locked": true,
+      "catalog_identity_candidate": "extra/2200a-2020/p1/tin-1"
+    },
+    {
+      "occurrence": 2,
+      "fields": [
+        "tinA",
+        "tinB",
+        "tinC",
+        "branchCode"
+      ],
+      "caption": "TIN (page header) + Taxpayer's Name",
+      "page": 2,
+      "item": "header (not numbered; above Part V Schedule)",
+      "role": "header copy of taxpayer TIN, not schedule/payee",
+      "control_line": "L1390-L1393",
+      "name": "frm2200Av2020:tinA_2 / tinB_2 / tinC_2 / branchCode_2",
+      "id": "shared frm2200Av2020:tinA / tinB / tinC / branchCode",
+      "disabled_in_source": true,
+      "writable_on_save": false,
+      "catalog_identity_candidate": ""
+    },
+    {
+      "occurrence": 3,
+      "fields": [
+        "tinA",
+        "tinB",
+        "tinC",
+        "branchCode"
+      ],
+      "caption": "TIN (page header) + Taxpayer's Name",
+      "page": 3,
+      "item": "header (not numbered; above Schedule 1 continuation)",
+      "role": "header copy of taxpayer TIN, not schedule/payee",
+      "control_line": "L2007-L2010",
+      "name": "frm2200Av2020:tinA_3 / tinB_3 / tinC_3 / branchCode_3",
+      "id": "shared frm2200Av2020:tinA / tinB / tinC / branchCode",
+      "disabled_in_source": true,
+      "writable_on_save": false,
+      "catalog_identity_candidate": ""
+    }
+  ],
+  "registeredName_occurrences": [
+    {
+      "occurrence": 1,
+      "caption": "Taxpayer's Name (Last Name, First Name, Middle Name for Individual OR Registered Name for Non-Individual)",
+      "page": 1,
+      "item": "6",
+      "control_line": "L439",
+      "name": "frm2200Av2020:registeredName",
+      "writable_on_save": false,
+      "profile_locked": true
+    },
+    {
+      "occurrence": 2,
+      "caption": "Taxpayer's Name (page 2 header)",
+      "page": 2,
+      "item": "header",
+      "control_line": "L1396",
+      "name": "frm2200Av2020:registeredName_2",
+      "writable_on_save": false
+    },
+    {
+      "occurrence": 3,
+      "caption": "Taxpayer's Name (page 3 header)",
+      "page": 3,
+      "item": "header",
+      "control_line": "L2013",
+      "name": "frm2200Av2020:registeredName_3",
+      "writable_on_save": false
+    }
+  ],
+  "serializer": "saveXML uses elem[i].id (shared id), not name=. JS copies occ1 values onto occ2/occ3 on load (L2725-L2737). Disabled copies were not enabled.",
+  "loadBGData_gate": "2200A loadBGData only hydrates TIN/name/RDO when profile formType == 2200Av2020. Dummy profile originally had formType=2000v2018 so TIN boxes stayed empty until that was changed and F5 reloaded. After Save, the form rewrote profile formType to 2200Tv2020.",
+  "hta": {
+    "path": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\forms\\BIR-Form2200Av2020.hta",
+    "sha256": "1df302eeb1352eccb88f6aa7a23fdcc185b6fbb4d15435996250f985a0198e2c",
+    "bytes": 440229
+  },
+  "exe": {
+    "product": "7.9.6.1",
+    "sha256": "a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c",
+    "manifest_pin": "7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca"
+  },
+  "live_untouched": [
+    "rules/forms/2200a-v2020",
+    "map_tin.py --write",
+    "join_census.SLUG_RE"
+  ],
+  "newForm_hardwire": "reverted after W3: Fill-up again uses forms/BIR-Form + formType + .hta"
+}

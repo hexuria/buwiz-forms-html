@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tools/formgen/identity/schema.json",
+  "title": "Field identity catalog",
+  "description": "Durable names for taxpayer-facing boxes. The identity id is not a quantised bbox and not an HTML cell id. Stage 3 will join these records to official serialized_key values; this schema is not that join.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "records"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-provisional)?$"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "bundle_slug",
+          "page",
+          "role",
+          "source_printed_box_pt",
+          "official_field_key",
+          "official_field_key_gap",
+          "html_id_hint",
+          "match",
+          "correction_id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 8,
+            "description": "Durable identity. Never recycled. Never derived from a bbox or from p1cN."
+          },
+          "bundle_slug": { "type": "string", "minLength": 3 },
+          "page": { "type": "integer", "minimum": 1 },
+          "role": { "type": "string", "minLength": 3 },
+          "source_printed_box_pt": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 4,
+            "maxItems": 4,
+            "description": "[x0, y0, x1, y1] in PDF points, top-left origin, from the pinned PDF / stage-1 emission of that artwork. Artwork identity. After a Stage 2 reflow the matcher uses the emitted box whose center still sits in this rectangle."
+          },
+          "official_field_key": {
+            "type": ["string", "null"],
+            "description": "Harvested HTA field_key when one exists in this checkout. Null only with a non-empty official_field_key_gap."
+          },
+          "official_field_key_gap": {
+            "type": "string",
+            "description": "Empty when official_field_key is set. Otherwise an honest gap, never a blank."
+          },
+          "html_id_hint": {
+            "type": "string",
+            "pattern": "^p[0-9]+c[0-9]+$",
+            "description": "Current batch cell id. Non-authoritative. A mismatch against a unique center hit is html_id_hint_stale, a schema change, not a new identity."
+          },
+          "match": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "tolerance_pt", "cardinality"],
+            "properties": {
+              "kind": { "enum": ["comb", "field"] },
+              "tolerance_pt": { "type": "number", "exclusiveMinimum": 0 },
+              "cardinality": { "const": "exactly-one" }
+            }
+          },
+          "correction_id": {
+            "type": ["string", "null"],
+            "description": "Stage 2 ledger id when this subject is also a correction. Null if identity-only."
+          }
+        }
+      }
+    }
+  }
+}

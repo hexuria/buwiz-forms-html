@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "form_id": "1701q-v2018",
+  "package_version": "7.9.6.0",
+  "observed_on": "2026-07-23",
+  "environment": "Official Offline eBIRForms HTA hosted by C:\\Windows\\SysWOW64\\mshta.exe",
+  "data_policy": "Dummy profile only; no online submission was confirmed.",
+  "observations": [
+    {
+      "observation_id": "live-ui-2026-07-23-missing-year",
+      "phase": "validate",
+      "setup": "In Edit mode, clear frm1701q:txtYear while leaving the remaining dummy return state intact, then click Validate.",
+      "observed_behavior": "Validation stopped at the year check and showed the exact first-error dialog.",
+      "exact_message": "Please enter a valid year in Item 1.",
+      "rule_ids": ["1701q-validate-001"],
+      "restoration": "The year was restored to 2026 immediately after observation. Save was not clicked."
+    },
+    {
+      "observation_id": "live-ui-2026-07-23-birth-month-zero",
+      "phase": "validate",
+      "setup": "The dummy return contained Item 11 = 00/01/1990 and otherwise passed the ordered Validate sequence.",
+      "observed_behavior": "The invalid month 00 was accepted and the official UI reported validation success.",
+      "exact_message": "Validation successful. Click on Edit if you wish to modify your entries.",
+      "rule_ids": ["1701q-validate-010"]
+    },
+    {
+      "observation_id": "live-ui-2026-07-23-no-spouse-edit-state",
+      "phase": "blur/change",
+      "setup": "Validate a dummy return with no spouse, dismiss the success dialog, click Edit, and inspect page 2.",
+      "observed_behavior": "Items 55B, 56B, 57B, 58B, 60B, 61B, 64B, 65B, and 66B were enabled. Item 59B remained disabled.",
+      "exact_message": null,
+      "rule_ids": ["1701q-change-004"]
+    },
+    {
+      "observation_id": "live-ui-2026-07-23-blank-spouse-branch-and-method",
+      "phase": "validate",
+      "setup": "Use dummy spouse TIN 123-456-788, leave the spouse branch code blank, select RDO 018, Professional, and ATC II014, provide a nonempty dummy spouse name, and leave both Item 25A choices blank.",
+      "observed_behavior": "The blank spouse branch code and blank Item 25A both passed the ordered Validate sequence.",
+      "exact_message": "Validation successful. Click on Edit if you wish to modify your entries.",
+      "rule_ids": ["1701q-validate-014", "1701q-validate-027"]
+    },
+    {
+      "observation_id": "live-ui-2026-07-23-final-copy-boundary",
+      "phase": "final-copy",
+      "setup": "After successful validation, click Submit / Final Copy first with Amended Return = No and then with Amended Return = Yes.",
+      "observed_behavior": "The non-amended attempt showed the existing-file/amended-return warning. The amended attempt reached an explicit online-submission confirmation. Cancel was selected; the online action was not confirmed. No 1701Q savefile or IAF_RDO_Copy timestamp changed.",
+      "exact_messages": [
+        "If your intention is to make an amended return, kindly tick Amended Return to 'Yes' before hitting 'Save'or'Final Copy' or 'Submit'.",
+        "Please ensure that you have INTERNET access and a VALID email address is indicated in your tax return. Are you sure you want to submit?"
+      ],
+      "rule_ids": [],
+      "safety_boundary": "The second dialog was canceled because online submission is outside the research scope. txtFinalFlag and reopen behavior after confirmed submission were not observed."
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+    "$schema": "../../schema/workflow.schema.json",
+    "schema_version": "1.0.0",
+    "form_id": "2000-dst-v2018",
+    "revision": "2018-01-01",
+    "phases": [
+        {
+            "phase": "edit",
+            "source_refs": [
+                "official-form-pdf",
+                "official-guide-pdf",
+                "official-help-v2018"
+            ],
+            "confidence": "high",
+            "official_behavior": "January 2018 monthly Documentary Stamp Tax declaration with ATC rows and separate mode-of-affixture schedules."
+        },
+        {
+            "phase": "saved-draft",
+            "source_refs": [
+                "official-hta-runtime#initialValidateBeforeSave:L5083-L5099",
+                "official-hta-runtime#saveXML:L2666-L2905"
+            ],
+            "confidence": "high",
+            "official_behavior": "Save checks only TIN blankness, RDO 000, and taxpayer name, then serializes 142 baseline occurrences plus added schedule rows."
+        },
+        {
+            "phase": "validated",
+            "source_refs": [
+                "official-hta-runtime#validate:L4782-L4876"
+            ],
+            "confidence": "high",
+            "official_behavior": "Validate checks period, identity, party, mode, and applicable schedule dates, then disables controls."
+        },
+        {
+            "phase": "final-copy",
+            "source_refs": [
+                "official-hta-runtime#saveXML",
+                "legacy-artifact-exclusion"
+            ],
+            "confidence": "medium",
+            "official_behavior": "Final-copy source exists, but the available encrypted sample is legacy and excluded."
+        },
+        {
+            "phase": "submitted",
+            "source_refs": [
+                "official-hta-runtime#sendEmail"
+            ],
+            "confidence": "medium",
+            "official_behavior": "Online transport exists but was not exercised."
+        }
+    ],
+    "transitions": [
+        {
+            "action": "Save",
+            "side_effects": [
+                "Writes flat pseudo-XML.",
+                "Retains four duplicate modLabel occurrences.",
+                "Collapses address/name continuations."
+            ],
+            "to": "saved-draft",
+            "from": "edit",
+            "source_refs": [
+                "official-hta-runtime#saveXML:L2666-L2905"
+            ],
+            "guard": "Three narrow Save guards pass."
+        },
+        {
+            "action": "Validate",
+            "side_effects": [
+                "Disables controls.",
+                "Shows success alert."
+            ],
+            "to": "validated",
+            "from": "edit",
+            "source_refs": [
+                "official-hta-runtime#validate:L4782-L4876"
+            ],
+            "guard": "All source-ordered Validate checks pass."
+        },
+        {
+            "action": "Edit",
+            "side_effects": [
+                "Re-enables controls and restores mode/party/amended conditional state."
+            ],
+            "to": "edit",
+            "from": "validated",
+            "source_refs": [
+                "official-hta-runtime#enableAllControl:L4954-L5019"
+            ],
+            "guard": null
+        },
+        {
+            "action": "Final Copy",
+            "side_effects": [
+                "Encrypts/compresses final copy."
+            ],
+            "to": "final-copy",
+            "from": "validated",
+            "source_refs": [
+                "official-hta-runtime#saveXML"
+            ],
+            "guard": "Finalization flow succeeds."
+        },
+        {
+            "action": "Transport",
+            "side_effects": [
+                "Online attempt; untested."
+            ],
+            "to": "submitted",
+            "from": "final-copy",
+            "source_refs": [
+                "official-hta-runtime#sendEmail"
+            ],
+            "guard": "Connectivity and remote acceptance succeed."
+        }
+    ],
+    "prerequisites": [
+        "Taxable month/year",
+        "Taxpayer identity and RDO",
+        "Liable party and mode of affixture",
+        "ATC/tax-base schedule",
+        "Mode-specific payment/remittance schedules"
+    ],
+    "required_attachments": [
+        {
+            "attachment_id": "dst-documents",
+            "label": "Taxable documents and supporting DST computation/payment records.",
+            "source_refs": [
+                "official-guide-pdf",
+                "official-help-v2018"
+            ],
+            "required_when": "Applicable filing.",
+            "official_ui_enforcement": "Not checked by local Validate.",
+            "confidence": "high"
+        },
+        {
+            "attachment_id": "payment-proof",
+            "label": "eDST, loose-stamp, constructive-affixture, or remittance proof for the selected mode.",
+            "source_refs": [
+                "official-guide-pdf",
+                "official-help-v2018"
+            ],
+            "required_when": "Applicable mode.",
+            "official_ui_enforcement": "Not checked by local Validate.",
+            "confidence": "high"
+        }
+    ],
+    "filing_deadlines": [
+        {
+            "source_refs": [
+                "official-guide-pdf",
+                "official-help-v2018"
+            ],
+            "confidence": "high",
+            "quarter": "Q1",
+            "due_date_rule": "Monthly deadline specified by the pinned January 2018 guide."
+        },
+        {
+            "source_refs": [
+                "official-guide-pdf"
+            ],
+            "confidence": "high",
+            "quarter": "Q2",
+            "due_date_rule": "Not quarterly; the same monthly rule applies."
+        },
+        {
+            "source_refs": [
+                "official-guide-pdf"
+            ],
+            "confidence": "high",
+            "quarter": "Q3",
+            "due_date_rule": "Not quarterly; the same monthly rule applies."
+        },
+        {
+            "source_refs": [
+                "official-guide-pdf"
+            ],
+            "confidence": "high",
+            "quarter": "Q4",
+            "due_date_rule": "Not quarterly; the same monthly rule applies."
+        }
+    ]
+}

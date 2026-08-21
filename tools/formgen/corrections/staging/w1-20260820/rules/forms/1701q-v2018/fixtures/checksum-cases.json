@@ -1,0 +1,138 @@
+{
+    "schema_version":  "1.0.0",
+    "fixture_id":  "1701q-v2018-official-chkt-runtime",
+    "authority":  "Offline eBIRForms 7.9.6.0 virtualized chkt.exe",
+    "helper":  {
+                   "virtual_path":  "C:\\eBIRForms\\chkt.exe",
+                   "size":  38400,
+                   "sha256":  "c00bd4131a725af53f48c6385d3332c4b789e15441bf52bbac73117c96c1b0ac",
+                   "first16_hex":  "4d5a90000300000004000000ffff0000",
+                   "format":  "native PE32, Free Pascal 2.6.4 i386-Win32",
+                   "authenticode":  "not signed",
+                   "discovery":  "Not enumerable with Get-ChildItem/Get-Item, but directly readable/executable at the relative path used by eBIRTools.vbs."
+               },
+    "wrapper":  {
+                    "source_refs":  [
+                                        "string-util-runtime#L74-L104",
+                                        "ebirtools-runtime#L114-L127"
+                                    ],
+                    "success_code":  0,
+                    "test_bypass":  "999999999 is forced to success by JavaScript after the helper returns 1"
+                },
+    "cases":  [
+                  {
+                      "case_id":  "no-argument",
+                      "arguments":  [
+
+                                    ],
+                      "stdout":  "3",
+                      "exit_code":  3,
+                      "meaning":  "missing parameter"
+                  },
+                  {
+                      "case_id":  "empty-argument",
+                      "arguments":  [
+                                        ""
+                                    ],
+                      "stdout":  "3",
+                      "exit_code":  3,
+                      "meaning":  "missing parameter"
+                  },
+                  {
+                      "case_id":  "wrong-length-8",
+                      "arguments":  [
+                                        "12345678"
+                                    ],
+                      "stdout":  "2",
+                      "exit_code":  2,
+                      "meaning":  "non-nine-digit input"
+                  },
+                  {
+                      "case_id":  "wrong-length-10",
+                      "arguments":  [
+                                        "1234567880"
+                                    ],
+                      "stdout":  "2",
+                      "exit_code":  2,
+                      "meaning":  "non-nine-digit input"
+                  },
+                  {
+                      "case_id":  "nondigit-letter",
+                      "arguments":  [
+                                        "12345678A"
+                                    ],
+                      "stdout":  "2",
+                      "exit_code":  2,
+                      "meaning":  "nonnumeric input"
+                  },
+                  {
+                      "case_id":  "checksum-invalid",
+                      "arguments":  [
+                                        "123456787"
+                                    ],
+                      "stdout":  "1",
+                      "exit_code":  1,
+                      "meaning":  "nine digits with invalid checksum"
+                  },
+                  {
+                      "case_id":  "checksum-valid",
+                      "arguments":  [
+                                        "123456788"
+                                    ],
+                      "stdout":  "0",
+                      "exit_code":  0,
+                      "meaning":  "nine digits with valid checksum"
+                  },
+                  {
+                      "case_id":  "all-zero-valid",
+                      "arguments":  [
+                                        "000000000"
+                                    ],
+                      "stdout":  "0",
+                      "exit_code":  0,
+                      "meaning":  "helper accepts all-zero synthetic TIN"
+                  },
+                  {
+                      "case_id":  "wrapper-bypass-helper-result",
+                      "arguments":  [
+                                        "999999999"
+                                    ],
+                      "stdout":  "1",
+                      "exit_code":  1,
+                      "meaning":  "helper rejects; JavaScript getTinChkCode explicitly overrides this to success"
+                  }
+              ],
+    "suffix_sweep":  {
+                         "synthetic_prefix":  "12345678",
+                         "tested_suffixes":  [
+                                                 0,
+                                                 1,
+                                                 2,
+                                                 3,
+                                                 4,
+                                                 5,
+                                                 6,
+                                                 7,
+                                                 8,
+                                                 9
+                                             ],
+                         "accepted_suffixes":  [
+                                                   8
+                                               ]
+                     },
+    "one_hot_samples":  {
+                            "10000000":  6,
+                            "01000000":  8,
+                            "00100000":  9,
+                            "00010000":  4,
+                            "00001000":  3,
+                            "00000100":  1,
+                            "00000010":  5,
+                            "00000001":  8
+                        },
+    "observed":  {
+                     "executed_on":  "2026-07-23",
+                     "result":  "pass",
+                     "notes":  "All inputs are synthetic. No form UI, save, Final Copy, network, or submission action occurred."
+                 }
+}

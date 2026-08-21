@@ -1,0 +1,36 @@
+{
+  "title": "Mint-path false-negative remint",
+  "source_census": "tools/formgen/corrections/evidence/join-census-20260819.json",
+  "rewritten_record_count": 1334,
+  "bundles": [
+    {
+      "records": 61,
+      "slug": "0605-1999"
+    },
+    {
+      "records": 168,
+      "slug": "1702ex-2018"
+    },
+    {
+      "records": 503,
+      "slug": "1702mx-2018c"
+    },
+    {
+      "records": 128,
+      "slug": "1702q-2018"
+    },
+    {
+      "records": 226,
+      "slug": "1702rt-2018c"
+    },
+    {
+      "records": 248,
+      "slug": "extra/2200t-2022"
+    }
+  ],
+  "notes": [
+    "inventory_path_for_slug now uses join_census file-existence resolution.",
+    "Records that claimed no harvested fields.json while inventory exists now carry no unique fields.json key for this box.",
+    "No official_field_key was invented. Catalog size stays 9990. Not Stage 3."
+  ]
+}

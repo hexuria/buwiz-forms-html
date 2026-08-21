@@ -1,0 +1,39 @@
+{
+  "job": "W1-1601EQ",
+  "title": "Dummy Save 1601EQ January 2018 and stage serialized_key where saveXML emitted it",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W1: Put serialized_key on 1601EQ",
+    "SAVEFILE": "C:\\\\eBIRForms\\\\savefile\\\\00000000000000-1601EQ-2026Q1.xml sha256=b3c737ebe3fcbc5d6342e8bdc805a008bc5add40336cd786c432468cf49ba067",
+    "FORM": "1601EQ January 2018 package=7.9.6.1",
+    "HTA": "C:\\\\Users\\\\uriah\\\\AppData\\\\Local\\\\Temp\\\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\\\forms\\\\BIR-Form1601EQ.hta sha256=cd56bf18d1da2127d578af611fe8005fe49913a65781bb603b22b31bbe548b96",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c (vs manifest 7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca)",
+    "FINDING": "Official Save emitted 90 XML keys including frm1601EQ:txtTIN1, frm1601EQ:txtTIN2, frm1601EQ:txtTIN3, frm1601EQ:txtBranchCode verbatim (dummy values 000/000/000/00000). Staging filled serialized_key only on those 90 emitted field_key rows; 531 inventory rows remain without serialized_key. leftover_keys on staging: 1601eq-2019 claimed_absent 0, claimed_unique 4. map_tin.py --write not run. Live rules/forms untouched.",
+    "STAGING": "tools/formgen/corrections/staging/w1-20260820/rules/forms/1601eq-v2018/fields.json",
+    "PINS": "leftover_keys.py live tree unchanged; staging census claimed_absent 8 (1601eq cleared, 1701q+2000-dst remain)",
+    "NEXT": "1 (1701Q)"
+  },
+  "savefile": {
+    "path": "C:\\\\eBIRForms\\\\savefile\\\\00000000000000-1601EQ-2026Q1.xml",
+    "sha256": "b3c737ebe3fcbc5d6342e8bdc805a008bc5add40336cd786c432468cf49ba067",
+    "bytes": 6176,
+    "dummy_tin": "000-000-000-00000"
+  },
+  "emitted_count": 90,
+  "tin_keys_verbatim": [
+    "frm1601EQ:txtTIN1",
+    "frm1601EQ:txtTIN2",
+    "frm1601EQ:txtTIN3",
+    "frm1601EQ:txtBranchCode"
+  ],
+  "tin_snippet": "<div>frm1601EQ:txtTIN1=000frm1601EQ:txtTIN1=</div> <div>frm1601EQ:txtTIN2=000frm1601EQ:txtTIN2=</div> <div>frm1601EQ:txtTIN3=000frm1601EQ:txtTIN3=</div> <div>frm1601EQ:txtBranchCode=00000frm1601EQ:txtBranchCode=</div>",
+  "staging_census": {
+    "1601eq-2019": {
+      "claimed_absent": 0,
+      "claimed_unique": 4,
+      "nulls": 531,
+      "rows": 621
+    }
+  }
+}
+

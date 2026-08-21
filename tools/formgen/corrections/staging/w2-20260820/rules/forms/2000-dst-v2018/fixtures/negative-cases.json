@@ -1,0 +1,197 @@
+{
+    "schema_version":  "1.0.0",
+    "form_id":  "2000-v2018",
+    "synthetic_only":  true,
+    "cases":  [
+                  {
+                      "case_id":  "case-01-2000-val-001-month",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Month is 00."
+                                    },
+                      "expected_message":  "Please select a valid month in Item 1.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-001-month"
+                  },
+                  {
+                      "case_id":  "case-02-2000-val-002-year-required",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Year is blank."
+                                    },
+                      "expected_message":  "Please enter a valid year in Item 1.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-002-year-required"
+                  },
+                  {
+                      "case_id":  "case-03-2000-val-003-old-year",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Year is below 2018."
+                                    },
+                      "expected_message":  "Please file using the old version of the form.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-003-old-year"
+                  },
+                  {
+                      "case_id":  "case-04-2000-val-004-future-year",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Year is greater than the current year."
+                                    },
+                      "expected_message":  "Year (Item 1) cannot be greater than or equal to current year.",
+                      "expected_behavior":  "Current year is accepted although the message says greater than or equal.",
+                      "rule_id":  "2000-val-004-future-year"
+                  },
+                  {
+                      "case_id":  "case-05-2000-val-005-tin",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Any taxpayer TIN segment or branch code is blank."
+                                    },
+                      "expected_message":  "Please enter a valid TIN number on Item 4.",
+                      "expected_behavior":  "Only blankness is checked.",
+                      "rule_id":  "2000-val-005-tin"
+                  },
+                  {
+                      "case_id":  "case-06-2000-val-006-rdo",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "RDO select remains at index zero."
+                                    },
+                      "expected_message":  "Please enter a valid RDO Code on Item 5.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-006-rdo"
+                  },
+                  {
+                      "case_id":  "case-07-2000-val-007-name",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Taxpayer name is blank."
+                                    },
+                      "expected_message":  "Please enter a valid Taxpayer Name on Item 6.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-007-name"
+                  },
+                  {
+                      "case_id":  "case-08-2000-val-008-phone",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Telephone is blank."
+                                    },
+                      "expected_message":  "Please enter a valid Telephone Number on Item 8.",
+                      "expected_behavior":  "Only blankness is checked.",
+                      "rule_id":  "2000-val-008-phone"
+                  },
+                  {
+                      "case_id":  "case-09-2000-val-009-address",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Address first line is blank."
+                                    },
+                      "expected_message":  "Please enter Taxpayer\u0027s Registered Address on Item 7.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-009-address"
+                  },
+                  {
+                      "case_id":  "case-10-2000-val-010-zip",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Zip is blank."
+                                    },
+                      "expected_message":  "Please enter Taxpayer\u0027s Zip Code on Item 7A.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-010-zip"
+                  },
+                  {
+                      "case_id":  "case-11-2000-val-011-party",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "No liable-party option is selected."
+                                    },
+                      "expected_message":  "Please select an option in Item 10.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-011-party"
+                  },
+                  {
+                      "case_id":  "case-12-2000-val-012-other-tin",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Party option 1 or 2 is selected and counterparty TIN is blank."
+                                    },
+                      "expected_message":  "Please enter a valid TIN in Item 12.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-012-other-tin"
+                  },
+                  {
+                      "case_id":  "case-13-2000-val-013-mode",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "No mode of affixture is selected."
+                                    },
+                      "expected_message":  "Please select an option in Item 13.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-013-mode"
+                  },
+                  {
+                      "case_id":  "case-14-2000-val-014-impossible-mode-conjunction",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "Mode 1 and Mode 3 are simultaneously checked and Item 18 is zero."
+                                    },
+                      "expected_message":  "Zero payment shall not be allowed in Item 18 if eDST System and Loose Stamp are selected.",
+                      "expected_behavior":  "The controls share one radio group, so both cannot be checked; this rule is unreachable.",
+                      "rule_id":  "2000-val-014-impossible-mode-conjunction"
+                  },
+                  {
+                      "case_id":  "case-15-2000-val-015-schedule-dates",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "An enabled Schedule 2, 3, or 4 date is malformed, impossible, or has a future year."
+                                    },
+                      "expected_message":  "Please enter a valid date in Schedule {schedule}, column {column} row {row}.",
+                      "expected_behavior":  "Only nonblank rows are checked; dates before 2018 are accepted.",
+                      "rule_id":  "2000-val-015-schedule-dates"
+                  },
+                  {
+                      "case_id":  "case-16-2000-val-016-success",
+                      "phase":  "validate",
+                      "mutations":  {
+                                        "synthetic_condition":  "All preceding checks pass."
+                                    },
+                      "expected_message":  "Validation successful. Click on \u0027Edit\u0027 if you wish to modify your entries.",
+                      "expected_behavior":  "The branch alerts and stops the active operation.",
+                      "rule_id":  "2000-val-016-success"
+                  },
+                  {
+                      "case_id":  "case-17-2000-save-001-tin",
+                      "phase":  "save",
+                      "mutations":  {
+                                        "synthetic_condition":  "Any TIN segment or branch is blank."
+                                    },
+                      "expected_message":  "Please enter a valid TIN number on Item 5.",
+                      "expected_behavior":  "Message wrongly cites Item 5; Validate cites Item 4.",
+                      "rule_id":  "2000-save-001-tin"
+                  },
+                  {
+                      "case_id":  "case-18-2000-save-002-rdo",
+                      "phase":  "save",
+                      "mutations":  {
+                                        "synthetic_condition":  "RDO is 000."
+                                    },
+                      "expected_message":  "Please enter a valid RDO Code on Item 6.",
+                      "expected_behavior":  "Message wrongly cites Item 6; Validate cites Item 5.",
+                      "rule_id":  "2000-save-002-rdo"
+                  },
+                  {
+                      "case_id":  "case-19-2000-save-003-name",
+                      "phase":  "save",
+                      "mutations":  {
+                                        "synthetic_condition":  "Taxpayer name is blank."
+                                    },
+                      "expected_message":  "Please enter a valid Taxpayer\u0027s Name on Item 8.",
+                      "expected_behavior":  "Message wrongly cites Item 8; Validate cites Item 6.",
+                      "rule_id":  "2000-save-003-name"
+                  }
+              ]
+}

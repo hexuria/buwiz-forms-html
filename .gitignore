@@ -1,4 +1,7 @@
 Thumbs.db
 .DS_Store
 *.xml
-.ci-buwiz-forms/
+*.pdf
+.ci-product/
+/build/
+/tools/formgen/_tmp_*

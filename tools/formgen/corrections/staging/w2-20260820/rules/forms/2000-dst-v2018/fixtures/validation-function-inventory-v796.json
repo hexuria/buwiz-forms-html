@@ -1,0 +1,542 @@
+{
+    "source_sha256":  "43aa6fcdba1ffb40bebb3dc1e8509a87b84799b38937bb6bc57273e9021c4a7b",
+    "function_count":  25,
+    "functions":  [
+                      {
+                          "name":  "saveEncryptedProfile",
+                          "start_line":  2591,
+                          "end_line":  2665,
+                          "body_sha256":  "a8475ac5fa94d89dcef40a030183ff1be23aa6bede2bfaf4a7af7ba65d563236",
+                          "alerts":  [
+                                         "\"Make sure you already inserted your USB flash drive or CD-RW before proceeding.\"",
+                                         "\"You have not saved the file to either your USB flash drive or CD-RW.\\n\\n In case you want to submit it via email,\\nyou may locate it under : \u0027C:\\\\IAF_RDO_Copy\u0027\""
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnNextPage",
+                                              "frm2000:btnPrevPage",
+                                              "frm2000:txtCurrentPage"
+                                          ]
+                      },
+                      {
+                          "name":  "saveXML",
+                          "start_line":  2666,
+                          "end_line":  2906,
+                          "body_sha256":  "3ee58a47742ab4bd5c82abac21337fd79ad9c20aa212e78fc8d168b8f056e80f",
+                          "alerts":  [
+                                         "\u0027BIR Form saved successfully as : \u0027+xmlFileName"
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:AmendedRtn_1",
+                                              "frm2000:AmendedRtn_2",
+                                              "frm2000:txtAddress",
+                                              "frm2000:txtAddress2",
+                                              "frm2000:txtBranchCode",
+                                              "frm2000:txtCurrentPage",
+                                              "frm2000:txtLineBus",
+                                              "frm2000:txtOtherName",
+                                              "frm2000:txtOtherName2",
+                                              "frm2000:txtRDOCode",
+                                              "frm2000:txtTax16",
+                                              "frm2000:txtTax17A",
+                                              "frm2000:txtTax17B",
+                                              "frm2000:txtTax17C",
+                                              "frm2000:txtTax17D",
+                                              "frm2000:txtTax18",
+                                              "frm2000:txtTax19",
+                                              "frm2000:txtTaxpayerName",
+                                              "frm2000:txtTelNum",
+                                              "frm2000:txtTIN1",
+                                              "frm2000:txtTIN2",
+                                              "frm2000:txtTIN3",
+                                              "frm2000:txtZipCode"
+                                          ]
+                      },
+                      {
+                          "name":  "saveXMLsubmit",
+                          "start_line":  2907,
+                          "end_line":  3087,
+                          "body_sha256":  "da3cabe211e9fa4b73f4a148443ad4948c6f7f30040bbf437a37a27446ae3429",
+                          "alerts":  [
+                                         "\u0027BIR Form saved successfully as : \u0027+xmlFileName"
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:AmendedRtn_1",
+                                              "frm2000:AmendedRtn_2",
+                                              "frm2000:txtAddress",
+                                              "frm2000:txtAddress2",
+                                              "frm2000:txtBranchCode",
+                                              "frm2000:txtCurrentPage",
+                                              "frm2000:txtLineBus",
+                                              "frm2000:txtOtherName",
+                                              "frm2000:txtOtherName2",
+                                              "frm2000:txtRDOCode",
+                                              "frm2000:txtTax16",
+                                              "frm2000:txtTax17A",
+                                              "frm2000:txtTax17B",
+                                              "frm2000:txtTax17C",
+                                              "frm2000:txtTax17D",
+                                              "frm2000:txtTax18",
+                                              "frm2000:txtTax19",
+                                              "frm2000:txtTaxpayerName",
+                                              "frm2000:txtTelNum",
+                                              "frm2000:txtTIN1",
+                                              "frm2000:txtTIN2",
+                                              "frm2000:txtTIN3",
+                                              "frm2000:txtZipCode"
+                                          ]
+                      },
+                      {
+                          "name":  "clearCheck",
+                          "start_line":  3243,
+                          "end_line":  3252,
+                          "body_sha256":  "d5b334d1a99e2a4528744f1616e38eff5e6f577900771dd9c6fe212f87529486",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "processAmended",
+                          "start_line":  3253,
+                          "end_line":  3260,
+                          "body_sha256":  "fae6215efb2e67e138e98c52e032ce83a6767b045d5f0c25ccde72dd3b3fbda2",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:AmendedRtn_1",
+                                              "frm2000:txtTax15A"
+                                          ]
+                      },
+                      {
+                          "name":  "processOtherParty",
+                          "start_line":  3261,
+                          "end_line":  3284,
+                          "body_sha256":  "0d53f5eb8d8679277cca14f277f79159f494ce688c3c007c8366cdbe817472a7",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:optParty_1",
+                                              "frm2000:optParty_2",
+                                              "frm2000:txtOtherName",
+                                              "frm2000:txtOtherName2",
+                                              "frm2000:txtOtherTIN"
+                                          ]
+                      },
+                      {
+                          "name":  "processModeAffixture",
+                          "start_line":  3285,
+                          "end_line":  3312,
+                          "body_sha256":  "4279f2fe5befe5aad39b25b1b5956eb4a3078ee7ce3236181b72c9e20278d6c4",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:optMode_1",
+                                              "frm2000:optMode_2",
+                                              "frm2000:optMode_3"
+                                          ]
+                      },
+                      {
+                          "name":  "enableSchedule2",
+                          "start_line":  3477,
+                          "end_line":  3487,
+                          "body_sha256":  "f6eb8c971fa15c414c0510244d21a9ee0c0251eaf2b9793cb72778be60980959",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched2Add",
+                                              "frm2000:btnSched2Delete",
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "disableSchedule2",
+                          "start_line":  3488,
+                          "end_line":  3502,
+                          "body_sha256":  "d56d41d9fb7cd52a48878cbf57277b2a18c2b02c53b88dc37d3154126eda849c",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched2Add",
+                                              "frm2000:btnSched2Delete",
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "enableSchedule3",
+                          "start_line":  3601,
+                          "end_line":  3611,
+                          "body_sha256":  "3dbac6ddc770fc86b193f641e998ff0951b8a3732988fc570d67d6acdc3821a9",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched3Add",
+                                              "frm2000:btnSched3Delete",
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "disableSchedule3",
+                          "start_line":  3612,
+                          "end_line":  3626,
+                          "body_sha256":  "2af1aad0aba86a3171c9ec18568001004ea58bb32189ec4c89b69767fb5831f5",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched3Add",
+                                              "frm2000:btnSched3Delete",
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt"
+                                          ]
+                      },
+                      {
+                          "name":  "enableSchedule4",
+                          "start_line":  3725,
+                          "end_line":  3738,
+                          "body_sha256":  "cbb21cb2cda725c0ae7f9586ea6cedc48be923949cf3a4e9b8843b6519f928de",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched4Add",
+                                              "frm2000:btnSched4Delete",
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate"
+                                          ]
+                      },
+                      {
+                          "name":  "disableSchedule4",
+                          "start_line":  3739,
+                          "end_line":  3759,
+                          "body_sha256":  "a8fa07cb3249d6bbf898b1308ca0b0cf7a5d86ff127d25737884d589540fb394",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:btnSched4Add",
+                                              "frm2000:btnSched4Delete",
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate"
+                                          ]
+                      },
+                      {
+                          "name":  "checkDateSched2",
+                          "start_line":  4642,
+                          "end_line":  4689,
+                          "body_sha256":  "763ecef82c2b1b09e10383c1a4aec146cdadfdeec007c79b283f9b99d7076d6b",
+                          "alerts":  [
+                                         "\"Invalid date entry in Schedule 2, column 1 row \"+i+\".Format should be MM/DD/YYYY\"",
+                                         "\"Please enter a valid date in Schedule 2, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 2, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 2, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 2, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 2, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 2, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 2, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 2, column 1 row \"+i+\".\""
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched2:txtPaymentDate"
+                                          ]
+                      },
+                      {
+                          "name":  "checkDateSched3",
+                          "start_line":  4690,
+                          "end_line":  4735,
+                          "body_sha256":  "486f6b32515bfc942371e723b0cd4a49c8c383146c66c51e5cb4be9535a32d3b",
+                          "alerts":  [
+                                         "\"Invalid date entry in Schedule 3, column 1 row \"+i+\".Format should be MM/DD/YYYY\"",
+                                         "\"Please enter a valid date in Schedule 3, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 3, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 3, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 3, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 3, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 3, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 3, column 1 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 3, column 1 row \"+i+\".\""
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched3:txtPaymentDate"
+                                          ]
+                      },
+                      {
+                          "name":  "checkDateSched4",
+                          "start_line":  4736,
+                          "end_line":  4781,
+                          "body_sha256":  "abaa5229cd8c64cc89c1e044589def2acc9e9216316e1593ad2ff3ceac321992",
+                          "alerts":  [
+                                         "\"Invalid date entry in Schedule 4, column 2 row \"+i+\".Format should be MM/DD/YYYY\"",
+                                         "\"Please enter a valid date in Schedule 4, column 2 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 4, column 2 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 4, column 2 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 4, column 2 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 4, column 2 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 4, column 2 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 4, column 2 row \"+i+\".\"",
+                                         "\"Please enter a valid date in Schedule 4, column 2 row \"+i+\".\""
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:sched4:txtRemittanceDate"
+                                          ]
+                      },
+                      {
+                          "name":  "validate",
+                          "start_line":  4782,
+                          "end_line":  4879,
+                          "body_sha256":  "5d7bc5268101cc98bd0f82969c437d9a0ca3618775e10de80ff64fc07423a6df",
+                          "alerts":  [
+                                         "\"Please select a valid month in Item 1.\"",
+                                         "\"Please enter a valid year in Item 1.\"",
+                                         "\"Please file using the old version of the form.\"",
+                                         "\"Year (Item 1) cannot be greater than or equal to current year.\"",
+                                         "\"Please enter a valid TIN number on Item 4.\"",
+                                         "\"Please enter a valid RDO Code on Item 5.\"",
+                                         "\"Please enter a valid Line of Business/Occupation on Item 7.\"",
+                                         "\"Please enter a valid Taxpayer Name on Item 6.\"",
+                                         "\"Please enter a valid Telephone Number on Item 8.\"",
+                                         "\"Please enter Taxpayer\u0027s Registered Address on Item 7.\"",
+                                         "\"Please enter Taxpayer\u0027s Zip Code on Item 7A.\"",
+                                         "\"Please select an option in Item 10.\"",
+                                         "\"Please enter a valid TIN in Item 12.\"",
+                                         "\"Please select an option in Item 13.\"",
+                                         "\"Zero payment shall not be allowed in Item 18 if eDST System and Loose Stamp are selected.\"",
+                                         "\"Validation successful. Click on \u0027Edit\u0027 if you wish to modify your entries.\""
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:optMode_1",
+                                              "frm2000:optMode_2",
+                                              "frm2000:optMode_3",
+                                              "frm2000:optParty_1",
+                                              "frm2000:optParty_2",
+                                              "frm2000:optParty_3",
+                                              "frm2000:txtAddress",
+                                              "frm2000:txtBranchCode",
+                                              "frm2000:txtDate",
+                                              "frm2000:txtLineBus",
+                                              "frm2000:txtMonth",
+                                              "frm2000:txtOtherTIN",
+                                              "frm2000:txtRDOCode",
+                                              "frm2000:txtTax18",
+                                              "frm2000:txtTaxpayerName",
+                                              "frm2000:txtTelNum",
+                                              "frm2000:txtTIN1",
+                                              "frm2000:txtTIN2",
+                                              "frm2000:txtTIN3",
+                                              "frm2000:txtYear",
+                                              "frm2000:txtZipCode"
+                                          ]
+                      },
+                      {
+                          "name":  "disableAllControl",
+                          "start_line":  4880,
+                          "end_line":  4953,
+                          "body_sha256":  "1706fb8158549f34c66a130e89624cdb550c848b319500b8378fb49c323c60fa",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:AmendedRtn_1",
+                                              "frm2000:AmendedRtn_2",
+                                              "frm2000:btnFinalCopy",
+                                              "frm2000:btnSched1Add",
+                                              "frm2000:btnSched1Delete",
+                                              "frm2000:btnSched2Add",
+                                              "frm2000:btnSched2Delete",
+                                              "frm2000:btnSched3Add",
+                                              "frm2000:btnSched3Delete",
+                                              "frm2000:btnSched4Add",
+                                              "frm2000:btnSched4Delete",
+                                              "frm2000:cmdEdit",
+                                              "frm2000:cmdValidate",
+                                              "frm2000:sched1:txtTaxBase",
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt",
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt",
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate",
+                                              "frm2000:txtAddress",
+                                              "frm2000:txtBranchCode",
+                                              "frm2000:txtCurrentPage",
+                                              "frm2000:txtLineBus",
+                                              "frm2000:txtMonth",
+                                              "frm2000:txtRDOCode",
+                                              "frm2000:txtSheets",
+                                              "frm2000:txtTax15A",
+                                              "frm2000:txtTax17A",
+                                              "frm2000:txtTax17B",
+                                              "frm2000:txtTax17C",
+                                              "frm2000:txtTaxpayerName",
+                                              "frm2000:txtTelNum",
+                                              "frm2000:txtTIN1",
+                                              "frm2000:txtTIN2",
+                                              "frm2000:txtTIN3",
+                                              "frm2000:txtYear",
+                                              "frm2000:txtZipCode"
+                                          ]
+                      },
+                      {
+                          "name":  "enableAllControl",
+                          "start_line":  4954,
+                          "end_line":  5019,
+                          "body_sha256":  "cf3ea0a5e00233c00455c678a85cdfbb800400cc178a9fab8d980b15ffd75fd1",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:AmendedRtn_1",
+                                              "frm2000:AmendedRtn_2",
+                                              "frm2000:btnFinalCopy",
+                                              "frm2000:btnSched1Add",
+                                              "frm2000:btnSched1Delete",
+                                              "frm2000:btnSched2Add",
+                                              "frm2000:btnSched2Delete",
+                                              "frm2000:btnSched3Add",
+                                              "frm2000:btnSched3Delete",
+                                              "frm2000:btnSched4Add",
+                                              "frm2000:btnSched4Delete",
+                                              "frm2000:cmdEdit",
+                                              "frm2000:cmdValidate",
+                                              "frm2000:sched1:txtTaxBase",
+                                              "frm2000:sched2:txtAmountPaid",
+                                              "frm2000:sched2:txtPaymentDate",
+                                              "frm2000:sched2:txtReceipt",
+                                              "frm2000:sched3:txtAmountPaid",
+                                              "frm2000:sched3:txtPaymentDate",
+                                              "frm2000:sched3:txtReceipt",
+                                              "frm2000:sched4:txtAmountRemitted",
+                                              "frm2000:sched4:txtBank",
+                                              "frm2000:sched4:txtNumberFrom",
+                                              "frm2000:sched4:txtNumberTo",
+                                              "frm2000:sched4:txtRCOCode",
+                                              "frm2000:sched4:txtRemittanceDate",
+                                              "frm2000:txtCurrentPage",
+                                              "frm2000:txtMonth",
+                                              "frm2000:txtSheets",
+                                              "frm2000:txtTax15A",
+                                              "frm2000:txtTax17A",
+                                              "frm2000:txtTax17B",
+                                              "frm2000:txtTax17C",
+                                              "frm2000:txtYear"
+                                          ]
+                      },
+                      {
+                          "name":  "processPrev",
+                          "start_line":  5041,
+                          "end_line":  5051,
+                          "body_sha256":  "bad1bc3954fce050200abbedc8c0be49b112a7caec1c3514726c4d29a7baa3e4",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:txtCurrentPage"
+                                          ]
+                      },
+                      {
+                          "name":  "processNext",
+                          "start_line":  5052,
+                          "end_line":  5067,
+                          "body_sha256":  "8a9c5e7fd9c7816836a78e8ace21ded12dac168375fda11e239235dfb485337f",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:txtCurrentPage"
+                                          ]
+                      },
+                      {
+                          "name":  "initialValidateBeforeSave",
+                          "start_line":  5083,
+                          "end_line":  5135,
+                          "body_sha256":  "3d9abae4d4be576cdf7872f69c524c801c0d98effc392f760816432dc37536fc",
+                          "alerts":  [
+                                         "\"Please enter a valid TIN number on Item 5.\"",
+                                         "\"Please enter a valid RDO Code on Item 6.\"",
+                                         "\"Please enter a valid Taxpayer\u0027s Name on Item 8.\""
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:txtBranchCode",
+                                              "frm2000:txtRDOCode",
+                                              "frm2000:txtTaxpayerName",
+                                              "frm2000:txtTIN1",
+                                              "frm2000:txtTIN2",
+                                              "frm2000:txtTIN3"
+                                          ]
+                      },
+                      {
+                          "name":  "saveXMLProfile",
+                          "start_line":  5239,
+                          "end_line":  5277,
+                          "body_sha256":  "7733a97707033d25da143e238d006633f191dc49d30b9859c9f3b07fe0d4fca7",
+                          "alerts":  [
+                                         "\u0027Background information saved/updated successfully as : \u0027+xmlFileName"
+                                     ],
+                          "control_ids":  [
+                                              "frm2000:txtAddress",
+                                              "frm2000:txtAddress2",
+                                              "frm2000:txtBranchCode",
+                                              "frm2000:txtLineBus",
+                                              "frm2000:txtRDOCode",
+                                              "frm2000:txtTaxpayerName",
+                                              "frm2000:txtTelNum",
+                                              "frm2000:txtTIN1",
+                                              "frm2000:txtTIN2",
+                                              "frm2000:txtTIN3",
+                                              "frm2000:txtZipCode"
+                                          ]
+                      },
+                      {
+                          "name":  "saveBeforeExit",
+                          "start_line":  5609,
+                          "end_line":  5623,
+                          "body_sha256":  "14f76e35de9e7d84047b843194fa84956361d0f4d2c14640eb1b4fb49e0c10df",
+                          "alerts":  [
+
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      },
+                      {
+                          "name":  "validateAdminLogon",
+                          "start_line":  5782,
+                          "end_line":  5795,
+                          "body_sha256":  "f1160b3ff6683a273b2251e3f895bbad4afebce645bb0470f8c9869ba91f86df",
+                          "alerts":  [
+                                         "\"Please provide Username and Password.\""
+                                     ],
+                          "control_ids":  [
+
+                                          ]
+                      }
+                  ]
+}

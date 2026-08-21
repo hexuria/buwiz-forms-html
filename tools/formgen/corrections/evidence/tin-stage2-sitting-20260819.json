@@ -1,0 +1,69 @@
+{
+  "sitting": "TIN Stage 2",
+  "url": "http://127.0.0.1:4191/",
+  "source": "uriah_verdict",
+  "reviewed_by": "Uriah",
+  "approved_at": "2026-08-19",
+  "batch": "ddac60583cca5f7c85b1b98ac01cead297e5869c",
+  "note": "Uriah approved in chat the seven-site sitting JSON from http://127.0.0.1:4191/. The dump still said agent_recommendation_pending_uriah / reviewed_by null because Confirm was not clicked; the chat message is the verdict. All seven approve. C01 and C07 lock 00000 because the official sheet prints 000; C02–C06 stay editable. C05 and C06 are one form. This sitting is of the rebuilt forms-corrected/ tree from named batch ddac6058 after the 2026-08-19 independent fidelity run.",
+  "agent_recommendation": {
+    "C01": {
+      "verdict": "approve",
+      "notes": "Whole strip 66–213.12 kept; every digit cell ~9.5pt. Branch is five locked zeros because BIR's own artwork prints 000 there — that is the only reason it is locked."
+    },
+    "C02": {
+      "verdict": "approve",
+      "notes": "Whole strip 30.23–223.91 kept; every digit cell ~11.3pt. Branch is five EDITABLE cells, no value, no readonly — the official box prints no 000. HTA max_length 5 is a 2003 harvest against 1999 art — that gap stays declared."
+    },
+    "C03": {
+      "verdict": "approve",
+      "notes": "Whole strip 59.76–207.36 kept; every digit cell ~9.53pt. Branch is five EDITABLE cells — official box prints no 000. No fields.json — honest gap, not a borrowed 2550M cite."
+    },
+    "C04": {
+      "verdict": "approve",
+      "notes": "Whole strip 57.84–205.44 kept; every digit cell ~9.53pt. Branch is five EDITABLE cells — official box prints no 000. HTA frm2553:txtBranchCode max_length 5."
+    },
+    "C05": {
+      "verdict": "approve",
+      "notes": "Whole primary strip 53.19–276 kept; every digit cell ~12.76pt. Branch is five EDITABLE cells — four official compartments, none pre-printed. Approve only with C06."
+    },
+    "C06": {
+      "verdict": "approve",
+      "notes": "Whole agent strip 257.17–401.29 kept; every digit cell ~8.3pt. Branch is five EDITABLE cells — four official compartments, no ink inside. No agent branch key — honest gap. Approve only with C05."
+    },
+    "C07": {
+      "verdict": "approve",
+      "notes": "Whole strip 58.56–250.80 kept; every digit cell ~10.97pt. Branch locked 00000 because the official sheet prints 000 in it. No fields.json — honest gap."
+    }
+  },
+  "verdicts": {
+    "C01": {
+      "verdict": "approve",
+      "notes": "Whole strip 66–213.12 kept; every digit cell ~9.5pt. Branch is five locked zeros because BIR's own artwork prints 000 there — that is the only reason it is locked."
+    },
+    "C02": {
+      "verdict": "approve",
+      "notes": "Whole strip 30.23–223.91 kept; every digit cell ~11.3pt. Branch is five EDITABLE cells, no value, no readonly — the official box prints no 000. HTA max_length 5 is a 2003 harvest against 1999 art — that gap stays declared."
+    },
+    "C03": {
+      "verdict": "approve",
+      "notes": "Whole strip 59.76–207.36 kept; every digit cell ~9.53pt. Branch is five EDITABLE cells — official box prints no 000. No fields.json — honest gap, not a borrowed 2550M cite."
+    },
+    "C04": {
+      "verdict": "approve",
+      "notes": "Whole strip 57.84–205.44 kept; every digit cell ~9.53pt. Branch is five EDITABLE cells — official box prints no 000. HTA frm2553:txtBranchCode max_length 5."
+    },
+    "C05": {
+      "verdict": "approve",
+      "notes": "Whole primary strip 53.19–276 kept; every digit cell ~12.76pt. Branch is five EDITABLE cells — four official compartments, none pre-printed. Approve only with C06."
+    },
+    "C06": {
+      "verdict": "approve",
+      "notes": "Whole agent strip 257.17–401.29 kept; every digit cell ~8.3pt. Branch is five EDITABLE cells — four official compartments, no ink inside. No agent branch key — honest gap. Approve only with C05."
+    },
+    "C07": {
+      "verdict": "approve",
+      "notes": "Whole strip 58.56–250.80 kept; every digit cell ~10.97pt. Branch locked 00000 because the official sheet prints 000 in it. No fields.json — honest gap."
+    }
+  }
+}

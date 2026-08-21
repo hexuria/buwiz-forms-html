@@ -1,0 +1,145 @@
+{
+  "job": "W6",
+  "title": "The four leftover_duplicate keys",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W6: The four leftover_duplicate keys",
+    "SAVEFILE": "none (HTA occurrence table; 2200A registeredName already dummy-Saved in W3)",
+    "FORM": "1702Qv2018C / 1707Av2021 / 2551Qv2018 / 2200Av2020 package=7.9.6.1",
+    "HTA": "live extracted tree {0B33C1CE-21A8-44A1-8D91-28A10444A6A3}",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c",
+    "FINDING": "frm1702q:txtTelNum x2: occ1 L633 Item 10 Contact Number (printed, disabled after profile); occ2 L2544 hiddenProfile clone (display:none), one control serialized twice. frm1707Av2021:txtI11Email x2: occ1 L654 Item 11 Email Address printed disabled; occ2 L2421 hiddenEmail clone. txtEmail on 2551q-2018 x2: occ1 L821 Item 11 Email Address printed disabled; occ2 L2649 is inside an HTML comment so not a live second control (still leftover_duplicate in inventory). frm2200Av2020:registeredName x3 from W3: L439 Item 6 Taxpayer Name page 1 profile-locked; L1396 page 2 header copy disabled; L2013 page 3 header copy disabled; saveXML emitted the shared id three times. No remint.",
+    "STAGING": "none",
+    "PINS": "leftover_keys.py live tree unchanged",
+    "NEXT": "7"
+  },
+  "occurrences": [
+    {
+      "key": "frm1702q:txtTelNum",
+      "slug": "1702q-2018",
+      "count": 2,
+      "rows": [
+        {
+          "occurrence": 1,
+          "hta": "BIR-Form1702Qv2018C.hta",
+          "line": 633,
+          "caption": "Contact Number (Landline/Cellphone No.)",
+          "page": 1,
+          "item": "10",
+          "live": true,
+          "disabled": true,
+          "note": "printed box"
+        },
+        {
+          "occurrence": 2,
+          "hta": "BIR-Form1702Qv2018C.hta",
+          "line": 2544,
+          "caption": "hiddenProfile clone",
+          "page": null,
+          "item": null,
+          "live": false,
+          "disabled": false,
+          "note": "div#hiddenProfile display:none; one control serialized twice"
+        }
+      ]
+    },
+    {
+      "key": "frm1707Av2021:txtI11Email",
+      "slug": "1707a-2021",
+      "count": 2,
+      "rows": [
+        {
+          "occurrence": 1,
+          "hta": "BIR-Form1707Av2021.hta",
+          "line": 654,
+          "caption": "Email Address",
+          "page": 1,
+          "item": "11",
+          "live": true,
+          "disabled": true,
+          "note": "printed box"
+        },
+        {
+          "occurrence": 2,
+          "hta": "BIR-Form1707Av2021.hta",
+          "line": 2421,
+          "caption": "hiddenEmail clone",
+          "page": null,
+          "item": null,
+          "live": false,
+          "note": "div#hiddenEmail display:none"
+        }
+      ]
+    },
+    {
+      "key": "txtEmail",
+      "slug": "2551q-2018",
+      "count": 2,
+      "rows": [
+        {
+          "occurrence": 1,
+          "hta": "BIR-Form2551Qv2018.hta",
+          "line": 821,
+          "caption": "Email Address",
+          "page": 1,
+          "item": "11",
+          "live": true,
+          "disabled": true,
+          "note": "printed box"
+        },
+        {
+          "occurrence": 2,
+          "hta": "BIR-Form2551Qv2018.hta",
+          "line": 2649,
+          "caption": "commented hiddenEmail clone",
+          "page": null,
+          "item": null,
+          "live": false,
+          "note": "inside HTML comment; leftover_duplicate still counts the name"
+        }
+      ]
+    },
+    {
+      "key": "frm2200Av2020:registeredName",
+      "slug": "extra/2200a-2020",
+      "count": 3,
+      "rows": [
+        {
+          "occurrence": 1,
+          "hta": "BIR-Form2200Av2020.hta",
+          "line": 439,
+          "caption": "Taxpayer's Name",
+          "page": 1,
+          "item": "6",
+          "live": true,
+          "writable_on_save": false,
+          "profile_locked": true
+        },
+        {
+          "occurrence": 2,
+          "hta": "BIR-Form2200Av2020.hta",
+          "line": 1396,
+          "caption": "Taxpayer's Name page 2 header",
+          "page": 2,
+          "item": "header",
+          "live": true,
+          "disabled": true
+        },
+        {
+          "occurrence": 3,
+          "hta": "BIR-Form2200Av2020.hta",
+          "line": 2013,
+          "caption": "Taxpayer's Name page 3 header",
+          "page": 3,
+          "item": "header",
+          "live": true,
+          "disabled": true
+        }
+      ]
+    }
+  ],
+  "live_untouched": [
+    "rules/forms",
+    "map_tin.py --write"
+  ]
+}

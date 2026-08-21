@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "form_id": "1601eq-v2018",
+  "cases": [
+    {"case_id":"row-basic","calculation_id":"calc-atc-row-withheld","inputs":{"tax_base":"100.00","tax_rate":"5.0"},"official_output":"5.00"},
+    {"case_id":"row-half-up-centavo","calculation_id":"calc-atc-row-withheld","inputs":{"tax_base":"0.10","tax_rate":"5.0"},"official_output":"0.01","note":"Binary-float formula reaches 0.005 and formatCurrency applies floor(x*100+0.50000000001)."},
+    {"case_id":"row-sub-half-centavo","calculation_id":"calc-atc-row-withheld","inputs":{"tax_base":"0.10","tax_rate":"0.5"},"official_output":"0.00"},
+    {"case_id":"rate-2018-wc651","calculation_id":"calc-atc-rate-by-year","inputs":{"year":"2018","category":"P","atc":"WC651"},"official_output":"32.0"},
+    {"case_id":"rate-2019-private-wc651","calculation_id":"calc-atc-rate-by-year","inputs":{"year":"2019","category":"P","atc":"WC651"},"official_output":"15.0"},
+    {"case_id":"rate-2019-government-wc651-package-bug","calculation_id":"calc-atc-rate-by-year","inputs":{"year":"2019","category":"G","atc":"WC651"},"official_output":"32.0","recommended_output":"15.0","source_refs":["fixtures/atc-catalog-v796.json","official-2019-pdf#p2:WC651"]},
+    {"case_id":"rate-2019-government-wc710-package-bug","calculation_id":"calc-atc-rate-by-year","inputs":{"year":"2019","category":"G","atc":"WC710"},"official_output":"20.0","recommended_output":"15.0","source_refs":["fixtures/atc-catalog-v796.json","official-2019-pdf#p2:WC710"]},
+    {"case_id":"rate-2019-wi661-package-bug","calculation_id":"calc-atc-rate-by-year","inputs":{"year":"2019","category":"P","atc":"WI661"},"official_output":"10.0","recommended_output":"15.0","source_refs":["fixtures/atc-catalog-v796.json","official-2019-pdf#p2:WI661"]},
+    {"case_id":"item24","calculation_id":"calc-item-24","inputs":{"item20":"1.00","item21":"2.00","item22":"3.00","item23":"4.00"},"official_output":"10.00"},
+    {"case_id":"item25-over-remittance","calculation_id":"calc-item-25","inputs":{"item19":"5.00","item24":"10.00"},"official_output":"-5.00"},
+    {"case_id":"item29","calculation_id":"calc-item-29","inputs":{"item26":"1.00","item27":"2.00","item28":"3.00"},"official_output":"6.00"},
+    {"case_id":"item30","calculation_id":"calc-item-30","inputs":{"item25":"-5.00","item29":"6.00"},"official_output":"1.00"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "sitting": "TIN Stage 2 — HEAD bind",
+  "url": "http://127.0.0.1:4193/",
+  "source": "uriah_verdict",
+  "reviewed_by": "Uriah",
+  "approved_at": "2026-08-20",
+  "batch": "0c1def60c8c7c46ae1dacd30d5422e5123d9966f",
+  "note": "Uriah reviewed the re-anchored forms-corrected/ tree (C01–C07 find/replace against current main forms/, tab-order DOM order) at http://127.0.0.1:4193/ and said looks good. Same lock rule: C01 and C07 00000; C02–C06 editable; C05+C06 together. Leftover 0.72pt sliver cells on C01/C03/C04 noted, not rejected.",
+  "verdicts": {
+    "C01": {"verdict": "approve", "notes": "HEAD-bind sitting 2026-08-20: looks good. Lock 00000."},
+    "C02": {"verdict": "approve", "notes": "HEAD-bind sitting 2026-08-20: looks good. Editable."},
+    "C03": {"verdict": "approve", "notes": "HEAD-bind sitting 2026-08-20: looks good. Editable."},
+    "C04": {"verdict": "approve", "notes": "HEAD-bind sitting 2026-08-20: looks good. Editable. Peach seps kept."},
+    "C05": {"verdict": "approve", "notes": "HEAD-bind sitting 2026-08-20: looks good. Approve with C06."},
+    "C06": {"verdict": "approve", "notes": "HEAD-bind sitting 2026-08-20: looks good. Approve with C05."},
+    "C07": {"verdict": "approve", "notes": "HEAD-bind sitting 2026-08-20: looks good. Lock 00000."}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Fillable identity class text",
+  "date": "2026-08-18",
+  "new_record_count": 4779,
+  "bundle_count": 52,
+  "notes": [
+    "source_printed_box_pt is the emitted cell (C02 pattern).",
+    "official_field_key harvested only when unique; otherwise an honest gap.",
+    "Not Stage 3. Nothing writes name= official keys."
+  ]
+}

@@ -1,14 +1,14 @@
 # buwiz-forms-html
 
-HTML corpus for BIR forms. Layout edits are commits here. The product app
-(`hexuria/buwiz-forms`) keeps only the **frozen** tree for fill/print.
+HTML corpus and generator (`tools/formgen`) for BIR forms. The product app
+(`hexuria/buwiz-forms`) keeps only `html-frozen/` for fill/print.
 
 | Tree | What it is |
 | --- | --- |
-| `forms/` | Stage 1 generated sheets (full generator batch, including `extra/`) |
+| `forms/` | Stage 1 generated sheets |
 | `forms-corrected/` | Stage 2 copy + declared corrections + fail-closed TIN `name=` stamps |
-| `html-frozen/` | Product freeze: 43 inventory sheets the app actually loads. Tag `v1-frozen` |
+| `html-frozen/` | Product freeze: 43 inventory sheets the app loads. Tag `v1-frozen` |
+| `tools/formgen/` | Extractor, emitter, gate, corrections ledger. Operator-run `gate.py` still needs pinned PDFs. |
 
-CI (`html-corpus`) validates `forms/` and the 2551Q TIN stamps on
-`html-frozen/`. No extractor, no `gate.py`, no Rust. Do not invent a `frm…`
-key. Do not copy leftover uniqueness onto `name=`. Do not commit saveXML.
+CI workflow is `formgen`. Do not invent a `frm…` key. Do not copy leftover
+uniqueness onto `name=`. Do not commit saveXML.

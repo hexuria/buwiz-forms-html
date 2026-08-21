@@ -1,0 +1,328 @@
+# formgen — generator + HTML corpus for hexuria/buwiz-forms-html.
+#
+# The done-condition remains `python3 tools/formgen/gate.py`. It CANNOT RUN
+# IN CI (pinned BIR PDFs, two regenerations, `build/`). THE GATE STAYS
+# OPERATOR-RUN.
+
+name: formgen
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "tools/formgen/**"
+      - "forms/**"
+      - "forms-corrected/**"
+      - "html-frozen/**"
+      - ".github/workflows/formgen.yml"
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - "tools/formgen/**"
+      - "forms/**"
+      - "forms-corrected/**"
+      - "html-frozen/**"
+      - ".github/workflows/formgen.yml"
+
+# Same shape as ci.yml. `github.workflow` differs per workflow, so this cannot
+# collide with the CI run on the same ref.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  formgen:
+    runs-on: ubuntu-22.04
+
+    env:
+      # The fixture PDFs carry MuPDF's own producer banner in their bytes, and
+      # extract.py pins each fixture by sha256 over exactly those bytes. A
+      # different MuPDF therefore writes a different, correct corpus that fails
+      # every pin — which is a confusing way to learn that a wheel floated. Pin
+      # it. This is the version the pins were generated against; bumping it
+      # means regenerating the corpus and re-pinning in extract.py, in one
+      # commit.
+      PYMUPDF_VERSION: '1.27.2.3'
+      # The PYTHON playwright version, which is NOT the npm one. The repo pins
+      # npm playwright 1.58.2, and PyPI has no 1.58.2 -- its line goes 1.58.0
+      # then 1.59.0 -- so copying the npm pin here broke the job at the install
+      # step, before anything ran. This is the version the audit self-test was
+      # proven against on the workstation; the two ecosystems version
+      # independently and must be pinned independently.
+      PLAYWRIGHT_VERSION: '1.59.0'
+      # audit.py seals the browser inside the Playwright package tree: it
+      # SHA-256s the whole tree around every render and requires the resolved
+      # Chromium to live under it. The default install puts browsers in
+      # ~/.cache/ms-playwright -- outside the closure -- which failed the first
+      # real runner execution with "resolved Chromium executable is outside
+      # Playwright closure". PLAYWRIGHT_BROWSERS_PATH=0 installs and resolves
+      # browsers inside the package, which is where the workstation (whose
+      # numbers the self-test was proven against) has them.
+      PLAYWRIGHT_BROWSERS_PATH: '0'
+      PRODUCT: ${{ github.workspace }}/.ci-product
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check out product rules (XML key inventory)
+        uses: actions/checkout@v4
+        with:
+          repository: hexuria/buwiz-forms
+          path: .ci-product
+          persist-credentials: false
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      # formgen is stdlib + fitz. There is no requirements file to cache
+      # against and the wheel installs in seconds, so no pip cache either.
+      # audit.py's self-test launches this. Pinned to the Python playwright the
+      # workstation proved the self-test against; a self-test that passes here
+      # and fails there would be worthless.
+      - name: Install Playwright and Chromium
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check "playwright==${PLAYWRIGHT_VERSION}"
+          python3 -m playwright install --with-deps chromium
+
+      - name: Install PyMuPDF
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check "pymupdf==${PYMUPDF_VERSION}"
+          python3 -c "import fitz; print(f'PyMuPDF {fitz.VersionBind} / MuPDF {fitz.VersionFitz}')"
+
+      # ---------------------------------------------------------------------
+      # Tree validator
+      # ---------------------------------------------------------------------
+
+      # Run the validator's own self-test before its verdict is believed. It
+      # asserts that each check can actually fail — a validator whose checks
+      # cannot fail is the shape of every failure this project has already paid
+      # for.
+      - name: Tree validator self-test (each check can fail)
+        run: python3 tools/formgen/validate_tree.py --self-test
+
+      # ---------------------------------------------------------------------
+      # The synthetic fixture corpus
+      # ---------------------------------------------------------------------
+
+      # Two independent generations into scratch directories, compared byte for
+      # byte. The file-count assertion is not decoration: `diff -r` over two
+      # empty directories is silent and exits 0, so a generator that produced
+      # nothing would otherwise pass a determinism check having generated
+      # nothing.
+      - name: Fixture corpus is deterministic (two builds, byte-identical)
+        run: |
+          set -euo pipefail
+          python3 tools/formgen/fixtures/make_fixtures.py --out-dir "$RUNNER_TEMP/fixtures-a"
+          python3 tools/formgen/fixtures/make_fixtures.py --out-dir "$RUNNER_TEMP/fixtures-b"
+
+          count=$(find "$RUNNER_TEMP/fixtures-a" -name '*.pdf' -type f | wc -l | tr -d ' ')
+          if [ "$count" -eq 0 ]; then
+            echo "::error::the fixture generator wrote no PDFs; two empty directories are not a determinism result" >&2
+            exit 1
+          fi
+          echo "generated $count fixture PDF(s) per build"
+
+          diff -r "$RUNNER_TEMP/fixtures-a" "$RUNNER_TEMP/fixtures-b"
+          (cd "$RUNNER_TEMP/fixtures-a" && sha256sum -- *.pdf)
+
+      # `--verify` rebuilds each fixture in memory and compares it to the bytes
+      # committed under tools/formgen/fixtures/. It fails on absence as loudly
+      # as on difference, which is the check that matters here: the sha256 pins
+      # in extract.py are over the committed bytes, so a stale or missing corpus
+      # must not reach the self-test below and produce a confusing pin failure.
+      #
+      # The fixtures have to be COMMITTED, and `*.pdf` is gitignored at
+      # .gitignore:55. A nested tools/formgen/fixtures/.gitignore negates the six
+      # BY NAME; without it this step reports "not present" on every fixture and
+      # the job is red. Naming them one by one is deliberate — an unqualified
+      # `!*.pdf` would re-admit any official BIR PDF a future hand dropped there.
+      - name: Fixture corpus matches its committed bytes
+        run: python3 tools/formgen/fixtures/make_fixtures.py --verify
+
+      # The one check that reads the checkers. It rebuilds the corpus per
+      # mutation, RE-PINS it to its own new digests so a hash mismatch cannot
+      # stand in for the result, and requires each mutation to trip exactly its
+      # own check -- so a neutered assertion trips nothing and the step is red.
+      # Every other module here prints a count of FAILURES, and zero failures is
+      # indistinguishable from zero checks; this is what tells them apart.
+      - name: Every fixture check can actually fail
+        run: python3 tools/formgen/fixtures/prove_fixtures_fail.py
+
+      # ---------------------------------------------------------------------
+      # Module self-tests
+      # ---------------------------------------------------------------------
+
+      # gate.py owns the list of modules that expose --self-test. If a module is
+      # added there and nobody updates the two lists below, this workflow would
+      # quietly stop covering it while still reporting green — the exact defect
+      # class this pipeline exists to make impossible. So the split is asserted
+      # against gate.py's own tuple, read without importing it.
+      #
+      # RUNS_IN_CI: proven to pass on a clean checkout with no build/ tree and
+      # no source PDFs. audit.py additionally needs the Chromium installed
+      # above -- it is the only one of the four that does.
+      # NEEDS_PINNED_CORPUS: asserts against the real 51-form corpus by
+      # construction (a named form's IR, layout, font plan, or the pinned PDF
+      # itself). Not skipped quietly — named in the job summary as NOT COVERED.
+      - name: Self-test coverage table matches gate.py
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import ast, pathlib, sys
+
+          RUNS_IN_CI = {"extract", "index_page", "audit", "comb_referee", "gate", "field_identity", "map_tin"}
+          NEEDS_PINNED_CORPUS = {"lattice", "fonts", "guides", "emit", "verify"}
+
+          source = pathlib.Path("tools/formgen/gate.py").read_text(encoding="utf-8")
+          for node in ast.walk(ast.parse(source)):
+              if (isinstance(node, ast.Assign)
+                      and any(getattr(t, "id", None) == "SELF_TEST_MODULES"
+                              for t in node.targets)):
+                  declared = set(ast.literal_eval(node.value))
+                  break
+          else:
+              sys.exit("::error::gate.py no longer declares SELF_TEST_MODULES; "
+                       "this workflow can no longer tell which modules exist")
+
+          covered = RUNS_IN_CI | NEEDS_PINNED_CORPUS
+          if covered != declared:
+              print(f"::error::self-test coverage table is stale. "
+                    f"gate.py declares {sorted(declared)}; this workflow accounts "
+                    f"for {sorted(covered)}. Unaccounted: "
+                    f"{sorted(declared - covered)}; invented: "
+                    f"{sorted(covered - declared)}", file=sys.stderr)
+              sys.exit(1)
+          print(f"{len(declared)} modules declared; {len(RUNS_IN_CI)} run here, "
+                f"{len(NEEDS_PINNED_CORPUS)} need the pinned corpus")
+          PY
+
+      # Six modules whose self-tests read nothing but their own source and the
+      # committed tree. Measured on a clean `git archive` checkout with no
+      # build/ and no ~/Downloads/forms: index_page <1s, comb_referee 1s,
+      # field_identity catalogs the tracked forms/, map_tin rewrites fixture
+      # HTML only, audit ~35s incl. the browser fixtures, gate 29s (gate needs
+      # the .git directory that actions/checkout provides — it re-derives the
+      # tracked corpus from HEAD).
+      #
+      # Each module is run and reported by name so a failure says which. The
+      # loop does not stop at the first failure: knowing that three of six
+      # broke is worth the extra minute.
+      - name: Module self-tests (no external input)
+        run: |
+          set -uo pipefail
+          failed=""
+          for module in index_page comb_referee audit gate field_identity map_tin; do
+            echo "::group::${module}.py --self-test"
+            if python3 "tools/formgen/${module}.py" --self-test; then
+              echo "PASS ${module}"
+            else
+              echo "FAIL ${module}"
+              failed="${failed} ${module}"
+            fi
+            echo "::endgroup::"
+          done
+          if [ -n "$failed" ]; then
+            echo "::error::self-test failed:${failed}" >&2
+            exit 1
+          fi
+
+      # ---------------------------------------------------------------------
+      # Committed HTML trees
+      # ---------------------------------------------------------------------
+
+      - name: Validate forms/
+        run: python3 tools/formgen/validate_tree.py --root forms --verbose
+
+      - name: tab_check.py self-test (synthetic pages)
+        run: python3 tools/formgen/tab_check.py --self-test
+
+      - name: Tab-order walk over forms/
+        run: |
+          set -euo pipefail
+          python3 tools/formgen/tab_check.py --forms forms --review-dir "$RUNNER_TEMP/tab-review"
+
+      - name: Frozen inventory and 2551Q TIN stamps
+        run: |
+          set -euo pipefail
+          python3 tools/formgen/freeze_html.py --verify --out html-frozen --index "$PRODUCT/rules/index.json"
+          python3 tools/formgen/stamp_2551q_names.py --self-test
+          python3 tools/formgen/stamp_2551q_names.py --check \
+            --html html-frozen/2551q-2018/index.html \
+            --fields "$PRODUCT/rules/forms/2551q-v2018/fields.json" \
+            --catalog tools/formgen/identity/catalog.json
+
+      # extract.py is the strongest check in the pipeline and, until the
+      # synthetic corpus existed, the least runnable: every assertion was pinned
+      # against six official BIR PDFs that will never be committed. The fixture
+      # profile re-runs the same checks over trackable stand-ins. It is weaker
+      # evidence and extract.py says so in its own output — a fixture can only
+      # encode what the module already believes, whereas the six official files
+      # are evidence about the world. That is why the real profile is not
+      # deleted and why this is not called equivalent coverage.
+      #
+      # `--fixtures` is the whole interface: it swaps REAL_PROFILE for
+      # FIXTURE_PROFILE and the same checks and the same mutation probes
+      # run over the synthetic subjects. Never replace it with a bare
+      # `--self-test` to make this step green — that selects the official pins,
+      # which are not in the repo, and the run would be measuring nothing.
+      - name: extract.py self-test (synthetic fixture profile)
+        run: python3 tools/formgen/extract.py --self-test --fixtures
+
+      # ---------------------------------------------------------------------
+      # What this workflow does NOT cover
+      # ---------------------------------------------------------------------
+
+      # `if: always()` on purpose. This has to be readable on a red run too: the
+      # worst outcome is somebody reading a green tick as "formgen is proven",
+      # and the second worst is somebody reading a red one as "only the gate is
+      # left". Written to the summary rather than printed to a log nobody opens.
+      - name: Declare what CI cannot cover
+        if: always()
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'MD'
+          ## formgen CI — scope, stated plainly
+
+          **This job is not the gate.** `python3 tools/formgen/gate.py` stays
+          operator-run (pinned BIR PDFs, `build/`).
+
+          ### Covered here
+
+          | Check | What it proves |
+          | --- | --- |
+          | `validate_tree.py --self-test` | each tree check can actually fail |
+          | `validate_tree.py --root forms` | generated `forms/` is internally consistent |
+          | `make_fixtures.py` ×2 | the synthetic corpus is byte-identical across generations |
+          | `make_fixtures.py --verify` | the committed fixture bytes rebuild exactly |
+          | `extract.py --self-test` (fixture profile) | the extractor's assertions, over synthetic stand-ins |
+          | `index_page`, `comb_referee`, `audit`, `gate`, `field_identity`, `map_tin` `--self-test` | those six modules' own invariants |
+          | `tab_check.py --self-test` | the tab walker can fail, on synthetic pages |
+          | `tab_check.py --forms forms` | Tab order over the generated corpus |
+          | `freeze_html.py --verify` + `stamp_2551q_names.py --check` | product freeze + 2551Q TIN names |
+
+          ### NOT covered here, and why
+
+          | Not run | Needs |
+          | --- | --- |
+          | `gate.py` (the done-condition) | two full regenerations, Chromium print-to-PDF, the six pinned BIR PDFs, `build/` |
+          | `batch.py` — 51/51 conversion | the pinned BIR PDFs |
+          | `audit.py` corpus sweep + the 8 assertions | `build/ir`, `build/html`, `build/layout` |
+          | `verify.py --self-test` | a pinned BIR PDF, and Chromium to print the candidate |
+          | `lattice.py`, `fonts.py` `--self-test` | `build/ir/2551q-2018.ir.json`, from a pinned PDF |
+          | `guides.py`, `emit.py` `--self-test` | `build/ir` and `build/layout` for named real forms |
+
+          Those five module self-tests assert against the real corpus by
+          construction — a named form's IR, layout or PDF. They are not skipped
+          quietly and they are not stubbed: they are listed here, every run, as
+          not run. `extract.py`'s fixture profile is the one case where a
+          synthetic stand-in was built deliberately, and it is weaker evidence
+          than the real pins, which is why the real profile still exists.
+
+          The six official BIR PDFs are **not** going to be committed. They are
+          official documents, `*.pdf` is gitignored, and they are pinned by
+          sha256 so that a swapped file fails loudly. That constraint is the
+          reason for this scope, not an oversight in it.
+          MD

@@ -1,0 +1,41 @@
+{
+    "schema_version":  "1.0.0",
+    "form_id":  "2000-v2018",
+    "cases":  [
+                  {
+                      "case_id":  "ds101-fraction",
+                      "calculation_id":  "2000-atc-ds101",
+                      "note":  "No statutory block ceiling is applied.",
+                      "source_output":  2.01,
+                      "base":  201
+                  },
+                  {
+                      "case_id":  "ds125-error",
+                      "intended_output":  50,
+                      "calculation_id":  "2000-atc-ds125",
+                      "source_result":  "ReferenceError: S is not defined",
+                      "base":  100
+                  },
+                  {
+                      "case_id":  "mode2-floor",
+                      "inputs":  {
+                                     "item15a":  80,
+                                     "item14":  100,
+                                     "item15b":  30
+                                 },
+                      "calculation_id":  "2000-item16",
+                      "source_output":  0
+                  },
+                  {
+                      "case_id":  "mode1-sign-flip",
+                      "inputs":  {
+                                     "item15c":  0,
+                                     "item15a":  0,
+                                     "item14":  100,
+                                     "item15b":  0
+                                 },
+                      "calculation_id":  "2000-item16",
+                      "source_output":  -100
+                  }
+              ]
+}

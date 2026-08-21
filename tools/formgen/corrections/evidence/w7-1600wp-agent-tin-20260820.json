@@ -1,0 +1,40 @@
+{
+  "job": "W7",
+  "title": "1600WP agent TIN (C06) after W1-W3",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W7: 1600WP agent TIN",
+    "SAVEFILE": "none (HTA finding; no distinct agent-TIN key beyond Item 5)",
+    "FORM": "1600WP (WITHHOLDING TAX REMITTANCE RETURN for transactions involving payment of winnings, prizes, and other similar payments) package=7.9.6.1",
+    "HTA": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\forms\\BIR-Form1600WP.hta",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c",
+    "FINDING": "No second WITHHOLDING AGENT TIN comb exists in BIR-Form1600WP.hta. The only taxpayer/agent TIN boxes are Item 5 TIN: frm1600WP:txtTIN1/2/3 + frm1600WP:txtBranchCode (L461-L464). loadBGData hydrates those from the dummy profile. Schedule payee TINs are frm1600WP:dtSched:txtTin1..txtTin10 (L1134-L1404), a different field. Phrase WITHHOLDING AGENT TIN does not appear; Item 7 is Category of Withholding Agent, Item 8 is Withholding Agent Name. Catalog tin-agent-1/2/3/branch therefore stays gapped: Save would emit Item 5 keys (C05), not a distinct agent-TIN field_key. No remint.",
+    "STAGING": "none",
+    "PINS": "leftover_keys.py live tree unchanged",
+    "NEXT": "8"
+  },
+  "agent_tin_controls": {
+    "item": "5",
+    "caption": "TIN",
+    "ids": [
+      "frm1600WP:txtTIN1",
+      "frm1600WP:txtTIN2",
+      "frm1600WP:txtTIN3",
+      "frm1600WP:txtBranchCode"
+    ],
+    "lines": "L461-L464",
+    "role": "withholding agent / taxpayer TIN (same as C05 inventory)"
+  },
+  "payee_tins": {
+    "ids": [
+      "frm1600WP:dtSched:txtTin1",
+      "frm1600WP:dtSched:txtTin10"
+    ],
+    "role": "schedule payee TINs, different field"
+  },
+  "distinct_agent_tin_key": false,
+  "live_untouched": [
+    "rules/forms",
+    "map_tin.py --write"
+  ]
+}

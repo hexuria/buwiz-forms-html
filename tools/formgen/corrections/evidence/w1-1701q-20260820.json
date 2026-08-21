@@ -1,0 +1,61 @@
+{
+  "job": "W1-1701Q",
+  "title": "Dummy Save 1701Q January 2018 and stage serialized_key where saveXML emitted it",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W1: Put serialized_key on 1701Q",
+    "SAVEFILE": "C:\\\\eBIRForms\\\\savefile\\\\00000000000000-1701Qv2018-2026Q1.xml sha256=192e71cf66bd43b82817d2cb6468cdbfcf367cf541aa43d67e0b91b64b49ea1e",
+    "FORM": "1701Q January 2018 package=7.9.6.1",
+    "HTA": "C:\\\\Users\\\\uriah\\\\AppData\\\\Local\\\\Temp\\\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\\\forms\\\\BIR-Form1701Qv2018.hta sha256=5f164dde6154b96f28e23656ed2ef29406010ee3f94333e88ea6eb107fe589a0",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c (vs manifest 7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca)",
+    "FINDING": "Official Save emitted 172 XML keys, matching the inventory row count. Catalog TIN keys frm1701q:txtTIN1, frm1701q:txtTIN2, frm1701q:txtTIN3, frm1701q:txtBranchCode appear verbatim (dummy 000/000/000/00000). Spouse and page-2 TIN keys were also emitted and staged because the savefile named them; they were not the catalog claimed_absent set. leftover_keys on staging: 1701q-2018 claimed_absent 0, claimed_unique 4, nulls 0. Combined with 1601EQ, staging claimed_absent is 4 remaining (2000-dst-2018 only). map_tin.py --write not run. Live rules/forms untouched.",
+    "STAGING": "tools/formgen/corrections/staging/w1-20260820/rules/forms/1701q-v2018/fields.json",
+    "PINS": "leftover_keys.py live tree unchanged; staging census claimed_absent 4 (only 2000-dst-2018)",
+    "NEXT": "2"
+  },
+  "savefile": {
+    "path": "C:\\\\eBIRForms\\\\savefile\\\\00000000000000-1701Qv2018-2026Q1.xml",
+    "sha256": "192e71cf66bd43b82817d2cb6468cdbfcf367cf541aa43d67e0b91b64b49ea1e",
+    "bytes": 11880,
+    "dummy_tin": "000-000-000-00000"
+  },
+  "emitted_count": 172,
+  "tin_keys_verbatim": [
+    "frm1701q:txtTIN1",
+    "frm1701q:txtTIN2",
+    "frm1701q:txtTIN3",
+    "frm1701q:txtBranchCode"
+  ],
+  "also_emitted_out_of_job_scope": [
+    "frm1701q:txtSpouseTIN1",
+    "frm1701q:txtSpouseTIN2",
+    "frm1701q:txtSpouseTIN3",
+    "frm1701q:txtSpouseBranchCode",
+    "frm1701q:txtPg2TIN1",
+    "frm1701q:txtPg2TIN2",
+    "frm1701q:txtPg2TIN3",
+    "frm1701q:txtPg2BranchCode"
+  ],
+  "tin_snippet": "<div>frm1701q:txtTIN1=000frm1701q:txtTIN1=</div> <div>frm1701q:txtTIN2=000frm1701q:txtTIN2=</div> <div>frm1701q:txtTIN3=000frm1701q:txtTIN3=</div> <div>frm1701q:txtBranchCode=00000frm1701q:txtBranchCode=</div>",
+  "staging_census": {
+    "1601eq-2019": {
+      "claimed_absent": 0,
+      "claimed_unique": 4,
+      "nulls": 531,
+      "rows": 621
+    },
+    "1701q-2018": {
+      "claimed_absent": 0,
+      "claimed_unique": 4,
+      "nulls": 0,
+      "rows": 172
+    },
+    "2000-dst-2018": {
+      "claimed_absent": 4,
+      "claimed_unique": 0,
+      "nulls": 0,
+      "rows": 0
+    }
+  }
+}
+

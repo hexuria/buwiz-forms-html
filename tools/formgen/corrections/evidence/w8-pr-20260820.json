@@ -1,0 +1,32 @@
+{
+  "job": "W8",
+  "title": "Evidence-first land of Windows eBIRForms observation packets",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W8: Evidence-first commit + PR, do not merge",
+    "SAVEFILE": "none (hashes only; dummy XML not committed)",
+    "FORM": "n/a n/a package=7.9.6.1",
+    "HTA": "n/a (see W0-W7 packets for per-form HTA sha256)",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c (vs manifest 7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca)",
+    "FINDING": "Landed dated W0-W7 observation JSON plus W1 staged serialized_key (1601eq 90/621 filled, 1701q 172/172 filled) and a NEW 2000-dst-v2018 staging snapshot. Live rules/forms untouched; leftover_keys live pins unchanged unique 8028 duplicate 4 claimed_unique 147 claimed_duplicate 4 claimed_absent 12 claimed 163. Staging leftover census: W1 claimed_absent 0 for 1601eq-2019 and 1701q-2018; W2 claimed_absent 0 for 2000-dst-2018 and resolve_slug exact -> 2000-dst-v2018. Live resolve_slug(2000-dst-2018) remains absent so it cannot steal 2000-v2018. Draft PR https://github.com/hexuria/buwiz-forms/pull/29 as hexuria, not merged. map_tin.py --write not run. No savefiles/PDFs/.hta in the commit.",
+    "STAGING": "tools/formgen/corrections/staging/w1-20260820/rules/forms/1601eq-v2018/ and 1701q-v2018/; tools/formgen/corrections/staging/w2-20260820/rules/forms/2000-dst-v2018/",
+    "PINS": "leftover_keys.py live tree unchanged (unique 8028, duplicate 4, claimed_unique 147, claimed_duplicate 4, claimed_absent 12, claimed 163); --self-test pass; join_census --self-test still forbids 2000-dst-2018 stealing 2000-v2018",
+    "NEXT": "stop"
+  },
+  "pr": {
+    "number": 29,
+    "url": "https://github.com/hexuria/buwiz-forms/pull/29",
+    "author": "hexuria",
+    "base": "main",
+    "head": "gol/windows-ebirforms-obs",
+    "draft": true,
+    "merged": false,
+    "commit": "3d291dedd407f36da79c0cae7e74d5c5ae2a4542"
+  },
+  "live_untouched": [
+    "rules/forms",
+    "map_tin.py --write",
+    "join_census.SLUG_RE",
+    "join_census.resolve_slug"
+  ]
+}

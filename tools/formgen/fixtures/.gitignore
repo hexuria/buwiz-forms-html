@@ -1,0 +1,15 @@
+# The repository ignores *.pdf, because the six official BIR source forms must
+# never be committed: they are official documents, and extract.py pins them by
+# sha256 precisely so a substituted file fails loudly rather than silently.
+#
+# These six are the opposite case. They are synthetic, built by make_fixtures.py
+# in this directory, and they exist so extract.py --self-test can run in CI at
+# all. Tracking them is the whole point, so the ignore is undone here and only
+# here, by name -- an unqualified `!*.pdf` would re-admit any official PDF a
+# future hand happened to drop in this directory.
+!rules.pdf
+!paths.pdf
+!masks.pdf
+!flip.pdf
+!glyphs.pdf
+!lean.pdf

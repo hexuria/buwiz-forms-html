@@ -1,0 +1,46 @@
+{
+    "schema_version":  "1.0.0",
+    "fixture_id":  "1701q-v2018-official-encrypt-roundtrip",
+    "authority":  "Offline eBIRForms 7.9.6.0 virtualized Encrypt.exe plus crates/bir-core/src/crypto.rs",
+    "helper":  {
+                   "virtual_path":  "C:\\eBIRForms\\Encrypt.exe",
+                   "size":  489452,
+                   "sha256":  "429337f44f84b93cd1095df48c8f3265e5ede7c646d1b48d9b80f4f92de74d2c",
+                   "first16_hex":  "4d5a90000300000004000000ffff0000"
+               },
+    "source":  {
+                   "asset_id":  "xml-editable-v1",
+                   "size":  11898,
+                   "sha256":  "69beaa41b045b44e1ccca742d56a06a3ec505375b80851d6592c60520cc9303e",
+                   "dummy_data_only":  true
+               },
+    "ciphertext":  {
+                       "size":  1463,
+                       "sha256":  "4e7f279f549f0e3fc7d26ee3a6f303bb2a3618bc4fc6e9372fd7f9c99c2b4be5",
+                       "encrypt_exit_code":  0,
+                       "repeat_sha256":  "4e7f279f549f0e3fc7d26ee3a6f303bb2a3618bc4fc6e9372fd7f9c99c2b4be5",
+                       "deterministic":  true
+                   },
+    "repository_decrypt":  {
+                               "source_ref":  "crates/bir-core/src/crypto.rs#decrypt_and_decompress",
+                               "pipeline":  [
+                                                "SHA-256 passphrase key",
+                                                "AES-256 ECB-derived IV",
+                                                "DCPcrypt CBC with partial-block tail",
+                                                "zlib decompression"
+                                            ],
+                               "zlib_first16_hex":  "78daa59a5173da4614469fdb99fe075e",
+                               "plain_size":  11898,
+                               "plain_sha256":  "69beaa41b045b44e1ccca742d56a06a3ec505375b80851d6592c60520cc9303e",
+                               "byte_exact_to_source":  true
+                           },
+    "observed":  {
+                     "executed_on":  "2026-07-23",
+                     "result":  "pass",
+                     "temporary_files_deleted":  true
+                 },
+    "limitations":  [
+                        "The live Final Copy UI action and txtFinalFlag transition were not exercised.",
+                        "No network or submission action occurred."
+                    ]
+}

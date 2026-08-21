@@ -1,0 +1,95 @@
+{
+    "schema_version":  "1.0.0",
+    "form_id":  "1701q-v2018",
+    "cases":  [
+                  {
+                      "id":  "missing-year",
+                      "mutation":  "Clear frm1701q:txtYear.",
+                      "phase":  "validate",
+                      "expected_first_message":  "Please enter a valid year in Item 1.",
+                      "rule_id":  "1701q-validate-001"
+                  },
+                  {
+                      "id":  "missing-quarter",
+                      "mutation":  "Clear all DateQuarter radios with otherwise valid prior fields.",
+                      "phase":  "validate",
+                      "expected_first_message":  "Please select quarter in Item 2.",
+                      "rule_id":  "1701q-validate-004"
+                  },
+                  {
+                      "id":  "missing-tin",
+                      "mutation":  "Clear frm1701q:txtTIN1.",
+                      "phase":  "save",
+                      "expected_first_message":  "Please enter a valid TIN number on Item 5.",
+                      "rule_id":  "1701q-save-002"
+                  },
+                  {
+                      "id":  "invalid-birth-month-zero",
+                      "mutation":  "Set birth date segments to 00/01/1990.",
+                      "phase":  "validate",
+                      "expected_official_behavior":  "Observed in the live 7.9.6 UI: 00/01/1990 reaches the validation-success dialog.",
+                      "observation_ref":  "live-ui-observations-v1.json#live-ui-2026-07-23-birth-month-zero",
+                      "rule_id":  "1701q-validate-010"
+                  },
+                  {
+                      "id":  "spouse-blank-branch-code",
+                      "mutation":  "Use checksum-valid dummy spouse TIN 123-456-788 while leaving frm1701q:txtSpouseBranchCode blank; satisfy the remaining spouse prerequisites.",
+                      "phase":  "validate",
+                      "expected_official_behavior":  "Observed in the live 7.9.6 UI: the blank spouse branch code reaches the validation-success dialog.",
+                      "observation_ref":  "live-ui-observations-v1.json#live-ui-2026-07-23-blank-spouse-branch-and-method",
+                      "rule_id":  "1701q-validate-014"
+                  },
+                  {
+                      "id":  "spouse-item52-over-cap",
+                      "mutation":  "Set frm1701q:txt52B to 250000.01 and blur.",
+                      "phase":  "blur/change",
+                      "expected_first_message":  "Item 52A cannot be more than P250,000.",
+                      "rule_id":  "1701q-blur-002"
+                  },
+                  {
+                      "id":  "current-year-input-handler",
+                      "mutation":  "Set Item 1 to current year and trigger validateYear().",
+                      "phase":  "input",
+                      "expected_official_behavior":  "Accepted despite message wording saying greater than or equal.",
+                      "rule_id":  "1701q-input-001"
+                  },
+                  {
+                      "id":  "spouse-item23-transition-typo",
+                      "mutation":  "Select Estate or Trust to invoke disableSpouse(), then select Single Proprietor or Professional.",
+                      "phase":  "blur/change",
+                      "expected_official_behavior":  "Other spouse controls are enabled, but frm1701q:txtSpouseForeignTaxNum remains disabled while taxpayer frm1701q:txtForeignTaxNumber is enabled.",
+                      "rule_id":  "1701q-change-002"
+                  },
+                  {
+                      "id":  "spouse-blank-item25a-computes-osd",
+                      "mutation":  "Configure a non-compensation spouse with Graduated rate, leave both Item 25A choices blank, and use Schedule I values where Itemized and OSD produce different Item 41B results.",
+                      "phase":  "validate",
+                      "expected_official_behavior":  "Observed in the live 7.9.6 UI: Validate succeeds with both spouse Item 25A choices blank. Source inspection separately proves Item 41B uses the OSD else branch.",
+                      "observation_ref":  "live-ui-observations-v1.json#live-ui-2026-07-23-blank-spouse-branch-and-method",
+                      "expected_correct_behavior":  "The guide default is Itemized, or the app must stop for an explicit method; it must not silently compute OSD.",
+                      "rule_id":  "1701q-validate-027"
+                  },
+                  {
+                      "id":  "edit-restores-spouse-schedule-from-taxpayer",
+                      "mutation":  "Use taxpayer Graduated/Itemized and spouse 8%, validate successfully, then click Edit.",
+                      "phase":  "blur/change",
+                      "expected_official_behavior":  "Spouse Schedule I editable inputs are enabled from taxpayer selections while spouse Schedule II inputs are not restored from spouse selections.",
+                      "rule_id":  "1701q-change-003"
+                  },
+                  {
+                      "id":  "edit-enables-no-spouse-credit-penalty-inputs",
+                      "mutation":  "Leave spouse name empty, validate successfully, then click Edit.",
+                      "phase":  "blur/change",
+                      "expected_official_behavior":  "Observed in the live 7.9.6 UI: spouse B inputs for Items 55-58, 60-61, and 64-66 become enabled; Item 59B is separately disabled.",
+                      "observation_ref":  "live-ui-observations-v1.json#live-ui-2026-07-23-no-spouse-edit-state",
+                      "rule_id":  "1701q-change-004"
+                  },
+                  {
+                      "id":  "mixed-schedules-overwrite-shared-descriptions",
+                      "mutation":  "Set taxpayer to Graduated and spouse to 8%, processing the spouse ATC/rate transition last; then reverse the processing order.",
+                      "phase":  "blur/change",
+                      "expected_official_behavior":  "Processing spouse Schedule II last disables shared txt43Desc needed by taxpayer Schedule I; processing taxpayer Schedule I last disables shared txt48Desc needed by spouse Schedule II.",
+                      "rule_id":  "1701q-change-005"
+                  }
+              ]
+}

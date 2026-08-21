@@ -1,0 +1,845 @@
+{
+    "$schema": "../../schema/calculations.schema.json",
+    "schema_version": "1.0.0",
+    "form_id": "2000-dst-v2018",
+    "revision": "2018-01-01",
+    "evaluation_order": [
+        "2000-atc-ds010",
+        "2000-atc-ds101",
+        "2000-atc-ds102",
+        "2000-atc-ds103",
+        "2000-atc-ds104",
+        "2000-atc-ds105",
+        "2000-atc-ds106",
+        "2000-atc-ds107",
+        "2000-atc-ds108",
+        "2000-atc-ds126",
+        "2000-atc-ds109",
+        "2000-atc-ds110",
+        "2000-atc-ds111",
+        "2000-atc-ds112",
+        "2000-atc-ds113",
+        "2000-atc-ds114",
+        "2000-atc-ds115",
+        "2000-atc-ds116",
+        "2000-atc-ds117",
+        "2000-atc-ds118",
+        "2000-atc-ds119",
+        "2000-atc-ds120",
+        "2000-atc-ds121",
+        "2000-atc-ds124",
+        "2000-atc-ds130",
+        "2000-atc-ds131",
+        "2000-atc-ds132",
+        "2000-atc-ds125",
+        "2000-schedule1-total",
+        "2000-schedule2-total",
+        "2000-schedule3-total",
+        "2000-schedule4-total",
+        "2000-item15d",
+        "2000-item16",
+        "2000-penalties",
+        "2000-total-payable"
+    ],
+    "calculations": [
+        {
+            "calculation_id": "2000-atc-ds010",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "Manual tax-due entry; source enables the result control.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4266"
+            ],
+            "assessment": "verified-correct",
+            "recommended_app_behavior": "Retain manual-entry behavior with explicit authorization.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds101",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 200 \u00c3\u2014 2.00.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4270"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds102",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 200 \u00c3\u2014 1.50.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4275"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds103",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base \u00c3\u2014 0.75.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4280"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds104",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 200 \u00c3\u2014 1.00.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4288"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds105",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base \u00c3\u2014 3.00.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4293"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds106",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 200 \u00c3\u2014 1.50; if modified, multiply by days / 365.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4298"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds107",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 200 \u00c3\u2014 0.60.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4313"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds108",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 200 \u00c3\u2014 0.60.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4314"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds126",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 200 \u00c3\u2014 0.60.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4315"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds109",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "Fixed tier: 0/20/50/100/150/200 according to the source base bands.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4320"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds110",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 4 \u00c3\u2014 0.50.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4343"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds111",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 4 \u00c3\u2014 0.50.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4344"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds112",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "Party-dependent: base / 200 \u00c3\u2014 1.00 or base / 200 \u00c3\u2014 0.40.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4349"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds113",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base / 4 \u00c3\u2014 0.30.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4359"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds114",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base \u00c3\u2014 30.00.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4364"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds115",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "Fixed 0 or 30 according to the source threshold.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4369"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds116",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base \u00c3\u2014 0.20.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4377"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds117",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "Fixed tier 0/2/20 according to source thresholds.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4382"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds118",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base \u00c3\u2014 30.00.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4393"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds119",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base \u00c3\u2014 10.00.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4398"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds120",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "0 below threshold; 6 at the first band; otherwise 6 + ((base - 2000) / 1000 \u00c3\u2014 2).",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4403"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds121",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "0 below threshold; 40 at the first band; otherwise 40 + ((base - 5000) / 5000 \u00c3\u2014 20).",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4418"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds124",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "base \u00c3\u2014 0.15.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4432"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds130",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "0 for invalid/zero months; 1000 through six months; then 1000 + (months-6)\u00c3\u2014100.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4441"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds131",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "0 for invalid/zero months; 2000 through six months; then 2000 + (months-6)\u00c3\u2014200.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4473"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds132",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "0 for invalid/zero months; 3000 through six months; then 3000 + (months-6)\u00c3\u2014300.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4511"
+            ],
+            "assessment": "ambiguous",
+            "recommended_app_behavior": "Re-derive the exact statutory rate, block rounding, thresholds, and units from the pinned guide before implementation; retain this source behavior as compatibility evidence.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-atc-ds125",
+            "outputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "inputs": [
+                "drpATCCode{index}",
+                "frm2000:sched1:txtTaxBase{index}"
+            ],
+            "condition": null,
+            "official_formula": "Intended result=base\u00c3\u201450%, but stray identifier S throws before output assignment.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSched1TaxDue",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSched1TaxDue:L4548"
+            ],
+            "assessment": "incorrect-official-behavior",
+            "recommended_app_behavior": "Implement base\u00c3\u201450% without the ReferenceError and regression-test the branch.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-schedule1-total",
+            "outputs": [
+                "frm2000:sched1:txtTotalDue1",
+                "frm2000:txtTax14"
+            ],
+            "inputs": [
+                "frm2000:sched1:txtTaxDue{index}"
+            ],
+            "condition": null,
+            "official_formula": "Sum all Schedule 1 tax-due rows; copy to Item 14.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSchedule1",
+            "depends_on": [
+                "2000-atc-ds010",
+                "2000-atc-ds101",
+                "2000-atc-ds102",
+                "2000-atc-ds103",
+                "2000-atc-ds104",
+                "2000-atc-ds105",
+                "2000-atc-ds106",
+                "2000-atc-ds107",
+                "2000-atc-ds108",
+                "2000-atc-ds126",
+                "2000-atc-ds109",
+                "2000-atc-ds110",
+                "2000-atc-ds111",
+                "2000-atc-ds112",
+                "2000-atc-ds113",
+                "2000-atc-ds114",
+                "2000-atc-ds115",
+                "2000-atc-ds116",
+                "2000-atc-ds117",
+                "2000-atc-ds118",
+                "2000-atc-ds119",
+                "2000-atc-ds120",
+                "2000-atc-ds121",
+                "2000-atc-ds124",
+                "2000-atc-ds130",
+                "2000-atc-ds131",
+                "2000-atc-ds132",
+                "2000-atc-ds125"
+            ],
+            "source_refs": [
+                "official-hta-runtime#computeSchedule1:L4560-L4591"
+            ],
+            "assessment": "verified-correct",
+            "recommended_app_behavior": "Implement with typed decimals and deterministic two-decimal formatting.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-schedule2-total",
+            "outputs": [
+                "frm2000:sched2:txtTotalPayment1",
+                "frm2000:txtTax15B"
+            ],
+            "inputs": [
+                "frm2000:sched2:txtAmountPaid{index}"
+            ],
+            "condition": null,
+            "official_formula": "Sum Schedule 2 payments and copy to Item 15B.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSchedule2",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSchedule2:L4598-L4607"
+            ],
+            "assessment": "verified-correct",
+            "recommended_app_behavior": "Implement with typed decimals and deterministic two-decimal formatting.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-schedule3-total",
+            "outputs": [
+                "frm2000:sched3:txtTotalPayment1",
+                "frm2000:txtTax15C"
+            ],
+            "inputs": [
+                "frm2000:sched3:txtAmountPaid{index}"
+            ],
+            "condition": null,
+            "official_formula": "Sum Schedule 3 payments and copy to Item 15C.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSchedule3",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSchedule3:L4609-L4618"
+            ],
+            "assessment": "verified-correct",
+            "recommended_app_behavior": "Implement with typed decimals and deterministic two-decimal formatting.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-schedule4-total",
+            "outputs": [
+                "frm2000:sched4:txtTotalRemittance1",
+                "frm2000:txtTax19"
+            ],
+            "inputs": [
+                "frm2000:sched4:txtAmountRemitted{index}"
+            ],
+            "condition": null,
+            "official_formula": "Sum Schedule 4 remittances and copy to Item 19.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeSchedule4",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computeSchedule4:L4620-L4628"
+            ],
+            "assessment": "verified-correct",
+            "recommended_app_behavior": "Implement with typed decimals and deterministic two-decimal formatting.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-item15d",
+            "outputs": [
+                "frm2000:txtTax15D"
+            ],
+            "inputs": [
+                "frm2000:txtTax15A",
+                "frm2000:txtTax15B",
+                "frm2000:txtTax15C"
+            ],
+            "condition": null,
+            "official_formula": "Item 15D = 15A + 15B + 15C.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeTax15D",
+            "depends_on": [
+                "2000-schedule2-total",
+                "2000-schedule3-total"
+            ],
+            "source_refs": [
+                "official-hta-runtime#computeTax15D:L3897-L3906"
+            ],
+            "assessment": "verified-correct",
+            "recommended_app_behavior": "Implement with typed decimals and deterministic two-decimal formatting.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-item16",
+            "outputs": [
+                "frm2000:txtTax16"
+            ],
+            "inputs": [
+                "frm2000:txtTax14",
+                "frm2000:txtTax15A",
+                "frm2000:txtTax15B",
+                "frm2000:txtTax15C",
+                "frm2000:optMode"
+            ],
+            "condition": null,
+            "official_formula": "Mode 2: max(14-(15A+15B),0). Modes 1/3: 14-15A-15B-15C, then force a positive result negative.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeTax16",
+            "depends_on": [
+                "2000-schedule1-total",
+                "2000-item15d"
+            ],
+            "source_refs": [
+                "official-hta-runtime#computeTax16:L3908-L3933"
+            ],
+            "assessment": "incorrect-official-behavior",
+            "recommended_app_behavior": "Re-derive payable/credit sign semantics; do not force a positive liability negative.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-penalties",
+            "outputs": [
+                "frm2000:txtTax17D"
+            ],
+            "inputs": [
+                "frm2000:txtTax17A",
+                "frm2000:txtTax17B",
+                "frm2000:txtTax17C"
+            ],
+            "condition": null,
+            "official_formula": "Item 17D = 17A + 17B + 17C.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computePenalties",
+            "depends_on": [],
+            "source_refs": [
+                "official-hta-runtime#computePenalties:L3946-L3950"
+            ],
+            "assessment": "verified-correct",
+            "recommended_app_behavior": "Implement with typed decimals and deterministic two-decimal formatting.",
+            "confidence": "high"
+        },
+        {
+            "calculation_id": "2000-total-payable",
+            "outputs": [
+                "frm2000:txtTax18"
+            ],
+            "inputs": [
+                "frm2000:txtTax16",
+                "frm2000:txtTax17D"
+            ],
+            "condition": null,
+            "official_formula": "Item 18 = Item 16 + Item 17D.",
+            "rounding": "Source normally applies Number.toFixed(2) through formatCurrency; per-block operations do not consistently apply statutory ceiling.",
+            "trigger": "computeTotalAmtPayable",
+            "depends_on": [
+                "2000-item16",
+                "2000-penalties"
+            ],
+            "source_refs": [
+                "official-hta-runtime#computeTotalAmtPayable:L3952-L3954"
+            ],
+            "assessment": "official-bug-compatible",
+            "recommended_app_behavior": "Represent credits and liabilities separately to avoid negative payable totals.",
+            "confidence": "high"
+        }
+    ]
+}

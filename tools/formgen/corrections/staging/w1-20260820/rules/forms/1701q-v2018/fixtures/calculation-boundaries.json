@@ -1,0 +1,209 @@
+{
+    "schema_version":  "1.0.0",
+    "fixture_id":  "1701q-v2018-official-runtime-calculation-boundaries",
+    "authority":  "Installed Offline eBIRForms 7.9.6.0 exact decoded JScript",
+    "package_sha256":  "de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca",
+    "hta_sha256":  "5f164dde6154b96f28e23656ed2ef29406010ee3f94333e88ea6eb107fe589a0",
+    "string_util_sha256":  "bc7f86f70bf993389a3a0135dcbd76c3e370c49d2eb95e2fc66ff318a2ebe43c",
+    "engine":  "Windows Script Host JScript via cscript.exe",
+    "source_refs":  [
+                        "official-hta-runtime#L4333-L4479",
+                        "string-util-runtime#L321-L362"
+                    ],
+    "parties":  [
+                    "taxpayer",
+                    "taxspouse"
+                ],
+    "item46_cases":  [
+                         {
+                             "year":  2022,
+                             "item45":  -1,
+                             "expected_item46":  "0.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  249990,
+                             "expected_item46":  "0.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  250000,
+                             "expected_item46":  "0.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  250010,
+                             "expected_item46":  "2.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  399990,
+                             "expected_item46":  "29,998.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  400000,
+                             "expected_item46":  "30,000.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  400010,
+                             "expected_item46":  "30,003.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  799990,
+                             "expected_item46":  "129,998.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  800000,
+                             "expected_item46":  "130,000.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  800010,
+                             "expected_item46":  "130,003.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  1999990,
+                             "expected_item46":  "489,997.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  2000000,
+                             "expected_item46":  "490,000.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  2000010,
+                             "expected_item46":  "490,003.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  7999990,
+                             "expected_item46":  "2,409,997.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  8000000,
+                             "expected_item46":  "2,410,000.00"
+                         },
+                         {
+                             "year":  2022,
+                             "item45":  8000010,
+                             "expected_item46":  "2,410,004.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  -1,
+                             "expected_item46":  "0.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  249990,
+                             "expected_item46":  "0.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  250000,
+                             "expected_item46":  "0.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  250010,
+                             "expected_item46":  "2.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  399990,
+                             "expected_item46":  "22,499.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  400000,
+                             "expected_item46":  "22,500.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  400010,
+                             "expected_item46":  "22,502.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  799990,
+                             "expected_item46":  "102,498.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  800000,
+                             "expected_item46":  "102,500.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  800010,
+                             "expected_item46":  "102,503.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  1999990,
+                             "expected_item46":  "402,498.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  2000000,
+                             "expected_item46":  "402,500.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  2000010,
+                             "expected_item46":  "402,503.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  7999990,
+                             "expected_item46":  "2,202,497.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  8000000,
+                             "expected_item46":  "2,202,500.00"
+                         },
+                         {
+                             "year":  2023,
+                             "item45":  8000010,
+                             "expected_item46":  "2,202,504.00"
+                         }
+                     ],
+    "item45_signed_cases":  [
+                                {
+                                    "party":  "taxpayer",
+                                    "items":  {
+                                                  "item43":  1000,
+                                                  "item41":  100000,
+                                                  "item42":  20000,
+                                                  "item44":  -25000
+                                              },
+                                    "expected_item45":  "96,000.00"
+                                },
+                                {
+                                    "party":  "taxspouse",
+                                    "items":  {
+                                                  "item43":  250,
+                                                  "item41":  -5000,
+                                                  "item42":  1000,
+                                                  "item44":  -100
+                                              },
+                                    "expected_item45":  "-3,850.00"
+                                }
+                            ],
+    "observed":  {
+                     "executed_on":  "2026-07-23",
+                     "item46_case_executions":  64,
+                     "item45_case_executions":  2,
+                     "total":  66,
+                     "result":  "pass"
+                 },
+    "notes":  "Exact official functions were extracted in memory from the hash-pinned package, executed with a minimal fake DOM, and the temporary JScript file was deleted. No UI, save, Final Copy, or submission action occurred."
+}

@@ -1,0 +1,15 @@
+{
+    "schema_version":  "1.0.0",
+    "form_id":  "2000-v2018",
+    "source_path":  "C:\\Mac\\Home\\Downloads\\forms\\2000\\2000-final-copy-#email-redacted#.xml",
+    "ciphertext_sha256":  "f52eff04eb3e2e50c9d6fc626cd5344aa243a4a4ea8fb1ae954093165daefe9c",
+    "zlib_header":  "78da",
+    "decrypted_byte_count":  6965,
+    "decrypted_sha256":  "d0a34a75488d15941d126e856202fb1f5e0d738165c83a0a3baa62e302636573",
+    "field_count":  114,
+    "unique_field_count":  113,
+    "field_inventory_sha256":  "da6f3991b7570f3786a40c24ac2d686aa3e79e488a30604285a49ae495048521",
+    "encrypted_only_field":  "frm2000:txtMonth1",
+    "xml_version":  null,
+    "values_emitted":  false
+}

@@ -1,0 +1,69 @@
+{
+    "schema_version":  "1.0.0",
+    "form_id":  "2000-v2018",
+    "resources":  [
+                      {
+                          "src":  "../jq/jquery-1.7.1.min.js",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\jq\\jquery-1.7.1.min.js",
+                          "present":  true,
+                          "size":  93868,
+                          "sha256":  "88171413fc76dda23ab32baa17b11e4fff89141c633ece737852445f1ba6c1bd"
+                      },
+                      {
+                          "src":  "../jq/jquery-ui-1.8.18.custom.min.js",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\jq\\jquery-ui-1.8.18.custom.min.js",
+                          "present":  true,
+                          "size":  210423,
+                          "sha256":  "f38f53a28fe9992933dbc4ba83a76eb55e7c30c6fe84981df683ace83735ad43"
+                      },
+                      {
+                          "src":  "../js/aes.js",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\js\\aes.js",
+                          "present":  true,
+                          "size":  19841,
+                          "sha256":  "177f098b1540af2a3fee43c15956a40b2021dd98c0dbec20efa8f8a2d1e4ed7e"
+                      },
+                      {
+                          "src":  "../js/eBIRTools.vbs",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\js\\eBIRTools.vbs",
+                          "present":  true,
+                          "size":  7557,
+                          "sha256":  "7d0ceb5aad2c0eb90aeca189d6104ff05163ecd1820379f456125634ff7460f7"
+                      },
+                      {
+                          "src":  "../js/environment.js",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\js\\environment.js",
+                          "present":  true,
+                          "size":  11556,
+                          "sha256":  "53f86a9e4def3955950ade2b452c722b22236d3e3d5e51f767f32d1fff555c4c"
+                      },
+                      {
+                          "src":  "../js/lz-string-1.0.2.js",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\js\\lz-string-1.0.2.js",
+                          "present":  true,
+                          "size":  5350,
+                          "sha256":  "58a7a887090cd33e763d470bd9558f177f4b2c52de99e01fabf0339a44c9f150"
+                      },
+                      {
+                          "src":  "../js/rijndael.js",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\js\\rijndael.js",
+                          "present":  true,
+                          "size":  7045,
+                          "sha256":  "f1eda7677447fcab29e3c26ea7054800cc43a4b436c40e71102fb97d9faaab06"
+                      },
+                      {
+                          "src":  "../js/string-util.js",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\js\\string-util.js",
+                          "present":  true,
+                          "size":  54582,
+                          "sha256":  "bc7f86f70bf993389a3a0135dcbd76c3e370c49d2eb95e2fc66ff318a2ebe43c"
+                      },
+                      {
+                          "src":  "../js/string-util2014.js",
+                          "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\js\\string-util2014.js",
+                          "present":  true,
+                          "size":  15980,
+                          "sha256":  "ca42592694e7416a15eca97fa25491c01da17e383038fc97dd9d6261e67bcf7d"
+                      }
+                  ]
+}

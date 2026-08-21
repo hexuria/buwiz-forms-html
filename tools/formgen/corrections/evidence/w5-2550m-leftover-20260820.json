@@ -1,0 +1,90 @@
+{
+  "job": "W5",
+  "title": "Classify leftover leaves on 2550M",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W5: Classify leftover leaves on 2550M",
+    "SAVEFILE": "C:\\eBIRForms\\savefile\\00000000000000-2550M-082026.xml sha256=0345f1ce71b1ff1a2d0dac70c1a16e8a2485970708c708dd7961d6eb01d5d544",
+    "FORM": "2550-M February 2007 ENCS package=7.9.6.1",
+    "HTA": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\forms\\BIR-Form2550M.hta sha256=72f1422dab2f8523d140aa51fe5f54f7d9025acc2cf877b37c8d92b60c7668b5",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c (vs manifest 7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca)",
+    "FINDING": "2550m-2007 leftover_unique 246. Dummy Save emitted 142 XML names. Partition by leftover leaf vs saveXML: 138 leftover keys emitted, 108 silent. Candidate harvest-rule JSON text only: txtEmail emitted as txtEmail (email box item 9-equivalent / profile email; one named box). frm2550m:txtRDOCode emitted (Item 5 RDO Code). frm2550m:txtZipCode emitted (Item 10 Zip Code). frm2550m:txtAddress emitted (Item 9 Registered Address). frm2550m:txtTaxPayerName emitted (Item 7 Taxpayer Name) but leftover leaf is txtTaxpayerName spelling, so leftover txtTaxpayerName is silent. Runtime emitted but not unique printed boxes: txtFinalFlag, ebirOnlineUsername/Secret/ConfirmUsername, txtEnroll, driveSelectTPExport. txtCurrentPage/txtMaxPage leftover-silent. No harvest_tin code change. No join.",
+    "STAGING": "none",
+    "PINS": "leftover_keys.py live tree unchanged",
+    "NEXT": "6"
+  },
+  "leftover_unique_total": 246,
+  "emitted_leftover": 138,
+  "silent_leftover": 108,
+  "harvest_rule_proposals": [
+    {
+      "leaf": "txtEmail",
+      "emitted": true,
+      "xml": "txtEmail",
+      "box": "Email address (profile-loaded on 2550M; one named box)",
+      "unique": true,
+      "proposal": "candidate harvest-rule later; JSON text only"
+    },
+    {
+      "leaf": "txtRDOCode",
+      "emitted": true,
+      "xml": "frm2550m:txtRDOCode",
+      "box": "Item 5 RDO Code",
+      "unique": true,
+      "proposal": "candidate"
+    },
+    {
+      "leaf": "txtZipCode",
+      "emitted": true,
+      "xml": "frm2550m:txtZipCode",
+      "box": "Item 10 Zip Code",
+      "unique": true,
+      "proposal": "candidate"
+    },
+    {
+      "leaf": "txtAddress",
+      "emitted": true,
+      "xml": "frm2550m:txtAddress",
+      "box": "Item 9 Registered Address",
+      "unique": true,
+      "proposal": "candidate"
+    },
+    {
+      "leaf": "txtTaxpayerName",
+      "emitted": false,
+      "xml": "frm2550m:txtTaxPayerName",
+      "box": "Item 7 Taxpayer Name uses TaxPayer spelling; leftover leaf txtTaxpayerName silent",
+      "unique": false,
+      "proposal": "not this leaf"
+    },
+    {
+      "leaf": "txtFinalFlag",
+      "emitted": true,
+      "xml": "txtFinalFlag",
+      "box": "runtime / filing-state",
+      "unique": false,
+      "proposal": "runtime"
+    },
+    {
+      "leaf": "ebirOnlineUsername",
+      "emitted": true,
+      "xml": "ebirOnlineUsername",
+      "box": "runtime / login",
+      "unique": false,
+      "proposal": "runtime"
+    },
+    {
+      "leaf": "txtCurrentPage",
+      "emitted": false,
+      "xml": null,
+      "box": "runtime pager leftover-silent on this Save",
+      "unique": false,
+      "proposal": "runtime"
+    }
+  ],
+  "live_untouched": [
+    "rules/forms",
+    "harvest_tin",
+    "map_tin.py --write"
+  ]
+}

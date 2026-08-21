@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tools/formgen/corrections/correction-record.schema.json",
+  "title": "Stage-2 correction record",
+  "description": "A declared, per-form correction applied to a byte-copy of a NAMED stage-1 batch (ARCHITECTURE.md, 'Batch-versioned immutability'). PROVISIONAL: the applier does not exist yet, and the integration round owns the final shape. Every key here is required because a stage-2 record that omits one of them cannot be checked -- an omitted expected_effect makes the correction unverifiable, an omitted authority makes it an opinion, and an omitted divergence block is the exact failure mode ARCHITECTURE.md rule 1 forbids.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "status",
+    "form",
+    "subject",
+    "preconditions",
+    "what",
+    "reason",
+    "authority",
+    "evidence",
+    "corpus_context",
+    "filing_safety",
+    "expected_effect",
+    "divergence",
+    "verified_by",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-provisional)?$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^C[0-9]{2,}$",
+      "description": "Stable ledger id. Quoted verbatim in the divergence report, so it never changes once published."
+    },
+    "title": { "type": "string", "minLength": 8 },
+    "status": {
+      "enum": ["declared", "applied", "verified", "retired"],
+      "description": "declared = authored and reviewable, never applied; applied = the applier wrote it into forms-corrected/; verified = an independent producer re-derived expected_effect; retired = withdrawn, with a reason. A record is NEVER 'verified' because its own applier said so."
+    },
+    "form": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "revision", "bundle_slug", "source_pdf", "source_pdf_sha256"],
+      "properties": {
+        "code": { "type": "string" },
+        "revision": { "type": "string" },
+        "bundle_slug": { "type": "string" },
+        "source_pdf": { "type": "string" },
+        "source_pdf_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "description": "WHAT is being corrected, identified so that a lattice renumbering cannot silently move it (risk R2). Geometry from the pinned PDF is authoritative; the cell id is a hint and is explicitly non-authoritative.",
+      "additionalProperties": false,
+      "required": ["description", "page", "printed_box_pt", "match", "official_field_key", "cell_id_hint"],
+      "properties": {
+        "description": { "type": "string" },
+        "page": { "type": "integer", "minimum": 1 },
+        "printed_box_pt": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "[x0, y0, x1, y1] in PDF points, top-left origin, measured from the pinned PDF."
+        },
+        "match": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["strategy", "tolerance_pt", "cardinality"],
+          "properties": {
+            "strategy": { "type": "string" },
+            "tolerance_pt": { "type": "number", "exclusiveMinimum": 0 },
+            "cardinality": {
+              "const": "exactly-one",
+              "description": "Zero matches or more than one is a build failure. The applier never picks a best candidate."
+            }
+          }
+        },
+        "official_field_key": { "type": "string" },
+        "cell_id_hint": { "type": "string" }
+      }
+    },
+    "preconditions": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Conditions the applier re-checks against the named batch and the pinned PDF before writing anything. Any failure aborts the whole applier run; a correction is never applied to a bundle it was not authored against.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check", "expect"],
+        "properties": {
+          "check": { "type": "string" },
+          "expect": {},
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "what": {
+      "type": "object",
+      "description": "The change, as data. No prose-only corrections: the applier must be general, so the operation is a named, form-independent transform.",
+      "additionalProperties": false,
+      "required": ["operation", "from", "to", "layout_policy"],
+      "properties": {
+        "operation": { "type": "string" },
+        "from": {},
+        "to": {},
+        "layout_policy": { "type": "object" }
+      }
+    },
+    "reason": { "type": "string", "minLength": 40 },
+    "authority": {
+      "type": "object",
+      "description": "WHO says so. An honest gap beats a fabricated citation: if the specific issuance cannot be identified from what is in the repository, regulation_reference states that in those words.",
+      "additionalProperties": false,
+      "required": ["kind", "statement", "in_repo_refs", "regulation_reference", "fabrication_guard"],
+      "properties": {
+        "kind": { "type": "string" },
+        "statement": { "type": "string" },
+        "in_repo_refs": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "regulation_reference": { "type": "string" },
+        "fabrication_guard": { "type": "string" }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Every load-bearing number, with where it came from and how to re-derive it. A claim with no reproduce step is not evidence.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim", "source", "measurement", "reproduce"],
+        "properties": {
+          "claim": { "type": "string" },
+          "source": { "type": "string" },
+          "measurement": {},
+          "reproduce": { "type": "string" },
+          "independence": { "type": "string" }
+        }
+      }
+    },
+    "corpus_context": {
+      "type": "object",
+      "description": "How the corrected form sits against the rest of the corpus, with denominators. Never a bare count.",
+      "additionalProperties": true,
+      "required": ["measured_on", "denominator", "summary"],
+      "properties": {
+        "measured_on": { "type": "string" },
+        "denominator": { "type": "integer", "minimum": 1 },
+        "summary": { "type": "string" }
+      }
+    },
+    "filing_safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["harm", "who_is_affected", "today", "after"],
+      "properties": {
+        "harm": { "type": "string" },
+        "who_is_affected": { "type": "string" },
+        "today": { "type": "string" },
+        "after": { "type": "string" }
+      }
+    },
+    "expected_effect": {
+      "type": "object",
+      "description": "Declared IN ADVANCE and re-derived by an independent producer. A correction that cannot state its effect in advance cannot land (ARCHITECTURE.md rule 3).",
+      "additionalProperties": false,
+      "required": ["declared_at", "assertions"],
+      "properties": {
+        "declared_at": { "type": "string" },
+        "assertions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "statement", "re_derived_from", "status"],
+            "properties": {
+              "id": { "type": "string" },
+              "statement": { "type": "string" },
+              "re_derived_from": { "type": "string" },
+              "status": { "enum": ["declared", "held", "failed"] }
+            }
+          }
+        }
+      }
+    },
+    "divergence": {
+      "type": "object",
+      "description": "ARCHITECTURE.md rule 1. The corrected field STILL diverges from the artwork and the report must still say so, naming this record and its authority. An override is never a way to silence a check.",
+      "additionalProperties": false,
+      "required": ["never_hidden", "report_text", "checks_that_must_report_it", "must_not"],
+      "properties": {
+        "never_hidden": { "const": true },
+        "report_text": { "type": "string" },
+        "checks_that_must_report_it": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["check", "expected_finding", "proven"],
+            "properties": {
+              "check": { "type": "string" },
+              "expected_finding": { "type": "string" },
+              "proven": {
+                "type": "boolean",
+                "description": "false until someone has SEEN the check fail on the corrected tree. A record may be 'declared' with proven:false; it may never be 'verified' with one."
+              }
+            }
+          }
+        },
+        "must_not": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "verified_by": {
+      "type": "object",
+      "description": "ARCHITECTURE.md rule 4 / risk R3: the verifier must share no producer with the correction.",
+      "additionalProperties": false,
+      "required": ["requirement", "forbidden_sources", "status"],
+      "properties": {
+        "requirement": { "type": "string" },
+        "forbidden_sources": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "status": { "type": "string" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authored_at", "authored_against_head", "tools", "review"],
+      "properties": {
+        "authored_at": { "type": "string" },
+        "authored_against_head": { "type": "string" },
+        "tools": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "note"],
+          "properties": {
+            "state": { "enum": ["unreviewed", "user-reviewed"] },
+            "note": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

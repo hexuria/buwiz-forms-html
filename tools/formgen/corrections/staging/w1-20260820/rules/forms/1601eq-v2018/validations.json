@@ -1,0 +1,1398 @@
+{
+    "$schema":  "../../schema/validations.schema.json",
+    "schema_version":  "1.0.0",
+    "form_id":  "1601eq-v2018",
+    "revision":  "2018-01-01",
+    "first_error_behavior":  "Validate and Save preflight stop at the first ordered failure. Input and change handlers run independently. Final-copy/submission has its own ordered guards.",
+    "rules":  [
+                  {
+                      "rule_id":  "1601eq-input-001",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "input",
+                      "order":  null,
+                      "condition":  "A keypress in year, sheet count, TIN core segments, ZIP code, or telephone is not a digit or an allowed control key.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear",
+                                     "frm1601EQ:txtNoSheets",
+                                     "frm1601EQ:txtTIN1",
+                                     "frm1601EQ:txtTIN2",
+                                     "frm1601EQ:txtTIN3",
+                                     "frm1601EQ:txtZipCode",
+                                     "frm1601EQ:txtTelNum"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#L276,L355,L391-L393,L495,L513",
+                                          "shared-string-util#wholenumber:L364-L387"
+                                      ],
+                      "evidence_type":  [
+                                            "runtime-dom",
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "wholenumber permits digits plus Backspace, Tab, Enter, Escape and equivalent control keys.",
+                      "recommended_app_behavior":  "Apply the same character filter, but also validate complete values after paste/programmatic assignment.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-input-002",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "input",
+                      "order":  null,
+                      "condition":  "A branch-code keypress is not ASCII A-Z/a-z, 0-9, or an allowed control key.",
+                      "fields":  [
+                                     "frm1601EQ:txtBranchCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#L394",
+                                          "shared-string-util#letternumber:L389-L412"
+                                      ],
+                      "evidence_type":  [
+                                            "runtime-dom",
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Branch input accepts ASCII alphanumeric characters and has maxlength 5.",
+                      "recommended_app_behavior":  "Normalize to uppercase and validate the official branch-code shape as a complete value.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-input-003",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "input",
+                      "order":  null,
+                      "condition":  "A runtime ATC tax-base keypress is not a digit, dot, or allowed control key.",
+                      "fields":  [
+                                     "frm1601EQ:txtTaxBase1",
+                                     "frm1601EQ:txtTaxBase2",
+                                     "frm1601EQ:txtTaxBase3",
+                                     "frm1601EQ:txtTaxBase4",
+                                     "frm1601EQ:txtTaxBase5",
+                                     "frm1601EQ:txtTaxBase6"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#getATCCode:L2922-L2929",
+                                          "shared-string-util#numbersonly:L148-L174"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "runtime-dom"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "The later duplicate numbersonly declaration wins and permits any number of decimal points; blur round() converts malformed text to 0.00.",
+                      "recommended_app_behavior":  "Accept one optional decimal point and reject malformed pasted/programmatic values instead of silently coercing them to zero.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-input-004",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "input",
+                      "order":  null,
+                      "condition":  "Text exceeds the control maxlength.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear",
+                                     "frm1601EQ:txtNoSheets",
+                                     "frm1601EQ:txtTIN1",
+                                     "frm1601EQ:txtTIN2",
+                                     "frm1601EQ:txtTIN3",
+                                     "frm1601EQ:txtBranchCode",
+                                     "frm1601EQ:txtTaxpayerName",
+                                     "frm1601EQ:txtAddress",
+                                     "frm1601EQ:txtZipCode",
+                                     "frm1601EQ:txtTelNum",
+                                     "txtEmail"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#L276-L539"
+                                      ],
+                      "evidence_type":  [
+                                            "runtime-dom"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "HTML maxlength bounds typed input: year 4, sheets 2, TIN cores 3 each, branch 5, name 50, each address line 150, ZIP 12, telephone 20, email 20.",
+                      "recommended_app_behavior":  "Enforce the same storage limits with explicit validation errors, including paste and import paths.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-blur-001",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "Taxpayer name or address loses focus.",
+                      "fields":  [
+                                     "frm1601EQ:txtTaxpayerName",
+                                     "frm1601EQ:txtAddress"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#L435,L472",
+                                          "shared-string-util#capital"
+                                      ],
+                      "evidence_type":  [
+                                            "runtime-dom",
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "capital uppercases and trims the value on blur.",
+                      "recommended_app_behavior":  "Normalize deterministically at the model boundary as well as in the editor.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-blur-002",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "A tax base loses focus.",
+                      "fields":  [
+                                     "frm1601EQ:txtTaxBase1",
+                                     "frm1601EQ:txtTaxBase2",
+                                     "frm1601EQ:txtTaxBase3",
+                                     "frm1601EQ:txtTaxBase4",
+                                     "frm1601EQ:txtTaxBase5",
+                                     "frm1601EQ:txtTaxBase6"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#getATCCode:L2922-L2929",
+                                          "shared-string-util#round:L286-L319"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "runtime-dom"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "round() truncates integer input to 12 digits, rounds half-up to two decimals, comma-groups, and coerces NaN or excess precision to 0.00.",
+                      "recommended_app_behavior":  "Use decimal arithmetic, reject excess precision/length explicitly, and never silently replace malformed input with zero.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-change-001",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "Taxable year changes.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#changeYear:L2636-L2641",
+                                          "official-hta-runtime#changeATCRate:L2665-L2690",
+                                          "fixtures/atc-catalog-v796.json",
+                                          "official-2019-pdf#p2:ATC-rates"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "runtime-binary",
+                                            "official-pdf"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Existing selected ATC rates and withheld amounts are recomputed; for year \u003c=2018 WI/WC650=25%, WI/WC651=32%, and WI/WC663 or WI/WC710=20%. For later years the package catalog is used, but it retains confirmed stale/wrong rates including Government WC651=32 and WC710=20, and WI/WC661=10, where the January 2019 form prints 15.",
+                      "recommended_app_behavior":  "Represent rates as effective-dated, revision-scoped catalog data; for January 2019 use the official PDF values and recompute dependent amounts transactionally.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-change-002",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "Category changes after at least one ATC row exists and the user confirms.",
+                      "fields":  [
+                                     "frm1601EQ:optCategory:P",
+                                     "frm1601EQ:optCategory:G"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "By changing Category your selected ATC will be remove.",
+                      "source_refs":  [
+                                          "official-hta-runtime#changeCategory:L2717-L2756"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "A confirmation is shown; confirmation clears Items 19-30, all selected ATCs, and both ATC tables. Cancellation reverses the category radio choice.",
+                      "recommended_app_behavior":  "Use grammatical warning text and clear only after an explicit confirmation while preserving a recoverable undo state.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-change-003",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "Amended Return No is selected.",
+                      "fields":  [
+                                     "frm1601EQ:optAmend:N",
+                                     "frm1601EQ:txtTax22"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#L311-L312"
+                                      ],
+                      "evidence_type":  [
+                                            "runtime-dom"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Item 22 is disabled, reset to 0.00, and downstream totals are recomputed.",
+                      "recommended_app_behavior":  "Apply the same dependency and preserve the prior value only in reversible editor state, not submitted data.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-change-004",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "Any Taxes Withheld changes from Yes to No after ATCs exist and the user confirms.",
+                      "fields":  [
+                                     "frm1601EQ:optWithheld:Y",
+                                     "frm1601EQ:optWithheld:N"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "You are about to change the value . Doing this will clear all \\n computation fields Do you wish to proceed?",
+                      "source_refs":  [
+                                          "official-hta-runtime#changeTaxWithheldNO:L3449-L3483"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "Confirmation clears Items 19-30 and all ATC rows; cancellation restores Yes.",
+                      "recommended_app_behavior":  "Use corrected message text and a reversible confirmation.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-change-005",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "Item 30 changes sign.",
+                      "fields":  [
+                                     "frm1601EQ:txtTax30",
+                                     "frm1601EQ:ifRefund",
+                                     "frm1601EQ:ifIssueCert",
+                                     "frm1601EQ:ifCarriedOver"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#computeOfTotalAmtDue:L3081-L3096"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Negative Item 30 enables the three disposition choices; zero or positive clears and disables all three.",
+                      "recommended_app_behavior":  "Apply the same state rule.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-change-006",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "One Item 30 over-remittance disposition is checked.",
+                      "fields":  [
+                                     "frm1601EQ:ifRefund",
+                                     "frm1601EQ:ifIssueCert",
+                                     "frm1601EQ:ifCarriedOver"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#checkRefund:L3116-L3121",
+                                          "official-hta-runtime#checkIssueCert:L3124-L3129",
+                                          "official-hta-runtime#checkCarriedOver:L3132-L3137"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Checking one choice clears the other two.",
+                      "recommended_app_behavior":  "Model as a single enum rather than three independent booleans while preserving XML compatibility.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-change-007",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  null,
+                      "condition":  "Item 11 category filters the package ATC catalog.",
+                      "fields":  [
+                                     "frm1601EQ:optCategory:P",
+                                     "frm1601EQ:optCategory:G",
+                                     "AtcCode1"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#getWithholdingAgentATC:L2643-L2662",
+                                          "official-hta-runtime#changedrpATCList:L2759-L2782",
+                                          "fixtures/atc-catalog-v796.json"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "runtime-binary"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "Private renders 111 ordered slots and Government renders 96; four malformed categoryless catalog records are loaded but unreachable.",
+                      "recommended_app_behavior":  "Keep the malformed records in provenance data, exclude them from selectable choices, and validate the catalog during ingestion.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-001",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  1,
+                      "condition":  "Item 1 is blank.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid year on Item 1.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3141-L3146"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stops, focuses Item 1, and returns false.",
+                      "recommended_app_behavior":  "Require a four-digit year.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-002",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  2,
+                      "condition":  "Item 1 is greater than the current calendar year.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Invalid entry on Item 1. Entry should not be a future Date.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3147-L3151"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Resets Item 1 to the current year, focuses it, and stops.",
+                      "recommended_app_behavior":  "Reject without silently mutating the user value.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-003",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  3,
+                      "condition":  "Item 1 is less than 2018.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Invalid entry on Item 1. Entry should not be a previous year from 2018.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3152-L3156"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Clears Item 1, focuses it, and stops.",
+                      "recommended_app_behavior":  "Enforce the revision applicability boundary explicitly.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-004",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  4,
+                      "condition":  "Q1 of the current year is selected before April.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear",
+                                     "frm1601EQ:optQuarter:1"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Unable to select first Quarter due to the current date. Payment should be made after the Quarter",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3161-L3173"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Clears Q1 and stops; a prior-year Q1 is accepted.",
+                      "recommended_app_behavior":  "Use a filing-period calendar service and preserve selection on error.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-005",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  5,
+                      "condition":  "Q2 of the current year is selected before July.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear",
+                                     "frm1601EQ:optQuarter:2"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Unable to select second Quarter due to the current date. Payment should be made after the Quarter",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3174-L3185"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Clears Q2 and stops; a prior-year Q2 is accepted.",
+                      "recommended_app_behavior":  "Use a filing-period calendar service and preserve selection on error.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-006",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  6,
+                      "condition":  "Q3 of the current year is selected before October.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear",
+                                     "frm1601EQ:optQuarter:3"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Unable to select third Quarter due to the current date. Payment should be made after the Quarter",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3186-L3197"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Clears Q3 and stops; a prior-year Q3 is accepted.",
+                      "recommended_app_behavior":  "Use a filing-period calendar service and preserve selection on error.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-007",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  7,
+                      "condition":  "Q4 of the current year is selected.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear",
+                                     "frm1601EQ:optQuarter:4"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Unable to select fourth Quarter due to the current date. Payment should be made after the Quarter",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3198-L3205"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Always clears current-year Q4 and stops; only prior-year Q4 is accepted.",
+                      "recommended_app_behavior":  "Make the end-of-quarter eligibility rule explicit and timezone-stable.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-008",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  8,
+                      "condition":  "No quarter radio is selected.",
+                      "fields":  [
+                                     "frm1601EQ:optQuarter:1",
+                                     "frm1601EQ:optQuarter:2",
+                                     "frm1601EQ:optQuarter:3",
+                                     "frm1601EQ:optQuarter:4"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please select Quarter on Item 2",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3206-L3209"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stops at Item 2.",
+                      "recommended_app_behavior":  "Require exactly one quarter.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-009",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  9,
+                      "condition":  "Neither Item 4 radio is selected.",
+                      "fields":  [
+                                     "frm1601EQ:optWithheld:Y",
+                                     "frm1601EQ:optWithheld:N"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please select an option for Item 4.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3211-L3214"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stops at Item 4.",
+                      "recommended_app_behavior":  "Require exactly one choice.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-010",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  10,
+                      "condition":  "Neither Item 11 category radio is selected.",
+                      "fields":  [
+                                     "frm1601EQ:optCategory:P",
+                                     "frm1601EQ:optCategory:G"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please select an option for Item 11.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3215-L3218"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stops at Item 11.",
+                      "recommended_app_behavior":  "Require exactly one category.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-011",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  11,
+                      "condition":  "Any Item 6 TIN core segment or branch code is blank.",
+                      "fields":  [
+                                     "frm1601EQ:txtTIN1",
+                                     "frm1601EQ:txtTIN2",
+                                     "frm1601EQ:txtTIN3",
+                                     "frm1601EQ:txtBranchCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid TIN number on Item 6.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3220-L3226"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Only nonblankness is tested; partial core segments, a one-character branch, and no checksum validation can pass.",
+                      "recommended_app_behavior":  "Require exactly 3-3-3 core digits, a valid branch representation, and the shared TIN checksum where applicable.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-012",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  12,
+                      "condition":  "Item 7 select has selectedIndex 0.",
+                      "fields":  [
+                                     "frm1601EQ:txtRDOCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid RDO Code on Item 7.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3227-L3230"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stops when the placeholder RDO is selected.",
+                      "recommended_app_behavior":  "Require a catalog-backed RDO code.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-013",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  13,
+                      "condition":  "Item 8 name is blank.",
+                      "fields":  [
+                                     "frm1601EQ:txtTaxpayerName"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid Taxpayer Name on Item 8.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3231-L3234"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stops on blank name.",
+                      "recommended_app_behavior":  "Require a nonblank trimmed withholding-agent name.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-014",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  14,
+                      "condition":  "Item 10 telephone is blank.",
+                      "fields":  [
+                                     "frm1601EQ:txtTelNum"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid Telephone Number on Item 10.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3235-L3238"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Requires a telephone number but validates no length or format beyond keypress filtering.",
+                      "recommended_app_behavior":  "Confirm the legal/guide requirement; if required, validate a complete contact number rather than nonblankness.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-015",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  15,
+                      "condition":  "Item 9 address is blank.",
+                      "fields":  [
+                                     "frm1601EQ:txtAddress"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter Taxpayer\u0027s Registered Address on Item 9.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3239-L3242"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Checks only the first address control, although save concatenates two controls.",
+                      "recommended_app_behavior":  "Validate the combined registered address and preserve line boundaries explicitly.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-016",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  16,
+                      "condition":  "Item 9A ZIP is blank.",
+                      "fields":  [
+                                     "frm1601EQ:txtZipCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter Taxpayer\u0027s Zip Code on Item 9A.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3243-L3246"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Requires a digit-only ZIP but performs no complete-value validation.",
+                      "recommended_app_behavior":  "Confirm requiredness and validate an allowed Philippine postal-code representation.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-017",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  17,
+                      "condition":  "Item 12 email is blank.",
+                      "fields":  [
+                                     "txtEmail"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter valid Email Address on Item 12.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3247-L3250"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Any nonblank string up to 20 characters passes; no email syntax check is called.",
+                      "recommended_app_behavior":  "Validate a syntactically valid email and allow the official published maximum if it exceeds this UI limit.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-018",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  18,
+                      "condition":  "Item 4 is Yes and the first ATC row is blank.",
+                      "fields":  [
+                                     "frm1601EQ:optWithheld:Y",
+                                     "frm1601EQ:txtAtcCd1"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please fill up Part II Computation of Tax if item 4 is set to Yes.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3251-L3256"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Shows the ATC modal and returns without an explicit false value.",
+                      "recommended_app_behavior":  "Require at least one selected ATC and return a typed validation failure.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-019",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  19,
+                      "condition":  "For any selected ATC row, Tax Base is blank or compares equal to 0.00.",
+                      "fields":  [
+                                     "frm1601EQ:txtAtcCd1",
+                                     "frm1601EQ:txtTaxBase1"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid value for tax base for {ATC_CODE}.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3257-L3267"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Scans rows in display order and stops at the first blank/zero tax base.",
+                      "recommended_app_behavior":  "Require a positive decimal tax base for each selected ATC and identify the row/code.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-020",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  20,
+                      "condition":  "Item 30 is negative and no over-remittance disposition is selected.",
+                      "fields":  [
+                                     "frm1601EQ:txtTax30",
+                                     "frm1601EQ:ifRefund",
+                                     "frm1601EQ:ifIssueCert",
+                                     "frm1601EQ:ifCarriedOver"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please select an Overpayment option in Part II Item 30.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3271-L3277"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stops when no disposition is selected.",
+                      "recommended_app_behavior":  "Require exactly one disposition for a negative amount.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-validate-021",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  21,
+                      "condition":  "All earlier Validate checks pass.",
+                      "fields":  [
+                                     "frm1601EQ:cmdValidate"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Validation successful. Click on Edit if you wish to modify your entries.",
+                      "source_refs":  [
+                                          "official-hta-runtime#validateForm:L3279-L3287"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stores Part II table size, disables editable controls, enables Edit/upload/final-copy paths, and shows success.",
+                      "recommended_app_behavior":  "Use an explicit validated state invalidated by any model change.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-save-001",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  1,
+                      "condition":  "Any Item 6 TIN core segment or branch code is blank.",
+                      "fields":  [
+                                     "frm1601EQ:txtTIN1",
+                                     "frm1601EQ:txtTIN2",
+                                     "frm1601EQ:txtTIN3",
+                                     "frm1601EQ:txtBranchCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid TIN number on Item 6.",
+                      "source_refs":  [
+                                          "official-hta-runtime#initialValidateBeforeSave:L3485-L3490"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Save preflight checks only nonblankness and permits partial/invalid TIN values.",
+                      "recommended_app_behavior":  "Use the same complete TIN validation for Save and Validate, or explicitly allow drafts without claiming validity.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-save-002",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  2,
+                      "condition":  "Item 7 value is 000.",
+                      "fields":  [
+                                     "frm1601EQ:txtRDOCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid RDO Code on Item 7.",
+                      "source_refs":  [
+                                          "official-hta-runtime#initialValidateBeforeSave:L3491-L3494"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Save stops on the RDO placeholder.",
+                      "recommended_app_behavior":  "Require a catalog-backed RDO for non-draft saves.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-save-003",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  3,
+                      "condition":  "Item 8 name is blank.",
+                      "fields":  [
+                                     "frm1601EQ:txtTaxpayerName"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please enter a valid Withholding Agent\u0027s Name on Item 8.",
+                      "source_refs":  [
+                                          "official-hta-runtime#initialValidateBeforeSave:L3495-L3500"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Save stops with wording different from Validate.",
+                      "recommended_app_behavior":  "Use one consistent field label and message.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-save-004",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  4,
+                      "condition":  "TIN, RDO, and name pass Save preflight even if every other Validate rule fails.",
+                      "fields":  [
+                                     "frm1601EQ:txtYear",
+                                     "frm1601EQ:optQuarter:1",
+                                     "frm1601EQ:optWithheld:Y",
+                                     "txtEmail"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#initialValidateBeforeSave:L3485-L3501",
+                                          "official-hta-runtime#saveXML:L2166-L2170"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "Draft Save does not invoke validateForm and may persist otherwise invalid/incomplete return data.",
+                      "recommended_app_behavior":  "Support explicit drafts, clearly label them unvalidated, and require full validation for final-copy/submission.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-save-005",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  5,
+                      "condition":  "The two address controls are serialized and reopened.",
+                      "fields":  [
+                                     "frm1601EQ:txtAddress"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#saveXML:L2306-L2311",
+                                          "official-hta-runtime#loadData:L1724-L1748"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "xml"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Both controls are concatenated into one escaped XML value without a delimiter; reopen splits the escaped byte-like string at position 127, which can move the line boundary or split a percent escape.",
+                      "recommended_app_behavior":  "Serialize address lines losslessly as separate modeled values while retaining the official combined XML projection.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-save-006",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  6,
+                      "condition":  "A saved return is reopened.",
+                      "fields":  [
+                                     "txtEmail"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#loadDataATCRow:L1787-L1828",
+                                          "xml-editable-v1#field:txtEmail"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "xml"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "The saved txtEmail is read, then overwritten with globalEmail from the active profile.",
+                      "recommended_app_behavior":  "Preserve the return email on reopen and surface any profile mismatch as an explicit user choice.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-save-007",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  7,
+                      "condition":  "A non-amended filename family already contains an amended V-version.",
+                      "fields":  [
+                                     "frm1601EQ:optAmend:N"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "If your intention is to make an amended return, kindly tick Amended Return to \u0027Yes\u0027 before hitting \u0027Save\u0027 or \u0027Final Copy\u0027 or \u0027Submit\u0027.",
+                      "source_refs":  [
+                                          "official-hta-runtime#saveXML:L2181-L2203"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Save is refused to avoid overwriting/creating a non-amended return after amended versions exist.",
+                      "recommended_app_behavior":  "Preserve explicit versioning and prevent ambiguous overwrite.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-final-001",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "final-copy",
+                      "order":  1,
+                      "condition":  "Submit / Final Copy is invoked after successful Validate and no prior final-state resend branch applies.",
+                      "fields":  [
+                                     "frm1601EQ:btnFinalCopy",
+                                     "txtFinalFlag"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Please ensure that you have INTERNET access and a VALID email address is indicated in your tax return.\\n\\nAre you sure you want to submit?",
+                      "source_refs":  [
+                                          "official-hta-runtime#openAlertEmail:L4096-L4167"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "The button is a submission-first workflow; it does not offer a separate ordinary local final-copy action before checking Internet.",
+                      "recommended_app_behavior":  "Separate local final-copy generation from optional online submission.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-final-002",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "final-copy",
+                      "order":  2,
+                      "condition":  "The user confirms final-copy/submission but checkNetConnection reports no Internet.",
+                      "fields":  [
+                                     "txtFinalFlag"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "The system detected that you have no internet connection.\\nPlease contact your internet service provider.",
+                      "source_refs":  [
+                                          "official-hta-runtime#openAlertEmail:L4153-L4163",
+                                          "official-hta-runtime#saveEncryptedProfile:L1913-L2000"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "Sets txtFinalFlag=3, invokes saveEncryptedProfile/saveXML(true), and creates an encrypted IAF_RDO_Copy artifact despite reporting no connection.",
+                      "recommended_app_behavior":  "Allow deterministic offline final copy directly and document state transitions without relying on a network probe.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-final-003",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "final-copy",
+                      "order":  3,
+                      "condition":  "A read-only final copy with txtFinalFlag other than 2 is saved again.",
+                      "fields":  [
+                                     "txtFinalFlag",
+                                     "driveSelectTPExport"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "You will no longer be allowed to modify since this is already the final copy.\\nDo you want to save this in USB flash drive or CD-RW instead?",
+                      "source_refs":  [
+                                          "official-hta-runtime#saveXML:L2108-L2164"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Confirmation generates and encrypts an IAF_RDO_Copy artifact and opens export selection; cancellation stops.",
+                      "recommended_app_behavior":  "Provide an explicit export-copy action with the same immutability semantics.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-final-004",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "final-copy",
+                      "order":  4,
+                      "condition":  "A final non-amended return already exists and the current attempt is not a special resend state.",
+                      "fields":  [
+                                     "frm1601EQ:optAmend:N",
+                                     "txtFinalFlag"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "If your intention is to make an amended return, kindly tick Amended Return to \u0027Yes\u0027 before hitting \u0027Save\u0027 or \u0027Final Copy\u0027 or \u0027Submit\u0027.",
+                      "source_refs":  [
+                                          "official-hta-runtime#openAlertEmail:L4145-L4152",
+                                          "official-hta-runtime#saveXML:L2238-L2243"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Final-copy/submission is refused.",
+                      "recommended_app_behavior":  "Preserve immutable versioning and require an explicit amended return.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-submit-001",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "submit",
+                      "order":  1,
+                      "condition":  "Online enrollment/credential confirmation proceeds.",
+                      "fields":  [
+                                     "txtEnroll",
+                                     "ebirOnlineUsername",
+                                     "ebirOnlineSecret",
+                                     "ebirOnlineConfirmUsername"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "",
+                      "source_refs":  [
+                                          "official-hta-runtime#sendEmail:L4284-L4294"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "unverified",
+                      "official_behavior":  "May set txtEnroll=Y, copies the password into serialized ebirOnlineSecret, then generates an encrypted final copy before transport.",
+                      "recommended_app_behavior":  "Never serialize plaintext credentials into return XML; use platform credential storage.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+                                                   "The encrypted-output credential exposure has not been decrypted and inspected for this form package."
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-submit-002",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "submit",
+                      "order":  2,
+                      "condition":  "RenameAndSendFile returns 0.",
+                      "fields":  [
+                                     "txtFinalFlag"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Submit Successful. Subject to validation by BIR. \\n\\n A notification will be sent to your email ({EMAIL}). Please print or save the email as an evidence of efiled return.",
+                      "source_refs":  [
+                                          "official-hta-runtime#sendEmail:L4355-L4366"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "unverified",
+                      "official_behavior":  "Sets txtFinalFlag=1, updates the save file, shows success, and offers payment options.",
+                      "recommended_app_behavior":  "Only mark submitted after an authenticated server acknowledgement; store immutable receipt evidence.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+                                                   "Online submission was intentionally not performed."
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1601eq-submit-003",
+                      "form_id":  "1601eq-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "submit",
+                      "order":  3,
+                      "condition":  "Transport returns nonzero or throws.",
+                      "fields":  [
+                                     "txtFinalFlag"
+                                 ],
+                      "accepted_behavior":  "Condition is false and processing continues.",
+                      "rejected_behavior":  "Official processing applies the documented rejection or mutation.",
+                      "exact_message":  "Your Tax Return was not submitted online due to any of the \\n following reasons that may interrupt the submission process: \\n - No internet connection \\n - Slow internet connection \\n - Overly restrictive firewall",
+                      "source_refs":  [
+                                          "official-hta-runtime#sendEmail:L4367-L4375"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "unverified",
+                      "official_behavior":  "Sets txtFinalFlag=2 and updates the save file for resend.",
+                      "recommended_app_behavior":  "Record the actual transport error safely, retain a retryable state, and avoid claiming one of several guessed causes.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+                                                   "Online submission was intentionally not performed."
+                                               ]
+                  }
+              ]
+}

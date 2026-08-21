@@ -1,0 +1,2123 @@
+{
+    "schema_version":  "1.0.0",
+    "form_id":  "1601eq-v2018",
+    "package_version":  "7.9.6.0",
+    "source_sha256":  "16e4db6ce456a6fb0a97f085cf8ef19349c2f6fc183971e97d4e253f63cdd22b",
+    "selection_semantics":  "AtcCodeN is the Nth entry after filtering this ordered catalog by Item 11 category; slot meanings differ between P and G.",
+    "private_slot_count":  111,
+    "government_slot_count":  96,
+    "unreachable_record_count":  4,
+    "entry_count":  211,
+    "entries":  [
+                    {
+                        "source_index":  703,
+                        "category":  "P",
+                        "runtime_slot":  1,
+                        "code":  "WI010",
+                        "description":  "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.) - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  704,
+                        "category":  "P",
+                        "runtime_slot":  2,
+                        "code":  "WI011",
+                        "description":  "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.) - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  705,
+                        "category":  "P",
+                        "runtime_slot":  3,
+                        "code":  "WI020",
+                        "description":  "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  706,
+                        "category":  "P",
+                        "runtime_slot":  4,
+                        "code":  "WI021",
+                        "description":  "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  707,
+                        "category":  "P",
+                        "runtime_slot":  5,
+                        "code":  "WI030",
+                        "description":  "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  708,
+                        "category":  "P",
+                        "runtime_slot":  6,
+                        "code":  "WI031",
+                        "description":  "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  709,
+                        "category":  "P",
+                        "runtime_slot":  7,
+                        "code":  "WI040",
+                        "description":  "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  710,
+                        "category":  "P",
+                        "runtime_slot":  8,
+                        "code":  "WI041",
+                        "description":  "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  711,
+                        "category":  "P",
+                        "runtime_slot":  9,
+                        "code":  "WI050",
+                        "description":  "MANAGEMENT AND TECHNICAL CONSULTANTS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  712,
+                        "category":  "P",
+                        "runtime_slot":  10,
+                        "code":  "WI051",
+                        "description":  "MANAGEMENT AND TECHNICAL CONSULTANTS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  713,
+                        "category":  "P",
+                        "runtime_slot":  11,
+                        "code":  "WI060",
+                        "description":  "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  714,
+                        "category":  "P",
+                        "runtime_slot":  12,
+                        "code":  "WI061",
+                        "description":  "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES -IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  715,
+                        "category":  "P",
+                        "runtime_slot":  13,
+                        "code":  "WI070",
+                        "description":  "INSURANCE AGENTS AND INSURANCE ADJUSTERS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  716,
+                        "category":  "P",
+                        "runtime_slot":  14,
+                        "code":  "WI071",
+                        "description":  "INSURANCE AGENTS AND INSURANCE ADJUSTERS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  717,
+                        "category":  "P",
+                        "runtime_slot":  15,
+                        "code":  "WI080",
+                        "description":  "OTHER RECIPIENTS OF TALENT FEES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  718,
+                        "category":  "P",
+                        "runtime_slot":  16,
+                        "code":  "WI081",
+                        "description":  "OTHER RECIPIENTS OF TALENT FEES - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  719,
+                        "category":  "P",
+                        "runtime_slot":  17,
+                        "code":  "WI090",
+                        "description":  "FEES OF DIRECTORS WHO ARE NOT EMPLOYEES OF THE COMPANY - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  720,
+                        "category":  "P",
+                        "runtime_slot":  18,
+                        "code":  "WI091",
+                        "description":  "FEES OF DIRECTORS WHO ARE NOT EMPLOYEES OF THE COMPANY - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  721,
+                        "category":  "P",
+                        "runtime_slot":  19,
+                        "code":  "WI100",
+                        "description":  "RENTALS: ON GROSS RENTAL OR LEASE FOR THE CONTINUED USE OR POSSESSION OF PERSONAL PROPERTY IN EXCESS OF TEN THOUSAND PESOS (P 10,000) ANNUALLY AND REAL PROPERTY USED IN BUSINESS WHICH THE PAYOR OR OBLIGOR HAS NOT TAKEN TITLE OR IS NOT TAKING TITLE, OR IN WHICH HAS NO EQUITY; POLES, SATELLITES , TRANSMISSION FACILITIES AND BILLBOARDS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  722,
+                        "category":  "P",
+                        "runtime_slot":  20,
+                        "code":  "WI110",
+                        "description":  "CINEMATOGRAPHIC FILM RENTALS AND OTHER PAYMENTS TO RESIDENT INDIVIDUALS AND CORPORATE CINEMATOGRAPHIC FILM OWNERS, LESSORS OR DISTRIBUTORS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  723,
+                        "category":  "P",
+                        "runtime_slot":  21,
+                        "code":  "WI120",
+                        "description":  "INCOME PAYMENTS TO CERTAIN CONTRACTORS ",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  724,
+                        "category":  "P",
+                        "runtime_slot":  22,
+                        "code":  "WI130",
+                        "description":  "INCOME DISTRIBUTION TO THE BENEFICIARIES OF ESTATES AND TRUSTS",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  725,
+                        "category":  "P",
+                        "runtime_slot":  23,
+                        "code":  "WI139",
+                        "description":  "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE CONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS) - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  726,
+                        "category":  "P",
+                        "runtime_slot":  24,
+                        "code":  "WI140",
+                        "description":  "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE CONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS) -  IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  727,
+                        "category":  "P",
+                        "runtime_slot":  25,
+                        "code":  "WI150",
+                        "description":  "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE, DOCTORS OF VETERINARY SCIENCE \u0026 DENTISTS) BY HOSPITALS \u0026 CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  728,
+                        "category":  "P",
+                        "runtime_slot":  26,
+                        "code":  "WI151",
+                        "description":  "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE, DOCTORS OF VETERINARY SCIENCE \u0026 DENTISTS) BY HOSPITALS \u0026 CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  729,
+                        "category":  "P",
+                        "runtime_slot":  27,
+                        "code":  "WI152",
+                        "description":  "PAYMENT BY THE GENERAL PROFESSIONAL PARTNERSHIPS (GPPS) TO ITS PARTNERS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  730,
+                        "category":  "P",
+                        "runtime_slot":  28,
+                        "code":  "WI153",
+                        "description":  "PAYMENT BY THE GENERAL PROFESSIONAL PARTNERSHIPS (GPPS) TO ITS PARTNERS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  731,
+                        "category":  "P",
+                        "runtime_slot":  29,
+                        "code":  "WI156",
+                        "description":  "INCOME PAYMENTS MADE BY CREDIT CARD COMPANIES",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  732,
+                        "category":  "P",
+                        "runtime_slot":  30,
+                        "code":  "WI640",
+                        "description":  "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  733,
+                        "category":  "P",
+                        "runtime_slot":  31,
+                        "code":  "WI157",
+                        "description":  "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  734,
+                        "category":  "P",
+                        "runtime_slot":  32,
+                        "code":  "WI159",
+                        "description":  "ADDITIONAL INCOME PAYMENTS TO GOVERNMENT PERSONNEL FROM IMPORTERS, SHIPPING AND AIRLINE COMPANIES OR THEIR AGENTS FOR OVERTIME SERVICES",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  735,
+                        "category":  "P",
+                        "runtime_slot":  33,
+                        "code":  "WI158",
+                        "description":  "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  736,
+                        "category":  "P",
+                        "runtime_slot":  34,
+                        "code":  "WI160",
+                        "description":  "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  737,
+                        "category":  "P",
+                        "runtime_slot":  35,
+                        "code":  "WI515",
+                        "description":  "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  738,
+                        "category":  "P",
+                        "runtime_slot":  36,
+                        "code":  "WI516",
+                        "description":  "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  739,
+                        "category":  "P",
+                        "runtime_slot":  37,
+                        "code":  "WI530",
+                        "description":  "GROSS PAYMENTS TO EMBALMERS BY FUNERAL PARLORS",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  740,
+                        "category":  "P",
+                        "runtime_slot":  38,
+                        "code":  "WI535",
+                        "description":  "PAYMENTS MADE BY PRE-NEED COMPANIES TO FUNERAL PARLORS",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  741,
+                        "category":  "P",
+                        "runtime_slot":  39,
+                        "code":  "WI540",
+                        "description":  "TOLLING FEES PAID TO REFINERIES",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  742,
+                        "category":  "P",
+                        "runtime_slot":  40,
+                        "code":  "WI610",
+                        "description":  "INCOME PAYMENTS MADE TO SUPPLIERS OF AGRICULTURAL PRODUCTS IN EXCESS OF CUMULATIVE AMOUNT OF P 300,000 WITHIN THE SAME TAXABLE YEAR",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  743,
+                        "category":  "P",
+                        "runtime_slot":  41,
+                        "code":  "WI630",
+                        "description":  "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES, SUCH AS BUT NOT LIMITED TO SILVER, GOLD, MARBLE, GRANITE, GRAVEL, SAND, BOULDERS AND OTHER MINERAL PRODUCTS EXCEPT PURCHASES BY BANGKO SENTRAL NG PILIPINAS ",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  744,
+                        "category":  "P",
+                        "runtime_slot":  42,
+                        "code":  "WI632",
+                        "description":  "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES BY BANGKO SENTRAL NG PILIPINAS (BSP) FROM GOLD MINERS/SUPPLIERS UNDER PD 1899, AS AMENDED BY RA NO. 7076",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  745,
+                        "category":  "P",
+                        "runtime_slot":  43,
+                        "code":  "WI650",
+                        "description":  "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH ACTIVE CONTRACTS AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  746,
+                        "category":  "P",
+                        "runtime_slot":  44,
+                        "code":  "WI651",
+                        "description":  "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH TERMINATED CONTRACTS AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  747,
+                        "category":  "P",
+                        "runtime_slot":  45,
+                        "code":  "WI660",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF RESIDENTIAL AND GENERAL SERVICE CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  748,
+                        "category":  "P",
+                        "runtime_slot":  46,
+                        "code":  "WI661",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF  NON-RESIDENTIAL CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  749,
+                        "category":  "P",
+                        "runtime_slot":  47,
+                        "code":  "WI662",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF RESIDENTIAL AND GENERAL SERVICE CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY OTHER ELECTRIC DISTRIBUTION UTILITIES (DU)",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  750,
+                        "category":  "P",
+                        "runtime_slot":  48,
+                        "code":  "WI663",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S ILLINGS OF  NON-RESIDENTIAL CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY OTHER ELECTRIC DISTRIBUTION UTILITIES (DU)",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  751,
+                        "category":  "P",
+                        "runtime_slot":  49,
+                        "code":  "WI680",
+                        "description":  "INCOME PAYMENTS MADE BY POLITICAL PARTIES AND CANDIDATES OF LOCAL AND NATIONAL ELECTIONS ON ALL THEIR PURCHASES OF GOODS AND SERVICES RELATED TO CAMPAIGN EXPENDITURES, AND INCOME PAYMENTS MADE BY INDIVIDUALS OR JURIDICAL PERSONS FOR THEIR PURCHASES OF GOODS AND SERVICES INTENDED TO BE GIVEN AS CAMPAIGN CONTRIBUTIONS TO POLITICAL PARTIES AND CANDIDATES",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  752,
+                        "category":  "P",
+                        "runtime_slot":  50,
+                        "code":  "WI710",
+                        "description":  "INTEREST INCOME DERIVED FROM ANY OTHER DEBT INSTRUMENTS NOT WITHIN THE COVERAGE OF DEPOSIT SUBSTITUTES AND REVENUE REGULATIONS NO. 14-2012 ",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  753,
+                        "category":  "P",
+                        "runtime_slot":  51,
+                        "code":  "WI720",
+                        "description":  "INCOME PAYMENTS ON LOCALLY PRODUCED RAW SUGAR",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  754,
+                        "category":  "G",
+                        "runtime_slot":  1,
+                        "code":  "WI010",
+                        "description":  "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.) - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  755,
+                        "category":  "G",
+                        "runtime_slot":  2,
+                        "code":  "WI011",
+                        "description":  "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.) - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  756,
+                        "category":  "G",
+                        "runtime_slot":  3,
+                        "code":  "WI020",
+                        "description":  "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  757,
+                        "category":  "G",
+                        "runtime_slot":  4,
+                        "code":  "WI021",
+                        "description":  "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  758,
+                        "category":  "G",
+                        "runtime_slot":  5,
+                        "code":  "WI030",
+                        "description":  "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  759,
+                        "category":  "G",
+                        "runtime_slot":  6,
+                        "code":  "WI031",
+                        "description":  "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  760,
+                        "category":  "G",
+                        "runtime_slot":  7,
+                        "code":  "WI040",
+                        "description":  "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  761,
+                        "category":  "G",
+                        "runtime_slot":  8,
+                        "code":  "WI041",
+                        "description":  "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  762,
+                        "category":  "G",
+                        "runtime_slot":  9,
+                        "code":  "WI050",
+                        "description":  "MANAGEMENT AND TECHNICAL CONSULTANTS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  763,
+                        "category":  "G",
+                        "runtime_slot":  10,
+                        "code":  "WI051",
+                        "description":  "MANAGEMENT AND TECHNICAL CONSULTANTS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  764,
+                        "category":  "G",
+                        "runtime_slot":  11,
+                        "code":  "WI060",
+                        "description":  "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  765,
+                        "category":  "G",
+                        "runtime_slot":  12,
+                        "code":  "WI061",
+                        "description":  "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES -IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  766,
+                        "category":  "G",
+                        "runtime_slot":  13,
+                        "code":  "WI070",
+                        "description":  "INSURANCE AGENTS AND INSURANCE ADJUSTERS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  767,
+                        "category":  "G",
+                        "runtime_slot":  14,
+                        "code":  "WI071",
+                        "description":  "INSURANCE AGENTS AND INSURANCE ADJUSTERS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  768,
+                        "category":  "G",
+                        "runtime_slot":  15,
+                        "code":  "WI080",
+                        "description":  "OTHER RECIPIENTS OF TALENT FEES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  769,
+                        "category":  "G",
+                        "runtime_slot":  16,
+                        "code":  "WI081",
+                        "description":  "OTHER RECIPIENTS OF TALENT FEES - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  770,
+                        "category":  "G",
+                        "runtime_slot":  17,
+                        "code":  "WI090",
+                        "description":  "FEES OF DIRECTORS WHO ARE NOT EMPLOYEES OF THE COMPANY - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  771,
+                        "category":  "G",
+                        "runtime_slot":  18,
+                        "code":  "WI091",
+                        "description":  "FEES OF DIRECTORS WHO ARE NOT EMPLOYEES OF THE COMPANY - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  772,
+                        "category":  "G",
+                        "runtime_slot":  19,
+                        "code":  "WI100",
+                        "description":  "RENTALS: ON GROSS RENTAL OR LEASE FOR THE CONTINUED USE OR POSSESSION OF PERSONAL PROPERTY IN EXCESS OF TEN THOUSAND PESOS (P 10,000) ANNUALLY AND REAL PROPERTY USED IN BUSINESS WHICH THE PAYOR OR OBLIGOR HAS NOT TAKEN TITLE OR IS NOT TAKING TITLE, OR IN WHICH HAS NO EQUITY; POLES, SATELLITES , TRANSMISSION FACILITIES AND BILLBOARDS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  773,
+                        "category":  "G",
+                        "runtime_slot":  20,
+                        "code":  "WI110",
+                        "description":  "CINEMATOGRAPHIC FILM RENTALS AND OTHER PAYMENTS TO RESIDENT INDIVIDUALS AND CORPORATE CINEMATOGRAPHIC FILM OWNERS, LESSORS OR DISTRIBUTORS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  774,
+                        "category":  "G",
+                        "runtime_slot":  21,
+                        "code":  "WI120",
+                        "description":  "INCOME PAYMENTS TO CERTAIN CONTRACTORS ",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  775,
+                        "category":  "G",
+                        "runtime_slot":  22,
+                        "code":  "WI130",
+                        "description":  "INCOME DISTRIBUTION TO THE BENEFICIARIES OF ESTATES AND TRUSTS",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  776,
+                        "category":  "G",
+                        "runtime_slot":  23,
+                        "code":  "WI139",
+                        "description":  "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE CONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS) - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  777,
+                        "category":  "G",
+                        "runtime_slot":  24,
+                        "code":  "WI140",
+                        "description":  "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE CONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS) -  IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  778,
+                        "category":  "G",
+                        "runtime_slot":  25,
+                        "code":  "WI150",
+                        "description":  "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE, DOCTORS OF VETERINARY SCIENCE \u0026 DENTISTS) BY HOSPITALS \u0026 CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  779,
+                        "category":  "G",
+                        "runtime_slot":  26,
+                        "code":  "WI151",
+                        "description":  "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE, DOCTORS OF VETERINARY SCIENCE \u0026 DENTISTS) BY HOSPITALS \u0026 CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  780,
+                        "category":  "G",
+                        "runtime_slot":  27,
+                        "code":  "WI152",
+                        "description":  "PAYMENT BY THE GENERAL PROFESSIONAL PARTNERSHIPS (GPPS) TO ITS PARTNERS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  781,
+                        "category":  "G",
+                        "runtime_slot":  28,
+                        "code":  "WI153",
+                        "description":  "PAYMENT BY THE GENERAL PROFESSIONAL PARTNERSHIPS (GPPS) TO ITS PARTNERS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  782,
+                        "category":  "G",
+                        "runtime_slot":  29,
+                        "code":  "WI156",
+                        "description":  "INCOME PAYMENTS MADE BY CREDIT CARD COMPANIES",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  783,
+                        "category":  "G",
+                        "runtime_slot":  30,
+                        "code":  "WI640",
+                        "description":  "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  784,
+                        "category":  "G",
+                        "runtime_slot":  31,
+                        "code":  "WI157",
+                        "description":  "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  785,
+                        "category":  "G",
+                        "runtime_slot":  32,
+                        "code":  "WI159",
+                        "description":  "ADDITIONAL INCOME PAYMENTS TO GOVERNMENT PERSONNEL FROM IMPORTERS, SHIPPING AND AIRLINE COMPANIES OR THEIR AGENTS FOR OVERTIME SERVICES",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  786,
+                        "category":  "G",
+                        "runtime_slot":  33,
+                        "code":  "WI158",
+                        "description":  "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  787,
+                        "category":  "G",
+                        "runtime_slot":  34,
+                        "code":  "WI160",
+                        "description":  "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  788,
+                        "category":  "G",
+                        "runtime_slot":  35,
+                        "code":  "WI515",
+                        "description":  "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 3M",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  789,
+                        "category":  "G",
+                        "runtime_slot":  36,
+                        "code":  "WI516",
+                        "description":  "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES - IF GROSS INCOME IS MORE THAN P 3M OR VAT REGISTERED REGARDLESS OF AMOUNT",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  790,
+                        "category":  "G",
+                        "runtime_slot":  37,
+                        "code":  "WI530",
+                        "description":  "GROSS PAYMENTS TO EMBALMERS BY FUNERAL PARLORS",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  791,
+                        "category":  "G",
+                        "runtime_slot":  38,
+                        "code":  "WI535",
+                        "description":  "PAYMENTS MADE BY PRE-NEED COMPANIES TO FUNERAL PARLORS",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  792,
+                        "category":  "G",
+                        "runtime_slot":  39,
+                        "code":  "WI540",
+                        "description":  "TOLLING FEES PAID TO REFINERIES",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  793,
+                        "category":  "G",
+                        "runtime_slot":  40,
+                        "code":  "WI610",
+                        "description":  "INCOME PAYMENTS MADE TO SUPPLIERS OF AGRICULTURAL PRODUCTS IN EXCESS OF CUMULATIVE AMOUNT OF P 300,000 WITHIN THE SAME TAXABLE YEAR",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  794,
+                        "category":  "G",
+                        "runtime_slot":  41,
+                        "code":  "WI630",
+                        "description":  "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES, SUCH AS BUT NOT LIMITED TO SILVER, GOLD, MARBLE, GRANITE, GRAVEL, SAND, BOULDERS AND OTHER MINERAL PRODUCTS EXCEPT PURCHASES BY BANGKO SENTRAL NG PILIPINAS ",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  795,
+                        "category":  "G",
+                        "runtime_slot":  42,
+                        "code":  "WI632",
+                        "description":  "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES BY BANGKO SENTRAL NG PILIPINAS (BSP) FROM GOLD MINERS/SUPPLIERS UNDER PD 1899, AS AMENDED BY RA NO. 7076",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  796,
+                        "category":  "G",
+                        "runtime_slot":  43,
+                        "code":  "WI650",
+                        "description":  "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH ACTIVE CONTRACTS AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  797,
+                        "category":  "G",
+                        "runtime_slot":  44,
+                        "code":  "WI651",
+                        "description":  "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH TERMINATED CONTRACTS AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  798,
+                        "category":  "G",
+                        "runtime_slot":  45,
+                        "code":  "WI660",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF RESIDENTIAL AND GENERAL SERVICE CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  799,
+                        "category":  "G",
+                        "runtime_slot":  46,
+                        "code":  "WI661",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF  NON-RESIDENTIAL CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  800,
+                        "category":  "G",
+                        "runtime_slot":  47,
+                        "code":  "WI662",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF RESIDENTIAL AND GENERAL SERVICE CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY OTHER ELECTRIC DISTRIBUTION UTILITIES (DU)",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  801,
+                        "category":  "G",
+                        "runtime_slot":  48,
+                        "code":  "WI663",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF  NON-RESIDENTIAL CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY OTHER ELECTRIC DISTRIBUTION UTILITIES (DU)",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  802,
+                        "category":  "G",
+                        "runtime_slot":  49,
+                        "code":  "WI680",
+                        "description":  "INCOME PAYMENTS MADE BY POLITICAL PARTIES AND CANDIDATES OF LOCAL AND NATIONAL ELECTIONS ON ALL THEIR PURCHASES OF GOODS AND SERVICES RELATED TO CAMPAIGN EXPENDITURES, AND INCOME PAYMENTS MADE BY INDIVIDUALS OR JURIDICAL PERSONS FOR THEIR PURCHASES OF GOODS AND SERVICES INTENDED TO BE GIVEN AS CAMPAIGN CONTRIBUTIONS TO POLITICAL PARTIES AND CANDIDATES",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  803,
+                        "category":  "G",
+                        "runtime_slot":  50,
+                        "code":  "WI710",
+                        "description":  "INTEREST INCOME DERIVED FROM ANY OTHER DEBT INSTRUMENTS NOT WITHIN THE COVERAGE OF DEPOSIT SUBSTITUTES AND REVENUE REGULATIONS NO. 14-2012 ",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  804,
+                        "category":  "G",
+                        "runtime_slot":  51,
+                        "code":  "WI720",
+                        "description":  "INCOME PAYMENTS ON LOCALLY PRODUCED RAW SUGAR",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  805,
+                        "category":  "P",
+                        "runtime_slot":  52,
+                        "code":  "WC010",
+                        "description":  "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.) - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  806,
+                        "category":  "P",
+                        "runtime_slot":  53,
+                        "code":  "WC011",
+                        "description":  "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.) - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  807,
+                        "category":  "P",
+                        "runtime_slot":  54,
+                        "code":  "WC020",
+                        "description":  "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  808,
+                        "category":  "P",
+                        "runtime_slot":  55,
+                        "code":  "WC021",
+                        "description":  "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  809,
+                        "category":  "P",
+                        "runtime_slot":  56,
+                        "code":  "WC030",
+                        "description":  "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  810,
+                        "category":  "P",
+                        "runtime_slot":  57,
+                        "code":  "WC031",
+                        "description":  "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  811,
+                        "category":  "P",
+                        "runtime_slot":  58,
+                        "code":  "WC040",
+                        "description":  "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  812,
+                        "category":  "P",
+                        "runtime_slot":  59,
+                        "code":  "WC041",
+                        "description":  "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS -  IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  813,
+                        "category":  "P",
+                        "runtime_slot":  60,
+                        "code":  "WC050",
+                        "description":  "MANAGEMENT AND TECHNICAL CONSULTANTS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  814,
+                        "category":  "P",
+                        "runtime_slot":  61,
+                        "code":  "WC051",
+                        "description":  "MANAGEMENT AND TECHNICAL CONSULTANTS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  815,
+                        "category":  "P",
+                        "runtime_slot":  62,
+                        "code":  "WC060",
+                        "description":  "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  816,
+                        "category":  "P",
+                        "runtime_slot":  63,
+                        "code":  "WC061",
+                        "description":  "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  817,
+                        "category":  "P",
+                        "runtime_slot":  64,
+                        "code":  "WC070",
+                        "description":  "INSURANCE AGENTS AND INSURANCE ADJUSTERS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  818,
+                        "category":  "P",
+                        "runtime_slot":  65,
+                        "code":  "WC071",
+                        "description":  "INSURANCE AGENTS AND INSURANCE ADJUSTERS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  819,
+                        "category":  "P",
+                        "runtime_slot":  66,
+                        "code":  "WC080",
+                        "description":  "OTHER RECIPIENTS OF TALENT FEES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  820,
+                        "category":  "P",
+                        "runtime_slot":  67,
+                        "code":  "WC081",
+                        "description":  "OTHER RECIPIENTS OF TALENT FEES - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  821,
+                        "category":  "P",
+                        "runtime_slot":  68,
+                        "code":  "WC100",
+                        "description":  "RENTALS: ON GROSS RENTAL OR LEASE FOR THE CONTINUED USE OR POSSESSION OF PERSONAL PROPERTY IN EXCESS OF TEN THOUSAND PESOS (P 10,000) ANNUALLY AND REAL PROPERTY USED IN BUSINESS WHICH THE PAYOR OR OBLIGOR HAS NOT TAKEN TITLE OR IS NOT TAKING TITLE, OR IN WHICH HAS NO EQUITY; POLES, SATELLITES, TRANSMISSION FACILITIES AND BILLBOARDS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  822,
+                        "category":  "P",
+                        "runtime_slot":  69,
+                        "code":  "WC110",
+                        "description":  "CINEMATOGRAPHIC FILM RENTALS AND OTHER PAYMENTS TO RESIDENT INDIVIDUALS AND CORPORATE CINEMATOGRAPHIC FILM OWNERS, LESSORS OR DISTRIBUTORS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  823,
+                        "category":  "P",
+                        "runtime_slot":  70,
+                        "code":  "WC120",
+                        "description":  "INCOME PAYMENTS TO CERTAIN CONTRACTORS ",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  824,
+                        "category":  "P",
+                        "runtime_slot":  71,
+                        "code":  "WC139",
+                        "description":  "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE ONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS) - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  825,
+                        "category":  "P",
+                        "runtime_slot":  72,
+                        "code":  "WC140",
+                        "description":  "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE ONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS) - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  826,
+                        "category":  "P",
+                        "runtime_slot":  73,
+                        "code":  "WC150",
+                        "description":  "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE DOCTORS OF VETERINARY SCIENCE \u0026 DENTISTS) BY HOSPITALS \u0026 CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  827,
+                        "category":  "P",
+                        "runtime_slot":  74,
+                        "code":  "WC151",
+                        "description":  "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE DOCTORS OF VETERINARY SCIENCE \u0026 DENTISTS) BY HOSPITALS \u0026 CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  828,
+                        "category":  "P",
+                        "runtime_slot":  75,
+                        "code":  "WC156",
+                        "description":  "INCOME PAYMENTS MADE BY CREDIT CARD COMPANIES",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  829,
+                        "category":  "P",
+                        "runtime_slot":  76,
+                        "code":  "WC640",
+                        "description":  "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  830,
+                        "category":  "P",
+                        "runtime_slot":  77,
+                        "code":  "WC157",
+                        "description":  "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  831,
+                        "category":  "P",
+                        "runtime_slot":  78,
+                        "code":  "WC158",
+                        "description":  "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  832,
+                        "category":  "P",
+                        "runtime_slot":  79,
+                        "code":  "WC160",
+                        "description":  "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR  LOCAL/RESIDENT SUPPLIER OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  833,
+                        "category":  "P",
+                        "runtime_slot":  80,
+                        "code":  "WC515",
+                        "description":  "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/ GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  834,
+                        "category":  "P",
+                        "runtime_slot":  81,
+                        "code":  "WC516",
+                        "description":  "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/ GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  835,
+                        "category":  "P",
+                        "runtime_slot":  82,
+                        "code":  "WC535",
+                        "description":  "PAYMENTS MADE BY PRE-NEED COMPANIES TO FUNERAL PARLORS",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  836,
+                        "category":  "P",
+                        "runtime_slot":  83,
+                        "code":  "WC540",
+                        "description":  "TOLLING FEES PAID TO REFINERIES",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  837,
+                        "category":  "P",
+                        "runtime_slot":  84,
+                        "code":  "WC610",
+                        "description":  "INCOME PAYMENTS MADE TO SUPPLIERS OF AGRICULTURAL PRODUCTS IN EXCESS OF CUMULATIVE AMOUNT OF P 300,000 WITHIN THE SAME TAXABLE YEAR",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  838,
+                        "category":  "P",
+                        "runtime_slot":  85,
+                        "code":  "WC630",
+                        "description":  "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES, SUCH AS BUT NOT LIMITED TO SILVER, GOLD, MARBLE, GRANITE, GRAVEL, SAND, BOULDERS AND OTHER MINERAL PRODUCTS EXCEPT PURCHASES BY BANGKO SENTRAL NG PILIPINAS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  839,
+                        "category":  "P",
+                        "runtime_slot":  86,
+                        "code":  "WC632",
+                        "description":  "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES BY BANGKO SENTRAL NG PILIPINAS (BSP) FROM GOLD MINERS/SUPPLIERS UNDER PD 1899, AS AMENDED BY RA NO. 7076",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  840,
+                        "category":  "P",
+                        "runtime_slot":  87,
+                        "code":  "WC650",
+                        "description":  "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH ACTIVE CONTRACTS AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  841,
+                        "category":  "P",
+                        "runtime_slot":  88,
+                        "code":  "WC651",
+                        "description":  "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH TERMINATED CONTRACTS AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  842,
+                        "category":  "P",
+                        "runtime_slot":  89,
+                        "code":  "WC660",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF RESIDENTIAL AND GENERAL SERVICE CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  843,
+                        "category":  "P",
+                        "runtime_slot":  90,
+                        "code":  "WC661",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF  NON-RESIDENTIAL CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  844,
+                        "category":  "P",
+                        "runtime_slot":  91,
+                        "code":  "WC662",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF RESIDENTIAL AND GENERAL SERVICE CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY OTHER ELECTRIC DISTRIBUTION UTILITIES (DU)",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  845,
+                        "category":  "P",
+                        "runtime_slot":  92,
+                        "code":  "WC663",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF  NON- RESIDENTIAL CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY OTHER ELECTRIC DISTRIBUTION UTILITIES (DU)",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  846,
+                        "category":  "P",
+                        "runtime_slot":  93,
+                        "code":  "WC680",
+                        "description":  "INCOME PAYMENTS MADE BY POLITICAL PARTIES AND CANDIDATES OF LOCAL AND NATIONAL ELECTIONS ON ALL THEIR PURCHASES OF GOODS AND SERVICES RELATED TO CAMPAIGN EXPENDITURES, AND INCOME PAYMENTS MADE BY INDIVIDUALS OR JURIDICAL PERSONS FOR THEIR PURCHASES OF GOODS AND SERVICES INTENDED TO BE GIVEN AS CAMPAIGN CONTRIBUTIONS TO POLITICAL PARTIES AND CANDIDATES",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  847,
+                        "category":  "P",
+                        "runtime_slot":  94,
+                        "code":  "WC690",
+                        "description":  "INCOME PAYMENTS RECEIVED BY REAL ESTATE INVESTMENT TRUST (REIT)",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  848,
+                        "category":  "P",
+                        "runtime_slot":  95,
+                        "code":  "WC710",
+                        "description":  "INTEREST INCOME DERIVED FROM ANY OTHER DEBT INSTRUMENTS NOT WITHIN THE COVERAGE OF DEPOSIT SUBSTITUTES AND REVENUE REGULATIONS NO. 14-2012 ",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  849,
+                        "category":  "P",
+                        "runtime_slot":  96,
+                        "code":  "WC720",
+                        "description":  "INCOME PAYMENTS ON LOCALLY PRODUCED RAW SUGAR",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  850,
+                        "category":  "G",
+                        "runtime_slot":  52,
+                        "code":  "WC010",
+                        "description":  "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.) - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  851,
+                        "category":  "G",
+                        "runtime_slot":  53,
+                        "code":  "WC011",
+                        "description":  "PROFESSIONAL (LAWYERS, CPAS, ENGINEERS, ETC.) - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  852,
+                        "category":  "G",
+                        "runtime_slot":  54,
+                        "code":  "WC020",
+                        "description":  "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  853,
+                        "category":  "G",
+                        "runtime_slot":  55,
+                        "code":  "WC021",
+                        "description":  "PROFESSIONAL ENTERTAINERS SUCH AS, BUT NOT LIMITED TO ACTORS AND ACTRESSES, SINGERS, LYRICISTS, COMPOSERS, EMCEES - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  854,
+                        "category":  "G",
+                        "runtime_slot":  56,
+                        "code":  "WC030",
+                        "description":  "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  855,
+                        "category":  "G",
+                        "runtime_slot":  57,
+                        "code":  "WC031",
+                        "description":  "PROFESSIONAL ATHLETES INCLUDING BASKETBALL PLAYERS, PELOTARIS AND JOCKEYS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  856,
+                        "category":  "G",
+                        "runtime_slot":  58,
+                        "code":  "WC040",
+                        "description":  "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  857,
+                        "category":  "G",
+                        "runtime_slot":  59,
+                        "code":  "WC041",
+                        "description":  "ALL DIRECTORS AND PRODUCERS INVOLVED IN MOVIES, STAGE, RADIO, TELEVISION AND MUSICAL PRODUCTIONS -  IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  858,
+                        "category":  "G",
+                        "runtime_slot":  60,
+                        "code":  "WC050",
+                        "description":  "MANAGEMENT AND TECHNICAL CONSULTANTS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  859,
+                        "category":  "G",
+                        "runtime_slot":  61,
+                        "code":  "WC051",
+                        "description":  "MANAGEMENT AND TECHNICAL CONSULTANTS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  860,
+                        "category":  "G",
+                        "runtime_slot":  62,
+                        "code":  "WC060",
+                        "description":  "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  861,
+                        "category":  "G",
+                        "runtime_slot":  63,
+                        "code":  "WC061",
+                        "description":  "BUSINESS AND BOOKKEEPING AGENTS AND AGENCIES - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  862,
+                        "category":  "G",
+                        "runtime_slot":  64,
+                        "code":  "WC070",
+                        "description":  "INSURANCE AGENTS AND INSURANCE ADJUSTERS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  863,
+                        "category":  "G",
+                        "runtime_slot":  65,
+                        "code":  "WC071",
+                        "description":  "INSURANCE AGENTS AND INSURANCE ADJUSTERS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  864,
+                        "category":  "G",
+                        "runtime_slot":  66,
+                        "code":  "WC080",
+                        "description":  "OTHER RECIPIENTS OF TALENT FEES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  865,
+                        "category":  "G",
+                        "runtime_slot":  67,
+                        "code":  "WC081",
+                        "description":  "OTHER RECIPIENTS OF TALENT FEES - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  866,
+                        "category":  "G",
+                        "runtime_slot":  68,
+                        "code":  "WC100",
+                        "description":  "RENTALS: ON GROSS RENTAL OR LEASE FOR THE CONTINUED USE OR POSSESSION OF PERSONAL PROPERTY IN EXCESS OF TEN THOUSAND PESOS (P 10,000) ANNUALLY AND REAL PROPERTY USED IN BUSINESS WHICH THE PAYOR OR OBLIGOR HAS NOT TAKEN TITLE OR IS NOT TAKING TITLE, OR IN WHICH HAS NO EQUITY; POLES, SATELLITES, TRANSMISSION FACILITIES AND BILLBOARDS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  867,
+                        "category":  "G",
+                        "runtime_slot":  69,
+                        "code":  "WC110",
+                        "description":  "CINEMATOGRAPHIC FILM RENTALS AND OTHER PAYMENTS TO RESIDENT INDIVIDUALS AND CORPORATE CINEMATOGRAPHIC FILM OWNERS, LESSORS OR DISTRIBUTORS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  868,
+                        "category":  "G",
+                        "runtime_slot":  70,
+                        "code":  "WC120",
+                        "description":  "INCOME PAYMENTS TO CERTAIN CONTRACTORS ",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  869,
+                        "category":  "G",
+                        "runtime_slot":  71,
+                        "code":  "WC139",
+                        "description":  "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE ONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS) - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  870,
+                        "category":  "G",
+                        "runtime_slot":  72,
+                        "code":  "WC140",
+                        "description":  "GROSS COMMISSIONS OR SERVICE FEES OF CUSTOMS, INSURANCE, STOCK, IMMIGRATION AND COMMERCIAL BROKERS, FEES OF AGENTS OF PROFESSIONAL ENTERTAINERS AND REAL ESTATE SERVICE PRACTITIONERS (RESPS), (I.E. REAL ESTATE ONSULTANTS, REAL ESTATE APPRAISERS AND REAL ESTATE BROKERS) - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  871,
+                        "category":  "G",
+                        "runtime_slot":  73,
+                        "code":  "WC150",
+                        "description":  "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE DOCTORS OF VETERINARY SCIENCE \u0026 DENTISTS) BY HOSPITALS \u0026 CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  872,
+                        "category":  "G",
+                        "runtime_slot":  74,
+                        "code":  "WC151",
+                        "description":  "PROFESSIONAL FEES PAID TO MEDICAL PRACTITIONERS (INCLUDES DOCTORS OF MEDICINE DOCTORS OF VETERINARY SCIENCE \u0026 DENTISTS) BY HOSPITALS \u0026 CLINICS OR PAID DIRECTLY BY HEALTH MAINTENANCE ORGANIZATIONS (HMOS) AND/OR SIMILAR ESTABLISHMENTS - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  873,
+                        "category":  "G",
+                        "runtime_slot":  75,
+                        "code":  "WC156",
+                        "description":  "INCOME PAYMENTS MADE BY CREDIT CARD COMPANIES",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  874,
+                        "category":  "G",
+                        "runtime_slot":  76,
+                        "code":  "WC640",
+                        "description":  "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  875,
+                        "category":  "G",
+                        "runtime_slot":  77,
+                        "code":  "WC157",
+                        "description":  "INCOME PAYMENTS MADE BY THE GOVERNMENT AND GOVERNMENT-OWNED AND CONTROLLED CORPORATIONS (GOCCS) TO ITS LOCAL/RESIDENT SUPPLIERS OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  876,
+                        "category":  "G",
+                        "runtime_slot":  78,
+                        "code":  "WC158",
+                        "description":  "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR LOCAL/RESIDENT SUPPLIER OF GOODS OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  877,
+                        "category":  "G",
+                        "runtime_slot":  79,
+                        "code":  "WC160",
+                        "description":  "INCOME PAYMENT MADE BY TOP WITHHOLDING AGENTS TO THEIR  LOCAL/RESIDENT SUPPLIER OF SERVICES OTHER THAN THOSE COVERED BY OTHER RATES OF WITHHOLDING TAX",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  878,
+                        "category":  "G",
+                        "runtime_slot":  80,
+                        "code":  "WC515",
+                        "description":  "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/ GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES - IF GROSS INCOME FOR THE CURRENT YEAR DID NOT EXCEED P 720,000",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  879,
+                        "category":  "G",
+                        "runtime_slot":  81,
+                        "code":  "WC516",
+                        "description":  "COMMISSIONS, REBATES, DISCOUNTS AND OTHER SIMILAR CONSIDERATIONS PAID/ GRANTED TO INDEPENDENT AND/OR EXCLUSIVE SALES REPRESENTATIVES AND MARKETING AGENTS AND SUB-AGENTS OF COMPANIES, INCLUDING MULTI-LEVEL MARKETING COMPANIES - IF GROSS INCOME EXCEEDS P 720,000",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  880,
+                        "category":  "G",
+                        "runtime_slot":  82,
+                        "code":  "WC535",
+                        "description":  "PAYMENTS MADE BY PRE-NEED COMPANIES TO FUNERAL PARLORS",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  881,
+                        "category":  "G",
+                        "runtime_slot":  83,
+                        "code":  "WC540",
+                        "description":  "TOLLING FEES PAID TO REFINERIES",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  882,
+                        "category":  "G",
+                        "runtime_slot":  84,
+                        "code":  "WC610",
+                        "description":  "INCOME PAYMENTS MADE TO SUPPLIERS OF AGRICULTURAL PRODUCTS IN EXCESS OF CUMULATIVE AMOUNT OF P 300,000 WITHIN THE SAME TAXABLE YEAR",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  883,
+                        "category":  "G",
+                        "runtime_slot":  85,
+                        "code":  "WC630",
+                        "description":  "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES, SUCH AS BUT NOT LIMITED TO SILVER, GOLD, MARBLE, GRANITE, GRAVEL, SAND, BOULDERS AND OTHER MINERAL PRODUCTS EXCEPT PURCHASES BY BANGKO SENTRAL NG PILIPINAS",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  884,
+                        "category":  "G",
+                        "runtime_slot":  86,
+                        "code":  "WC632",
+                        "description":  "INCOME PAYMENTS ON PURCHASES OF MINERALS, MINERAL PRODUCTS AND QUARRY RESOURCES BY BANGKO SENTRAL NG PILIPINAS (BSP) FROM GOLD MINERS/SUPPLIERS UNDER PD 1899, AS AMENDED BY RA NO. 7076",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  885,
+                        "category":  "G",
+                        "runtime_slot":  87,
+                        "code":  "WC650",
+                        "description":  "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH ACTIVE CONTRACTS AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  886,
+                        "category":  "G",
+                        "runtime_slot":  88,
+                        "code":  "WC651",
+                        "description":  "ON GROSS AMOUNT OF REFUND GIVEN BY MERALCO TO CUSTOMERS WITH TERMINATED CONTRACTS AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "32.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  887,
+                        "category":  "G",
+                        "runtime_slot":  89,
+                        "code":  "WC660",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF RESIDENTIAL AND GENERAL SERVICE CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  888,
+                        "category":  "G",
+                        "runtime_slot":  90,
+                        "code":  "WC661",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF  NON-RESIDENTIAL CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY MERALCO",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  889,
+                        "category":  "G",
+                        "runtime_slot":  91,
+                        "code":  "WC662",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF RESIDENTIAL AND GENERAL SERVICE CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY OTHER ELECTRIC DISTRIBUTION UTILITIES (DU)",
+                        "catalog_rate":  "10.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  890,
+                        "category":  "G",
+                        "runtime_slot":  92,
+                        "code":  "WC663",
+                        "description":  "ON GROSS AMOUNT OF INTEREST ON THE REFUND OF METER DEPOSIT WHETHER PAID DIRECTLY TO THE CUSTOMERS OR APPLIED AGAINST CUSTOMER\u0027S BILLINGS OF  NON- RESIDENTIAL CUSTOMERS WHOSE MONTHLY ELECTRICITY CONSUMPTION EXCEEDS 200 KWH AS CLASSIFIED BY OTHER ELECTRIC DISTRIBUTION UTILITIES (DU)",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  891,
+                        "category":  "G",
+                        "runtime_slot":  93,
+                        "code":  "WC680",
+                        "description":  "INCOME PAYMENTS MADE BY POLITICAL PARTIES AND CANDIDATES OF LOCAL AND NATIONAL ELECTIONS ON ALL THEIR PURCHASES OF GOODS AND SERVICES RELATED TO CAMPAIGN EXPENDITURES, AND INCOME PAYMENTS MADE BY INDIVIDUALS OR JURIDICAL PERSONS FOR THEIR PURCHASES OF GOODS AND SERVICES INTENDED TO BE GIVEN AS CAMPAIGN CONTRIBUTIONS TO POLITICAL PARTIES AND CANDIDATES",
+                        "catalog_rate":  "5.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  892,
+                        "category":  "G",
+                        "runtime_slot":  94,
+                        "code":  "WC690",
+                        "description":  "INCOME PAYMENTS RECEIVED BY REAL ESTATE INVESTMENT TRUST (REIT)",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  893,
+                        "category":  "G",
+                        "runtime_slot":  95,
+                        "code":  "WC710",
+                        "description":  "INTEREST INCOME DERIVED FROM ANY OTHER DEBT INSTRUMENTS NOT WITHIN THE COVERAGE OF DEPOSIT SUBSTITUTES AND REVENUE REGULATIONS NO. 14-2012 ",
+                        "catalog_rate":  "20.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  894,
+                        "category":  "G",
+                        "runtime_slot":  96,
+                        "code":  "WC720",
+                        "description":  "INCOME PAYMENTS ON LOCALLY PRODUCED RAW SUGAR",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  895,
+                        "category":  "P",
+                        "runtime_slot":  97,
+                        "code":  "WI820",
+                        "description":  "ON THE GROSS REMITTANCES BY E-MARKETPLACE OPERATORS TO THE SELLERS/MERCHANTS FOR THE GOODS OR SERVICES SOLD/PAID THROUGH THEIR PLATFORM/FACILITY-INDIVIDUAL.",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  896,
+                        "category":  "P",
+                        "runtime_slot":  98,
+                        "code":  "WI830",
+                        "description":  "ON THE GROSS REMITTANCES BY DIGITAL FINANCIAL SERVICES PROVIDERS TO THE SELLERS/MERCHANTS FOR THE GOODS OR SERVICES SOLD/PAID THROUGH THEIR PLATFORM/FACILITY-INDIVIDUAL",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  897,
+                        "category":  "P",
+                        "runtime_slot":  99,
+                        "code":  "WC820",
+                        "description":  "ON THE GROSS REMITTANCES BY E-MARKETPLACE OPERATORS TO THE SELLERS/MERCHANTS FOR THE GOODS OR SERVICES SOLD/PAID THROUGH THEIR PLATFORM/FACILITY-CORPORATE",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  898,
+                        "category":  "P",
+                        "runtime_slot":  100,
+                        "code":  "WC830",
+                        "description":  "ON THE GROSS REMITTANCES BY DIGITAL FINANCIAL SERVICES PROVIDERS TO THE SELLERS/MERCHANTS FOR THE GOODS OR SERVICES SOLD/PAID THROUGH THEIR PLATFORM/FACILITY-CORPORATE",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1037,
+                        "category":  "P",
+                        "runtime_slot":  101,
+                        "code":  "WI770",
+                        "description":  "INCOME PAYMENTS MADE BY JOINT VENTURES, WHETHER INCORPORATED OR NOT, TAXABLE OR NON-TAXABLE, TO THEIR LOCAL/RESIDENT SUPPLIER OF GOODS. INDIVIDUAL",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1038,
+                        "category":  "P",
+                        "runtime_slot":  102,
+                        "code":  "WI780",
+                        "description":  "INCOME PAYMENTS MADE BY JOINT VENTURES, WHETHER INCORPORATED OR NOT, TAXABLE OR NON-TAXABLE, TO THEIR LOCAL/RESIDENT SUPPLIER OF SERVICES. INDIVIDUAL",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1039,
+                        "category":  "P",
+                        "runtime_slot":  103,
+                        "code":  "WC770",
+                        "description":  "INCOME PAYMENTS MADE BY JOINT VENTURES, WHETHER INCORPORATED OR NOT, TAXABLE OR NON-TAXABLE, TO THEIR LOCAL/RESIDENT SUPPLIER OF GOODS. CORPORATE",
+                        "catalog_rate":  "1.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1040,
+                        "category":  "P",
+                        "runtime_slot":  104,
+                        "code":  "WC780",
+                        "description":  "INCOME PAYMENTS MADE BY JOINT VENTURES, WHETHER INCORPORATED OR NOT, TAXABLE OR NON-TAXABLE, TO THEIR LOCAL/RESIDENT SUPPLIER OF SERVICES. CORPORATE",
+                        "catalog_rate":  "2.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1041,
+                        "category":  "P",
+                        "runtime_slot":  105,
+                        "code":  "WC790",
+                        "description":  "ON THE SHARE OF EACH CO-VENTURER/MEMBER FROM THE NET INCOME OF THE JOINT VENTURE/CONSORTIUM NOT TAXABLE AS CORPORATION PRIOR TO ACTUAL OR CONSTRUCTIVE DISTRIBUTION THEREOF. CORPORATE",
+                        "catalog_rate":  "15.0",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1066,
+                        "category":  "",
+                        "runtime_slot":  null,
+                        "code":  "WI240",
+                        "description":  "Distributive share of individual partners in a taxable partnership, association, joint account or joint venture or consortium;20",
+                        "catalog_rate":  "P",
+                        "reachable_from_category_ui":  false,
+                        "parse_issue":  "Category is neither P nor G; changedrpATCList never renders this record."
+                    },
+                    {
+                        "source_index":  1067,
+                        "category":  "",
+                        "runtime_slot":  null,
+                        "code":  "WI341",
+                        "description":  "Royalties paid to NRAETB on cinematographic fils and similar works;20",
+                        "catalog_rate":  "P",
+                        "reachable_from_category_ui":  false,
+                        "parse_issue":  "Category is neither P nor G; changedrpATCList never renders this record."
+                    },
+                    {
+                        "source_index":  1068,
+                        "category":  "",
+                        "runtime_slot":  null,
+                        "code":  "WC212",
+                        "description":  "Cash dividend payment by domestic corporation to citizens and resident aliens/NRFCs; 25",
+                        "catalog_rate":  "P",
+                        "reachable_from_category_ui":  false,
+                        "parse_issue":  "Category is neither P nor G; changedrpATCList never renders this record."
+                    },
+                    {
+                        "source_index":  1069,
+                        "category":  "",
+                        "runtime_slot":  null,
+                        "code":  "WC213",
+                        "description":  "Property dividend payment by domestic corporation to citizens and resident aliens/NRFCs;25",
+                        "catalog_rate":  "P",
+                        "reachable_from_category_ui":  false,
+                        "parse_issue":  "Category is neither P nor G; changedrpATCList never renders this record."
+                    },
+                    {
+                        "source_index":  1076,
+                        "category":  "P",
+                        "runtime_slot":  106,
+                        "code":  "WI840",
+                        "description":  "INCOME PAYMENTS MADE BY TOP WITHHOLDING AGENTS, EITHER PRIVATE CORPORATION OR INDIVIDUALS, TO THE MANUFACTURERS AND DIRECT IMPORTERS OF MOTOR VEHICLES IN COMPLETELY BUILT UNITS (CBUs) OR SEMI-KNOCKDOWN (SKD) UNITS, MOTOR VEHICLE PARTS AND ACCESSORIES.",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1077,
+                        "category":  "P",
+                        "runtime_slot":  107,
+                        "code":  "WC840",
+                        "description":  "INCOME PAYMENTS MADE BY TOP WITHHOLDING AGENTS, EITHER PRIVATE CORPORATION OR INDIVIDUALS, TO THE MANUFACTURERS AND DIRECT IMPORTERS OF MOTOR VEHICLES IN COMPLETELY BUILT UNITS (CBUs) OR SEMI-KNOCKDOWN (SKD) UNITS, MOTOR VEHICLE PARTS AND ACCESSORIES.",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1078,
+                        "category":  "P",
+                        "runtime_slot":  108,
+                        "code":  "WI850",
+                        "description":  "INCOME PAYMENTS MADE BY TOP WITHHOLDING AGENTS, EITHER PRIVATE CORPORATION OR INDIVIDUALS, TO THE MANUFACTURERS AND DIRECT IMPORTERS OF MEDICINE/PHARMACEUTICAL PRODUCTS.",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1079,
+                        "category":  "P",
+                        "runtime_slot":  109,
+                        "code":  "WC850",
+                        "description":  "INCOME PAYMENTS MADE BY TOP WITHHOLDING AGENTS, EITHER PRIVATE CORPORATION OR INDIVIDUALS, TO THE MANUFACTURERS AND DIRECT IMPORTERS OF MEDICINE/PHARMACEUTICAL PRODUCTS.",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1080,
+                        "category":  "P",
+                        "runtime_slot":  110,
+                        "code":  "WI860",
+                        "description":  "INCOME PAYMENTS MADE BY TOP WITHHOLDING AGENTS, EITHER PRIVATE CORPORATION OR INDIVIDUALS, TO THE MANUFACTURERS AND DIRECT IMPORTERS OF SOLID OR LIQUID FUELS AND RELATED PRODUCTS.",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    },
+                    {
+                        "source_index":  1081,
+                        "category":  "P",
+                        "runtime_slot":  111,
+                        "code":  "WC860",
+                        "description":  "INCOME PAYMENTS MADE BY TOP WITHHOLDING AGENTS, EITHER PRIVATE CORPORATION OR INDIVIDUALS, TO THE MANUFACTURERS AND DIRECT IMPORTERS OF SOLID OR LIQUID FUELS AND RELATED PRODUCTS.",
+                        "catalog_rate":  "0.5",
+                        "reachable_from_category_ui":  true,
+                        "parse_issue":  null
+                    }
+                ]
+}

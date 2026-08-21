@@ -1,0 +1,146 @@
+{
+    "$schema":  "../../schema/form-manifest.schema.json",
+    "schema_version":  "1.0.0",
+    "form_id":  "1701q-v2018",
+    "form_code":  "1701Q",
+    "revision":  "2018-01-01",
+    "revision_label":  "January 2018 (ENCS)",
+    "package_version":  "7.9.6.0",
+    "status":  "complete",
+    "official_assets":  [
+                            {
+                                "asset_id":  "package-7.9.6",
+                                "kind":  "official-package-executable",
+                                "path":  "C:\\eBIRForms\\BIRForms.exe",
+                                "sha256":  "de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca",
+                                "size":  57506304,
+                                "revision_binding":  "Runtime package from which the inspected HTA was extracted.",
+                                "notes":  "File and product version 7.9.6.0."
+                            },
+                            {
+                                "asset_id":  "official-hta-runtime",
+                                "kind":  "runtime-extracted-hta",
+                                "path":  "C:\\Users\\uriah\\AppData\\Local\\Temp\\{68379049-6E6C-4478-A2C5-EF7B77ED7E38}\\forms\\BIR-Form1701Qv2018.hta",
+                                "sha256":  "5f164dde6154b96f28e23656ed2ef29406010ee3f94333e88ea6eb107fe589a0",
+                                "size":  372180,
+                                "revision_binding":  "HTA title and application name identify 1701Qv2018.",
+                                "notes":  "Temporary extraction path; rediscover after package restart."
+                            },
+                            {
+                                "asset_id":  "official-pdf",
+                                "kind":  "official-form-pdf",
+                                "path":  "C:\\Mac\\Home\\Downloads\\forms\\1701Qv2018\\1701Q Jan 2018 final rev2_copy.pdf",
+                                "sha256":  "c731d3f12556e6f19ab81f6113ca7c4a23f7ed099675c03451ac0074d96b85ed",
+                                "size":  1108853,
+                                "revision_binding":  "January 2018 form artwork and instructions."
+                            },
+                            {
+                                "asset_id":  "xml-editable-v1",
+                                "kind":  "dummy-profile-editable-save",
+                                "path":  "C:\\eBIRForms\\savefile\\00000000000000-1701Qv2018-2026Q1V1.xml",
+                                "sha256":  "69beaa41b045b44e1ccca742d56a06a3ec505375b80851d6592c60520cc9303e",
+                                "size":  11898,
+                                "revision_binding":  "Filename and serialized form keys identify 1701Qv2018.",
+                                "notes":  "Dummy profile; 172 unique editable fields."
+                            },
+                            {
+                                "asset_id":  "string-util-runtime",
+                                "kind":  "shared-javascript",
+                                "path":  "runtime-extraction\\js\\string-util.js",
+                                "sha256":  "bc7f86f70bf993389a3a0135dcbd76c3e370c49d2eb95e2fc66ff318a2ebe43c",
+                                "size":  54582,
+                                "revision_binding":  "Loaded directly by the inspected HTA.",
+                                "notes":  "Includes TIN wrapper and common input handlers."
+                            },
+                            {
+                                "asset_id":  "string-util2014-runtime",
+                                "kind":  "shared-javascript",
+                                "path":  "runtime-extraction\\js\\string-util2014.js",
+                                "sha256":  "ca42592694e7416a15eca97fa25491c01da17e383038fc97dd9d6261e67bcf7d",
+                                "size":  15980,
+                                "revision_binding":  "Loaded directly by the inspected HTA.",
+                                "notes":  "Includes date masking."
+                            },
+                            {
+                                "asset_id":  "ebirtools-runtime",
+                                "kind":  "shared-vbscript",
+                                "path":  "runtime-extraction\\js\\eBIRTools.vbs",
+                                "sha256":  "7d0ceb5aad2c0eb90aeca189d6104ff05163ecd1820379f456125634ff7460f7",
+                                "size":  7557,
+                                "revision_binding":  "Loaded directly by the inspected HTA.",
+                                "notes":  "Delegates TIN checks and encryption/transport to external executables."
+                            },
+                            {
+                                "asset_id":  "chkt-runtime",
+                                "kind":  "virtualized-helper-executable",
+                                "path":  "C:\\eBIRForms\\chkt.exe",
+                                "sha256":  "c00bd4131a725af53f48c6385d3332c4b789e15441bf52bbac73117c96c1b0ac",
+                                "size":  38400,
+                                "revision_binding":  "Resolved and invoked by the exact eBIRTools ValidateTinWChkDgt function used by 1701Q.",
+                                "notes":  "Native Free Pascal 2.6.4 PE32; not enumerable as a physical directory entry but directly readable and executable through the package virtual filesystem."
+                            },
+                            {
+                                "asset_id":  "encrypt-runtime",
+                                "kind":  "virtualized-helper-executable",
+                                "path":  "C:\\eBIRForms\\Encrypt.exe",
+                                "sha256":  "429337f44f84b93cd1095df48c8f3265e5ede7c646d1b48d9b80f4f92de74d2c",
+                                "size":  489452,
+                                "revision_binding":  "Resolved by the exact eBIRTools EncryptFile function used by the 1701Q encrypted-copy path.",
+                                "notes":  "Directly opened through the package virtual filesystem; deterministic output and repository-compatible byte-exact decrypt verified with dummy XML."
+                            },
+                            {
+                                "asset_id":  "package-7.9.5",
+                                "kind":  "official-package-executable",
+                                "path":  "\\\\Mac\\goldcoders\\reverse-engineer-ebir-forms\\BIRForms.exe",
+                                "sha256":  "3d087545564531de1fbe8fb28f086ce6398e18608c54a0ea33353042665917eb",
+                                "size":  56572928,
+                                "revision_binding":  "Retained historical package exactly matching the existing 7.9.5.0 Rust provenance pin.",
+                                "notes":  "Historical comparator only; the installed 7.9.6.0 package remains the live runtime authority."
+                            },
+                            {
+                                "asset_id":  "repo-pin-7.9.5",
+                                "kind":  "prior-reviewed-repository-provenance",
+                                "path":  "crates/bir-core/src/forms/form_1701q.rs",
+                                "sha256":  "3d087545564531de1fbe8fb28f086ce6398e18608c54a0ea33353042665917eb",
+                                "size":  0,
+                                "revision_binding":  "Existing code pins package 7.9.5.0 and decoded HTA hash 42f25e268aefe881a2e1fa1d73ac4c47ef17d3ad236b3cbfb7b62af22949592d.",
+                                "notes":  "This is a package hash recorded in repository code, not the hash of the Rust file. Kept distinct from the observed 7.9.6.0 package."
+                            },
+                            {
+                                "asset_id":  "official-guide",
+                                "kind":  "official-guide-pdf",
+                                "path":  "C:\\Mac\\Home\\Downloads\\forms\\1701Qv2018\\1701Q Guide Jan 2018.pdf",
+                                "sha256":  "ff07962229015a50b0aa169f91fa32e10c534f6730de5bf59263e22d34e270bc",
+                                "size":  152170,
+                                "revision_binding":  "Title states Guidelines and Instructions for BIR Form No. 1701Q [January 2018 (ENCS)].",
+                                "notes":  "Retrieved 2026-07-22 from https://bir-cdn.bir.gov.ph/local/pdf/1701Q%20Guide%20Jan%202018.pdf."
+                            }
+                        ],
+    "counts":  {
+                   "editable_xml_fields":  172,
+                   "runtime_serializable_elements":  173,
+                   "typed_fields":  172,
+                   "validation_rules":  40,
+                   "calculations":  19,
+                   "confirmed_official_bugs":  15,
+                   "unverified_gaps":  1
+               },
+    "artifacts":  {
+                      "fields":  "fields.json",
+                      "validations":  "validations.json",
+                      "calculations":  "calculations.json",
+                      "workflow":  "workflow.json",
+                      "evidence":  "evidence.md",
+                      "audit":  "audit.md",
+                      "gaps":  "gaps.md",
+                      "calculation_fixtures":  "fixtures/calculation-boundaries.json",
+                      "checksum_fixtures":  "fixtures/checksum-cases.json",
+                      "encryption_fixture":  "fixtures/encryption-roundtrip.json",
+                      "live_ui_observations":  "fixtures/live-ui-observations-v1.json"
+                  },
+    "scope_notes":  [
+                        "Research artifacts only; no renderer, migration status, release evidence, or capability flags were changed.",
+                        "Online submission was not invoked.",
+                        "The live UI observations resolve the representative dialog and source-suspicion gaps. Online submission was canceled at its explicit confirmation; the post-submission txtFinalFlag/reopen transition remains an explicit safety-bounded gap."
+                    ]
+}

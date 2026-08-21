@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "form_id": "1601eq-v2018",
+  "synthetic_only": true,
+  "cases": [
+    {"case_id":"blank-year","phase":"validate","mutations":{"frm1601EQ:txtYear":""},"expected_message":"Please enter a valid year on Item 1.","rule_id":"1601eq-validate-001"},
+    {"case_id":"future-year","phase":"validate","mutations":{"frm1601EQ:txtYear":"2999"},"expected_message":"Invalid entry on Item 1. Entry should not be a future Date.","rule_id":"1601eq-validate-002"},
+    {"case_id":"pre-revision-year","phase":"validate","mutations":{"frm1601EQ:txtYear":"2017"},"expected_message":"Invalid entry on Item 1. Entry should not be a previous year from 2018.","rule_id":"1601eq-validate-003"},
+    {"case_id":"no-quarter","phase":"validate","mutations":{"frm1601EQ:optQuarter:1":"false","frm1601EQ:optQuarter:2":"false","frm1601EQ:optQuarter:3":"false","frm1601EQ:optQuarter:4":"false"},"expected_message":"Please select Quarter on Item 2","rule_id":"1601eq-validate-008"},
+    {"case_id":"no-withheld-choice","phase":"validate","mutations":{"frm1601EQ:optWithheld:Y":"false","frm1601EQ:optWithheld:N":"false"},"expected_message":"Please select an option for Item 4.","rule_id":"1601eq-validate-009"},
+    {"case_id":"no-category","phase":"validate","mutations":{"frm1601EQ:optCategory:P":"false","frm1601EQ:optCategory:G":"false"},"expected_message":"Please select an option for Item 11.","rule_id":"1601eq-validate-010"},
+    {"case_id":"blank-tin-segment","phase":"validate","mutations":{"frm1601EQ:txtTIN2":""},"expected_message":"Please enter a valid TIN number on Item 6.","rule_id":"1601eq-validate-011"},
+    {"case_id":"partial-tin-bug","phase":"validate","mutations":{"frm1601EQ:txtTIN1":"1","frm1601EQ:txtTIN2":"2","frm1601EQ:txtTIN3":"3","frm1601EQ:txtBranchCode":"A"},"expected_message":null,"expected_behavior":"Official source proceeds past Item 6 despite invalid lengths/checksum.","rule_id":"1601eq-validate-011"},
+    {"case_id":"blank-rdo","phase":"validate","mutations":{"frm1601EQ:txtRDOCode":"000"},"expected_message":"Please enter a valid RDO Code on Item 7.","rule_id":"1601eq-validate-012"},
+    {"case_id":"blank-name","phase":"validate","mutations":{"frm1601EQ:txtTaxpayerName":""},"expected_message":"Please enter a valid Taxpayer Name on Item 8.","rule_id":"1601eq-validate-013"},
+    {"case_id":"blank-phone","phase":"validate","mutations":{"frm1601EQ:txtTelNum":""},"expected_message":"Please enter a valid Telephone Number on Item 10.","rule_id":"1601eq-validate-014"},
+    {"case_id":"blank-address","phase":"validate","mutations":{"frm1601EQ:txtAddress":""},"expected_message":"Please enter Taxpayer's Registered Address on Item 9.","rule_id":"1601eq-validate-015"},
+    {"case_id":"blank-zip","phase":"validate","mutations":{"frm1601EQ:txtZipCode":""},"expected_message":"Please enter Taxpayer's Zip Code on Item 9A.","rule_id":"1601eq-validate-016"},
+    {"case_id":"blank-email","phase":"validate","mutations":{"txtEmail":""},"expected_message":"Please enter valid Email Address on Item 12.","rule_id":"1601eq-validate-017"},
+    {"case_id":"malformed-email-bug","phase":"validate","mutations":{"txtEmail":"x"},"expected_message":null,"expected_behavior":"Official source proceeds because only blankness is tested.","rule_id":"1601eq-validate-017"},
+    {"case_id":"withheld-without-atc","phase":"validate","mutations":{"frm1601EQ:optWithheld:Y":"true","frm1601EQ:optWithheld:N":"false","frm1601EQ:txtAtcCd1":""},"expected_message":"Please fill up Part II Computation of Tax if item 4 is set to Yes.","rule_id":"1601eq-validate-018"},
+    {"case_id":"selected-atc-zero-base","phase":"validate","mutations":{"frm1601EQ:optWithheld:Y":"true","frm1601EQ:optWithheld:N":"false","frm1601EQ:txtAtcCd1":"WI010","frm1601EQ:txtTaxBase1":"0.00"},"expected_message":"Please enter a valid value for tax base for WI010.","rule_id":"1601eq-validate-019"},
+    {"case_id":"negative-without-disposition","phase":"validate","mutations":{"frm1601EQ:txtTax30":"-1.00","frm1601EQ:ifRefund":"false","frm1601EQ:ifIssueCert":"false","frm1601EQ:ifCarriedOver":"false"},"expected_message":"Please select an Overpayment option in Part II Item 30.","rule_id":"1601eq-validate-020"},
+    {"case_id":"save-blank-name-wording","phase":"save","mutations":{"frm1601EQ:txtTaxpayerName":""},"expected_message":"Please enter a valid Withholding Agent's Name on Item 8.","rule_id":"1601eq-save-003"},
+    {"case_id":"save-invalid-draft-bug","phase":"save","mutations":{"frm1601EQ:txtYear":"","frm1601EQ:optQuarter:1":"false","txtEmail":""},"expected_message":null,"expected_behavior":"Save proceeds if TIN/RDO/name pass its three-check preflight.","rule_id":"1601eq-save-004"},
+    {"case_id":"multiple-decimal-coercion","phase":"blur/change","mutations":{"frm1601EQ:txtTaxBase1":"1.2.3"},"expected_message":null,"expected_behavior":"numbersonly permits typed dots and round() coerces malformed value to 0.00.","rule_id":"1601eq-input-003"},
+    {"case_id":"address-percent-boundary","phase":"save","mutations":{"frm1601EQ:txtAddress":"A string whose escaped representation crosses source position 127","frm1601EQ:txtAddress2":"SECOND LINE"},"expected_message":null,"expected_behavior":"Save concatenates escaped lines without delimiter; reopen splits encoded text at position 127.","rule_id":"1601eq-save-005"}
+  ]
+}

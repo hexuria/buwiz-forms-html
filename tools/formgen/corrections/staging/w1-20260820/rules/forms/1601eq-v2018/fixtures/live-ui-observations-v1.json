@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "form_id": "1601eq-v2018",
+  "package_version": "7.9.6.0",
+  "observed_on": "2026-07-23",
+  "environment": "Official Offline eBIRForms HTA hosted by C:\\Windows\\SysWOW64\\mshta.exe",
+  "data_policy": "Synthetic zero-TIN profile only; no 1601EQ Save, Final Copy, or online submission was invoked.",
+  "observations": [
+    {
+      "observation_id": "live-ui-2026-07-23-missing-year",
+      "phase": "validate",
+      "setup": "Open a new 1601EQ January 2018 return, clear frm1601EQ:txtYear, and click Validate.",
+      "observed_behavior": "Validation stopped at the first ordered year check.",
+      "exact_message": "Please enter a valid year on Item 1.",
+      "rule_ids": ["1601eq-validate-001"]
+    },
+    {
+      "observation_id": "live-ui-2026-07-23-missing-quarter",
+      "phase": "validate",
+      "setup": "Restore Item 1 to 2026, leave all four Item 2 quarter choices blank, and click Validate.",
+      "observed_behavior": "Validation passed the year checks and stopped at the ordered quarter-required check.",
+      "exact_message": "Please select Quarter on Item 2",
+      "rule_ids": ["1601eq-validate-008"]
+    }
+  ],
+  "safety_outcome": {
+    "return_state": "The new 1601EQ form was left open and unsaved after the observations.",
+    "new_1601eq_save_created": false,
+    "final_copy_invoked": false,
+    "submission_invoked": false
+  },
+  "incidental_navigation_side_effects": [
+    {
+      "path": "C:\\eBIRForms\\savefile\\00000000000000-1701Qv2018-2026Q1V2.xml",
+      "effect": "A mistaken stale menu-index click on the previously open synthetic 1701Q form invoked Save before navigation.",
+      "size": 11904,
+      "sha256": "c455303b6e1d5016d0b2464867c9911aef4cfd04a824c3809f30bf78563d7a67",
+      "last_write_time_local": "2026-07-23T06:55:34+08:00",
+      "disposition": "Left in place; not deleted or modified further."
+    },
+    {
+      "path": "C:\\eBIRForms\\profile\\00000000000000.xml",
+      "effect": "The legacy Main Screen/Fill-up route rewrote the existing synthetic zero-TIN profile.",
+      "size": 797,
+      "sha256_after_observation": "e2f02c691f191208ca92a13f846447263de9c366f93979ddddc8b5f79fc4de03",
+      "last_write_time_local": "2026-07-23T07:00:54+08:00",
+      "disposition": "Left in place; no real taxpayer data was used."
+    }
+  ]
+}

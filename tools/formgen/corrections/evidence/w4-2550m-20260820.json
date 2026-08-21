@@ -1,0 +1,44 @@
+{
+  "job": "W4",
+  "title": "One money comb and one growable band on 2550M Feb 2007",
+  "date": "2026-08-20",
+  "packet": {
+    "JOB": "W4: One money comb and one growable band (R3 / R7)",
+    "SAVEFILE": "C:\\eBIRForms\\savefile\\00000000000000-2550M-082026.xml sha256=0345f1ce71b1ff1a2d0dac70c1a16e8a2485970708c708dd7961d6eb01d5d544",
+    "FORM": "2550-M February 2007 ENCS (runtime 2550M Monthly Value-Added Tax Declaration) package=7.9.6.1",
+    "HTA": "C:\\Users\\uriah\\AppData\\Local\\Temp\\{0B33C1CE-21A8-44A1-8D91-28A10444A6A3}\\forms\\BIR-Form2550M.hta sha256=72f1422dab2f8523d140aa51fe5f54f7d9025acc2cf877b37c8d92b60c7668b5",
+    "EXE": "7.9.6.1 sha256=a43a4599f95158e6ba0e7a1c4b88c4e2cf215ac86e53c24259cc69d1b664829c (vs manifest 7.9.6.0 de8ef0815509d65189e6794e1f8135a5ecf5f2800005d1fc5c87043efd96dbca)",
+    "FINDING": "Money box Item 14 Zero Rated Sales/Receipts is a single input maxlength=25 id=frm2550m:txtTax14, not N digit cells. Dummy 123 saved as one XML node frm2550m:txtTax14=123.00. Schedule 1 (Sch. 1) is a modal overlay (modalSched1) with one Industry/ATC/Amount/Output row plus totals, OK/CLEAR/CANCEL; it does not add occurrence-suffixed rows (_1/_2) in saveXML. Verdict: other (single money input + modal schedule, not R3-shaped N-cells-1-key, not R7-shaped occurrence suffix). No catalog join.",
+    "STAGING": "none (savefile copy only under tools/formgen/corrections/staging/w4-20260820/)",
+    "PINS": "leftover_keys.py live tree unchanged (unique 8028, duplicate 4, claimed_unique 147, claimed_duplicate 4, claimed_absent 12, claimed 163)",
+    "NEXT": "5"
+  },
+  "savefile": {
+    "path": "C:\\eBIRForms\\savefile\\00000000000000-2550M-082026.xml",
+    "copied_to": "C:\\Users\\uriah\\Code\\buwiz-forms\\tools\\formgen\\corrections\\staging\\w4-20260820\\00000000000000-2550M-082026.xml",
+    "sha256": "0345f1ce71b1ff1a2d0dac70c1a16e8a2485970708c708dd7961d6eb01d5d544",
+    "bytes": 9481,
+    "dummy_tin": "000-000-000-00000",
+    "money_value_typed": "123",
+    "emitted_count": 142,
+    "unique_count": 142
+  },
+  "money_box": {
+    "caption": "14 Zero Rated Sales/Receipts",
+    "control": "frm2550m:txtTax14",
+    "maxlength": 25,
+    "xml_node": "frm2550m:txtTax14=123.00",
+    "shape": "single input, not N digit cells"
+  },
+  "growable_band": {
+    "caption": "Schedule 1 Schedule of Sales/Receipts and Output Tax",
+    "ui": "modal overlay modalSched1, one row, OK/CLEAR/CANCEL",
+    "xml_shape": "totals frm2550M:txtmodaltxtTotal12A / 12B; no _1/_2 occurrence suffix for extra rows",
+    "verdict": "other"
+  },
+  "verdict": "other",
+  "live_untouched": [
+    "rules/forms",
+    "map_tin.py --write"
+  ]
+}

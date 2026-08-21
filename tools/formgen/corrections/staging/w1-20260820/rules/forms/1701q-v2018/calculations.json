@@ -1,0 +1,519 @@
+{
+    "$schema":  "../../schema/calculations.schema.json",
+    "schema_version":  "1.0.0",
+    "form_id":  "1701q-v2018",
+    "revision":  "2018-01-01",
+    "evaluation_order":  [
+                             "calc-item-38",
+                             "calc-item-40",
+                             "calc-item-41",
+                             "calc-item-45",
+                             "calc-item-46",
+                             "calc-item-49",
+                             "calc-item-51",
+                             "calc-item-53",
+                             "calc-item-54",
+                             "calc-item-62",
+                             "calc-item-63",
+                             "calc-item-67",
+                             "calc-item-68",
+                             "calc-item-26",
+                             "calc-item-27",
+                             "calc-item-28",
+                             "calc-item-29",
+                             "calc-item-30",
+                             "calc-item-31"
+                         ],
+    "calculations":  [
+                         {
+                             "calculation_id":  "calc-item-38",
+                             "outputs":  [
+                                             "frm1701q:txt38A",
+                                             "frm1701q:txt38B"
+                                         ],
+                             "inputs":  [
+                                            "txt36{party}",
+                                            "txt37{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item38 = item36 - item37",
+                             "rounding":  "toFixed(2), Math.round to whole peso, formatCurrency",
+                             "trigger":  "item36/item37 blur",
+                             "depends_on":  [
+
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4285-L4294",
+                                                 "official-pdf#p2:item-38"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-40",
+                             "outputs":  [
+                                             "frm1701q:txt40A",
+                                             "frm1701q:txt40B"
+                                         ],
+                             "inputs":  [
+                                            "txt36{party}"
+                                        ],
+                             "condition":  "Guard is taxpayer OSD OR spouse OSD regardless of party argument.",
+                             "official_formula":  "item40 = item36 * 40%",
+                             "rounding":  "Math.round to whole peso, formatCurrency",
+                             "trigger":  "OSD selection/item36 blur",
+                             "depends_on":  [
+
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4296-L4307",
+                                                 "official-pdf#p2:item-40"
+                                             ],
+                             "assessment":  "official-bug-compatible",
+                             "recommended_app_behavior":  "Guard by same party\u0027s method.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-41",
+                             "outputs":  [
+                                             "frm1701q:txt41A",
+                                             "frm1701q:txt41B"
+                                         ],
+                             "inputs":  [
+                                            "txt38{party}",
+                                            "txt39{party}",
+                                            "txt40{party}"
+                                        ],
+                             "condition":  "Explicit Itemized and OSD selections compute correctly. If blank, the else branch computes as OSD; taxpayer Validate blocks blank, but spouse Validate does not.",
+                             "official_formula":  "itemized: item38-item39; OSD: item38-item40",
+                             "rounding":  "toFixed(2), Math.round to whole peso",
+                             "trigger":  "upstream recompute",
+                             "depends_on":  [
+                                                "calc-item-38",
+                                                "calc-item-40"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4310-L4331",
+                                                 "official-pdf#p2:item-41",
+                                                 "official-guide#p1:Deductions"
+                                             ],
+                             "assessment":  "incorrect-official-behavior",
+                             "recommended_app_behavior":  "Preserve explicit formulas. For blank spouse Item 25A, apply the guide default of Itemized or stop for a choice; never fall through to OSD.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-45",
+                             "outputs":  [
+                                             "frm1701q:txt45A",
+                                             "frm1701q:txt45B"
+                                         ],
+                             "inputs":  [
+                                            "txt41{party}",
+                                            "txt42{party}",
+                                            "txt43{party}",
+                                            "txt44{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item45 = item41 + item42 + item43 + item44",
+                             "rounding":  "Math.round to whole peso",
+                             "trigger":  "upstream/item42-44 blur",
+                             "depends_on":  [
+                                                "calc-item-41"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4333-L4342",
+                                                 "official-pdf#p2:item-45"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Sum Items 41 through 44 exactly as printed; preserve signed income/loss values.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-46",
+                             "outputs":  [
+                                             "frm1701q:txt46A",
+                                             "frm1701q:txt46B"
+                                         ],
+                             "inputs":  [
+                                            "txt45{party}",
+                                            "txtYear"
+                                        ],
+                             "condition":  "For taxable years 2018 onward. The runtime also contains a pre-2018 legacy branch not printed on this January 2018 revision.",
+                             "official_formula":  "2018-2022: \u003c=250000: 0; \u003c=400000: 20% over 250000; \u003c=800000: 30000 + 25% over 400000; \u003c=2000000: 130000 + 30% over 800000; \u003c=8000000: 490000 + 32% over 2000000; \u003e8000000: 2410000 + 35% over 8000000. 2023+: \u003c=250000: 0; \u003c=400000: 15% over 250000; \u003c=800000: 22500 + 20% over 400000; \u003c=2000000: 102500 + 25% over 800000; \u003c=8000000: 402500 + 30% over 2000000; \u003e8000000: 2202500 + 35% over 8000000.",
+                             "rounding":  "Bracket result toFixed(2), Math.round to whole peso",
+                             "trigger":  "item45 recompute",
+                             "depends_on":  [
+                                                "calc-item-45"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4344-L4479",
+                                                 "official-pdf#p2:item-46"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Implement the two printed tables exactly and test every lower/upper boundary; keep the unprinted pre-2018 runtime branch separately scoped.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-49",
+                             "outputs":  [
+                                             "frm1701q:txt49A",
+                                             "frm1701q:txt49B"
+                                         ],
+                             "inputs":  [
+                                            "txt47{party}",
+                                            "txt48{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item49 = item47 + item48",
+                             "rounding":  "toFixed(2), Math.round to whole peso",
+                             "trigger":  "item47/item48 blur",
+                             "depends_on":  [
+
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4481-L4490",
+                                                 "official-pdf#p2:item-49"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-51",
+                             "outputs":  [
+                                             "frm1701q:txt51A",
+                                             "frm1701q:txt51B"
+                                         ],
+                             "inputs":  [
+                                            "txt49{party}",
+                                            "txt50{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item51 = item49 + item50",
+                             "rounding":  "toFixed(2), Math.round to whole peso",
+                             "trigger":  "item49/item50 recompute",
+                             "depends_on":  [
+                                                "calc-item-49"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4492-L4501",
+                                                 "official-pdf#p2:item-51"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-53",
+                             "outputs":  [
+                                             "frm1701q:txt53A",
+                                             "frm1701q:txt53B"
+                                         ],
+                             "inputs":  [
+                                            "txt51{party}",
+                                            "txt52{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item53 = item51 - item52",
+                             "rounding":  "toFixed(2), Math.round to whole peso",
+                             "trigger":  "item51/item52 recompute",
+                             "depends_on":  [
+                                                "calc-item-51"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4503-L4512",
+                                                 "official-pdf#p2:item-53"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-54",
+                             "outputs":  [
+                                             "frm1701q:txt54A",
+                                             "frm1701q:txt54B"
+                                         ],
+                             "inputs":  [
+                                            "txt53{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item54 = max(0, item53 * 8%)",
+                             "rounding":  "toFixed(2), Math.round to whole peso; negative becomes 0.00",
+                             "trigger":  "item53 recompute",
+                             "depends_on":  [
+                                                "calc-item-53"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4514-L4530",
+                                                 "official-pdf#p2:item-54"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-62",
+                             "outputs":  [
+                                             "frm1701q:txt62A",
+                                             "frm1701q:txt62B"
+                                         ],
+                             "inputs":  [
+                                            "txt55{party}",
+                                            "txt56{party}",
+                                            "txt57{party}",
+                                            "txt58{party}",
+                                            "txt59{party}",
+                                            "txt60{party}",
+                                            "txt61{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item62 = sum(items55..61)",
+                             "rounding":  "toFixed(2), Math.round to whole peso",
+                             "trigger":  "blur item55..61",
+                             "depends_on":  [
+
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4532-L4541",
+                                                 "official-pdf#p2:item-62"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-63",
+                             "outputs":  [
+                                             "frm1701q:txt63A",
+                                             "frm1701q:txt63B"
+                                         ],
+                             "inputs":  [
+                                            "txt46{party}",
+                                            "txt54{party}",
+                                            "txt62{party}",
+                                            "tax-rate{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "graduated: item46-item62; 8%: item54-item62",
+                             "rounding":  "toFixed(2), Math.round to whole peso",
+                             "trigger":  "tax/credit recompute",
+                             "depends_on":  [
+                                                "calc-item-46",
+                                                "calc-item-54",
+                                                "calc-item-62"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4543-L4564",
+                                                 "official-pdf#p2:item-63"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-67",
+                             "outputs":  [
+                                             "frm1701q:txt67A",
+                                             "frm1701q:txt67B"
+                                         ],
+                             "inputs":  [
+                                            "txt64{party}",
+                                            "txt65{party}",
+                                            "txt66{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item67 = item64 + item65 + item66",
+                             "rounding":  "toFixed(2), Math.round to whole peso",
+                             "trigger":  "blur item64..66",
+                             "depends_on":  [
+
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4566-L4575",
+                                                 "official-pdf#p2:item-67"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-68",
+                             "outputs":  [
+                                             "frm1701q:txt68A",
+                                             "frm1701q:txt68B"
+                                         ],
+                             "inputs":  [
+                                            "txt63{party}",
+                                            "txt67{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item68 = item63 + item67",
+                             "rounding":  "toFixed(2), Math.round to whole peso",
+                             "trigger":  "item63/item67 recompute",
+                             "depends_on":  [
+                                                "calc-item-63",
+                                                "calc-item-67"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4577-L4586",
+                                                 "official-pdf#p2:item-68"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-26",
+                             "outputs":  [
+                                             "frm1701q:txt26A",
+                                             "frm1701q:txt26B"
+                                         ],
+                             "inputs":  [
+                                            "txt46{party}",
+                                            "txt54{party}",
+                                            "tax-rate{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "graduated: item26=item46; otherwise item26=item54",
+                             "rounding":  "toFixed(2), formatCurrency",
+                             "trigger":  "computePartIII",
+                             "depends_on":  [
+                                                "calc-item-46",
+                                                "calc-item-54"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4262-L4278",
+                                                 "official-pdf#p1:item-26"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-27",
+                             "outputs":  [
+                                             "frm1701q:txt27A",
+                                             "frm1701q:txt27B"
+                                         ],
+                             "inputs":  [
+                                            "txt62{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item27 = item62",
+                             "rounding":  "toFixed(2), formatCurrency",
+                             "trigger":  "computePartIII",
+                             "depends_on":  [
+                                                "calc-item-62"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4245-L4257",
+                                                 "official-pdf#p1:item-27"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-28",
+                             "outputs":  [
+                                             "frm1701q:txt28A",
+                                             "frm1701q:txt28B"
+                                         ],
+                             "inputs":  [
+                                            "txt26{party}",
+                                            "txt27{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item28 = item26 - item27",
+                             "rounding":  "toFixed(2), formatCurrency",
+                             "trigger":  "computePartIII",
+                             "depends_on":  [
+                                                "calc-item-26",
+                                                "calc-item-27"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4245-L4257",
+                                                 "official-pdf#p1:item-28"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-29",
+                             "outputs":  [
+                                             "frm1701q:txt29A",
+                                             "frm1701q:txt29B"
+                                         ],
+                             "inputs":  [
+                                            "txt67{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item29 = item67",
+                             "rounding":  "toFixed(2), formatCurrency",
+                             "trigger":  "computePartIII",
+                             "depends_on":  [
+                                                "calc-item-67"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4245-L4257",
+                                                 "official-pdf#p1:item-29"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-30",
+                             "outputs":  [
+                                             "frm1701q:txt30A",
+                                             "frm1701q:txt30B"
+                                         ],
+                             "inputs":  [
+                                            "txt28{party}",
+                                            "txt29{party}"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item30 = item28 + item29",
+                             "rounding":  "toFixed(2), formatCurrency",
+                             "trigger":  "computePartIII",
+                             "depends_on":  [
+                                                "calc-item-28",
+                                                "calc-item-29"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4245-L4257",
+                                                 "official-pdf#p1:item-30"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         },
+                         {
+                             "calculation_id":  "calc-item-31",
+                             "outputs":  [
+                                             "frm1701q:txt31"
+                                         ],
+                             "inputs":  [
+                                            "txt30A",
+                                            "txt30B"
+                                        ],
+                             "condition":  null,
+                             "official_formula":  "item31 = item30A + item30B",
+                             "rounding":  "toFixed(2), formatCurrency",
+                             "trigger":  "computePartIII",
+                             "depends_on":  [
+                                                "calc-item-30"
+                                            ],
+                             "source_refs":  [
+                                                 "official-hta-runtime#L4280-L4283",
+                                                 "official-pdf#p1:item-31"
+                                             ],
+                             "assessment":  "verified-correct",
+                             "recommended_app_behavior":  "Recompute from typed decimal inputs in dependency order; make rounding explicit and test boundaries.",
+                             "confidence":  "high"
+                         }
+                     ]
+}

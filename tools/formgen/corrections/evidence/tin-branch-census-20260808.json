@@ -1,0 +1,2430 @@
+{
+ "method": "see module docstring of measure_tin_branch_census.py",
+ "bundles": 53,
+ "tally": {
+  "3+3+3+3": 3,
+  "3+3+3+4": 1,
+  "3+3+3+5": 39,
+  "not-measurable": 10
+ },
+ "forms": {
+  "0605-1999": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "0605version1999_09.02.2022_copy.pdf",
+   "pdf_sha256": "de04419766c59bf27fdeb854c0f7c3f98601900caa20630442e671e2313e536f"
+  },
+  "0619e-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    165.5,
+    183.14
+   ],
+   "groups_x": [
+    [
+     218.09,
+     261.29,
+     3
+    ],
+    [
+     276.05,
+     319.25,
+     3
+    ],
+    [
+     334.03,
+     377.23,
+     3
+    ],
+    [
+     392.11,
+     464.14,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.76,
+    14.78,
+    14.88
+   ],
+   "branch_box_x": [
+    392.11,
+    464.14
+   ],
+   "branch_ticks_x": [
+    406.51,
+    420.91,
+    435.31,
+    449.71
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    169.12,
+    175.43,
+    179.15
+   ],
+   "pdf": "0619-E Jan 2018 rev final.pdf",
+   "pdf_sha256": "0418160d63d4e6f68c34f2bad553273a5d148c3686d8562d338d35fcdd0c5215"
+  },
+  "0619f-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    143.54,
+    161.3
+   ],
+   "groups_x": [
+    [
+     217.37,
+     260.57,
+     3
+    ],
+    [
+     275.45,
+     318.65,
+     3
+    ],
+    [
+     333.43,
+     376.63,
+     3
+    ],
+    [
+     391.39,
+     463.42,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.88,
+    14.78,
+    14.76
+   ],
+   "branch_box_x": [
+    391.39,
+    463.42
+   ],
+   "branch_ticks_x": [
+    405.79,
+    420.19,
+    434.59,
+    448.99
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    147.27,
+    175.43,
+    157.31
+   ],
+   "pdf": "0619-F Jan 2018 rev final.pdf",
+   "pdf_sha256": "edd7357390b1f0d95f2a38c9bb76252341c15b54b82bffd338bd540452ff15e1"
+  },
+  "0620-2019": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    171.26,
+    188.9
+   ],
+   "groups_x": [
+    [
+     218.09,
+     261.29,
+     3
+    ],
+    [
+     276.05,
+     319.25,
+     3
+    ],
+    [
+     334.03,
+     377.23,
+     3
+    ],
+    [
+     392.11,
+     464.14,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.76,
+    14.78,
+    14.88
+   ],
+   "branch_box_x": [
+    392.11,
+    464.14
+   ],
+   "branch_ticks_x": [
+    406.51,
+    420.91,
+    435.31,
+    449.71
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    174.88,
+    175.43,
+    184.91
+   ],
+   "pdf": "0620 Jan 2019 final.pdf",
+   "pdf_sha256": "03644c5b617ed246bf840c95ca07b0621137bdbde4d5d5d0804e7e6aa9c14341"
+  },
+  "1600-pt-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    145.58,
+    162.26
+   ],
+   "groups_x": [
+    [
+     213.65,
+     256.25,
+     3
+    ],
+    [
+     270.53,
+     313.13,
+     3
+    ],
+    [
+     327.42,
+     370.03,
+     3
+    ],
+    [
+     384.31,
+     455.35,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.28,
+    14.29,
+    14.28
+   ],
+   "branch_box_x": [
+    384.31,
+    455.35
+   ],
+   "branch_ticks_x": [
+    398.47,
+    412.63,
+    426.91,
+    441.07
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    171.2,
+    148.83,
+    185.63,
+    158.87
+   ],
+   "pdf": "1600-PT January 2018 ENCS final.pdf",
+   "pdf_sha256": "a7341728d072a70aafbea3291eec07573b111d058f0bc838ae0f58b80c41db84"
+  },
+  "1600-vt-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    141.14,
+    159.02
+   ],
+   "groups_x": [
+    [
+     213.65,
+     256.25,
+     3
+    ],
+    [
+     270.53,
+     313.13,
+     3
+    ],
+    [
+     327.42,
+     370.03,
+     3
+    ],
+    [
+     384.31,
+     455.35,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.28,
+    14.29,
+    14.28
+   ],
+   "branch_box_x": [
+    384.31,
+    455.35
+   ],
+   "branch_ticks_x": [
+    398.47,
+    412.63,
+    426.91,
+    441.07
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    171.2,
+    144.88,
+    185.63,
+    154.91
+   ],
+   "pdf": "1600-VT January 2018 ENCS final.pdf",
+   "pdf_sha256": "6314f5797fd3663bdfd2eac6d7923f18a1c48efcea9af83ab0464b11cc58128a"
+  },
+  "1600wp-2010": {
+   "pattern": "3+3+3+4",
+   "band_y": [
+    139.2,
+    156.72
+   ],
+   "groups_x": [
+    [
+     53.04,
+     94.08,
+     3
+    ],
+    [
+     109.08,
+     149.28,
+     3
+    ],
+    [
+     164.28,
+     204.36,
+     3
+    ],
+    [
+     218.52,
+     276.0,
+     4
+    ]
+   ],
+   "separator_widths_pt": [
+    15.0,
+    15.0,
+    14.16
+   ],
+   "branch_box_x": [
+    218.52,
+    276.0
+   ],
+   "branch_ticks_x": [
+    232.68,
+    247.68,
+    260.28
+   ],
+   "branch_compartments": 4,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    34.68,
+    138.88,
+    47.7,
+    147.87
+   ],
+   "pdf": "1600WP p1ENCS.pdf",
+   "pdf_sha256": "6ea2ef0f6c84a68ef1c50ad63f4ff0e95a68258f52b62b98f305c861c8b75d55"
+  },
+  "1601-fq-2020": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    148.34,
+    165.98
+   ],
+   "groups_x": [
+    [
+     232.85,
+     275.81,
+     3
+    ],
+    [
+     290.21,
+     333.19,
+     3
+    ],
+    [
+     347.71,
+     390.67,
+     3
+    ],
+    [
+     405.19,
+     476.86,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.52,
+    14.52
+   ],
+   "branch_box_x": [
+    405.19,
+    476.86
+   ],
+   "branch_ticks_x": [
+    419.47,
+    433.87,
+    448.15,
+    462.46
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    151.95,
+    175.43,
+    161.99
+   ],
+   "pdf": "1601-FQ 2020 final.pdf",
+   "pdf_sha256": "0e06c2e75195ac1cad9524674bfd483f1a514e817decaf5b014927fe8e2e90d7"
+  },
+  "1601c-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    142.1,
+    157.46
+   ],
+   "groups_x": [
+    [
+     233.09,
+     276.05,
+     3
+    ],
+    [
+     290.45,
+     333.43,
+     3
+    ],
+    [
+     347.83,
+     390.79,
+     3
+    ],
+    [
+     405.19,
+     476.86,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.4,
+    14.4
+   ],
+   "branch_box_x": [
+    405.19,
+    476.86
+   ],
+   "branch_ticks_x": [
+    419.47,
+    433.87,
+    448.15,
+    462.46
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    144.64,
+    175.43,
+    154.67
+   ],
+   "pdf": "1601C final Jan 2018 with DPA.pdf",
+   "pdf_sha256": "c8faaa71015337a73b4ceb96bfb265c539589ab5e10eb27899bb81f87f417397"
+  },
+  "1601eq-2019": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    144.02,
+    161.78
+   ],
+   "groups_x": [
+    [
+     233.09,
+     276.05,
+     3
+    ],
+    [
+     290.45,
+     333.43,
+     3
+    ],
+    [
+     347.83,
+     390.79,
+     3
+    ],
+    [
+     405.19,
+     476.86,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.4,
+    14.4
+   ],
+   "branch_box_x": [
+    405.19,
+    476.86
+   ],
+   "branch_ticks_x": [
+    419.47,
+    433.87,
+    448.15,
+    462.46
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    147.76,
+    175.43,
+    157.79
+   ],
+   "pdf": "1601-EQ January 2019 ENCS final.pdf",
+   "pdf_sha256": "5277addc6778c96a53fde99b8664b1a5213fcea638dea06033c9acf22ee73c25"
+  },
+  "1602q-2019": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    170.42,
+    188.18
+   ],
+   "groups_x": [
+    [
+     233.09,
+     276.05,
+     3
+    ],
+    [
+     290.45,
+     333.43,
+     3
+    ],
+    [
+     347.83,
+     390.79,
+     3
+    ],
+    [
+     405.19,
+     476.86,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.4,
+    14.4
+   ],
+   "branch_box_x": [
+    405.19,
+    476.86
+   ],
+   "branch_ticks_x": [
+    419.47,
+    433.87,
+    448.15,
+    462.46
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    174.15,
+    175.43,
+    184.19
+   ],
+   "pdf": "1602Q Jan 2019.pdf",
+   "pdf_sha256": "9cad9524ebf2042c7d9827b87afe77fd6f60cc8a596ec1b5f54ffbf2df49aa69"
+  },
+  "1603q-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    185.9,
+    204.74
+   ],
+   "groups_x": [
+    [
+     233.09,
+     276.05,
+     3
+    ],
+    [
+     290.45,
+     333.43,
+     3
+    ],
+    [
+     347.83,
+     390.79,
+     3
+    ],
+    [
+     405.19,
+     476.86,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.4,
+    14.4
+   ],
+   "branch_box_x": [
+    405.19,
+    476.86
+   ],
+   "branch_ticks_x": [
+    419.47,
+    433.87,
+    448.15,
+    462.46
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    190.12,
+    175.43,
+    200.15
+   ],
+   "pdf": "1603Q Jan 2018 final.pdf",
+   "pdf_sha256": "e18b6bfd755bc02c8be1d2413cbad30a355b652e871f6dee720e5f76975abbae"
+  },
+  "1604c-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    153.02,
+    171.86
+   ],
+   "groups_x": [
+    [
+     238.13,
+     279.65,
+     3
+    ],
+    [
+     294.05,
+     335.71,
+     3
+    ],
+    [
+     350.11,
+     392.83,
+     3
+    ],
+    [
+     407.23,
+     476.62,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.4,
+    14.4
+   ],
+   "branch_box_x": [
+    407.23,
+    476.62
+   ],
+   "branch_ticks_x": [
+    421.03,
+    434.95,
+    448.87,
+    462.7
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    180.98,
+    157.71,
+    195.51,
+    167.73
+   ],
+   "pdf": "1604-C Jan 2018 Final.pdf",
+   "pdf_sha256": "5239dd7f94bfc9d8a1b2e330e2da955bd5a0223762f41e95112d6b3822325dfd"
+  },
+  "1604cf-2008": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "1604-CF July 2008 ENCS final.pdf",
+   "pdf_sha256": "877fbeee071752b2d9af72924647196e6dafa71a2412e74bc9f17897767cc2e7"
+  },
+  "1604e-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    159.14,
+    177.98
+   ],
+   "groups_x": [
+    [
+     235.85,
+     277.85,
+     3
+    ],
+    [
+     292.25,
+     334.27,
+     3
+    ],
+    [
+     348.67,
+     390.67,
+     3
+    ],
+    [
+     405.07,
+     475.18,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.4,
+    14.4
+   ],
+   "branch_box_x": [
+    405.07,
+    475.18
+   ],
+   "branch_ticks_x": [
+    419.11,
+    433.15,
+    447.07,
+    461.14
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    180.98,
+    163.71,
+    195.51,
+    173.73
+   ],
+   "pdf": "1604E Jan 2018 ENCS Final2.pdf",
+   "pdf_sha256": "1db203442630c74ff4c95b509e204f542c5ba8fb1bd812440793e314ce709876"
+  },
+  "1604f-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    146.18,
+    163.82
+   ],
+   "groups_x": [
+    [
+     228.41,
+     271.49,
+     3
+    ],
+    [
+     285.89,
+     329.23,
+     3
+    ],
+    [
+     343.63,
+     386.59,
+     3
+    ],
+    [
+     400.99,
+     473.5,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.4,
+    14.4
+   ],
+   "branch_box_x": [
+    400.99,
+    473.5
+   ],
+   "branch_ticks_x": [
+    415.27,
+    429.67,
+    443.95,
+    459.07
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    169.94,
+    151.02,
+    182.94,
+    159.97
+   ],
+   "pdf": "1604-F Jan 2018 Final 2.pdf",
+   "pdf_sha256": "fc34de40dc7e6bc5f7a8cbc3feb5b170cca4bce4f0abd5b7b0dece4e9dd75c4d"
+  },
+  "1606-2018": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "1606 Jan 2018 ENCS Final version.pdf",
+   "pdf_sha256": "374eca083888f36ae18612741d8473c61376db44cd281318def831c73dadabfe"
+  },
+  "1621-2019": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    181.1,
+    201.14
+   ],
+   "groups_x": [
+    [
+     233.09,
+     276.05,
+     3
+    ],
+    [
+     290.45,
+     333.43,
+     3
+    ],
+    [
+     347.83,
+     390.79,
+     3
+    ],
+    [
+     405.19,
+     476.86,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.4,
+    14.4
+   ],
+   "branch_box_x": [
+    405.19,
+    476.86
+   ],
+   "branch_ticks_x": [
+    419.47,
+    433.87,
+    448.15,
+    462.46
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.0,
+    185.91,
+    175.43,
+    195.95
+   ],
+   "pdf": "1621 Jan 2019 final.pdf",
+   "pdf_sha256": "9b2e6c2d4754694ba8677b2dec040fb0aee06e6534f939139c0322f0f127c23c"
+  },
+  "1700-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    150.86,
+    168.62
+   ],
+   "groups_x": [
+    [
+     41.28,
+     83.42,
+     3
+    ],
+    [
+     98.06,
+     140.18,
+     3
+    ],
+    [
+     154.58,
+     196.97,
+     3
+    ],
+    [
+     211.49,
+     284.21,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.64,
+    14.4,
+    14.52
+   ],
+   "branch_box_x": [
+    211.49,
+    284.21
+   ],
+   "branch_ticks_x": [
+    226.85,
+    241.01,
+    255.53,
+    269.81
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    156.98,
+    140.07,
+    171.51,
+    150.09
+   ],
+   "pdf": "1700 Jan 2018 ENCS v6.pdf",
+   "pdf_sha256": "a5850f698c8d7aaf165d74bff0cd6547ca8f83eb76552c3bde490cbc3bbfea6c"
+  },
+  "1701-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    134.78,
+    151.34
+   ],
+   "groups_x": [
+    [
+     195.41,
+     238.13,
+     3
+    ],
+    [
+     252.77,
+     296.45,
+     3
+    ],
+    [
+     313.25,
+     357.07,
+     3
+    ],
+    [
+     371.59,
+     447.91,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.64,
+    16.8,
+    14.52
+   ],
+   "branch_box_x": [
+    371.59,
+    447.91
+   ],
+   "branch_ticks_x": [
+    386.83,
+    402.19,
+    417.43,
+    432.67
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    158.06,
+    138.78,
+    171.06,
+    147.73
+   ],
+   "pdf": "1701 Jan 2018 final with rates.pdf",
+   "pdf_sha256": "19be91d78258eb7c255f2615610db2739f10c378f8ac97adc0887c1bf40d1b2e"
+  },
+  "1701-2018-attachment": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "1701 Attachment Jan 2018 ENCSv3.pdf",
+   "pdf_sha256": "e71799dc613c08d4c383fcd66bed83032b182ab43721c8665d7b608047766cad"
+  },
+  "1701-2018-conso": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "1701 January 2018 Consov4.pdf",
+   "pdf_sha256": "eac0ce426cc57c473e24638accb14a978ddd54f8cf795cc4303f527088416871"
+  },
+  "1701a-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    153.02,
+    170.78
+   ],
+   "groups_x": [
+    [
+     28.68,
+     70.22,
+     3
+    ],
+    [
+     84.26,
+     126.5,
+     3
+    ],
+    [
+     140.66,
+     183.26,
+     3
+    ],
+    [
+     197.57,
+     269.69,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.04,
+    14.16,
+    14.31
+   ],
+   "branch_box_x": [
+    197.57,
+    269.69
+   ],
+   "branch_ticks_x": [
+    211.85,
+    226.25,
+    240.53,
+    255.29
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    158.06,
+    143.1,
+    171.06,
+    152.05
+   ],
+   "pdf": "1701A Jan 2018 v5 with rates.pdf",
+   "pdf_sha256": "8d492eabc6da2088cf9a55084488b192def5cc415048f607142c8bce1b72bfb8"
+  },
+  "1701ms-2024": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "1701-MS August 2024 Fillable_01.pdf",
+   "pdf_sha256": "802912a60607bdd437faf429105e0efbcbd862894825b0682ded188c8a1aa38c"
+  },
+  "1701q-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    126.74,
+    142.22
+   ],
+   "groups_x": [
+    [
+     198.53,
+     241.85,
+     3
+    ],
+    [
+     256.61,
+     299.69,
+     3
+    ],
+    [
+     314.21,
+     357.31,
+     3
+    ],
+    [
+     372.07,
+     446.83,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.76,
+    14.52,
+    14.76
+   ],
+   "branch_box_x": [
+    372.07,
+    446.83
+   ],
+   "branch_ticks_x": [
+    387.07,
+    401.95,
+    416.95,
+    432.07
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    156.98,
+    129.27,
+    171.51,
+    139.29
+   ],
+   "pdf": "1701Q Jan 2018 final rev2_copy.pdf",
+   "pdf_sha256": "c731d3f12556e6f19ab81f6113ca7c4a23f7ed099675c03451ac0074d96b85ed"
+  },
+  "1702ex-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    185.66,
+    202.22
+   ],
+   "groups_x": [
+    [
+     215.09,
+     260.57,
+     3
+    ],
+    [
+     275.81,
+     321.29,
+     3
+    ],
+    [
+     336.43,
+     381.91,
+     3
+    ],
+    [
+     397.03,
+     472.9,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    15.24,
+    15.14,
+    15.12
+   ],
+   "branch_box_x": [
+    397.03,
+    472.9
+   ],
+   "branch_ticks_x": [
+    412.15,
+    427.39,
+    442.51,
+    457.75
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.54,
+    188.79,
+    176.07,
+    198.81
+   ],
+   "pdf": "1702-EX Jan 2018 ENCS v2.pdf",
+   "pdf_sha256": "e2dece405bbf48d4be8f50fc73f124b90e574ddaf79361b2f81bacf8831efcfb"
+  },
+  "1702mx-2018c": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    188.06,
+    204.5
+   ],
+   "groups_x": [
+    [
+     215.09,
+     260.57,
+     3
+    ],
+    [
+     275.81,
+     321.29,
+     3
+    ],
+    [
+     336.43,
+     381.91,
+     3
+    ],
+    [
+     397.03,
+     472.9,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    15.24,
+    15.14,
+    15.12
+   ],
+   "branch_box_x": [
+    397.03,
+    472.9
+   ],
+   "branch_ticks_x": [
+    412.15,
+    427.39,
+    442.51,
+    457.75
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.54,
+    191.07,
+    176.07,
+    201.09
+   ],
+   "pdf": "1702-MX Jan 2018 ENCS Final with OSDv2.pdf",
+   "pdf_sha256": "81c05fffadde6c0b4098aeba8547a9820a0806c6be9b0c6ceac5597cab4263d2"
+  },
+  "1702mx-2018c-attachment": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "1702-MX Attachment Jan 2018 ENCS Final4.pdf",
+   "pdf_sha256": "36c02d4c84919d2e5b94cd31b339490019be80afa622f5681ce252c8ec3dec26"
+  },
+  "1702q-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    178.82,
+    195.38
+   ],
+   "groups_x": [
+    [
+     215.09,
+     260.57,
+     3
+    ],
+    [
+     275.81,
+     321.29,
+     3
+    ],
+    [
+     336.43,
+     381.91,
+     3
+    ],
+    [
+     397.03,
+     472.9,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    15.24,
+    15.14,
+    15.12
+   ],
+   "branch_box_x": [
+    397.03,
+    472.9
+   ],
+   "branch_ticks_x": [
+    412.15,
+    427.39,
+    442.51,
+    457.75
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    176.89,
+    181.45,
+    192.95,
+    192.53
+   ],
+   "pdf": "1702Q 2018ENCS final2.pdf",
+   "pdf_sha256": "589e22190b9211571cb8a0ba14c97c17dff250f3b8ee9f9e8f6cc3b37b1b1be4"
+  },
+  "1702rt-2018c": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    182.3,
+    198.86
+   ],
+   "groups_x": [
+    [
+     215.09,
+     260.57,
+     3
+    ],
+    [
+     275.81,
+     321.29,
+     3
+    ],
+    [
+     336.43,
+     381.91,
+     3
+    ],
+    [
+     397.03,
+     472.9,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    15.24,
+    15.14,
+    15.12
+   ],
+   "branch_box_x": [
+    397.03,
+    472.9
+   ],
+   "branch_ticks_x": [
+    412.15,
+    427.39,
+    442.51,
+    457.75
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.54,
+    185.32,
+    176.07,
+    195.33
+   ],
+   "pdf": "1702-RT Jan 2018 ENCS Final v3.pdf",
+   "pdf_sha256": "d9a6a8a13e0114934261151c4eb269a1573042e7ce670eaf12b15f169d308d2d"
+  },
+  "1706-2018": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "1706 Jan 2018 ENCS Final version.pdf",
+   "pdf_sha256": "5237ba69d5fae6a26dceffc8f39dfcab32fe7d57081bfba74dcf5c5550c1afa3"
+  },
+  "1707-2021": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "1707 April 2021 ENCS.pdf",
+   "pdf_sha256": "b6bc016f240a8d6233db6fb0065b72b31e75cb665affc2b96bcd2066e7ad257e"
+  },
+  "1707a-2021": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    171.74,
+    189.38
+   ],
+   "groups_x": [
+    [
+     216.53,
+     259.97,
+     3
+    ],
+    [
+     274.49,
+     317.69,
+     3
+    ],
+    [
+     332.23,
+     375.67,
+     3
+    ],
+    [
+     390.67,
+     463.18,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.52,
+    14.54,
+    15.0
+   ],
+   "branch_box_x": [
+    390.67,
+    463.18
+   ],
+   "branch_ticks_x": [
+    405.07,
+    419.47,
+    434.35,
+    448.75
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.18,
+    175.35,
+    175.71,
+    185.37
+   ],
+   "pdf": "1707-A April 2021 ENCS.pdf",
+   "pdf_sha256": "5742d6bf0ca58c601f6c87e486984714a976c6a8b8c1bc6fb246b11fc87f08c3"
+  },
+  "1709-2020": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    158.06,
+    176.9
+   ],
+   "groups_x": [
+    [
+     219.05,
+     262.85,
+     3
+    ],
+    [
+     277.37,
+     321.17,
+     3
+    ],
+    [
+     335.71,
+     379.51,
+     3
+    ],
+    [
+     394.03,
+     467.02,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.52,
+    14.54,
+    14.52
+   ],
+   "branch_box_x": [
+    394.03,
+    467.02
+   ],
+   "branch_ticks_x": [
+    408.67,
+    423.19,
+    437.83,
+    452.35
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    170.41,
+    161.89,
+    186.47,
+    172.97
+   ],
+   "pdf": "BIR Form No. 1709 Dec 2020 encs.pdf",
+   "pdf_sha256": "73629bceae8c271026b6d5fde8e4ac6d2103bceb5d585f78961794bcedffa45c"
+  },
+  "1800-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    132.62,
+    148.58
+   ],
+   "groups_x": [
+    [
+     227.81,
+     270.17,
+     3
+    ],
+    [
+     284.33,
+     326.69,
+     3
+    ],
+    [
+     342.19,
+     384.79,
+     3
+    ],
+    [
+     398.95,
+     470.62,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.16,
+    15.5,
+    14.16
+   ],
+   "branch_box_x": [
+    398.95,
+    470.62
+   ],
+   "branch_ticks_x": [
+    413.23,
+    427.87,
+    442.03,
+    456.31
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    193.82,
+    136.26,
+    206.7,
+    145.21
+   ],
+   "pdf": "1800 Jan 2018 ENCS rev final.pdf",
+   "pdf_sha256": "e2e837852680196d0e9aa9a513f55c7a6e4924493b5440548e46217166cc085e"
+  },
+  "1801-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    137.54,
+    155.3
+   ],
+   "groups_x": [
+    [
+     204.65,
+     247.85,
+     3
+    ],
+    [
+     262.01,
+     304.85,
+     3
+    ],
+    [
+     318.89,
+     361.39,
+     3
+    ],
+    [
+     375.55,
+     446.47,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.16,
+    14.04,
+    14.16
+   ],
+   "branch_box_x": [
+    375.55,
+    446.47
+   ],
+   "branch_ticks_x": [
+    389.71,
+    403.99,
+    418.15,
+    432.31
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    165.14,
+    141.27,
+    179.67,
+    151.29
+   ],
+   "pdf": "1801 Jan 2018 ENCS.pdf",
+   "pdf_sha256": "ec49207aab9b035d1913d41091b677d9df690e01b391ed2c2f4c34cf43a524c6"
+  },
+  "2000-dst-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    145.1,
+    160.46
+   ],
+   "groups_x": [
+    [
+     220.61,
+     262.61,
+     3
+    ],
+    [
+     276.77,
+     318.89,
+     3
+    ],
+    [
+     332.95,
+     375.07,
+     3
+    ],
+    [
+     389.11,
+     459.31,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.16,
+    14.06,
+    14.04
+   ],
+   "branch_box_x": [
+    389.11,
+    459.31
+   ],
+   "branch_ticks_x": [
+    403.15,
+    417.19,
+    431.23,
+    445.27
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    165.62,
+    148.94,
+    177.8,
+    157.35
+   ],
+   "pdf": "2000-DST Jan 2018 final.pdf",
+   "pdf_sha256": "b18ce9d2380d216814f4410c2e132eebb02b93754f7ca0167311f368e100e79f"
+  },
+  "2000-ot-2018": {
+   "measured": false,
+   "reason": "no 3+3+3+N TIN chain measurable by this method",
+   "pdf": "2000-OT January 2018 ENCS v3.pdf",
+   "pdf_sha256": "64d987ef79ed57005c1f13f8c9a5732bde2bf40f57dd4ec9f2067ef96c3c492d"
+  },
+  "2200a-2020": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    137.06,
+    152.54
+   ],
+   "groups_x": [
+    [
+     204.53,
+     247.97,
+     3
+    ],
+    [
+     262.37,
+     305.81,
+     3
+    ],
+    [
+     320.33,
+     363.67,
+     3
+    ],
+    [
+     378.19,
+     450.55,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.52,
+    14.52
+   ],
+   "branch_box_x": [
+    378.19,
+    450.55
+   ],
+   "branch_ticks_x": [
+    392.71,
+    407.23,
+    421.63,
+    436.15
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    167.18,
+    139.95,
+    181.71,
+    149.97
+   ],
+   "pdf": "2200-A Jan 2020 ENCS Final version2.pdf",
+   "pdf_sha256": "c294bd45da56aa641f40ed5ed22b6c7c782860e84c2da6431c3340bd73194879"
+  },
+  "2200an-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    140.42,
+    154.58
+   ],
+   "groups_x": [
+    [
+     234.53,
+     277.85,
+     3
+    ],
+    [
+     292.61,
+     335.59,
+     3
+    ],
+    [
+     350.11,
+     393.31,
+     3
+    ],
+    [
+     407.83,
+     479.62,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.76,
+    14.52,
+    14.52
+   ],
+   "branch_box_x": [
+    407.83,
+    479.62
+   ],
+   "branch_ticks_x": [
+    422.11,
+    436.51,
+    450.91,
+    465.22
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.54,
+    142.35,
+    176.07,
+    152.37
+   ],
+   "pdf": "2200-AN Jan 2018 ENCS Final version.pdf",
+   "pdf_sha256": "832163890dc19297cd1f47004626aadcc840204b48124f3c788a31dd50fb5288"
+  },
+  "2200c-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    148.82,
+    164.18
+   ],
+   "groups_x": [
+    [
+     204.53,
+     247.97,
+     3
+    ],
+    [
+     262.37,
+     305.81,
+     3
+    ],
+    [
+     320.33,
+     363.67,
+     3
+    ],
+    [
+     378.19,
+     450.55,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.52,
+    14.52
+   ],
+   "branch_box_x": [
+    378.19,
+    450.55
+   ],
+   "branch_ticks_x": [
+    392.71,
+    407.23,
+    421.63,
+    436.15
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    167.18,
+    151.59,
+    181.71,
+    161.61
+   ],
+   "pdf": "2200-C Jan 2018 final version3.pdf",
+   "pdf_sha256": "7b60d517ac6f3697e351aa89c124423d03dd7cac0961c4319b6507dd0ae64ce2"
+  },
+  "2200m-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    129.74,
+    144.02
+   ],
+   "groups_x": [
+    [
+     233.81,
+     277.25,
+     3
+    ],
+    [
+     292.01,
+     334.99,
+     3
+    ],
+    [
+     349.51,
+     392.59,
+     3
+    ],
+    [
+     407.11,
+     479.02,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.76,
+    14.52,
+    14.52
+   ],
+   "branch_box_x": [
+    407.11,
+    479.02
+   ],
+   "branch_ticks_x": [
+    421.51,
+    435.91,
+    450.19,
+    464.62
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    168.02,
+    132.03,
+    182.55,
+    142.05
+   ],
+   "pdf": "2200-M Jan 2018 ENCS v2 final version.pdf",
+   "pdf_sha256": "94161600eef26177a311e09d7b7e233a9582e1d2e56211b5f81f59d1891d9a90"
+  },
+  "2200p-2020": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    135.62,
+    150.98
+   ],
+   "groups_x": [
+    [
+     204.53,
+     247.97,
+     3
+    ],
+    [
+     262.37,
+     305.81,
+     3
+    ],
+    [
+     320.33,
+     363.67,
+     3
+    ],
+    [
+     378.19,
+     450.55,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.4,
+    14.52,
+    14.52
+   ],
+   "branch_box_x": [
+    378.19,
+    450.55
+   ],
+   "branch_ticks_x": [
+    392.71,
+    407.23,
+    421.63,
+    436.15
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    167.18,
+    138.39,
+    181.71,
+    148.41
+   ],
+   "pdf": "2200-P Jan 2020 ENCS final version2correct.pdf",
+   "pdf_sha256": "7bf29a28a93f45ae7af9ba344d4755540abd324137831d594bc623b4a0c06d2c"
+  },
+  "2200s-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    133.82,
+    148.1
+   ],
+   "groups_x": [
+    [
+     193.7,
+     239.09,
+     3
+    ],
+    [
+     254.81,
+     301.97,
+     3
+    ],
+    [
+     317.69,
+     364.87,
+     3
+    ],
+    [
+     381.91,
+     462.22,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    15.72,
+    15.72,
+    17.04
+   ],
+   "branch_box_x": [
+    381.91,
+    462.22
+   ],
+   "branch_ticks_x": [
+    398.23,
+    414.31,
+    430.51,
+    446.23
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    165.38,
+    136.12,
+    179.91,
+    146.13
+   ],
+   "pdf": "2200-S Jan 2018 rev2.pdf",
+   "pdf_sha256": "2626eab0f2681bd811d12ae6ed60e177d1961e4f462be5ed453d674f3418671b"
+  },
+  "2200t-2022": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    146.06,
+    160.34
+   ],
+   "groups_x": [
+    [
+     234.53,
+     277.85,
+     3
+    ],
+    [
+     292.61,
+     335.59,
+     3
+    ],
+    [
+     350.11,
+     393.31,
+     3
+    ],
+    [
+     407.83,
+     479.62,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.76,
+    14.52,
+    14.52
+   ],
+   "branch_box_x": [
+    407.83,
+    479.62
+   ],
+   "branch_ticks_x": [
+    422.11,
+    436.51,
+    450.91,
+    465.22
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    161.54,
+    148.0,
+    176.07,
+    158.01
+   ],
+   "pdf": "2200-T Aug 2022 ENCS Final.pdf",
+   "pdf_sha256": "cea195a413e5aa1ba94da957ed982c0f5f95fd31ad8fa89bc57ce8733dca52fb"
+  },
+  "2316-2021": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    122.72,
+    137.79
+   ],
+   "groups_x": [
+    [
+     86.24,
+     124.15,
+     3
+    ],
+    [
+     135.88,
+     173.79,
+     3
+    ],
+    [
+     185.55,
+     223.46,
+     3
+    ],
+    [
+     235.22,
+     306.08,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    11.73,
+    11.76,
+    11.76
+   ],
+   "branch_box_x": [
+    235.22,
+    306.08
+   ],
+   "branch_ticks_x": [
+    249.01,
+    263.51,
+    278.83,
+    293.06
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    49.8,
+    122.24,
+    61.49,
+    130.3
+   ],
+   "pdf": "2316 Sep 2021 ENCS_Final_corrected.pdf",
+   "pdf_sha256": "8e927e65b096d7a786ba7d36c55c28ee3de3546278880d9de8c11a91d1b48d60"
+  },
+  "2550-ds-2025": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    167.22,
+    183.83
+   ],
+   "groups_x": [
+    [
+     232.8,
+     275.3,
+     3
+    ],
+    [
+     289.5,
+     332.5,
+     3
+    ],
+    [
+     346.7,
+     389.52,
+     3
+    ],
+    [
+     404.02,
+     475.23,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.2,
+    14.2,
+    14.5
+   ],
+   "branch_box_x": [
+    404.02,
+    475.23
+   ],
+   "branch_ticks_x": [
+    418.58,
+    432.68,
+    446.87,
+    461.08
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    164.33,
+    170.69,
+    178.84,
+    180.7
+   ],
+   "pdf": "2550-DS  Jan 2025 version_Folio.pdf",
+   "pdf_sha256": "5deb4ecb7c617b4f60da4019658ba109861814e72d263b4e103afafd9ea15963"
+  },
+  "2550m-2007": {
+   "pattern": "3+3+3+3",
+   "band_y": [
+    118.8,
+    134.4
+   ],
+   "groups_x": [
+    [
+     66.0,
+     99.84,
+     3
+    ],
+    [
+     104.64,
+     137.76,
+     3
+    ],
+    [
+     142.32,
+     175.44,
+     3
+    ],
+    [
+     180.24,
+     213.12,
+     3
+    ]
+   ],
+   "separator_widths_pt": [
+    4.8,
+    4.56,
+    4.8
+   ],
+   "branch_box_x": [
+    180.24,
+    213.12
+   ],
+   "branch_ticks_x": [
+    191.28,
+    202.08
+   ],
+   "branch_compartments": 3,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    44.64,
+    116.67,
+    57.53,
+    125.52
+   ],
+   "pdf": "bir2550m.pdf",
+   "pdf_sha256": "9fb4101ace8c781436dac85df138a8fb9790775291affe2dada030c490d0d2b6"
+  },
+  "2550q-2024": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    169.42,
+    186.03
+   ],
+   "groups_x": [
+    [
+     233.1,
+     275.6,
+     3
+    ],
+    [
+     289.8,
+     332.8,
+     3
+    ],
+    [
+     347.0,
+     389.83,
+     3
+    ],
+    [
+     404.33,
+     475.52,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.2,
+    14.2,
+    14.5
+   ],
+   "branch_box_x": [
+    404.33,
+    475.52
+   ],
+   "branch_ticks_x": [
+    418.87,
+    432.98,
+    447.18,
+    461.37
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    165.72,
+    172.77,
+    180.23,
+    182.79
+   ],
+   "pdf": "2550Q  April 2024 ENCS_Final.pdf",
+   "pdf_sha256": "18eb16925010fdda820cef958221ba2c0d073066efa93a898113e39b31135a25"
+  },
+  "2551m-2002": {
+   "pattern": "3+3+3+3",
+   "band_y": [
+    190.8,
+    210.24
+   ],
+   "groups_x": [
+    [
+     59.76,
+     93.6,
+     3
+    ],
+    [
+     98.4,
+     131.52,
+     3
+    ],
+    [
+     136.08,
+     169.2,
+     3
+    ],
+    [
+     174.0,
+     207.36,
+     3
+    ]
+   ],
+   "separator_widths_pt": [
+    4.8,
+    4.56,
+    4.8
+   ],
+   "branch_box_x": [
+    174.0,
+    207.36
+   ],
+   "branch_ticks_x": [
+    184.8,
+    196.08
+   ],
+   "branch_compartments": 3,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    38.4,
+    190.56,
+    51.29,
+    199.68
+   ],
+   "pdf": "2551m.pdf",
+   "pdf_sha256": "f678be684558b8fb15a026b70a7c473f904fd07d49df64e0345fe1c0f81de71e"
+  },
+  "2551q-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    160.1,
+    177.86
+   ],
+   "groups_x": [
+    [
+     220.85,
+     263.33,
+     3
+    ],
+    [
+     277.49,
+     320.09,
+     3
+    ],
+    [
+     334.39,
+     376.99,
+     3
+    ],
+    [
+     391.15,
+     462.1,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.16,
+    14.3,
+    14.16
+   ],
+   "branch_box_x": [
+    391.15,
+    462.1
+   ],
+   "branch_ticks_x": [
+    405.31,
+    419.59,
+    433.75,
+    447.91
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    174.05,
+    163.76,
+    189.29,
+    174.33
+   ],
+   "pdf": "2551Q Jan 2018 ENCS final rev 3_copy.pdf",
+   "pdf_sha256": "1f270ecf66d778836a14697863e420ff65d5ed0a5576a6cf58b97c9a8e8c9b24"
+  },
+  "2552-2018": {
+   "pattern": "3+3+3+5",
+   "band_y": [
+    149.66,
+    166.22
+   ],
+   "groups_x": [
+    [
+     222.65,
+     265.49,
+     3
+    ],
+    [
+     279.77,
+     322.61,
+     3
+    ],
+    [
+     336.91,
+     379.75,
+     3
+    ],
+    [
+     394.03,
+     465.58,
+     5
+    ]
+   ],
+   "separator_widths_pt": [
+    14.28,
+    14.3,
+    14.28
+   ],
+   "branch_box_x": [
+    394.03,
+    465.58
+   ],
+   "branch_ticks_x": [
+    408.43,
+    422.71,
+    436.99,
+    451.27
+   ],
+   "branch_compartments": 5,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    173.45,
+    152.72,
+    188.69,
+    163.29
+   ],
+   "pdf": "2552 2018ENCS Final.pdf",
+   "pdf_sha256": "c0a9d7cd44cf931fb939a010a265d05655b9a1d55d21841ecf0b590594b1742a"
+  },
+  "2553-1999": {
+   "pattern": "3+3+3+3",
+   "band_y": [
+    189.36,
+    208.8
+   ],
+   "groups_x": [
+    [
+     57.84,
+     91.68,
+     3
+    ],
+    [
+     96.48,
+     129.6,
+     3
+    ],
+    [
+     134.16,
+     167.28,
+     3
+    ],
+    [
+     172.08,
+     205.44,
+     3
+    ]
+   ],
+   "separator_widths_pt": [
+    4.8,
+    4.56,
+    4.8
+   ],
+   "branch_box_x": [
+    172.08,
+    205.44
+   ],
+   "branch_ticks_x": [
+    182.88,
+    194.16
+   ],
+   "branch_compartments": 3,
+   "measured": true,
+   "page": 1,
+   "caption_rect": [
+    36.48,
+    188.4,
+    49.37,
+    197.52
+   ],
+   "pdf": "42792553.pdf",
+   "pdf_sha256": "e52f96fe48aba2890078f889930744a4e13a4defe1284aa9c5292e2c702a20e5"
+  }
+ }
+}

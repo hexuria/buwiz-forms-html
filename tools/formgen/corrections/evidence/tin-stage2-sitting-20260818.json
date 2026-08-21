@@ -1,0 +1,69 @@
+{
+  "sitting": "TIN Stage 2",
+  "url": "http://127.0.0.1:4191/",
+  "source": "uriah_verdict",
+  "reviewed_by": "Uriah",
+  "approved_at": "2026-08-18",
+  "batch": "ddac60583cca5f7c85b1b98ac01cead297e5869c",
+  "note": "Uriah approved in chat the seven-site sitting JSON from http://127.0.0.1:4191/. The dump still said agent_recommendation_pending_uriah / reviewed_by null because Confirm was not clicked; the chat message is the verdict. C01 and C07 lock 00000; C02–C06 stay editable. C05 and C06 are one form. Status on the evidence records is applied, not verified.",
+  "agent_recommendation": {
+    "C01": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5, digit ~9.5pt (delta 0.01), p1c13 five locked zeros, knockout on, p1c128/p1c129 gone. Crop boxes 53/53/53/91 px (last ≈ 5/3). Official crop shows printed 000 in a 3-cell branch — that is why this one is locked. First group 14.88pt vs 15.6pt is inherited, not a squeeze."
+    },
+    "C02": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5, digit ~11.3pt, p1c29 five editable (no readonly, no value=0). Crop 64/64/64/111 px. Official crop: four 3-tick boxes, blank branch — do not lock. HTA max_length 5 is a 2003 harvest against 1999 art; that gap stays declared."
+    },
+    "C03": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5, digit ~9.53pt, p1c19 editable. Crop 53/53/55/91 px. Official branch blank, no 000. Sep fill #808080 kept. No fields.json — honest gap."
+    },
+    "C04": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5 (p1c24 five slots, not three), digit ~9.53pt, branch editable. Crop 54/53/53/92 px. Peach seps #ffcc99 kept. Official is 3-3-3-3 with a blank branch."
+    },
+    "C05": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE with C06. Markup 3-3-3-5, digit ~12.76pt, p1c16 editable. Crop 73/73/73/124 px. Official four compartments, no 000. Do not split from C06."
+    },
+    "C06": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE with C05. Markup 3-3-3-5, digit ~8.3pt even, p1c74 editable. Crop 46/46/46/79 px. Official four empty compartments. Neighbouring IN: chrome is in the crop; the strip is even. No agent branch key — honest gap."
+    },
+    "C07": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5, digit ~10.97pt, p1c13 five locked zeros. Crop last box 106 vs 62 px. Official prints 000 in the branch — that is why this one is locked. Sep fill #e3e3e3 kept. No fields.json — honest gap."
+    }
+  },
+  "verdicts": {
+    "C01": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5, digit ~9.5pt (delta 0.01), p1c13 five locked zeros, knockout on, p1c128/p1c129 gone. Crop boxes 53/53/53/91 px (last ≈ 5/3). Official crop shows printed 000 in a 3-cell branch — that is why this one is locked. First group 14.88pt vs 15.6pt is inherited, not a squeeze."
+    },
+    "C02": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5, digit ~11.3pt, p1c29 five editable (no readonly, no value=0). Crop 64/64/64/111 px. Official crop: four 3-tick boxes, blank branch — do not lock. HTA max_length 5 is a 2003 harvest against 1999 art; that gap stays declared."
+    },
+    "C03": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5, digit ~9.53pt, p1c19 editable. Crop 53/53/55/91 px. Official branch blank, no 000. Sep fill #808080 kept. No fields.json — honest gap."
+    },
+    "C04": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5 (p1c24 five slots, not three), digit ~9.53pt, branch editable. Crop 54/53/53/92 px. Peach seps #ffcc99 kept. Official is 3-3-3-3 with a blank branch."
+    },
+    "C05": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE with C06. Markup 3-3-3-5, digit ~12.76pt, p1c16 editable. Crop 73/73/73/124 px. Official four compartments, no 000. Do not split from C06."
+    },
+    "C06": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE with C05. Markup 3-3-3-5, digit ~8.3pt even, p1c74 editable. Crop 46/46/46/79 px. Official four empty compartments. Neighbouring IN: chrome is in the crop; the strip is even. No agent branch key — honest gap."
+    },
+    "C07": {
+      "verdict": "approve",
+      "notes": "2026-08-18 agent re-review: APPROVE. Markup 3-3-3-5, digit ~10.97pt, p1c13 five locked zeros. Crop last box 106 vs 62 px. Official prints 000 in the branch — that is why this one is locked. Sep fill #e3e3e3 kept. No fields.json — honest gap."
+    }
+  }
+}

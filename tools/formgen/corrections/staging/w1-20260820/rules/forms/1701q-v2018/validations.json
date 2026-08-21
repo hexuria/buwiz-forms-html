@@ -1,0 +1,1205 @@
+{
+    "$schema":  "../../schema/validations.schema.json",
+    "schema_version":  "1.0.0",
+    "form_id":  "1701q-v2018",
+    "revision":  "2018-01-01",
+    "first_error_behavior":  "Validate and Save preflight return on the first failed ordered check. Blur/change rules run independently.",
+    "rules":  [
+                  {
+                      "rule_id":  "1701q-validate-001",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  1,
+                      "condition":  "Item 1 taxable year is blank.",
+                      "fields":  [
+                                     "frm1701q:txtYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid year in Item 1.",
+                      "source_refs":  [
+                            "official-hta-runtime#L3327-L3331",
+                            "fixtures/live-ui-observations-v1.json#live-ui-2026-07-23-missing-year"
+                                      ],
+                      "evidence_type":  [
+                              "source",
+                              "ui-observation"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Stops on blank year.",
+                      "recommended_app_behavior":  "Require a four-digit taxable year.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-002",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  2,
+                      "condition":  "Item 1 is greater than the current calendar year.",
+                      "fields":  [
+                                     "frm1701q:txtYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Invalid date entry on Item no.1. Entry should not be later than Current Date.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3332-L3336"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Rejects future year; allows current year.",
+                      "recommended_app_behavior":  "Use explicit filing-period policy.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-003",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  3,
+                      "condition":  "Item 1 is less than 1900.",
+                      "fields":  [
+                                     "frm1701q:txtYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Invalid date entry on Item no.1. Entry should not be lower than 1900.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3337-L3340"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Rejects years before 1900.",
+                      "recommended_app_behavior":  "Use revision/legal period bounds.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-004",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  4,
+                      "condition":  "All Item 2 quarter radios are unchecked.",
+                      "fields":  [
+                                     "frm1701q:DateQuarter_1",
+                                     "frm1701q:DateQuarter_2",
+                                     "frm1701q:DateQuarter_3"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select quarter in Item 2.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3341-L3343"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Quarter is required.",
+                      "recommended_app_behavior":  "Use required Q1/Q2/Q3 enum.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-005",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  5,
+                      "condition":  "Any taxpayer TIN core or branch segment is blank.",
+                      "fields":  [
+                                     "frm1701q:txtTIN1",
+                                     "frm1701q:txtTIN2",
+                                     "frm1701q:txtTIN3",
+                                     "frm1701q:txtBranchCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid TIN number on Item 5.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3345-L3349"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Rejects blank components.",
+                      "recommended_app_behavior":  "Require full lossless identifier.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-006",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  6,
+                      "condition":  "A taxpayer TIN core length is not 3 or branch length is less than 3.",
+                      "fields":  [
+                                     "frm1701q:txtTIN1",
+                                     "frm1701q:txtTIN2",
+                                     "frm1701q:txtTIN3",
+                                     "frm1701q:txtBranchCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid TIN number on Item 5.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3351-L3354",
+                                          "string-util-runtime#L74-L104"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Checks lengths but never calls getTinChkCode for taxpayer TIN.",
+                      "recommended_app_behavior":  "Validate characters, exact branch shape, and reviewed checksum.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-007",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  7,
+                      "condition":  "Taxpayer RDO selectedIndex is 0.",
+                      "fields":  [
+                                     "frm1701q:txtRDOCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid RDO Code on Item 6.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3355-L3358"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Rejects placeholder RDO.",
+                      "recommended_app_behavior":  "Require a revision-pinned RDO code.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-008",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  8,
+                      "condition":  "Taxpayer name is empty.",
+                      "fields":  [
+                                     "frm1701q:txtTaxpayerName"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid Taxpayer Name on Item 9.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3359-L3362"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Checks only empty string.",
+                      "recommended_app_behavior":  "Require nonblank normalized legal name.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-009",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  9,
+                      "condition":  "Registered-address first control is empty.",
+                      "fields":  [
+                                     "frm1701q:txtAddress"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter Taxpayer\u0027s Registered Address on Item 10.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3363-L3366",
+                                          "official-hta-runtime#L2821-L2827"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Checks only txtAddress though save concatenates txtAddress2.",
+                      "recommended_app_behavior":  "Validate combined address and preserve both runtime controls.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-010",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  10,
+                      "condition":  "Birth components are present and validateMonthDayYearDate returns true.",
+                      "fields":  [
+                                     "frm1701q:txtBirthMonth",
+                                     "frm1701q:txtBirthDay",
+                                     "frm1701q:txtBirthYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Invalid birth date on item 11 of Taxpayer.  Please check date format.",
+                      "source_refs":  [
+                            "official-hta-runtime#L3375-L3379",
+                            "official-hta-runtime#L4589-L4635",
+                            "fixtures/live-ui-observations-v1.json#live-ui-2026-07-23-birth-month-zero"
+                                      ],
+                      "evidence_type":  [
+                              "source",
+                              "ui-observation"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Custom parser permits month 00 and its isNaN expression does not reliably inspect all parts.",
+                      "recommended_app_behavior":  "Parse a strict real Gregorian MM/DD/YYYY date.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-011",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  11,
+                      "condition":  "All taxpayer birth components are empty.",
+                      "fields":  [
+                                     "frm1701q:txtBirthMonth",
+                                     "frm1701q:txtBirthDay",
+                                     "frm1701q:txtBirthYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please indicate Birth Date of Taxpayer on item 11.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3380-L3383"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Birth date is required.",
+                      "recommended_app_behavior":  "Require a complete date.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-012",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  12,
+                      "condition":  "Birth year is greater than current year.",
+                      "fields":  [
+                                     "frm1701q:txtBirthYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Birth Year on Item 11 should not be later than current year.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3384-L3387"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Rejects future birth year only.",
+                      "recommended_app_behavior":  "Apply other date/age constraints only with authority.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-013",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  13,
+                      "condition":  "ZIP code is empty.",
+                      "fields":  [
+                                     "frm1701q:txtZipCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter Zip Code on Item 10A.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3388-L3391"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Checks presence only.",
+                      "recommended_app_behavior":  "Also validate revision-specific ZIP format.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-014",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  14,
+                      "condition":  "Spouse TIN core is partly present and a core length is not 3 or branch length is greater than 5.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseTIN1",
+                                     "frm1701q:txtSpouseTIN2",
+                                     "frm1701q:txtSpouseTIN3",
+                                     "frm1701q:txtSpouseBranchCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid TIN number on Item 17.",
+                      "source_refs":  [
+                            "official-hta-runtime#L3393-L3398",
+                            "fixtures/live-ui-observations-v1.json#live-ui-2026-07-23-blank-spouse-branch-and-method"
+                                      ],
+                      "evidence_type":  [
+                              "source",
+                              "ui-observation"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Blank/short spouse branch code passes because only \u003e5 is rejected.",
+                      "recommended_app_behavior":  "Require exact complete spouse identifier.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-015",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  15,
+                      "condition":  "Spouse TIN is present and getTinChkCode returns nonzero.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseTIN1",
+                                     "frm1701q:txtSpouseTIN2",
+                                     "frm1701q:txtSpouseTIN3"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "You have entered an incorrect TIN on Item 17.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3399-L3403",
+                                          "string-util-runtime#L74-L104",
+                                          "ebirtools-runtime#L111-L122",
+                                          "chkt-runtime#sha256:c00bd4131a725af53f48c6385d3332c4b789e15441bf52bbac73117c96c1b0ac",
+                                          "fixtures/checksum-cases.json"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "runtime-binary"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "Uses virtualized chkt.exe: exit 0 valid, 1 checksum mismatch, 2 malformed nine-digit input, 3 missing argument; then explicitly overrides 999999999 from helper exit 1 to success.",
+                      "recommended_app_behavior":  "Use reviewed checksum without test bypass.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-016",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  16,
+                      "condition":  "Spouse RDO index is 0 in spouse-TIN branch.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseRDOCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid RDO Code on Item 18.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3404-L3407"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Spouse RDO becomes required.",
+                      "recommended_app_behavior":  "Express dependency explicitly.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-017",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  17,
+                      "condition":  "Spouse name is empty in spouse-TIN branch.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseName"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter Spouse Name on Item 21.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3408-L3411"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Spouse name becomes required.",
+                      "recommended_app_behavior":  "Use one spouse-present predicate.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-018",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  18,
+                      "condition":  "No spouse ATC in spouse-TIN branch.",
+                      "fields":  [
+                                     "frm1701q:optSpouseATC_1",
+                                     "frm1701q:optSpouseATC_2",
+                                     "frm1701q:optSpouseATC_3",
+                                     "frm1701q:optSpouseATC_4",
+                                     "frm1701q:optSpouseATC_5",
+                                     "frm1701q:optSpouseATC_6",
+                                     "frm1701q:optSpouseATC_7"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select an option for Item 20.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3412-L3414"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Spouse ATC becomes required.",
+                      "recommended_app_behavior":  "Model conditional enum.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-019",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  19,
+                      "condition":  "No taxpayer type is selected.",
+                      "fields":  [
+                                     "frm1701q:optType_1",
+                                     "frm1701q:optType_2",
+                                     "frm1701q:optType_3",
+                                     "frm1701q:optType_4"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select an option for Item 7.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3419-L3421"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Taxpayer type is required.",
+                      "recommended_app_behavior":  "Use required enum.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-020",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  20,
+                      "condition":  "No taxpayer ATC is selected.",
+                      "fields":  [
+                                     "frm1701q:optATC_1",
+                                     "frm1701q:optATC_2",
+                                     "frm1701q:optATC_3",
+                                     "frm1701q:optATC_4",
+                                     "frm1701q:optATC_5",
+                                     "frm1701q:optATC_6"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select an option for Item 8.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3422-L3424"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "ATC is required.",
+                      "recommended_app_behavior":  "Use revision-pinned enum.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-021",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  21,
+                      "condition":  "No taxpayer tax rate is selected.",
+                      "fields":  [
+                                     "frm1701q:optTaxRate_1",
+                                     "frm1701q:optTaxRate_2"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select an option for Item 16.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3425-L3427"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Tax rate is required.",
+                      "recommended_app_behavior":  "Validate consistency with ATC.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-022",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  22,
+                      "condition":  "Graduated rate is selected and no deduction method is selected.",
+                      "fields":  [
+                                     "frm1701q:optTaxRate_1",
+                                     "frm1701q:optMethodOfDeduction:_1",
+                                     "frm1701q:optMethodOfDeduction:_2"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select an option for Item 16A.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3428-L3430",
+                                          "official-guide#p1:Deductions"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "official-guide"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Validate requires an Item 16A choice, contradicting the guide rule that an unmarked choice is deemed itemized.",
+                      "recommended_app_behavior":  "Apply the guide default to Itemized while clearly presenting the irrevocable annual choice; retain the stricter eBIRForms rejection as compatibility evidence.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-023",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  23,
+                      "condition":  "Spouse name is nonempty and no spouse type is selected.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseName",
+                                     "frm1701q:optSpouseType_1",
+                                     "frm1701q:optSpouseType_2",
+                                     "frm1701q:optSpouseType_3"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select an option for Item 19.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3431-L3434"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Later spouse branch keys off name, earlier branch off TIN.",
+                      "recommended_app_behavior":  "Use one explicit spouse-present predicate.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-024",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  24,
+                      "condition":  "Spouse name is nonempty and no spouse ATC is selected.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseName",
+                                     "frm1701q:optSpouseATC_1",
+                                     "frm1701q:optSpouseATC_2",
+                                     "frm1701q:optSpouseATC_3",
+                                     "frm1701q:optSpouseATC_4",
+                                     "frm1701q:optSpouseATC_5",
+                                     "frm1701q:optSpouseATC_6",
+                                     "frm1701q:optSpouseATC_7"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select an option for Item 20.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3435-L3437"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Duplicates ATC check under different predicate.",
+                      "recommended_app_behavior":  "Use one conditional rule.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-025",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  25,
+                      "condition":  "Spouse name is nonempty, no spouse tax rate is selected, and spouse is not Compensation Earner.",
+                      "fields":  [
+                                     "frm1701q:optSpouseTaxRate_1",
+                                     "frm1701q:optSpouseTaxRate_2",
+                                     "frm1701q:optSpouseType_3"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select an option for Item 25.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3438-L3442"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Compensation-earner spouse is exempt from Item 25.",
+                      "recommended_app_behavior":  "Encode exception explicitly.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-026",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  26,
+                      "condition":  "All prior Validate checks pass.",
+                      "fields":  [
+
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Validation successful. Click on Edit if you wish to modify your entries.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3444-L3447"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Disables controls before success alert.",
+                      "recommended_app_behavior":  "Use explicit reversible validated state.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-save-001",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  1,
+                      "condition":  "No quarter is selected.",
+                      "fields":  [
+                                     "frm1701q:DateQuarter_1",
+                                     "frm1701q:DateQuarter_2",
+                                     "frm1701q:DateQuarter_3"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please select quarter in Item 2.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L4637-L4641"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Save/final preflight stops.",
+                      "recommended_app_behavior":  "Use phase-specific canonical validation.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-save-002",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  2,
+                      "condition":  "Any taxpayer TIN or branch segment is empty.",
+                      "fields":  [
+                                     "frm1701q:txtTIN1",
+                                     "frm1701q:txtTIN2",
+                                     "frm1701q:txtTIN3",
+                                     "frm1701q:txtBranchCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid TIN number on Item 5.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L4642-L4645"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Checks presence only.",
+                      "recommended_app_behavior":  "Allow incomplete drafts only if clearly non-final.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-save-003",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  3,
+                      "condition":  "RDO value is 000.",
+                      "fields":  [
+                                     "frm1701q:txtRDOCode"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid RDO Code on Item 6.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L4646-L4649"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Rejects placeholder.",
+                      "recommended_app_behavior":  "Use explicit code enum.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-save-004",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "save",
+                      "order":  4,
+                      "condition":  "Taxpayer name is empty.",
+                      "fields":  [
+                                     "frm1701q:txtTaxpayerName"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Please enter a valid Taxpayer Name on Item 9.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L4650-L4654"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "ambiguous",
+                      "official_behavior":  "Save accepts many states Validate rejects.",
+                      "recommended_app_behavior":  "Separate draft save from filing readiness.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-blur-001",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  1,
+                      "condition":  "Item 52A exceeds 250000.",
+                      "fields":  [
+                                     "frm1701q:txt52A"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Item 52A cannot be more than P250,000.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3302-L3307"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "verified-correct",
+                      "official_behavior":  "Resets value to 0.00.",
+                      "recommended_app_behavior":  "Preserve rejected input for correction.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-blur-002",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  2,
+                      "condition":  "Item 52B exceeds 250000.",
+                      "fields":  [
+                                     "frm1701q:txt52B"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Item 52A cannot be more than P250,000.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3308-L3313"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Resets spouse value but message names 52A.",
+                      "recommended_app_behavior":  "Message must name Item 52B.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-input-001",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "input",
+                      "order":  1,
+                      "condition":  "validateYear is called and year is greater than current year.",
+                      "fields":  [
+                                     "frm1701q:txtYear"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "Year (Item 1) cannot be greater than or equal to current year.",
+                      "source_refs":  [
+                                          "official-hta-runtime#L3317-L3324"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Predicate is \u003e but message says \u003e=.",
+                      "recommended_app_behavior":  "Align predicate and message with policy.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-blur-003",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  3,
+                      "condition":  "Focus leaves spouse TIN controls and external check fails.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseTIN1",
+                                     "frm1701q:txtSpouseTIN2",
+                                     "frm1701q:txtSpouseTIN3"
+                                 ],
+                      "accepted_behavior":  "Condition is false and this validation path continues.",
+                      "rejected_behavior":  "Official UI shows the exact message and stops or mutates as described.",
+                      "exact_message":  "You have entered an incorrect TIN",
+                      "source_refs":  [
+                                          "official-hta-runtime#L4692-L4706",
+                                          "string-util-runtime#L92-L104",
+                                          "chkt-runtime#sha256:c00bd4131a725af53f48c6385d3332c4b789e15441bf52bbac73117c96c1b0ac",
+                                          "fixtures/checksum-cases.json"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "runtime-binary"
+                                        ],
+                      "assessment":  "official-bug-compatible",
+                      "official_behavior":  "Delayed 10ms handler omits item number.",
+                      "recommended_app_behavior":  "Use deterministic checksum without bypass.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-change-001",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  4,
+                      "condition":  "Spouse ATC II016 (Mixed Income - 8% IT Rate) is selected.",
+                      "fields":  [
+                                     "frm1701q:optSpouseATC_7",
+                                     "frm1701q:optSpouseType_3",
+                                     "frm1701q:txt52B"
+                                 ],
+                      "accepted_behavior":  "If spouse type Compensation Earner is not selected, the official UI sets Item 52B to 0.00 and disables it.",
+                      "rejected_behavior":  "When spouse type Compensation Earner is selected, the source condition is false and Item 52B remains enabled even though the guide says the P250,000 reduction is not applicable to mixed-income earners.",
+                      "exact_message":  null,
+                      "source_refs":  [
+                                          "official-hta-runtime#L4152-L4163",
+                                          "official-guide#p1:Tax Rate"
+                                      ],
+                      "evidence_type":  [
+                                            "source",
+                                            "official-guide"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "The spouse mixed-income reduction is disabled only when optSpouseType_3 is false, which is inverted for the normal compensation-earner mixed-income case.",
+                      "recommended_app_behavior":  "For ATC II016, force Item 52B to zero and disabled regardless of the spouse-type radio; flag contradictory spouse-type/ATC combinations separately.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+                                                   "Black-box confirmation is pending because computer-use cannot initialize in the current sandbox cwd."
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-change-002",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  5,
+                      "condition":  "Taxpayer type changes from Estate/Trust to Single Proprietor/Professional after disableSpouse() has run.",
+                      "fields":  [
+                                     "frm1701q:optType_1",
+                                     "frm1701q:optType_2",
+                                     "frm1701q:txtForeignTaxNumber",
+                                     "frm1701q:txtSpouseForeignTaxNum"
+                                 ],
+                      "accepted_behavior":  "Other spouse background controls are re-enabled by enableSpouse().",
+                      "rejected_behavior":  "Item 23 remains disabled because enableSpouse() targets taxpayer Item 14 instead of the spouse control.",
+                      "exact_message":  null,
+                      "source_refs":  [
+                                          "official-hta-runtime#L3732-L3757",
+                                          "official-hta-runtime#L3760-L3780",
+                                          "official-hta-runtime#L3540-L3583"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "enableSpouse() enables txtForeignTaxNumber rather than txtSpouseForeignTaxNum. The Edit path does enable Item 23, so behavior depends on transition path.",
+                      "recommended_app_behavior":  "Enable spouse Item 23 with the other spouse fields; do not mutate taxpayer Item 14 as a side effect.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+                                                   "Live transition confirmation is pending because computer-use cannot initialize."
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-validate-027",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "validate",
+                      "order":  27,
+                      "condition":  "Spouse name is nonempty, graduated tax rate is selected, and neither spouse Item 25A method is selected.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseName",
+                                     "frm1701q:optSpouseTaxRate_1",
+                                     "frm1701q:optSpouseMethod:_1",
+                                     "frm1701q:optSpouseMethod:_2",
+                                     "frm1701q:txt41B"
+                                 ],
+                      "accepted_behavior":  "Official Validate has no Item 25A check and can report success after prior checks pass.",
+                      "rejected_behavior":  "No rejection occurs; Item 41B treats the blank method as OSD through its else branch.",
+                      "exact_message":  null,
+                      "source_refs":  [
+                                          "official-hta-runtime#L3428-L3446",
+                            "official-hta-runtime#L4320-L4328",
+                            "official-guide#p1:Deductions",
+                            "fixtures/live-ui-observations-v1.json#live-ui-2026-07-23-blank-spouse-branch-and-method"
+                                      ],
+                      "evidence_type":  [
+                              "source",
+                              "official-guide",
+                              "ui-observation"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Spouse Item 25A is not validated. Blank computes as OSD although the guide deems an unmarked choice Itemized.",
+                      "recommended_app_behavior":  "Apply the guide default of Itemized or require an explicit choice; never silently treat blank as OSD.",
+                      "confidence":  "high",
+        "unresolved_questions":  [
+
+                                 ]
+                  },
+                  {
+                      "rule_id":  "1701q-change-003",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  6,
+                      "condition":  "Edit is clicked after successful validation and taxpayer/spouse tax-rate or deduction-method selections differ.",
+                      "fields":  [
+                                     "frm1701q:optTaxRate_1",
+                                     "frm1701q:optTaxRate_2",
+                                     "frm1701q:optMethodOfDeduction:_1",
+                                     "frm1701q:optSpouseTaxRate_1",
+                                     "frm1701q:optSpouseTaxRate_2",
+                                     "frm1701q:optSpouseMethod:_1"
+                                 ],
+                      "accepted_behavior":  "Spouse Schedule I/II fields happen to match when taxpayer and spouse selections are the same.",
+                      "rejected_behavior":  "enableAllControl() uses taxpayer rate/method controls to enable spouse Schedule I/II fields, producing the wrong spouse edit state.",
+                      "exact_message":  null,
+                      "source_refs":  [
+                                          "official-hta-runtime#L1792",
+                                          "official-hta-runtime#L3597-L3645"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "Spouse Schedule I checks optTaxRate_1 and optMethodOfDeduction:_1; spouse Schedule II checks optTaxRate_2, all taxpayer controls.",
+                      "recommended_app_behavior":  "Derive each spouse schedule field from spouse tax-rate and spouse deduction-method selections.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+                                                   "Live Edit-state confirmation is pending because computer-use cannot initialize."
+                                               ]
+                  },
+                  {
+                      "rule_id":  "1701q-change-004",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  7,
+                      "condition":  "Edit is clicked after successful validation while spouse name is empty.",
+                      "fields":  [
+                                     "frm1701q:txtSpouseName",
+                                     "frm1701q:txt55B",
+                                     "frm1701q:txt56B",
+                                     "frm1701q:txt57B",
+                                     "frm1701q:txt58B",
+                                     "frm1701q:txt60B",
+                                     "frm1701q:txt61B",
+                                     "frm1701q:txt64B",
+                                     "frm1701q:txt65B",
+                                     "frm1701q:txt66B"
+                                 ],
+                      "accepted_behavior":  "Computed spouse totals remain disabled, and Item 59B is separately disabled when no spouse is present.",
+                      "rejected_behavior":  "Other spouse credits/payments and penalty inputs are unconditionally re-enabled even though no spouse exists.",
+                      "exact_message":  null,
+                      "source_refs":  [
+                                          "official-hta-runtime#L1792",
+                                          "official-hta-runtime#L3648-L3658",
+                            "official-hta-runtime#L3675-L3685",
+                            "fixtures/live-ui-observations-v1.json#live-ui-2026-07-23-no-spouse-edit-state"
+                                      ],
+                      "evidence_type":  [
+                              "source",
+                              "ui-observation"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "enableAllControl() enables both A and B inputs for noncomputed Items 55-68 without checking spouse presence; only Item 59B is corrected later.",
+                      "recommended_app_behavior":  "Keep all spouse-column credit/payment and penalty inputs disabled unless a spouse filing branch is active.",
+                      "confidence":  "high",
+        "unresolved_questions":  [
+
+                                 ]
+                  },
+                  {
+                      "rule_id":  "1701q-change-005",
+                      "form_id":  "1701q-v2018",
+                      "revision":  "2018-01-01",
+                      "phase":  "blur/change",
+                      "order":  8,
+                      "condition":  "Taxpayer and spouse use different schedules and either party tax-rate transition runs.",
+                      "fields":  [
+                                     "frm1701q:optTaxRate_1",
+                                     "frm1701q:optTaxRate_2",
+                                     "frm1701q:optSpouseTaxRate_1",
+                                     "frm1701q:optSpouseTaxRate_2",
+                                     "frm1701q:txt43Desc",
+                                     "frm1701q:txt48Desc"
+                                 ],
+                      "accepted_behavior":  "The shared description happens to match the most recently processed party schedule.",
+                      "rejected_behavior":  "Enabling one party schedule disables the shared description for the other party schedule, although both schedules remain in use.",
+                      "exact_message":  null,
+                      "source_refs":  [
+                                          "official-hta-runtime#L4060-L4122",
+                                          "official-hta-runtime#L4124-L4192"
+                                      ],
+                      "evidence_type":  [
+                                            "source"
+                                        ],
+                      "assessment":  "incorrect-official-behavior",
+                      "official_behavior":  "enableSchedule1/2 and disableSchedule1/2 mutate single shared txt43Desc/txt48Desc controls without considering the other party.",
+                      "recommended_app_behavior":  "Enable each shared description when either party uses its schedule; disable only when neither party uses it.",
+                      "confidence":  "high",
+                      "unresolved_questions":  [
+                                                   "Live mixed-schedule confirmation is pending because computer-use cannot initialize."
+                                               ]
+                  }
+              ]
+}
