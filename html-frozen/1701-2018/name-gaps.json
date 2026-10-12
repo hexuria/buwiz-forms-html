@@ -21,26 +21,26 @@
     {
       "catalog_id": "1701-2018/p2/tin-p2-1",
       "html_id": "p2c9",
-      "name": "frm1701:txtPg2TIN1"
+      "name": "frm1701:txtPg2I1TIN1"
     },
     {
       "catalog_id": "1701-2018/p2/tin-p2-2",
       "html_id": "p2c11",
-      "name": "frm1701:txtPg2TIN2"
+      "name": "frm1701:txtPg2I1TIN2"
     },
     {
       "catalog_id": "1701-2018/p2/tin-p2-3",
       "html_id": "p2c13",
-      "name": "frm1701:txtPg2TIN3"
+      "name": "frm1701:txtPg2I1TIN3"
     }
   ],
   "stamped_names": [
     "frm1701:txtPg1I4TIN1",
     "frm1701:txtPg1I4TIN2",
     "frm1701:txtPg1I4TIN3",
-    "frm1701:txtPg2TIN1",
-    "frm1701:txtPg2TIN2",
-    "frm1701:txtPg2TIN3"
+    "frm1701:txtPg2I1TIN1",
+    "frm1701:txtPg2I1TIN2",
+    "frm1701:txtPg2I1TIN3"
   ],
   "unwritable_mixed": [
     {
