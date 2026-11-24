@@ -21,3 +21,6 @@
 .fh7 { font-size:9pt;line-height:16.8pt }
 .fh8 { font-size:9pt;line-height:17.28pt }
 .fh9 { font-size:9pt;line-height:17.3pt }
+
+/* Form 1707A visual polish: Schedule 1 & 2 plain text cell padding */
+#p2c16-i, #p2c22-i, #p2c28-i, #p2c34-i, #p2c66-i, #p2c71-i, #p2c76-i, #p2c81-i { padding-left: 2pt; padding-right: 2pt }

@@ -36,3 +36,7 @@
 .fh7 { font-size:9pt;line-height:12.12pt }
 .fh8 { font-size:9pt;line-height:12.18pt }
 .fh9 { font-size:9pt;line-height:12.21pt }
+
+/* Form 1606 visual polish: cell padding and Item 13 rate tenths centering */
+#p1c25-i, #p1c26-i, #p1c40-i, #p1c41-i, #p2c13-i, #p2c14-i, #p2c15-i, #p2c40-i, #p2c47-i { padding-left: 2pt; padding-right: 2pt }
+#p1c76-i { justify-content: center; text-align: center }

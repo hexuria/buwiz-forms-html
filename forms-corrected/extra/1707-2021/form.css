@@ -26,3 +26,7 @@
 .fh9 { font-size:9pt;line-height:16.32pt }
 .doc-link { position:absolute;left:0;top:0;z-index:9;font:12px/1.5 system-ui,-apple-system,sans-serif;padding:2px 8px;background:#fff;color:#0645ad;text-decoration:underline }
 @media print { .doc-link{display:none} }
+
+/* Form 1707 visual polish: Part I 6A-7C plain text cell padding */
+#p1c25-i, #p1c26-i, #p1c27-i, #p1c29-i, #p1c30-i, #p1c31-i, #p1c33-i, #p1c34-i, #p1c35-i,
+#p1c40-i, #p1c41-i, #p1c42-i, #p1c44-i, #p1c45-i, #p1c46-i, #p1c48-i, #p1c49-i, #p1c50-i { padding-left: 2pt; padding-right: 2pt }

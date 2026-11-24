@@ -38,3 +38,6 @@
 .fh7 { font-size:9pt;line-height:10.94pt }
 .fh8 { font-size:9pt;line-height:11.03pt }
 .fh9 { font-size:9pt;line-height:11.04pt }
+
+/* Form 1706 visual polish: plain text cell padding */
+#p1c24-i, #p1c25-i, #p1c47-i, #p1c48-i, #p2c13-i, #p2c14-i, #p2c15-i, #p2c40-i, #p2c47-i { padding-left: 2pt; padding-right: 2pt }
