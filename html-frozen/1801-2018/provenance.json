@@ -27,7 +27,50 @@
   "images": 3,
   "cells": 459,
   "comb_cells": 102,
-  "growables": [],
+  "growables": [
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.88
+    },
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.52
+    },
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.64
+    },
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.52
+    },
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.52
+    },
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.52
+    },
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.52
+    }
+  ],
   "sources": [
     {
       "role": "form",

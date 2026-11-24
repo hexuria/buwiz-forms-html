@@ -7090,8 +7090,8 @@ def column_role(texts: Sequence[str]) -> str | None:
 
     "constant" -- every row carries the same pre-printed text (or none): the
     money decimal point, the "%" glyph, an empty comb.
-    "enumerated" -- the rows carry consecutive integers: the pre-printed row
-    numbers "1".."6" of Schedule 1.
+    "enumerated" -- the rows carry consecutive integers ("1".."6" of Schedule 1)
+    or consecutive single uppercase letters ("A".."D" of 1707 Schedules 1-3).
     None -- the rows carry different prose, which means these are distinct
     numbered items that merely happen to be drawn on a regular pitch. Part II
     of the 2551Q (items 15-19) is exactly that shape and must NOT be growable.
@@ -7102,6 +7102,10 @@ def column_role(texts: Sequence[str]) -> str | None:
     try:
         numbers = [int(t) for t in stripped]
     except ValueError:
+        if all(len(t) == 1 and "A" <= t <= "Z" for t in stripped):
+            ords = [ord(t) for t in stripped]
+            if all(b - a == 1 for a, b in zip(ords, ords[1:])):
+                return "enumerated"
         return None
     if all(b - a == 1 for a, b in zip(numbers, numbers[1:])):
         return "enumerated"
@@ -7139,6 +7143,27 @@ def uniform_pitch_subruns(run: Sequence[int], yl: Lattice) -> list[list[int]]:
     return subruns
 
 
+OUTER_H_INSET_TOL_PT = 1.0
+FIRST_ROW_PITCH_TOL_PT = 0.65
+
+
+def _band_h_closed(h_at: list[list[bool]], xl: Lattice,
+                   row_edges: Sequence[int], i0: int, i1: int) -> bool:
+    """True when every row boundary is closed across the band width.
+
+    Tolerates horizontal rules inset by <= OUTER_H_INSET_TOL_PT (1.0pt) from
+    the outer vertical borders (e.g. 1600WP Schedule 1.1 where horizontal rules
+    stop 0.95pt inside the outer page frame).
+    """
+    inner = [
+        i for i in range(i0, i1)
+        if (xl.positions[i + 1] - xl.positions[i0] > OUTER_H_INSET_TOL_PT
+            and xl.positions[i1] - xl.positions[i] > OUTER_H_INSET_TOL_PT)
+    ]
+    check_cols = inner if inner else list(range(i0, i1))
+    return all(h_at[j][i] for j in row_edges for i in check_cols)
+
+
 def detect_growables(page_index: int, xl: Lattice, yl: Lattice,
                      v_at: list[list[bool]], h_at: list[list[bool]],
                      cells: Sequence[dict[str, Any]],
@@ -7160,6 +7185,72 @@ def detect_growables(page_index: int, xl: Lattice, yl: Lattice,
     by_position = {(c["row"], c["col"]): c for c in cells}
 
     growables: list[dict[str, Any]] = []
+    covered_rows: set[int] = set()
+
+    def try_emit(sub: Sequence[int], row_edges: Sequence[int],
+                 signature: tuple[int, ...]) -> bool:
+        i0, i1 = signature[0], signature[-1]
+        if not _band_h_closed(h_at, xl, row_edges, i0, i1):
+            return False
+
+        edges = [yl.positions[j] for j in row_edges]
+        deltas = [q(b - a) for a, b in zip(edges, edges[1:])]
+
+        roles: dict[int, str] = {}
+        for column in signature[:-1]:
+            column_cells = [by_position.get((j, column)) for j in sub]
+            if any(c is None for c in column_cells):
+                return False
+            texts = ["".join(run_text[t] for t in c["text_run_ids"])
+                     for c in column_cells]
+            role = column_role(texts)
+            if role is None:
+                return False
+            roles[column] = role
+        if not roles:
+            return False
+
+        band_x0, band_x1 = xl.positions[i0], xl.positions[i1]
+        band_y0, band_y1 = edges[0], edges[-1]
+        in_band = [c for c in cells
+                   if c["x0"] >= band_x0 - CLUSTER_TOL_PT
+                   and c["x1"] <= band_x1 + CLUSTER_TOL_PT
+                   and c["y0"] >= band_y0 - CLUSTER_TOL_PT
+                   and c["y1"] <= band_y1 + CLUSTER_TOL_PT]
+        template = [c["id"] for c in in_band
+                    if abs(c["y0"] - edges[0]) <= CLUSTER_TOL_PT]
+        header = [c["id"] for c in cells
+                  if abs(c["y1"] - band_y0) <= CLUSTER_TOL_PT
+                  and c["x0"] >= band_x0 - CLUSTER_TOL_PT
+                  and c["x1"] <= band_x1 + CLUSTER_TOL_PT]
+
+        growables.append({
+            "id": f"p{page_index}g{len(growables)}",
+            "kind": "repeating_rows",
+            "x0": band_x0, "y0": band_y0, "x1": band_x1, "y1": band_y1,
+            # Modal pitch. The band is NOT perfectly regular -- on the 2551Q
+            # Schedule 1 rows 1-5 are 18.24pt and row 6 is 18.27pt -- so a
+            # generator must use row_y, not index * pitch.
+            "row_pitch_pt": min(collections.Counter(deltas).most_common(),
+                                key=lambda kv: (-kv[1], kv[0]))[0],
+            "row_pitch_min_pt": min(deltas),
+            "row_pitch_max_pt": max(deltas),
+            "row_count": len(sub),
+            "row_y": edges,
+            "column_x": [xl.positions[i] for i in signature],
+            "column_index": list(signature),
+            "column_roles": [roles[i] for i in signature[:-1]],
+            "header_cell_ids": sorted(header),
+            "template_cell_ids": sorted(template),
+            "cell_ids": sorted(c["id"] for c in in_band),
+            # On-sheet capacity. Overflow beyond this is a continuation sheet,
+            # not a taller table.
+            "capacity": len(sub),
+        })
+        for j in range(row_edges[0], row_edges[-1]):
+            covered_rows.add(j)
+        return True
+
     start = 0
     while start < ny:
         signature = signatures[start]
@@ -7171,71 +7262,72 @@ def detect_growables(page_index: int, xl: Lattice, yl: Lattice,
 
         if len(run) < MIN_GROWABLE_ROWS or len(signature) < MIN_GROWABLE_COLUMNS:
             continue
-        i0, i1 = signature[0], signature[-1]
-
         for sub in uniform_pitch_subruns(run, yl):
-            # Every row must be closed top and bottom across the band's width,
-            # otherwise this is a column of free space, not a stack of rows.
-            if not all(h_at[j][i] for j in (*sub, sub[-1] + 1)
-                       for i in range(i0, i1)):
-                continue
+            try_emit(sub, (*sub, sub[-1] + 1), signature)
 
-            edges = [yl.positions[j] for j in (*sub, sub[-1] + 1)]
-            deltas = [q(b - a) for a, b in zip(edges, edges[1:])]
+    # Pass 2: comb rows split by a constant-height internal/spacer sub-row
+    # (step-2 lattice rows, e.g. 1707 Page 2 Schedules 1-3) with <=0.65pt
+    # first-row pitch tolerance.
+    j = 0
+    while j + 1 < ny:
+        if j in covered_rows:
+            j += 1
+            continue
+        sig = signatures[j]
+        spacer_sig = signatures[j + 1]
+        if len(sig) < MIN_GROWABLE_COLUMNS or sig == spacer_sig:
+            j += 1
+            continue
+        i0, i1 = sig[0], sig[-1]
 
-            roles: dict[int, str] = {}
-            for column in signature[:-1]:
-                column_cells = [by_position.get((j, column)) for j in sub]
-                if any(c is None for c in column_cells):
-                    roles = {}
-                    break
-                texts = ["".join(run_text[t] for t in c["text_run_ids"])
-                         for c in column_cells]
-                role = column_role(texts)
-                if role is None:
-                    roles = {}
-                    break
-                roles[column] = role
-            if not roles:
-                continue
+        def _is_spacer_empty(ridx: int) -> bool:
+            return not any(
+                c["row"] == ridx
+                and c["x0"] >= xl.positions[i0] - CLUSTER_TOL_PT
+                and c["x1"] <= xl.positions[i1] + CLUSTER_TOL_PT
+                for c in cells
+            )
 
-            band_x0, band_x1 = xl.positions[i0], xl.positions[i1]
-            band_y0, band_y1 = edges[0], edges[-1]
-            in_band = [c for c in cells
-                       if c["x0"] >= band_x0 - CLUSTER_TOL_PT
-                       and c["x1"] <= band_x1 + CLUSTER_TOL_PT
-                       and c["y0"] >= band_y0 - CLUSTER_TOL_PT
-                       and c["y1"] <= band_y1 + CLUSTER_TOL_PT]
-            template = [c["id"] for c in in_band
-                        if abs(c["y0"] - edges[0]) <= CLUSTER_TOL_PT]
-            header = [c["id"] for c in cells
-                      if abs(c["y1"] - band_y0) <= CLUSTER_TOL_PT
-                      and c["x0"] >= band_x0 - CLUSTER_TOL_PT
-                      and c["x1"] <= band_x1 + CLUSTER_TOL_PT]
+        if not _is_spacer_empty(j + 1):
+            j += 1
+            continue
+        run = [j]
+        k = j + 2
+        while (k + 1 < ny and k not in covered_rows
+               and signatures[k] == sig and signatures[k + 1] == spacer_sig
+               and _is_spacer_empty(k + 1)):
+            run.append(k)
+            k += 2
+        if len(run) >= MIN_GROWABLE_ROWS:
+            # Include an immediately preceding first row whose spacer sub-row
+            # and cell columns match (1707 Schedules 1-3 row A).
+            if (j >= 2 and (j - 2) not in covered_rows
+                    and signatures[j - 1] == spacer_sig
+                    and _is_spacer_empty(j - 1)
+                    and all((j - 2, col) in by_position for col in sig[:-1])):
+                cand_run = [j - 2, *run]
+                cand_edges = (*cand_run, cand_run[-1] + 2)
+                cand_deltas = [q(yl.positions[b] - yl.positions[a])
+                               for a, b in zip(cand_edges, cand_edges[1:])]
+                rest = cand_deltas[1:]
+                if (max(rest) - min(rest) <= PITCH_TOL_PT
+                        and abs(cand_deltas[0] - rest[0]) <= FIRST_ROW_PITCH_TOL_PT):
+                    if try_emit(cand_run, cand_edges, sig):
+                        j = k
+                        continue
+            edges_idx = (*run, run[-1] + 2)
+            deltas = [q(yl.positions[b] - yl.positions[a])
+                      for a, b in zip(edges_idx, edges_idx[1:])]
+            spacer_hs = [q(yl.positions[r + 2] - yl.positions[r + 1]) for r in run]
+            rest = deltas[1:]
+            if (max(spacer_hs) - min(spacer_hs) <= PITCH_TOL_PT
+                    and max(rest) - min(rest) <= PITCH_TOL_PT
+                    and abs(deltas[0] - rest[0]) <= FIRST_ROW_PITCH_TOL_PT):
+                if try_emit(run, edges_idx, sig):
+                    j = k
+                    continue
+        j += 1
 
-            growables.append({
-                "id": f"p{page_index}g{len(growables)}",
-                "kind": "repeating_rows",
-                "x0": band_x0, "y0": band_y0, "x1": band_x1, "y1": band_y1,
-                # Modal pitch. The band is NOT perfectly regular -- on the 2551Q
-                # Schedule 1 rows 1-5 are 18.24pt and row 6 is 18.27pt -- so a
-                # generator must use row_y, not index * pitch.
-                "row_pitch_pt": min(collections.Counter(deltas).most_common(),
-                                    key=lambda kv: (-kv[1], kv[0]))[0],
-                "row_pitch_min_pt": min(deltas),
-                "row_pitch_max_pt": max(deltas),
-                "row_count": len(sub),
-                "row_y": edges,
-                "column_x": [xl.positions[i] for i in signature],
-                "column_index": list(signature),
-                "column_roles": [roles[i] for i in signature[:-1]],
-                "header_cell_ids": sorted(header),
-                "template_cell_ids": sorted(template),
-                "cell_ids": sorted(c["id"] for c in in_band),
-                # On-sheet capacity. Overflow beyond this is a continuation sheet,
-                # not a taller table.
-                "capacity": len(sub),
-            })
     return growables
 
 

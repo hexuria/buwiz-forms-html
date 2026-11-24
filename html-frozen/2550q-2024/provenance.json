@@ -26,7 +26,26 @@
   "images": 3,
   "cells": 452,
   "comb_cells": 150,
-  "growables": [],
+  "growables": [
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.5
+    },
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 9.09
+    },
+    {
+      "page": 2,
+      "rows": 2,
+      "capacity": 2,
+      "pitch_pt": 8.5
+    }
+  ],
   "sources": [
     {
       "role": "form",

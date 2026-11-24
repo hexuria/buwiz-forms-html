@@ -23,7 +23,14 @@
   "images": 1,
   "cells": 264,
   "comb_cells": 21,
-  "growables": [],
+  "growables": [
+    {
+      "page": 1,
+      "rows": 6,
+      "capacity": 6,
+      "pitch_pt": 11.64
+    }
+  ],
   "sources": [
     {
       "role": "form",

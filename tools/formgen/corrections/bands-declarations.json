@@ -1,0 +1,83 @@
+{
+  "description": "Explicit per-form repeating-row band declarations for 2-row schedules below MIN_GROWABLE_ROWS=3 (1801, 2550Q, 1701A). Metadata-only emission preserves static sheet DOM.",
+  "forms": {
+    "1801-2018": [
+      {
+        "id": "p2g0",
+        "page": 2,
+        "schedule": "Schedule 1 (Real Properties - Part 1)",
+        "rows": [25, 26]
+      },
+      {
+        "id": "p2g1",
+        "page": 2,
+        "schedule": "Schedule 1 (Real Properties - Part 2 / FMV)",
+        "rows": [30, 31]
+      },
+      {
+        "id": "p2g2",
+        "page": 2,
+        "schedule": "Schedule 1A (Family Home)",
+        "rows": [36, 37]
+      },
+      {
+        "id": "p2g3",
+        "page": 2,
+        "schedule": "Schedule 2 (Shares of Stock)",
+        "rows": [42, 43]
+      },
+      {
+        "id": "p2g4",
+        "page": 2,
+        "schedule": "Schedule 2A (Personal Properties)",
+        "rows": [48, 49]
+      },
+      {
+        "id": "p2g5",
+        "page": 2,
+        "schedule": "Schedule 3 (Other Properties)",
+        "rows": [54, 55]
+      },
+      {
+        "id": "p2g6",
+        "page": 2,
+        "schedule": "Schedule 4 (Gross Estate - Business)",
+        "rows": [60, 61]
+      }
+    ],
+    "2550q-2024": [
+      {
+        "id": "p2g0",
+        "page": 2,
+        "schedule": "Schedule 1 (Sales/Receipts/Revenues)",
+        "rows": [78, 79]
+      },
+      {
+        "id": "p2g1",
+        "page": 2,
+        "schedule": "Schedule 3 (Input Tax on Capital Goods Exceeding 1M)",
+        "rows": [91, 92]
+      },
+      {
+        "id": "p2g2",
+        "page": 2,
+        "schedule": "Schedule 4 (Input Tax Allocable to Exempt Sales)",
+        "rows": [96, 97]
+      }
+    ],
+    "1701a-2018": [
+      {
+        "id": "p2g0",
+        "page": 2,
+        "schedule": "Part IV-A Others (Specify)",
+        "rows": [12, 13]
+      },
+      {
+        "id": "p2g1",
+        "page": 2,
+        "schedule": "Part IV-B Others (Specify)",
+        "rows": [23, 24]
+      }
+    ]
+  }
+}
