@@ -34,3 +34,6 @@
 .fh9 { font-size:6.96pt;line-height:15.38pt;letter-spacing:-0.0182pt }
 .doc-link { position:absolute;left:0;top:0;z-index:9;font:12px/1.5 system-ui,-apple-system,sans-serif;padding:2px 8px;background:#fff;color:#0645ad;text-decoration:underline }
 @media print { .doc-link{display:none} }
+
+/* Form 1602Q: right-align Schedule 2 & 3 Rate (%) cells */
+#p2c166-i, #p2c176-i, #p2c206-i, #p2c216-i { justify-content: flex-end; text-align: right; padding-right: 2pt }
