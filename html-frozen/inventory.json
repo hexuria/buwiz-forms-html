@@ -499,8 +499,8 @@
     },
     {
       "form_id": "2200t-v2020",
-      "source_slug": "extra/2200t-2022",
-      "frozen_slug": "2200t-2022",
+      "source_slug": "extra/2200t-2020",
+      "frozen_slug": "2200t-2020",
       "files": [
         "index.html",
         "form.css",
@@ -508,8 +508,8 @@
         "guide.html",
         "provenance.json"
       ],
-      "serialized_key_count": 278,
-      "index_sha256": "c8288d2a98c934448ca88caf46d7102f0b4d91bef908ad16c185072e4eba591f"
+      "serialized_key_count": 0,
+      "index_sha256": "f5cf14263511ed99857431a93f538c2e61d2fa96157820dd4019796b3a027350"
     },
     {
       "form_id": "0605-v2003",

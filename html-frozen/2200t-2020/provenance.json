@@ -1,11 +1,11 @@
 {
-  "slug": "2200t-2022",
+  "slug": "2200t-2020",
   "code": "2200T",
-  "revision": "2022",
+  "revision": "2020",
   "variant": "",
   "in_corpus": false,
-  "source_file": "2200-T Aug 2022 ENCS Final.pdf",
-  "sha256": "cea195a413e5aa1ba94da957ed982c0f5f95fd31ad8fa89bc57ce8733dca52fb",
+  "source_file": "2200-T Jan 2020 ENCS Final version2.pdf",
+  "sha256": "6c7ff78db4348d57139d417995832294e489cf869d807e4c254f3a00513cce4a",
   "stage_failed": null,
   "error": null,
   "images_extracted": 4,
@@ -21,19 +21,20 @@
     "Arial",
     "Arial Narrow",
     "Calibri",
-    "Times New Roman"
+    "Times New Roman",
+    "Wingdings"
   ],
-  "rules": 948,
-  "text_runs": 548,
+  "rules": 1000,
+  "text_runs": 524,
   "images": 4,
-  "cells": 589,
-  "comb_cells": 88,
+  "cells": 584,
+  "comb_cells": 41,
   "growables": [],
   "sources": [
     {
       "role": "form",
-      "file": "2200-T Aug 2022 ENCS Final.pdf",
-      "sha256": "cea195a413e5aa1ba94da957ed982c0f5f95fd31ad8fa89bc57ce8733dca52fb"
+      "file": "2200-T Jan 2020 ENCS Final version2.pdf",
+      "sha256": "6c7ff78db4348d57139d417995832294e489cf869d807e4c254f3a00513cce4a"
     }
   ],
   "guide": {
@@ -44,15 +45,15 @@
     "moved_from_form": [
       {
         "page": 3,
-        "cut_y_pt": 449.89,
-        "reclaimed_pt": 486.11,
-        "reclaimed_pct": 52,
+        "cut_y_pt": 438.88,
+        "reclaimed_pt": 497.12,
+        "reclaimed_pct": 53,
         "marker": "Guidelines and Instructions for BIR Form No. 2200-T",
         "marker_pattern": "guidelines-and-instructions",
         "moved": {
           "rules": 0,
           "cells": 0,
-          "text_runs": 102,
+          "text_runs": 97,
           "area_fills": 0,
           "images": 0
         },
@@ -61,10 +62,10 @@
       }
     ],
     "standalone_pdfs": [],
-    "reclaimed_pt_total": 486.11,
-    "reclaimed_pct_mean": 52,
-    "reclaimed_pct_min": 52,
-    "reclaimed_pct_max": 52,
+    "reclaimed_pt_total": 497.12,
+    "reclaimed_pct_mean": 53,
+    "reclaimed_pct_min": 53,
+    "reclaimed_pct_max": 53,
     "note": "Reference material printed on the source sheet, or shipped as a separate guide PDF. It is not part of the filed form: index.html no longer carries the regions listed under moved_from_form. Each PDF under standalone_pdfs was re-extracted and reflowed into guide.html so that it prints with the document; the pinned PDF is kept beside it and linked, and remains the exact artefact."
   },
   "guide_detected": {
@@ -73,7 +74,11 @@
     ],
     "standalone_pdfs": []
   },
-  "html_bytes": 742443,
+  "html_bytes": 740493,
   "generator": "tools/formgen batch.py (rule-backend=svg)",
-  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits."
+  "note": "Generated once from the pinned source PDF, then maintained by hand. Re-running the generator over this directory would discard manual edits.",
+  "source_url": "https://www.bir.gov.ph/images/bir_files/taxpayers_service_programs_and_monitoring_1/2200-T%20Jan%202020%20ENCS%20Final%20version2.pdf",
+  "source_url_status": "historic BIR URL now returns 404 after site migration; bytes retrieved from Internet Archive capture dated 2022-10-23",
+  "revision_date": "2020-01",
+  "retrieved_date": "2026-11-26"
 }
