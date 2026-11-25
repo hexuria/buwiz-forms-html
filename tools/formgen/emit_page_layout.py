@@ -98,7 +98,7 @@ STYLE_BOX_RE = re.compile(
 STYLE_POS_RE = re.compile(r"left:([\d.]+)pt;top:([\d.]+)pt")
 SVG_BLOCK_RE = re.compile(r"<svg\b[^>]*>(.*?)</svg>", re.S)
 SVG_TOKEN_RE = re.compile(
-    r"<(/?)(g|rect|line|path|polygon|polyline|circle|ellipse|image|text)\b([^>]*)>"
+    r"<(/?)(g|rect|line|path|polygon|polyline|circle|ellipse)\b([^>]*)>"
 )
 NUM_RE = re.compile(r"-?\d+(?:\.\d+)?")
 
@@ -482,7 +482,7 @@ def derive_page_layout(
     # 6. Drop any internal cut that straddles a .c cell interior OR falls inside a row_template block
     def straddles_cell(y: float) -> bool:
         for c in cells:
-            if c["y0"] + 2.0 < y < c["y1"] - 2.0:
+            if c["y0"] + 1.5 < y < c["y1"] - 1.5:
                 return True
         return False
 
@@ -509,8 +509,9 @@ def derive_page_layout(
         clean_cuts[-1] = ph
 
     # 7. Merge top bands into a single `page_header` band
-    # Page header ends at the first section title ("Part I", "Part IV", "Schedule 1", etc.)
-    # or first grey bar below y=85pt.
+    # Page header ends at the first section title ("Part I", "Part IV", "Schedule 1", etc.),
+    # the first editable field slice on page 1 (so Items 1-4 like "For the Period" are never
+    # swallowed into page_header), or the first grey bar below y=95pt on page 2+.
     header_end_y: float | None = None
     for y in clean_cuts[1:]:
         if y < 75.0:
@@ -524,6 +525,17 @@ def derive_page_layout(
         if any(SECTION_TITLE_RE.match(st) for st in slice_texts):
             header_end_y = y
             break
+        if pnum == 1:
+            slice_fields = [
+                c
+                for c in cells
+                if c["cell_kind"] == "field"
+                and (c["y0"] + c["y1"]) * 0.5 >= y - 1.0
+                and (c["y0"] + c["y1"]) * 0.5 < ny + 1.0
+            ]
+            if slice_fields:
+                header_end_y = y
+                break
         # On page 2+, the TIN/Name header box usually ends around y=115..140 right before a grey bar
         if pnum >= 2 and any(abs(gb[0] - y) <= 2.5 for gb in grey_bars) and y >= 95.0:
             header_end_y = y
@@ -682,18 +694,59 @@ def derive_page_layout(
                 row_template_indices.add(i)
                 break
 
-    # (d) table_head immediately above each row_template (if non-field band and not a section_title)
+    # (d) table_head above each row_template (walk past up to 4 leading fixed rows if
+    # formgen-bands starts after row 1, and merge adjacent multi-row non-field header sub-bands)
+    merged_away: set[int] = set()
     for rti in sorted(row_template_indices):
-        if rti - 1 >= 1:
-            prev_b = bands[rti - 1]
-            prev_fields = [c for cid in prev_b["cell_ids"] if cell_by_id[cid]["cell_kind"] == "field"]
-            prev_texts = [text_by_id[tid]["text"] for tid in prev_b["text_ids"]]
-            is_sec_title = any(SECTION_TITLE_RE.match(t) for t in prev_texts)
-            if not prev_fields and not is_sec_title and prev_b["kind"] == "plain_block":
-                prev_b["kind"] = "table_head"
-                prev_b["keep_with_next"] = True
-                prev_b["repeat_on_break"] = True
-                prev_b["table_group"] = bands[rti]["table_group"]
+        j = rti - 1
+        skipped_rows = 0
+        while j >= 1 and skipped_rows < 4:
+            cand = bands[j]
+            if cand["kind"] != "plain_block":
+                break
+            cand_fields = [c for cid in cand["cell_ids"] if cell_by_id[cid]["cell_kind"] == "field"]
+            cand_texts = [text_by_id[tid]["text"] for tid in cand["text_ids"]]
+            is_sec_title = any(SECTION_TITLE_RE.match(t) for t in cand_texts)
+            if is_sec_title:
+                break
+            if not cand_fields:
+                # Found table_head! Merge an immediately preceding non-field super-header band if present
+                if j - 1 >= 1 and (j - 1) not in merged_away:
+                    sup = bands[j - 1]
+                    sup_fields = [c for cid in sup["cell_ids"] if cell_by_id[cid]["cell_kind"] == "field"]
+                    sup_texts = [text_by_id[tid]["text"] for tid in sup["text_ids"]]
+                    sup_is_sec = any(SECTION_TITLE_RE.match(t) for t in sup_texts)
+                    if (
+                        sup["kind"] == "plain_block"
+                        and not sup_fields
+                        and not sup_is_sec
+                        and (sup["y1"] - sup["y0"]) <= 35.0
+                        and (cand["y1"] - sup["y0"]) <= 80.0
+                    ):
+                        cand["y0"] = sup["y0"]
+                        cand["svg_ids"] = sup["svg_ids"] + cand["svg_ids"]
+                        cand["svg_indices"] = sup["svg_indices"] + cand["svg_indices"]
+                        cand["text_ids"] = sup["text_ids"] + cand["text_ids"]
+                        cand["cell_ids"] = sup["cell_ids"] + cand["cell_ids"]
+                        cand["spanning_svg_ids"] = sorted(
+                            set(sup["spanning_svg_ids"]) | set(cand["spanning_svg_ids"])
+                        )
+                        merged_away.add(j - 1)
+                cand["kind"] = "table_head"
+                cand["keep_with_next"] = True
+                cand["repeat_on_break"] = True
+                cand["table_group"] = bands[rti]["table_group"]
+                break
+            skipped_rows += 1
+            j -= 1
+
+    if merged_away:
+        bands = [b for idx, b in enumerate(bands) if idx not in merged_away]
+        for idx, b in enumerate(bands):
+            b["id"] = f"p{pnum}b{idx}"
+        row_template_indices = {
+            idx for idx, b in enumerate(bands) if b["kind"] == "row_template"
+        }
 
     # (e) total_row immediately below each row_template (if text mentions Total/Sub-total)
     for rti in sorted(row_template_indices):
