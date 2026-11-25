@@ -93,9 +93,9 @@ TEXT_DIV_RE = re.compile(
 )
 ATTR_RE = re.compile(r'([\w-]+)="([^"]*)"')
 STYLE_BOX_RE = re.compile(
-    r"left:([\d.]+)pt;top:([\d.]+)pt;width:([\d.]+)pt;height:([\d.]+)pt"
+    r"left:(-?[\d.]+)(?:pt)?;top:(-?[\d.]+)(?:pt)?;width:(-?[\d.]+)(?:pt)?;height:(-?[\d.]+)(?:pt)?"
 )
-STYLE_POS_RE = re.compile(r"left:([\d.]+)pt;top:([\d.]+)pt")
+STYLE_POS_RE = re.compile(r"left:(-?[\d.]+)(?:pt)?;top:(-?[\d.]+)(?:pt)?")
 SVG_BLOCK_RE = re.compile(r"<svg\b[^>]*>(.*?)</svg>", re.S)
 SVG_TOKEN_RE = re.compile(
     r"<(/?)(g|rect|line|path|polygon|polyline|circle|ellipse)\b([^>]*)>"
@@ -773,6 +773,8 @@ def derive_page_layout(
             # Propagate table_group if directly followed by a table_head or row_template
             if i + 1 < len(bands) and bands[i + 1]["table_group"]:
                 b["table_group"] = bands[i + 1]["table_group"]
+                if bands[i + 1]["kind"] == "table_head":
+                    b["repeat_on_break"] = True
 
     # (g) elastic_box: ONLY empty stamp/validation boxes (0 editable field cells, stamp caption,
     # h >= 32pt, caption sits in the top portion leaving >= 8pt of actual empty shrinkable space).
