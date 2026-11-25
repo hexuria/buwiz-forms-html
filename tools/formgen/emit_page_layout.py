@@ -610,14 +610,9 @@ def derive_page_layout(
             for i, b in enumerate(bands):
                 if n["y0"] < b["y1"] - 1.5 and n["y1"] > b["y0"] + 1.5:
                     crossed.append(i)
-        if is_vertical_rule and len(crossed) >= 2:
-            if n["rule_id"]:
-                for i in crossed:
-                    bands[i]["spanning_svg_ids"].append(n["rule_id"])
-            else:
-                # Un-ID'd vertical rail spanning multiple bands: record in spanning_svg_indices
-                for i in crossed:
-                    spanning_indices_by_band[i].append(n["idx"])
+        if is_vertical_rule and len(crossed) >= 2 and n["rule_id"]:
+            for i in crossed:
+                bands[i]["spanning_svg_ids"].append(n["rule_id"])
         else:
             ymid = (n["y0"] + n["y1"]) / 2.0
             bi = band_index_for_y(ymid)
@@ -625,11 +620,6 @@ def derive_page_layout(
                 bands[bi]["svg_ids"].append(n["rule_id"])
             else:
                 bands[bi]["svg_indices"].append(n["idx"])
-
-    # Attach spanning_svg_indices only if any band has one (keeps clean schema on 39/43 forms)
-    if any(spanning_indices_by_band.values()):
-        for i, idxs in spanning_indices_by_band.items():
-            bands[i]["spanning_svg_indices"] = idxs
 
     # Merge tiny empty hairline-gap slivers (h <= 3.5pt, 0 cells, 0 texts) into the preceding band
     merged_bands: list[dict[str, Any]] = []
@@ -647,11 +637,6 @@ def derive_page_layout(
             for sid in b["spanning_svg_ids"]:
                 if sid not in prev["spanning_svg_ids"]:
                     prev["spanning_svg_ids"].append(sid)
-            if "spanning_svg_indices" in b:
-                prev.setdefault("spanning_svg_indices", [])
-                for sidx in b["spanning_svg_indices"]:
-                    if sidx not in prev["spanning_svg_indices"]:
-                        prev["spanning_svg_indices"].append(sidx)
         else:
             b["id"] = f"p{pnum}b{len(merged_bands)}"
             merged_bands.append(b)
@@ -681,7 +666,8 @@ def derive_page_layout(
     ):
         last_b["kind"] = "trailing_space"
 
-    # (c) row_template bands (matched from formgen-bands + paired half-tables)
+    # (c) row_template bands (matched from formgen-bands; paired half-tables without their own
+    # formgen-bands entry keep table_group as plain_block so row_template <=> growable_id != null)
     row_template_indices: set[int] = set()
     for i, b in enumerate(bands):
         if i == 0 or b["kind"] == "trailing_space":
@@ -689,8 +675,9 @@ def derive_page_layout(
         bmid = (b["y0"] + b["y1"]) / 2.0
         for rt in all_row_templates:
             if rt["y0"] - 2.0 <= bmid <= rt["y1"] + 2.0:
-                b["kind"] = "row_template"
-                b["growable_id"] = rt["id"]
+                if rt["id"] is not None:
+                    b["kind"] = "row_template"
+                    b["growable_id"] = rt["id"]
                 b["table_group"] = rt["table_group"]
                 row_template_indices.add(i)
                 break
@@ -889,11 +876,13 @@ def self_check_page(
             if mh is None or mh < 24.0 or mh > (b["y1"] - b["y0"]) + 0.01:
                 errs.append(f"p{pnum}: elastic_box {b['id']} invalid min_height_pt={mh}")
 
-    # 6. Growable references
+    # 6. Growable references (BAND-FORMAT.md: row_template <=> non-null valid growable_id)
     valid_gids = {g["id"] for g in formgen_bands if g.get("page") == pnum}
     for b in bands:
-        if b["growable_id"] is not None and b["growable_id"] not in valid_gids:
-            errs.append(f"p{pnum}: {b['id']} unknown growable_id={b['growable_id']}")
+        if b["kind"] == "row_template" and (b["growable_id"] is None or b["growable_id"] not in valid_gids):
+            errs.append(f"p{pnum}: row_template {b['id']} missing/unknown growable_id={b['growable_id']}")
+        if b["kind"] != "row_template" and b["growable_id"] is not None:
+            errs.append(f"p{pnum}: non-row_template {b['id']} has growable_id={b['growable_id']}")
 
     # 7. Rule 6 references
     band_ids = {b["id"] for b in bands}
@@ -908,7 +897,7 @@ def self_check_page(
 def attach_unid_svg_indices_to_formgen_bands(
     html: str, formgen_bands: list[dict[str, Any]]
 ) -> tuple[list[dict[str, Any]], int]:
-    """Add `unid_svg_indices` to each row in `formgen-bands` (un-ID'd rects/elements inside that row)."""
+    """Add `structural_rects` (BAND-FORMAT.md Section 6) to each row in `formgen-bands`."""
     if not formgen_bands:
         return formgen_bands, 0
     page_matches = list(PAGE_RE.finditer(html))
@@ -923,25 +912,33 @@ def attach_unid_svg_indices_to_formgen_bands(
         pnum = g.get("page")
         nodes = svg_by_page.get(pnum, [])
         for r in g.get("rows", []):
+            r.pop("unid_svg_indices", None)
             rcells = r.get("cells", [])
             if not rcells:
-                r["unid_svg_indices"] = []
+                r["structural_rects"] = []
                 continue
             ry0 = min(float(c["y"]) for c in rcells)
             ry1 = max(float(c["y"]) + float(c["h"]) for c in rcells)
             rx0 = min(float(c["x"]) for c in rcells) - 2.0
             rx1 = max(float(c["x"]) + float(c["w"]) for c in rcells) + 2.0
-            unid = [
-                n["idx"]
+            srects = [
+                {
+                    "x": round(n["x0"], 2),
+                    "y": round(n["y0"], 2),
+                    "w": round(n["w"], 2),
+                    "h": round(n["h"], 2),
+                    "fill": n["fill"] or "#000000",
+                }
                 for n in nodes
                 if not n["rule_id"]
+                and n["tag"] == "rect"
                 and n["y0"] >= ry0 - 1.5
                 and n["y1"] <= ry1 + 1.5
                 and n["x0"] >= rx0
                 and n["x1"] <= rx1
                 and n["h"] <= (ry1 - ry0) + 3.0
             ]
-            r["unid_svg_indices"] = unid
+            r["structural_rects"] = srects
             updated_rows += 1
     return formgen_bands, updated_rows
 
