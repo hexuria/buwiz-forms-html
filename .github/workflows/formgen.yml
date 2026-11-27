@@ -248,7 +248,7 @@ jobs:
       - name: Frozen inventory and TIN name stamps
         run: |
           set -euo pipefail
-          python3 tools/formgen/freeze_html.py --verify --out html-frozen --index "$PRODUCT/rules/index.json"
+          python3 tools/formgen/freeze_html.py --verify --require-product --out html-frozen --index "$PRODUCT/rules/index.json"
           python3 tools/formgen/stamp_frozen_names.py --self-test
           python3 tools/formgen/stamp_frozen_names.py --check-all \
             --html-root html-frozen \

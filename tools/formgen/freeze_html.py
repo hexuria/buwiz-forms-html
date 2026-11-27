@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import pathlib
 import re
 import shutil
@@ -167,10 +168,34 @@ def product_html_for(index_path: pathlib.Path, product_html: pathlib.Path | None
     return product_html or index_path.resolve().parent.parent / "html-frozen"
 
 
-def refuse_joined_stamps(out: pathlib.Path, product_html: pathlib.Path) -> int:
+def in_ci() -> bool:
+    """GitHub Actions (and most CI) set CI=true."""
+    return os.environ.get("CI", "").strip().lower() in ("1", "true", "yes")
+
+
+def refuse_joined_stamps(
+    out: pathlib.Path,
+    product_html: pathlib.Path,
+    require_product: bool = False,
+    allow_missing_product: bool = False,
+) -> int:
+    """Refuse filing-key names inside cells the product joins.
+
+    Without the product's html-frozen/ the check cannot run, and that fails:
+    always under --require-product or in CI, and locally unless the caller
+    explicitly passes --allow-missing-product.
+    """
     if not product_html.is_dir():
-        print(f"SKIP  joined-cell names: no product html-frozen at {product_html}")
-        return 0
+        required = require_product or in_ci()
+        if allow_missing_product and not required:
+            print(f"SKIP  joined-cell names: no product html-frozen at {product_html} (--allow-missing-product)")
+            return 0
+        why = "--require-product" if require_product else "CI" if in_ci() else "no --allow-missing-product"
+        print(
+            f"error: joined-cell names cannot be checked: no product html-frozen at {product_html} ({why})",
+            file=sys.stderr,
+        )
+        return 1
     problems = joined_cell_stamps(out, product_html)
     if problems:
         print(
@@ -197,7 +222,13 @@ def load_form_ids(index_path: pathlib.Path) -> list[str]:
     return form_ids
 
 
-def verify(out: pathlib.Path, index_path: pathlib.Path, product_html: pathlib.Path | None = None) -> int:
+def verify(
+    out: pathlib.Path,
+    index_path: pathlib.Path,
+    product_html: pathlib.Path | None = None,
+    require_product: bool = False,
+    allow_missing_product: bool = False,
+) -> int:
     """Check the committed freeze without regenerating from forms-corrected/."""
     form_ids = load_form_ids(index_path)
     inventory_path = out / "inventory.json"
@@ -236,7 +267,9 @@ def verify(out: pathlib.Path, index_path: pathlib.Path, product_html: pathlib.Pa
         print("error: freeze incomplete:\n  " + "\n  ".join(missing), file=sys.stderr)
         return 1
     print(f"OK    verify {len(bundles)} bundles at {out}")
-    return refuse_joined_stamps(out, product_html_for(index_path, product_html))
+    return refuse_joined_stamps(
+        out, product_html_for(index_path, product_html), require_product, allow_missing_product
+    )
 
 
 def freeze(
@@ -244,6 +277,8 @@ def freeze(
     out: pathlib.Path,
     index_path: pathlib.Path,
     product_html: pathlib.Path | None = None,
+    require_product: bool = False,
+    allow_missing_product: bool = False,
 ) -> int:
     form_ids = load_form_ids(index_path)
     if not source.is_dir():
@@ -350,7 +385,9 @@ def freeze(
     print(f"OK    bundles {len(manifest['bundles'])}")
     print(f"OK    assets {copied_assets}")
     print(f"OK    out {out}")
-    return refuse_joined_stamps(out, product_html_for(index_path, product_html))
+    return refuse_joined_stamps(
+        out, product_html_for(index_path, product_html), require_product, allow_missing_product
+    )
 
 
 def main() -> int:
@@ -368,10 +405,21 @@ def main() -> int:
         type=pathlib.Path,
         help="The product's html-frozen/ (default: beside --index's rules/).",
     )
+    parser.add_argument(
+        "--require-product",
+        action="store_true",
+        help="Fail when the product's html-frozen/ is missing (CI passes this; CI=true implies it).",
+    )
+    parser.add_argument(
+        "--allow-missing-product",
+        action="store_true",
+        help="Locally only: skip the joined-cell check when the product's html-frozen/ is missing.",
+    )
     args = parser.parse_args()
+    product = (args.product_html, args.require_product, args.allow_missing_product)
     if args.verify:
-        return verify(args.out, args.index, args.product_html)
-    return freeze(args.source, args.out, args.index, args.product_html)
+        return verify(args.out, args.index, *product)
+    return freeze(args.source, args.out, args.index, *product)
 
 
 if __name__ == "__main__":
