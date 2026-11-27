@@ -255,6 +255,14 @@ jobs:
             --rules-root "$PRODUCT/rules/forms" \
             --catalog tools/formgen/identity/catalog.json
 
+      # The product's html-frozen/ must equal this tree, formgen-* scripts
+      # aside, so a re-sync in either direction changes nothing else.
+      - name: Frozen sheets equal the product's copies
+        run: |
+          set -euo pipefail
+          python3 tools/formgen/check_product_sync.py --self-test
+          python3 tools/formgen/check_product_sync.py --out html-frozen --product "$PRODUCT/html-frozen"
+
       # extract.py is the strongest check in the pipeline and, until the
       # synthetic corpus existed, the least runnable: every assertion was pinned
       # against six official BIR PDFs that will never be committed. The fixture
