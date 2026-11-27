@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import pathlib
 import re
 import shutil
@@ -59,7 +60,7 @@ INVENTORY_SLUGS: dict[str, str] = {
     "2200m-v2018": "2200m-2018",
     "2200p-v2020": "extra/2200p-2020",
     "2200s-v2018": "extra/2200s-2018",
-    "2200t-v2020": "extra/2200t-2022",
+    "2200t-v2020": "extra/2200t-2020",
     "2550m-v2007": "2550m-2007",
     "2550q-v2024": "2550q-2024",
     "2551q-v2018": "2551q-2018",
@@ -108,6 +109,105 @@ def copy_bundle(src: pathlib.Path, dest: pathlib.Path, *, from_extra: bool) -> t
     return copied, assets
 
 
+def joined_cells(writer_cells: dict) -> set[str]:
+    """Every cell a product writer-cells.json join prints into."""
+    cells: set[str] = set()
+    for section in ("joins", "money_joins", "peso_joins", "xbox_joins", "date_joins"):
+        for join in writer_cells.get(section) or []:
+            for key, value in join.items():
+                if key.endswith("html_id") and isinstance(value, str):
+                    cells.add(value)
+                elif key.endswith("html_ids") and isinstance(value, list):
+                    cells.update(v for v in value if isinstance(v, str))
+    return cells
+
+
+CELL_TAG_RE = re.compile(r"<div ([^>]*\bdata-cell-kind=[^>]*)>")
+CELL_ID_RE = re.compile(r'(?:^|\s)id="(p\d+c\d+)"')
+INPUT_NAME_RE = re.compile(r'<input\b[^>]*?\sname="([^"]*)"')
+
+
+def stamped_joined_inputs(html: str, joined: set[str]) -> list[str]:
+    """Inputs of joined cells that carry another name than their cell's id.
+
+    The product fills a joined cell through its writer-cells join, and fills
+    any input whose name is a filing key by that name too: such an input
+    would be filled twice. Every input inside a joined cell must therefore be
+    named after the cell. Band rows kept in <template> are not the sheet's.
+    """
+    html = re.sub(r"<template\b.*?</template>", "", html, flags=re.S)
+    tags = list(CELL_TAG_RE.finditer(html))
+    found = []
+    for at, tag in enumerate(tags):
+        match = CELL_ID_RE.search(tag.group(1))
+        if not match or match.group(1) not in joined:
+            continue
+        cell = match.group(1)
+        end = tags[at + 1].start() if at + 1 < len(tags) else len(html)
+        for name in INPUT_NAME_RE.findall(html[tag.end():end]):
+            if name != cell:
+                found.append(f"{cell}: input named {name!r}")
+    return found
+
+
+def joined_cell_stamps(out: pathlib.Path, product_html: pathlib.Path) -> list[str]:
+    """[`stamped_joined_inputs`] for every frozen sheet the product joins."""
+    problems = []
+    for writer_cells in sorted(product_html.glob("*/writer-cells.json")):
+        slug = writer_cells.parent.name
+        sheet = out / slug / "index.html"
+        if not sheet.is_file():
+            continue
+        joined = joined_cells(json.loads(writer_cells.read_text(encoding="utf-8")))
+        problems += [f"{slug} {p}" for p in stamped_joined_inputs(sheet.read_text(encoding="utf-8"), joined)]
+    return problems
+
+
+def product_html_for(index_path: pathlib.Path, product_html: pathlib.Path | None) -> pathlib.Path:
+    """The product's html-frozen/: given, or beside the rules/index.json it reads."""
+    return product_html or index_path.resolve().parent.parent / "html-frozen"
+
+
+def in_ci() -> bool:
+    """GitHub Actions (and most CI) set CI=true."""
+    return os.environ.get("CI", "").strip().lower() in ("1", "true", "yes")
+
+
+def refuse_joined_stamps(
+    out: pathlib.Path,
+    product_html: pathlib.Path,
+    require_product: bool = False,
+    allow_missing_product: bool = False,
+) -> int:
+    """Refuse filing-key names inside cells the product joins.
+
+    Without the product's html-frozen/ the check cannot run, and that fails:
+    always under --require-product or in CI, and locally unless the caller
+    explicitly passes --allow-missing-product.
+    """
+    if not product_html.is_dir():
+        required = require_product or in_ci()
+        if allow_missing_product and not required:
+            print(f"SKIP  joined-cell names: no product html-frozen at {product_html} (--allow-missing-product)")
+            return 0
+        why = "--require-product" if require_product else "CI" if in_ci() else "no --allow-missing-product"
+        print(
+            f"error: joined-cell names cannot be checked: no product html-frozen at {product_html} ({why})",
+            file=sys.stderr,
+        )
+        return 1
+    problems = joined_cell_stamps(out, product_html)
+    if problems:
+        print(
+            "error: inputs of cells the product joins carry a filing-key name "
+            "(the product would fill them twice):\n  " + "\n  ".join(problems),
+            file=sys.stderr,
+        )
+        return 1
+    print("OK    joined cells keep their inputs named after the cell")
+    return 0
+
+
 def load_form_ids(index_path: pathlib.Path) -> list[str]:
     index = json.loads(index_path.read_text(encoding="utf-8"))
     form_ids = [row["form_id"] for row in index["forms"]]
@@ -122,7 +222,13 @@ def load_form_ids(index_path: pathlib.Path) -> list[str]:
     return form_ids
 
 
-def verify(out: pathlib.Path, index_path: pathlib.Path) -> int:
+def verify(
+    out: pathlib.Path,
+    index_path: pathlib.Path,
+    product_html: pathlib.Path | None = None,
+    require_product: bool = False,
+    allow_missing_product: bool = False,
+) -> int:
     """Check the committed freeze without regenerating from forms-corrected/."""
     form_ids = load_form_ids(index_path)
     inventory_path = out / "inventory.json"
@@ -161,10 +267,19 @@ def verify(out: pathlib.Path, index_path: pathlib.Path) -> int:
         print("error: freeze incomplete:\n  " + "\n  ".join(missing), file=sys.stderr)
         return 1
     print(f"OK    verify {len(bundles)} bundles at {out}")
-    return 0
+    return refuse_joined_stamps(
+        out, product_html_for(index_path, product_html), require_product, allow_missing_product
+    )
 
 
-def freeze(source: pathlib.Path, out: pathlib.Path, index_path: pathlib.Path) -> int:
+def freeze(
+    source: pathlib.Path,
+    out: pathlib.Path,
+    index_path: pathlib.Path,
+    product_html: pathlib.Path | None = None,
+    require_product: bool = False,
+    allow_missing_product: bool = False,
+) -> int:
     form_ids = load_form_ids(index_path)
     if not source.is_dir():
         print(f"error: missing source tree {source}", file=sys.stderr)
@@ -270,7 +385,9 @@ def freeze(source: pathlib.Path, out: pathlib.Path, index_path: pathlib.Path) ->
     print(f"OK    bundles {len(manifest['bundles'])}")
     print(f"OK    assets {copied_assets}")
     print(f"OK    out {out}")
-    return 0
+    return refuse_joined_stamps(
+        out, product_html_for(index_path, product_html), require_product, allow_missing_product
+    )
 
 
 def main() -> int:
@@ -283,10 +400,26 @@ def main() -> int:
         action="store_true",
         help="Check a committed html-frozen/ tree; do not regenerate.",
     )
+    parser.add_argument(
+        "--product-html",
+        type=pathlib.Path,
+        help="The product's html-frozen/ (default: beside --index's rules/).",
+    )
+    parser.add_argument(
+        "--require-product",
+        action="store_true",
+        help="Fail when the product's html-frozen/ is missing (CI passes this; CI=true implies it).",
+    )
+    parser.add_argument(
+        "--allow-missing-product",
+        action="store_true",
+        help="Locally only: skip the joined-cell check when the product's html-frozen/ is missing.",
+    )
     args = parser.parse_args()
+    product = (args.product_html, args.require_product, args.allow_missing_product)
     if args.verify:
-        return verify(args.out, args.index)
-    return freeze(args.source, args.out, args.index)
+        return verify(args.out, args.index, *product)
+    return freeze(args.source, args.out, args.index, *product)
 
 
 if __name__ == "__main__":

@@ -248,12 +248,21 @@ jobs:
       - name: Frozen inventory and TIN name stamps
         run: |
           set -euo pipefail
-          python3 tools/formgen/freeze_html.py --verify --out html-frozen --index "$PRODUCT/rules/index.json"
+          python3 tools/formgen/freeze_html.py --verify --require-product --out html-frozen --index "$PRODUCT/rules/index.json"
           python3 tools/formgen/stamp_frozen_names.py --self-test
           python3 tools/formgen/stamp_frozen_names.py --check-all \
             --html-root html-frozen \
             --rules-root "$PRODUCT/rules/forms" \
             --catalog tools/formgen/identity/catalog.json
+
+      # The product's html-frozen/ must equal this tree byte for byte, its
+      # formgen-page-layout block aside, so a re-sync in either direction
+      # changes nothing else.
+      - name: Frozen sheets equal the product's copies
+        run: |
+          set -euo pipefail
+          python3 tools/formgen/check_product_sync.py --self-test
+          python3 tools/formgen/check_product_sync.py --out html-frozen --product "$PRODUCT/html-frozen"
 
       # extract.py is the strongest check in the pipeline and, until the
       # synthetic corpus existed, the least runnable: every assertion was pinned

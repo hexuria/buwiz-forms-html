@@ -1,9 +1,7 @@
-/* 2200T rev 2022 -- guide-specific rules.
+/* 2200T rev 2020 -- guide-specific rules.
  * Shared scaffolding is in ../base.css; the form's own rules
  * are in form.css and are not loaded by the guide. */
 @page { size:612pt 936pt;margin:36pt }
-.doc-link { position:absolute;left:0;top:0;z-index:9;font:12px/1.5 system-ui,-apple-system,sans-serif;padding:2px 8px;background:#fff;color:#0645ad;text-decoration:underline }
-@media print { .doc-link{display:none} }
 body { background:#fff;color:#111 }
 .gl { max-width:46em;margin:0 auto;padding:3em 1.5em 4em;
 font:16px/1.6 Georgia,"Times New Roman",serif }
