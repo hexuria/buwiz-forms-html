@@ -1,5 +1,5 @@
 /* 2200T rev 2020 -- guide-specific rules.
- * Shared scaffolding is in ../../base.css; the form's own rules
+ * Shared scaffolding is in ../base.css; the form's own rules
  * are in form.css and are not loaded by the guide. */
 @page { size:612pt 936pt;margin:36pt }
 body { background:#fff;color:#111 }
